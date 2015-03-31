@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_020138_create_roles_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Course.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_29_010232_create_schools_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_29_010232_create_schools_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Business.php" afterPath="$PROJECT_DIR$/app/Business.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_224333_create_coupon_tables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_225525_create_assignment_tables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_225550_create_grade_tables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_232837_link_tables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Assignment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Coupon.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Grade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2013_3_31_000000_create_users_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/District.php" afterPath="$PROJECT_DIR$/app/District.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Region.php" afterPath="$PROJECT_DIR$/app/Region.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fridgeworthy.iws" />
@@ -41,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015_03_31_030113_create_course_user_pivot_table.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php">
+      <file leaf-file-name="Region.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Region.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.24844721" vertical-offset="0" max-vertical-offset="483">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -55,23 +55,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="artisan make:migration:pivot users roles" />
-      <command text="artisan migrate:refresh" />
-      <command text="artisan make:model Role" />
-      <command text="artisan make:model Class" />
-      <command text="artisan make:model ClassRoster" />
-      <command text="artisan migration:refresh" />
-      <command text="artisan migrate:refresh" />
-      <command text="artisan migrate" />
-      <command text="artisan " />
-      <command text="artisan migrate:rollback" />
-      <command text="artisan" />
-      <command text="artisan:reset" />
-      <command text="artisan migrate:reset" />
-      <command text="artisan make:migration create_course_table --create=courses" />
-      <command text="artisan migrate:refresh" />
-      <command text="artisan dump-autoload" />
-      <command text="artisan migrate" />
       <command text="artisan migrate:refresh" />
       <command text="artisan migrate:reset" />
       <command text="artisan make:migration:pivot courses users" />
@@ -80,31 +63,37 @@
       <command text="artisan migrate" />
       <command text="artisan migrate:refresh" />
       <command text="artisan migrate" />
+      <command text="create migration create_coupon_table --create-table:coupons" />
+      <command text="artisan" />
+      <command text="make migration create_coupon_tables --create-table=coupons" />
+      <command text="artisan " />
+      <command text="artisan make:migration -help" />
+      <command text="make migration create_coupon_tables --create=coupons" />
+      <command text="artisan make:migration create_coupon_tables --create=coupons" />
+      <command text="artisan make:migration create_assignment_tables --create=assignments" />
+      <command text="artisan make:migration create_grade_tables --create=grades" />
+      <command text="artisan migrate:refresh" />
+      <command text="artisan" />
+      <command text="artisan migrate" />
+      <command text="artisan migrate:refresh" />
+      <command text="artisan migrate" />
+      <command text="artisan make:migration link_tables" />
+      <command text="artisan migrate:refresh" />
+      <command text="artisan migrate" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/schools/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SchoolController.php" />
-        <option value="$PROJECT_DIR$/resources/views/schools/edit.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_29_233327_create_businesses_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/BusinessRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/businesses/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/businesses/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/businesses/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/businesses/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/businesses/partials/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/rewards/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/rewards/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/rewards/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/static/staticmaster.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RewardController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php" />
         <option value="$PROJECT_DIR$/app/Reward.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/RewardRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/rewards/partials/form.blade.php" />
@@ -124,7 +113,6 @@
         <option value="$PROJECT_DIR$/resources/views/users/index.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_31_020138_create_roles_table.php" />
         <option value="$PROJECT_DIR$/app/Role.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_29_010232_create_schools_table.php" />
@@ -136,9 +124,24 @@
         <option value="$PROJECT_DIR$/app/Course.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_31_022959_create_courses_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_course_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_31_023023_create_course_user_pivot_tabl.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_31_023023_create_course_user_pivot_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_3_31_300000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_225550_create_grade_tables.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_224333_create_coupon_tables.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_225525_create_assignment_tables.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_232837_link_tables.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Coupon.php" />
+        <option value="$PROJECT_DIR$/app/Grade.php" />
+        <option value="$PROJECT_DIR$/app/Coupon.php" />
+        <option value="$PROJECT_DIR$/app/Assignment.php" />
+        <option value="$PROJECT_DIR$/app/District.php" />
+        <option value="$PROJECT_DIR$/app/Region.php" />
       </list>
     </option>
   </component>
@@ -461,11 +464,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/resources/views/static" />
       <recent name="$PROJECT_DIR$/resources/views/home/partials" />
       <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/home" />
@@ -512,33 +515,41 @@
       <option name="number" value="Default" />
       <updated>1427567747470</updated>
     </task>
+    <task id="LOCAL-00001" summary="Additional migrations and models">
+      <created>1427841435990</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1427841435991</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="24" width="1400" height="804" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32804233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32804233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -556,6 +567,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Additional migrations and models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additional migrations and models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -564,97 +577,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.stepframemodal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5443788" vertical-offset="1290" max-vertical-offset="3045">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/administrator/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="507">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="507">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7763975" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41420117" vertical-offset="0" max-vertical-offset="507">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/infographic.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82840234" vertical-offset="0" max-vertical-offset="15495">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/regions/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5279503" vertical-offset="0" max-vertical-offset="483">
-          <caret line="17" column="49" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/rewards/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5279503" vertical-offset="0" max-vertical-offset="483">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/partials/registration_closed.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49689442" vertical-offset="0" max-vertical-offset="483">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/businesses/partials/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1863354" vertical-offset="0" max-vertical-offset="483">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/businesses/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="507">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/businesses/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5279503" vertical-offset="0" max-vertical-offset="483">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/businesses/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3726708" vertical-offset="0" max-vertical-offset="483">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/businesses/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46583852" vertical-offset="0" max-vertical-offset="483">
@@ -799,6 +721,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9006211" vertical-offset="525" max-vertical-offset="1980">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -806,6 +729,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7204969" vertical-offset="117" max-vertical-offset="660">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -816,73 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_29_010232_create_schools_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36935705" vertical-offset="0" max-vertical-offset="731">
-          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_29_233327_create_businesses_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_020138_create_roles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26675788" vertical-offset="0" max-vertical-offset="731">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/District.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="755">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12311901" vertical-offset="0" max-vertical-offset="731">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Reward.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20519836" vertical-offset="0" max-vertical-offset="731">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Business.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36935705" vertical-offset="0" max-vertical-offset="731">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/phpspec/phpspec/spec/PhpSpec/Locator/PSR0/PSR0LocatorSpec.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22982216" vertical-offset="4707" max-vertical-offset="7575">
           <caret line="328" column="79" selection-start-line="328" selection-start-column="79" selection-end-line="328" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5485636" vertical-offset="574" max-vertical-offset="1335">
-          <caret line="69" column="67" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8385093" vertical-offset="0" max-vertical-offset="495">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -893,31 +754,439 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_28_213914_create_districts_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.124223605" vertical-offset="0" max-vertical-offset="705">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1427590952000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427590952000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_29_005501_create_regions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.621118" vertical-offset="0" max-vertical-offset="600">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.39751554" vertical-offset="153" max-vertical-offset="660">
+          <caret line="24" column="38" selection-start-line="21" selection-start-column="10" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <marker date="1427652320000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427652320000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.11801242" vertical-offset="57" max-vertical-offset="570">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426302170000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1426302170000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2013_3_31_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56087554" vertical-offset="10" max-vertical-offset="765">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1427844695000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427844695000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_30_000834_create_rewards_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47195622" vertical-offset="0" max-vertical-offset="731">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1427844907000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427844907000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_29_233327_create_businesses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1427672091000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427672091000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_29_010232_create_schools_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1490684" vertical-offset="0" max-vertical-offset="705">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+          <folding>
+            <marker date="1427769216000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427769216000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_020138_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2815735" vertical-offset="59" max-vertical-offset="630">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <marker date="1427768079000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427768079000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_025601_create_courses_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.124223605" vertical-offset="0" max-vertical-offset="705">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.45341614" vertical-offset="96" max-vertical-offset="630">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1427844832000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427844832000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_030113_create_course_user_pivot_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.49689442" vertical-offset="0" max-vertical-offset="585">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <marker date="1427845414000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427845414000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_021133_create_role_user_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36645964" vertical-offset="63" max-vertical-offset="570">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <marker date="1427845065000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427845065000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_232837_link_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.89440995" vertical-offset="897" max-vertical-offset="1380">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1427845344000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427845344000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Reward.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2173913" vertical-offset="45" max-vertical-offset="585">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1427677611000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1427677611000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427677611000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427677611000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427677611000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_225550_create_grade_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43271223" vertical-offset="91" max-vertical-offset="615">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1427844738000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427844738000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_224333_create_coupon_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4099379" vertical-offset="87" max-vertical-offset="615">
+          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+          <folding>
+            <marker date="1427844792000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427844792000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_31_225525_create_assignment_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43271223" vertical-offset="76" max-vertical-offset="600">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <marker date="1427845307000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1427845307000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Grade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5590062" vertical-offset="0" max-vertical-offset="483">
+          <caret line="23" column="6" selection-start-line="18" selection-start-column="3" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <marker date="1427845845000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1427845845000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845845000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1863354" vertical-offset="0" max-vertical-offset="483">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <marker date="1427768208000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427768208000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/School.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.062111802" vertical-offset="0" max-vertical-offset="483">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="39" />
+          <folding>
+            <marker date="1427654156000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427654156000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427654156000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427654156000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5652174" vertical-offset="552" max-vertical-offset="1335">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding>
+            <marker date="1427770096000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder=" The database table used by the model. ..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder=" The attributes that are mass assignable. ..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder=" The attributes excluded from the model's JSON form. ..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770096000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Assignment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65217394" vertical-offset="0" max-vertical-offset="483">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <marker date="1427845938000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1427845938000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845938000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Business.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5590062" vertical-offset="0" max-vertical-offset="483">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <marker date="1427769987000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769987000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427769987000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59006214" vertical-offset="0" max-vertical-offset="483">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <marker date="1427845938000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1427845938000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427845938000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1863354" vertical-offset="0" max-vertical-offset="495">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1427770196000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770196000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770196000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427770196000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/District.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24844721" vertical-offset="0" max-vertical-offset="483">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <marker date="1427846037000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427846037000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427846037000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24844721" vertical-offset="0" max-vertical-offset="483">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
         </state>
       </provider>

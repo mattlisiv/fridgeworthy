@@ -21,11 +21,6 @@ class CreateCoursesTable extends Migration {
             $table->text('description');
             $table->timestamps();
 
-
-
-            $table->foreign('teacher_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
         });
     }
 

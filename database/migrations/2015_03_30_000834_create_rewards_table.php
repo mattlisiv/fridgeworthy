@@ -23,9 +23,6 @@ class CreateRewardsTable extends Migration {
             $table->float('dollar_amount');
 			$table->timestamps();
 
-            $table->foreign('business_id')
-                ->references('id')->on('businesses')
-                ->onDelete('cascade');
 		});
 	}
 
