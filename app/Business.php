@@ -16,6 +16,6 @@ class Business extends Model {
 
     public function rewards(){
 
-        return $this->hasMany('App\Rewards');
+        return $this->hasMany('App\Reward');
     }
 }

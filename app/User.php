@@ -31,4 +31,57 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+    public function roles(){
+
+        return $this->belongsToMany('Role')->withTimestamps();
+    }
+
+
+    public function hasRole($name){
+
+        foreach($this->roles() as $role){
+
+            if($role->name == $name){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function assignRole($role){
+
+        return $this->roles()->attach($role);
+    }
+
+    public function removeRole($role){
+
+        return $this->roles()->detach($role);
+    }
+
+    public function classes(){
+       if($this->hasRole('teacher')){
+
+           return $this->hasMany('App\Course');
+
+       }else if($this->hasRole('student')){
+
+           return $this->belongsToMany('Course')->withTimestamps();
+       }
+
+    }
+
+    public function enrolledInClass($name){
+
+        foreach($this->classes() as $class){
+
+            if($class->name == $name){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
