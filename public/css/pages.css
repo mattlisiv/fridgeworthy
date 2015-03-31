@@ -1,0 +1,562 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*home*/
+#homecntblocks {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 65px 0 0 80px;
+	width: 520px;
+}
+
+#hardwork {
+	width: 100%;
+	margin-bottom: 4%;
+}
+
+#hardwork img {
+	width: 100%;
+}
+
+#homeblocks {
+	width: 100%;
+	height: 450px;
+}
+
+#logoblock {
+	width: 300px; 
+	margin-right: 13px;
+	padding: 30px;
+	height: 450px;
+	background-color: rgba(255,255,255,.95);
+	display: block;
+	float: left;
+	z-index: 1000;
+}
+
+img#logomain {
+	width: 100%;
+	height: auto;
+	margin-bottom: 25px; 
+}
+
+#homeformblock {
+	width: 207px;
+	height: 100%;
+	display: block;
+	float: left;
+}
+
+#sublock {
+	width: 100%; 
+	height: 270px;
+	margin-bottom: 13px;
+	padding: 17px 5%;
+	background-color: rgba(238,120,48,.9);
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+#liblock {
+	width: 100%; 
+	height: 167px;
+	padding: 17px 0 0;
+	background-color: rgba(1,174,240,.9);
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+form#signup .tfield {
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+#liblock button {
+	margin-bottom: 8px;
+}
+
+
+#signup .custom-dropdownBlue, #signup .customSelect {
+	width: 100%;
+	display: block;
+}
+
+/*about*/
+#aboutcnt img {
+	margin: 20px 0 30px 0;
+	width: 100%;
+	max-width: 625px;
+	
+}
+
+#aboutcnt p {
+	margin: 0 auto;
+	padding: 0 10%;
+	max-width: 800px;
+	min-width: 200px;
+	
+}
+
+/*abt 2*/
+.forthecol {
+	float: left;
+	width: 21%;
+	padding: 0 2%;
+	overflow: visible;
+	text-align: center;
+	z-index: 998;
+}
+
+.forthecol h5 {
+	margin-bottom: 15px;
+	white-space: nowrap;
+}
+
+#studentscirc, #teacherscirc, #parentscirc, #businessescirc {
+width: 200px;
+height: 200px;
+background-repeat: no-repeat;
+background-size: 100%;
+margin: 0 auto 30px auto;
+}
+
+#studentscirc:hover, #teacherscirc:hover, #parentscirc:hover, #businessescirc:hover  {
+-moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);	
+}
+
+#studentscirc {
+background-image: url(../images/studentscirc.svg);
+
+}
+
+#teacherscirc {
+background-image: url(../images/teacherscirc.svg);
+	
+}
+
+#parentscirc {
+background-image: url(../images/parentscirc.svg);
+	
+}
+
+#businessescirc {
+	background-image: url(../images/businesscirc.svg);
+}
+
+/*rewards*/
+.rewpanhalf {
+	width: 50%; 
+	float: left;
+	min-width: 300px;
+}
+
+/*registration placeholder*/
+#regbannercal, #regbannertype {
+	float: left;
+}
+
+#regbannercal{
+	width: 30%;
+	margin-right: 2%;
+}
+
+#regbannercal img {
+	width: 100%;
+}
+
+#regbannertype{
+	width: 63%;
+}
+
+#regbannertype a {
+	color: #666666;
+	border-bottom: 1px dotted #666666;
+	text-decoration: none;	
+}
+
+#regbannertype a:visited {
+}
+
+#regbannertype a:hover, #regbannertype a:focus, #regbannertype a:active {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;
+}
+
+/*registration*/
+.regthird {
+	float: left;
+	width: 31.026528258362% /*896.66666666666667/2890*/;
+}
+
+#userinfo {padding-right: 03.460207612457% /*100/2890*/;}
+#persinfo {padding-right: 01.730103806228% /*50/2890*/;}
+#schoolinfo {padding-left: 01.730103806228% /*50/2890*/;}
+
+
+input#city, #persinfo .custom-dropdownBlue {
+	float: left;
+	width: 35%;
+	display: block;
+}
+
+#persinfo .customSelect {
+	width: 100%;
+	display: block;
+}
+
+
+#city {
+margin-right: 04.460966542751% /*40/896.66666666666667*/;
+}
+
+#selectschool, #teachstud {
+float: left;
+width: 100%;
+margin-bottom: 8px;
+display: block;
+}
+
+#selectschool .customSelect, #teachstud .customSelect {
+	width: 100%;
+	display: block;
+}
+
+.regthird input {
+width: 100%;
+margin-bottom: 8px;
+}
+
+#userinfo p, #persinfo p, #schoolinfo p {
+	text-align: left;
+	font-style: italic;
+	padding-bottom: 6px;
+}
+
+#regpancnt .smbtn {
+	margin-top: 86px;
+	width: 100px;	
+	float: right;
+}
+
+/*my points*/
+#pointscirccont {
+	width: 100%;	
+}
+
+#pointscirccont:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.pointscirc {
+	width: 33.33%;
+	float: left;
+	cursor:pointer;
+}
+
+a#viewstudyguides, a#submitgrade, a#checkprogress {
+display: block;
+margin: 0 auto;
+height: 115px;
+width: 200px;
+padding-top: 85px;
+text-decoration: none;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;	
+}
+
+a#viewstudyguides {
+background-image: url(../images/viewstudyguides.svg);
+}
+
+a#submitgrade {
+background-image: url(../images/submitgrade.svg);
+}
+
+a#checkprogress {
+background-image: url(../images/viewprogress.svg);
+}
+
+a#viewstudyguides:hover, a#submitgrade:hover, a#checkprogress:hover {
+-moz-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-o-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+transform: scale(1.1);	
+}
+
+/*interact*/
+#teachcirccont {
+	width: 100%;	
+}
+
+#teachcirccont:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.teachcirc {
+	width: 33.33%;
+	float: left;
+	cursor:pointer;
+}
+
+a#uploadtest, a#uploadstudyguide, a#reviewgrades {
+display: block;
+margin: 0 auto;
+height: 115px;
+width: 200px;
+padding-top: 85px;
+text-decoration: none;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;	
+}
+
+a#uploadtest {
+background-image: url(../images/uploadtest.svg);
+}
+
+a#uploadstudyguide{
+background-image: url(../images/uploadstudyguide.svg);
+}
+
+a#reviewgrades {
+background-image: url(../images/reviewgrades.svg);
+}
+
+a#uploadtest:hover, a#uploadstudyguide:hover, a#reviewgrades:hover {
+-moz-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-o-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+transform: scale(1.1);	
+}
+
+/*submit a grade*/
+form#submitgrade {
+	width: 458px;
+	margin: 0 auto;
+}
+
+/*submit grade dropdown*/
+#submitgrade .custom-dropdownBlue {
+	float: left;
+	width: 49%;
+	margin-bottom: 8px;
+	display: block;
+}
+
+#submitgrade .customSelect {
+	width: 100%;
+	display: block;
+}
+
+#selectteacher {
+	margin-right: 2%;
+}
+
+#numgrade {
+	float: left;
+	width: 49% /*300/916*/;
+}
+
+#submitgradepancnt .smbtn {	
+	float: right;
+}
+
+/*manage profile*/
+.managehalf {
+	width: 46.532593619972% /*671/1442*/;
+	float: left;
+	text-align: left;
+}
+
+#userinfomanage {
+	margin-right: 06.934812760055% /*100/1442*/;
+}
+
+.manageinfo {
+display: block;
+background-color: #ffffff;
+height: 150px;
+width: 90%;	
+padding: 8px 5%;
+}
+
+/*review grades*/
+#reviewtable {
+	width: 100% /*1420/1420*/;
+	display: table;
+	border-top: 1px solid #e2e4e5;
+	border-left: 1px solid #e2e4e5;
+	border-right: 1px solid #e2e4e5;
+}
+
+.reviewrow {
+	width: 100%;
+	display: table-row;
+}
+
+.reviewrow:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.namecell, .asscell, .gradecell, .statuscell, .responsecell {
+	display: table-cell;
+	text-align: left;
+	vertical-align: bottom;
+	padding: 5px 0;
+	border-bottom: 1px solid #e2e4e5;
+}
+
+.namecell {
+	width: 19.014084507042%/*270/1420*/;
+	padding-left: 1%;
+	
+}
+
+.asscell {
+	width: 19.014084507042%/*270/1420*/;
+	
+}
+
+.gradecell {
+	width: 13.732394366197%/*195/1420*/;
+	
+}
+
+.statuscell {
+	width: 30%/*195/1420*/;
+	
+}
+
+.responsecell {
+	padding-right: 1%;
+}
+
+.responsecell form {
+	width: 100%;
+}
+
+/*rewards center*/
+#rewcentpancnt input:first-of-type {
+	width: 40%;
+	margin-right: 2%;
+	background-image: url(../images/magicon.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+#rewardsboxwrap {
+	margin-top: 50px;	
+}
+
+.rewardbox {
+display: block;
+float: left;
+width: 23%;
+margin: 0 2% 10px 0;
+height: 320px;
+padding: 10% 2.65% 0 2%;
+overflow: hidden;
+background-image: url(../images/notemag@2x.png);
+background-position: top;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.rewardbox img{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.rewardbox h6{
+	color: #666666;
+}
+
+#rewardsboxwrap:after {
+	content: "";
+	display: block;
+	clear:both;
+	height: 10px;
+}
+
+/*rewards center details*/
+.rewardboxlg {
+width: 100%;
+max-width: 800px;
+padding: 140px 6.5% 30px 5%;
+background-image: url(../images/notemaglg@2x.png);
+background-position: top;
+background-size: cover;
+background-repeat: no-repeat;
+overflow: hidden;
+}
+
+.rewardboxlg p {	
+font-size: 15px;
+margin-bottom: 15px;
+line-height: 19px;
+}
+
+.rewardinfo {
+	width: 100%;
+	display: block;
+	
+}
+
+.rewardinfo:after {
+	content: "";
+	display: block;
+	clear: both;
+	margin-bottom: 30px;
+}
+
+.rewarddetcol {
+width: 50%;
+display: block;
+float: left;
+}
+
+.rewarddetcol:first-of-type {
+padding-right: 5%;
+}
+
+.rewardlogo {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.rewarddet2ndrow {
+	width: 100%;
+	display: block;
+}
+
+a.plink {
+	color: #ee7830;
+	text-decoration: none;	
+}
+
+a.plink:visited {
+}
+
+a.plink:hover, a.plink:focus, a.plink:active {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;	
+}
+
+	
+	
