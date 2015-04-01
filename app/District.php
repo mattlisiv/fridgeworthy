@@ -11,8 +11,14 @@ class District extends Model {
     ];
 
 
+    /** Relationships **/
     public function regions(){
 
         return $this->hasMany('App\Region');
+    }
+    
+    public function schools(){
+    	
+    	retu $this->hasManyThrough('App\School','App\Region');
     }
 }
