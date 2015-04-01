@@ -25,11 +25,30 @@ class Coupon extends Model{
         'access_code'
     ];
 
-
+    /**Relationships**/
     public function reward(){
 
 
         $this->belongsTo('App\Reward');
+    }
+    
+    /**Query Scope 
+    *@TODO Verify Functionality
+    **/
+    
+    public function scopeRedeemed($query){
+        
+        return $query->whereStatus('redeemed');
+    }
+    
+    public function scopeUnredeemed($query){
+        
+        return $query->whereStatus('unredeemed');
+    }
+    
+    public function scopeFlagged($query){
+        
+        return $query->whereStatus('flagged');
     }
 
     /**
