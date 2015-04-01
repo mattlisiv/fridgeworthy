@@ -23,6 +23,10 @@ class Assignment extends Model{
         'description',
         'due_date'
     ];
+    
+     protected $dates = [
+        'due_date'
+    ];
 
 
     public function grades(){
