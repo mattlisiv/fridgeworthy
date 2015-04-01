@@ -13,10 +13,15 @@ class Business extends Model {
         'website',
     ];
 
-
+    /**Relationships **/
     public function rewards(){
 
         return $this->hasMany('App\Reward');
+    }
+    
+    public function coupons(){
+        
+        return $this->hasManyThrough('App\Coupon','App\Reward');
     }
 
     /**
