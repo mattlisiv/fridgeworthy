@@ -24,4 +24,22 @@ class Coupon extends Model{
         'user_id',
         'access_code'
     ];
+
+
+    public function reward(){
+
+
+        $this->belongsTo('App\Reward');
+    }
+
+    /**
+     *@TODO define methods
+     * -owner
+     * -isRedeemed
+     * -reward
+     *
+     */
+
+
+
 }

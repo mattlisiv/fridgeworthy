@@ -24,4 +24,12 @@ class Grade extends Model{
     ];
 
 
+    public function student(){
+        
+        $this->belongsTo('App\User');
+    }
+
+
+
+
 }

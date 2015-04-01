@@ -35,5 +35,16 @@ class Reward extends Model{
         return $this->belongsTo('App\Business');
     }
 
+    public function coupons(){
+
+        return $this->hasMany('App\Coupon');
+    }
+
+    /**@TODO methods
+     * -unredeemedCoupons
+     * -redeemedCoupons
+     *
+     */
+
 
 }

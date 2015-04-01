@@ -18,4 +18,13 @@ class Business extends Model {
 
         return $this->hasMany('App\Reward');
     }
+
+    /**
+     *@TODO define methods
+     * -location?
+     * -coupons
+     *-redeemedCoupons
+     * -unredeemedCoupons
+     *
+     */
 }

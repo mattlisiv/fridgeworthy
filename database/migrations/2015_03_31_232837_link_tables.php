@@ -23,6 +23,8 @@ class LinkTables extends Migration {
             /**Foreign Key to Assignment**/
             $table->foreign('assignment_id')
                 ->references('id')->on('assignments');
+            $table->foreign('student_id')
+                ->references('id')->on('users');
             $table->timestamps();
         });
 

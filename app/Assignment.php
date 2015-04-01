@@ -24,4 +24,26 @@ class Assignment extends Model{
         'due_date'
     ];
 
+
+    public function grades(){
+
+
+        $this->hasMany('App\Grade');
+    }
+
+
+    public function course(){
+
+        $this->belongsTo('App\Course');
+
+    }
+
+    /**@TODO define methods
+     * -grades
+     * -pastDueDate
+     *-grades w/ users
+     *
+     *
+     */
+
 }

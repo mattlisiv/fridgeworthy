@@ -24,4 +24,19 @@ class Course extends Model {
         return $this->belongsToMany('User')->withTimestamps();
     }
 
+    public function assignments(){
+
+
+        return $this->hasMany('App\Assignment');
+    }
+
+    /**@TODO define methods
+     * -school
+     *
+     *
+     *
+     */
+
+
+
 }

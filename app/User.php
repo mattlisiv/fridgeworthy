@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\DB;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -60,7 +61,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->roles()->detach($role);
     }
 
-    public function classes(){
+    public function courses(){
        if($this->hasRole('teacher')){
 
            return $this->hasMany('App\Course');
@@ -72,16 +73,35 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     }
 
-    public function enrolledInClass($name){
+    public function enrolledInCourse($name){
 
-        foreach($this->classes() as $class){
+        foreach($this->courses() as $course){
 
-            if($class->name == $name){
+            if($course->name == $name){
                 return true;
             }
         }
 
         return false;
     }
+
+    public function school(){
+
+
+        return $this->belongsTo('App\School');
+    }
+
+    public function coupons(){
+
+        $coupons = DB::table('coupons')->where('user_id', '=', $this->id)->get();
+        return $coupons;
+    }
+
+/**@TODO
+ * enroll in class
+ * deroll from class
+ * ----add status to enrollment table
+ *
+ * */
 
 }

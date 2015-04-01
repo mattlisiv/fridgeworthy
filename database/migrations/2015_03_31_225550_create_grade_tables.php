@@ -15,6 +15,7 @@ class CreateGradeTables extends Migration {
 		Schema::create('grades', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('student_id')->unsigned();
             $table->integer('assignment_id')->unsigned();
             $table->enum('status',['pending','accepted','flagged']);
             $table->integer('numeric_grade')->unsigned();

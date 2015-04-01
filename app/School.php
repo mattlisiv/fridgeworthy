@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class School extends Model {
 
@@ -23,4 +24,26 @@ class School extends Model {
 
         $this->region->district;
     }
+
+    public function allUsers(){
+
+        $users = DB::table('users')->where('school_id', '=', $this->id)->get();
+        return $users;
+
+    }
+
+    public function courses(){
+
+
+    }
+
+    /**@TODO methds
+     * -grades
+     * -teachers
+     * -students
+     *
+     *
+     */
+
+
 }
