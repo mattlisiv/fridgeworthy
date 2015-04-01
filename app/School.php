@@ -20,6 +20,8 @@ class School extends Model {
         return $this->belongsTo('App\Region');
     }
 
+    /**Relationships **/
+    
     public function district(){
 
         $this->region->district;
@@ -34,6 +36,7 @@ class School extends Model {
 
     public function courses(){
 
+        return $this->hasManyThrough('App\Course','App\User');
 
     }
 
