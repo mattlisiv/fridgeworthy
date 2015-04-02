@@ -19,13 +19,13 @@ class Registrar implements RegistrarContract {
 	{
 		return Validator::make($data, [
 			'first_name' => 'required|max:50',
-            'last_name' => 'required|max:50',
-            'school_id'=>'required',
+            		'last_name' => 'required|max:50',
+            		'school_id'=>'required',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
-            'grade'=> 'required_if:role,student',
-            'parent_email'=>'required_if:role,student',
-            'role'=>'required'
+            		'grade'=> 'required_if:role,student',
+            		'parent_email'=>'required_if:role,student',
+            		'role'=>'required'
 		]);
 
 
@@ -39,19 +39,19 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-        if(!array_key_exists('grade',$data)){
+        	if(!array_key_exists('grade',$data)){
 
-            $data['grade'] = 99;
-        }
+            		$data['grade'] = 99;
+        	}
 		return User::create([
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
-            'school_id' => $data['school_id'],
-            'first_name'=> $data['first_name'],
-            'last_name'=> $data['last_name'],
-            'parent_email' =>$data['parent_email'],
-            'grade'=>$data['grade'],
-            'points'=> 0
+		        'school_id' => $data['school_id'],
+            		'first_name'=> $data['first_name'],
+            		'last_name'=> $data['last_name'],
+            		'parent_email' =>$data['parent_email'],
+            		'grade'=>$data['grade'],
+            		'points'=> 0
 
 		]);
 
