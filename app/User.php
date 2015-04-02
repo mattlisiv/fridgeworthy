@@ -23,7 +23,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['first_name','last_name','school_id', 'points' ,
+        'email', 'password','parent_email','grade'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -33,33 +34,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	protected $hidden = ['password', 'remember_token'];
 
 
-    public function roles(){
-
-        return $this->belongsToMany('Role')->withTimestamps();
-    }
-
-
-    public function hasRole($name){
-
-        foreach($this->roles() as $role){
-
-            if($role->name == $name){
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public function assignRole($role){
-
-        return $this->roles()->attach($role);
-    }
-
-    public function removeRole($role){
-
-        return $this->roles()->detach($role);
-    }
 
     public function courses(){
        if($this->hasRole('teacher')){
@@ -85,6 +59,37 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return false;
     }
 
+    public function enrollInCourse($course){
+
+        if($this->hasRole('student')){
+
+            return $this->courses()->attach($course);
+        }
+
+    }
+
+
+    public function hasRole($name){
+
+        foreach($this->roles as $role){
+            if($role->name == $name){
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public function assignRole($role){
+
+        return $this->roles()->attach($role);
+    }
+
+    public function removeRole($role){
+
+        return $this->roles()->detach($role);
+    }
+
     public function school(){
 
 
@@ -96,6 +101,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $coupons = DB::table('coupons')->where('user_id', '=', $this->id)->get();
         return $coupons;
     }
+
+    public function roles(){
+
+        return $this->belongsToMany('App\Role')->withTimestamps();
+    }
+
+
+
+
+
 
 /**@TODO
  * enroll in class

@@ -19,6 +19,6 @@ class District extends Model {
     
     public function schools(){
     	
-    	retu $this->hasManyThrough('App\School','App\Region');
+    	return $this->hasManyThrough('App\School','App\Region');
     }
 }

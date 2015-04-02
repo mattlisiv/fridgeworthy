@@ -30,6 +30,7 @@
         <img src="/images/fwlogo-nav.png" alt="FridgeWorthy">
     </div>
 </div>
+
 @yield('content')
 </div>
 

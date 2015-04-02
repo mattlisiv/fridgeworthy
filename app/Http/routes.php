@@ -10,7 +10,7 @@ Route::get("infographic","StaticPagesController@infographic");
 
 
 /**Admin Routes **/
-Route::get("admin","AdministratorController@index");
+Route::get("admin","AdministratorController@index")->before('role:admin');
 
 Route::resource('admin/districts','DistrictController');
 Route::resource('admin/regions','RegionController');

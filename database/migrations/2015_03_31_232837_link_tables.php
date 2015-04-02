@@ -62,12 +62,6 @@ class LinkTables extends Migration {
         });
 
 
-        Schema::table('role_user', function($table){
-
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-        });
 
         Schema::table('course_user',function($table){
 

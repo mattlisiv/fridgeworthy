@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\District;
 use App\Http\Requests\DistrictRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
 class DistrictController extends Controller {
@@ -34,6 +34,7 @@ class DistrictController extends Controller {
 
 
         District::create($request->all());
+        Session::flash('flash_message','District has been created');
         return redirect('admin/districts');
 
     }
