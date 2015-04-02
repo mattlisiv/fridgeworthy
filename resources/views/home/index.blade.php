@@ -94,14 +94,7 @@
     <nav class="my-sticky-element">
         <div class="navlogo"><img src="/images/fwlogo-nav.png" alt="FridgeWorthy logo"></div>
 
-        <div class="navrightcnt">
-            <div class="navlogin">
-                <h6>Get involved with FridgeWorthy!</h6>
-                <form action="#" method="post" id="navloginbtns">
-                    <a href="#loginmodal" class="modal-popup"><button type="button" value="login" class="smbtn loginbtn">login</button></a>
-                    <a href="#registrationpanel" data-scroll="#registrationpanel" class="scrollbtn"><button type="button" value="register" class="smbtn">register</button></a>
-                </form>
-            </div><!--end navlogin-->
+       @include('home.partials.loginBanner')
 
             <!--main desktop links-->
             <div class="navmainlinks">
@@ -109,7 +102,7 @@
                     <li><a href="#home" class="scrollbtn">home</a></li>
                     <li><a href="#aboutpanel" class="scrollbtn">about us</a></li>
                     <li><a href="#rewardspanel" class="scrollbtn">rewards</a>
-                        <ul class="dropdownmenu"><li><a href="rewardscentertemp.html" class="scrollbtn">rewards center</a></li></ul>
+                        <ul class="dropdownmenu"><li><a href="{{action('PublicRewardController@index')}}" class="scrollbtn">rewards center</a></li></ul>
                     </li>
                     <li><a href="#registrationpanel" class="scrollbtn">registration</a></li>
                 </ul>
@@ -131,7 +124,7 @@
                             <li class="menu-item"><a href="#aboutpanel" class="scrollbtn">about us</a></li>
                             <li class="menu-item menu-item-has-children"><a href="#rewardspanel" class="scrollbtn">rewards</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item"><a href="rewardscentertemp.html" class="scrollbtn">rewards center</a></li>
+                                    <li class="menu-item"><a href="#rewardspanel" class="scrollbtn">rewards center</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item"><a href="#registrationpanel" class="scrollbtn" style="border-bottom: none;">registration</a></li>
@@ -226,7 +219,7 @@
                     <div class="hrrew"></div>
                 </div><!--end therow-->
                 <h1 class="whiteblue">rewards center</h1>
-                <div id="mainfindrewbtn"><a href="rewardscentertemp.html">find rewards now!<img src="/images/whiterightarrow.png" alt="white right arrow"></a></div>
+                <div id="mainfindrewbtn"><a href="{{ action('PublicRewardController@index') }}">find rewards now!<img src="/images/whiterightarrow.png" alt="white right arrow"></a></div>
             </div>
             <div class="rewpanhalf">
                 <img src="/images/trophy.svg" alt="trophy">
@@ -235,7 +228,15 @@
         </div><!--end rewardspancnt-->
     </section><!--end reward panel-->
 
-    @include('home.partials.registration_open')
+    @if(is_null($user))
+
+         @include('home.partials.registration_open')
+    @else
+
+        @include('home.partials.userProfile')
+
+    @endif
+
 
     <div class="push"></div>
 </div><!--end mainwrap-->
