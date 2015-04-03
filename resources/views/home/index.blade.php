@@ -230,7 +230,7 @@
 
     @if(is_null($user))
 
-         @include('home.partials.registration_open')
+         @include('home.partials.registrationOpen')
     @else
 
         @include('home.partials.userProfile')

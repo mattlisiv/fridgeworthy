@@ -1,4 +1,4 @@
-<div class="navrightcnt">
+
     <div class="navlogin">
         <h6>Get involved with FridgeWorthy!</h6>
         <form action="#" method="post" id="navloginbtns">
