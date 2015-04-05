@@ -8,6 +8,7 @@
 Route::get("/","HomeController@index");
 Route::get("privacypolicy","StaticPagesController@privacy");
 Route::get("infographic","StaticPagesController@infographic");
+Route::post("logout","HomeController@logout");
 
 
 /**Admin Routes **/

@@ -140,7 +140,7 @@
     <div class="push"></div>
 </div><!--end mainwrap-->
 <!--footer-->
-@include('home.partials.footer')
+@include('home.partials.Footer')
 <!--end footer-->
 
 <!--responsive menu-->

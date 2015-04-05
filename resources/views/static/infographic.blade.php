@@ -111,12 +111,12 @@
     <div id="infographic-h">
         <img src="images/infographic-dektop-h-3.svg" alt="infographic">
         <!--footer-->
-       @include('home.partials.footer')
+       @include('home.partials.Footer')
     </div>
 
     <div id="infographic-v">
         <img src="images/infographic-dektop-v-3.svg" alt="infographic">
-        @include('home.partials.footer')
+        @include('home.partials.Footer')
     </div>
 </div>
 <!--responsive menu-->

@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
     <!--CSS links-->
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/pages.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/css/pages.css" rel="stylesheet" type="text/css">
+    <link href="/css/responsive.css" rel="stylesheet" type="text/css">
 
     <!--JS links-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.sticky.js"></script>
-    <script type="text/javascript" src="js/parallax.js"></script>
-    <script type="text/javascript" src="js/retina.min.js"></script>
-    <script type="text/javascript" src="js/jquery.stepframemodal.js"></script>
-    <script type="text/javascript" src="js/fridgeworthy.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="/js/waypoints.sticky.js"></script>
+    <script type="text/javascript" src="/js/parallax.js"></script>
+    <script type="text/javascript" src="/js/retina.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.stepframemodal.js"></script>
+    <script type="text/javascript" src="/js/fridgeworthy.js"></script>
 
     <!--favicon-->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -32,7 +32,7 @@
 
 <div class="mainwrap">
 
-   @include('home.partials.stickyNavigation')
+   @include('home.partials.StickyNavigation')
 
     <!--start login-->
     <div id="loginmodal" class="popup">
@@ -79,7 +79,8 @@
     <div class="push"></div>
 </div><!--end mainwrap-->
 <!--footer-->
-@include('home.partials.footer')
+@include('home.partials.Footer')
+@
 <!--end footer-->
 
 <!--responsive menu-->
