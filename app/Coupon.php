@@ -6,7 +6,7 @@
  * Time: 7:45 PM
  */
 
-namespace app;
+namespace App\FridgeWorthy;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,7 +29,7 @@ class Coupon extends Model{
     public function reward(){
 
 
-        $this->belongsTo('App\Reward');
+        return $this->belongsTo('App\Reward');
     }
     
     /**Query Scope 

@@ -6,9 +6,11 @@
  * Time: 8:22 PM
  */
 
-namespace app;
+namespace App\FridgeWorthy;
 
 
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Reward extends Model{
@@ -22,12 +24,14 @@ class Reward extends Model{
         'description',
         'expiration',
         'points_required',
-        'dollar_amount'
+        'dollar_amount',
+        'img'
     ];
 
     protected $dates = [
         'expiration'
     ];
+
 
     public function business(){
 
@@ -38,6 +42,14 @@ class Reward extends Model{
     public function coupons(){
 
         return $this->hasMany('App\Coupon');
+    }
+
+    public function scopeAvailable($query){
+
+        return $query->whereHas('coupons',function($q){
+
+           $q->where('status','=','unredeemed');
+        });
     }
 
     /**@TODO methods

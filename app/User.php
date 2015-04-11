@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\FridgeWorthy;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -6,10 +6,11 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Support\Facades\DB;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
-	use Authenticatable, CanResetPassword;
+	use Authenticatable, CanResetPassword, EntrustUserTrait;
 
 	/**
 	 * The database table used by the model.
@@ -23,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['first_name','last_name','school_id', 'points' ,
+	protected $fillable = ['first_name','last_name','school_id', 'business_id','points' ,
         'email', 'password','parent_email','grade'];
 
 	/**
@@ -36,59 +37,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
     public function courses(){
-       if($this->hasRole('teacher')){
 
-           return $this->hasMany('App\Course');
-
-       }else if($this->hasRole('student')){
-
-           return $this->belongsToMany('Course')->withTimestamps();
-       }
 
     }
 
-    public function enrolledInCourse($name){
+    public function enrolledInCourse($course){
 
-        foreach($this->courses() as $course){
 
-            if($course->name == $name){
-                return true;
-            }
-        }
 
-        return false;
     }
 
     public function enrollInCourse($course){
 
-        if($this->hasRole('student')){
 
-            return $this->courses()->attach($course);
-        }
 
     }
 
 
-    public function hasRole($name){
-
-        foreach($this->roles as $role){
-            if($role->name == $name){
-                return true;
-            }
-
-        }
-        return false;
-    }
-
-    public function assignRole($role){
-
-        return $this->roles()->attach($role);
-    }
-
-    public function removeRole($role){
-
-        return $this->roles()->detach($role);
-    }
 
     public function school(){
 
@@ -102,10 +67,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $coupons;
     }
 
-    public function roles(){
-
-        return $this->belongsToMany('App\Role')->withTimestamps();
-    }
 
 
 

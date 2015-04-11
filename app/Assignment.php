@@ -6,7 +6,7 @@
  * Time: 7:47 PM
  */
 
-namespace app;
+namespace App\FridgeWorthy;
 
 use Illuminate\Database\Eloquent\Model;
 

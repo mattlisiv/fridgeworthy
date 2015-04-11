@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\FridgeWorthy;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
