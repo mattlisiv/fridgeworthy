@@ -23,6 +23,7 @@ class CreateRewardsTable extends Migration {
             $table->float('dollar_amount');
 			$table->timestamps();
 
+
 		});
 	}
 

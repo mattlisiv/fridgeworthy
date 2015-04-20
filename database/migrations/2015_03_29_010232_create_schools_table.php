@@ -17,7 +17,7 @@ class CreateSchoolsTable extends Migration {
 			$table->increments('id');
             $table->integer('region_id')->unsigned();
             $table->string('name');
-            $table->enum('typ',['elementary','middle','high','other']);
+            $table->enum('type',['elementary','middle','high','other']);
 
             $table->timestamps();
 

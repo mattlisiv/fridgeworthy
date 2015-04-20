@@ -48,12 +48,11 @@
 
 
     @if(is_null($user))
-
-         @include('home.partials.sections.RegistrationOpen')
-    @else
-
+        @include('home.partials.sections.RegistrationOpen')
+    @elseif(get_class($user)=='App\Student' || get_class($user)=='App\Teacher' || get_class($user)== 'App\Parent')
         @include('home.partials.sections.UserProfile')
-
+    @elseif(get_class($user)=='App\BusinessManager')
+        @include('home.partials.sections.BusinessManager')
     @endif
 
 

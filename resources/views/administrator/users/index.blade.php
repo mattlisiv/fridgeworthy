@@ -6,8 +6,32 @@
 
     <h1>User Management</h1>
 
+    <table class="table table-bordered">
+        <tr><th>ID</th><th>Email</th><th>Role</th><th>Status</th></tr>
+        @foreach($users as $user)
+            <tr>
+                <td>{{$user->id}}</td>
+                <td>{{$user->email}}</td>
+                @if(get_class($user)=='App\Student')
+                    <td>Student</td>
+                    @elseif(get_class($user)=='App\Teacher')
+                    <td>Teacher</td>
+                    @elseif(get_class($user)=='App\Guardian')
+                    <td>Parent</td>
+                    @elseif(get_class($user)=='App\BusinessManager')
+                    <td>Business Manager</td>
+                    @elseif(get_class($user)=='App\Admin')
+                    <td>Site Admin</td>
+                    @else
+                    <td>{{get_class($user)}}</td>
+                    @endif
+                <td>{{$user->status}}</td>
+                <td><a href="{{action('Admin\UserController@show',[$user->id])}}">Select</a></td>
+            </tr>
+        @endforeach
+    </table>
 
 
-    <a href="{{action('UserController@create') }}"> <h6>Create New User</h6></a>
+    <a href="{{action('Admin\UserController@create') }}"> <h6>Create New User</h6></a>
 
 @endsection

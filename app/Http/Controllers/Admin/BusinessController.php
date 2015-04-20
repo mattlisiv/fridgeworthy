@@ -1,23 +1,30 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Business;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repositories\Interfaces\BusinessRepositoryInterface as BusinessRepositoryInterface;
 
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+    /**
+     * Display a listing of the resource.
+     *
+     * @param BusinessRepositoryInterface $businessRepository
+     */
+
+    public function __construct(BusinessRepositoryInterface $businessRepository){
+
+        $this->businessRepository = $businessRepository;
+    }
+
 	public function index()
 	{
-        $businesses = Business::all();
+        $businesses =$this->businessRepository->all();
         $pageTitle = "Business Manager";
-        return view('businesses.index',compact('businesses','pageTitle'));
+        return view('administrator.businesses.index',compact('businesses','pageTitle'));
 	}
 
 	/**
@@ -28,7 +35,7 @@ class BusinessController extends Controller {
 	public function create()
 	{
         $pageTitle = "Create New Business";
-        return view('businesses.create',compact('pageTitle'));
+        return view('administrator.businesses.create',compact('pageTitle'));
 	}
 
     /**
@@ -39,9 +46,10 @@ class BusinessController extends Controller {
      */
 	public function store(Requests\BusinessRequest $request)
 	{
-        Business::create($request->all());
-        return redirect('admin/businesses');
-	}
+        $this->businessRepository->store($request->all());
+        return redirect()->action('Admin\BusinessController@index');
+
+    }
 
 	/**
 	 * Display the specified resource.
@@ -51,9 +59,9 @@ class BusinessController extends Controller {
 	 */
 	public function show($id)
 	{
-        $business = Business::findOrFail($id);
+        $business =$this->businessRepository->find($id);
         $pageTitle = $business->name;
-        return view('businesses.show',compact('business','pageTitle'));
+        return view('administrator.businesses.show',compact('business','pageTitle'));
 	}
 
 	/**
@@ -64,9 +72,9 @@ class BusinessController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $business = Business::findOrFail($id);
+        $business =$this->businessRepository->find($id);
         $pageTitle = "Edit ".$business->name;
-        return view('businesses.edit',compact('business','pageTitle'));
+        return view('administrator.businesses.edit',compact('business','pageTitle'));
 	}
 
     /**
@@ -78,11 +86,10 @@ class BusinessController extends Controller {
      */
 	public function update($id,Requests\BusinessRequest $request)
 	{
-        $business = Business::findOrFail($id);
-        $business->update($request->all());
+        $this->businessRepository->update($id,$request->all());
+        return redirect()->action('Admin\BusinessController@index');
 
-        return redirect('admin/businesses');
-	}
+    }
 
 	/**
 	 * Remove the specified resource from storage.
@@ -92,9 +99,8 @@ class BusinessController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $business = Business::findOrFail($id);
-        $business->delete();
-        return redirect('admin/businesses');
+        $this->businessRepository->destroy($id);
+        return redirect()->action('Admin\BusinessController@index');
 	}
 
 }

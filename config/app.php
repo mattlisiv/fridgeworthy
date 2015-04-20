@@ -145,8 +145,14 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
+        'Zizaco\Entrust\EntrustServiceProvider',
+        'App\Repositories\DBServiceProvider',
 
-	],
+
+
+
+    ],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,7 +200,9 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'      => 'Illuminate\Html\FormFacade',
-        'Html'      => 'Illuminate\Html\HtmlFacade'
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'QrCode'    => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
+        'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
 
 
     ],

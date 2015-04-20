@@ -12,11 +12,11 @@
                 <td>{{$coupon->reward->name}}</td>
                 <td>{{$coupon->access_code}}</td>
                 <td>{{$coupon->status}}</td>
-                <td><a href="{{action('CouponController@show',[$coupon->id])}}">Select</a></td>
+                <td><a href="{{action('Admin\CouponController@show',[$coupon->id])}}">Select</a></td>
             </tr>
             @endforeach
     </table>
 
-    <a href="{{action('CouponController@create') }}"> <h6>Create New Coupon</h6></a>
+    <a href="{{action('Admin\CouponController@create') }}"> <h6>Create New Coupon</h6></a>
 
 @endsection

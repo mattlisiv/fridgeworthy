@@ -64,7 +64,7 @@
 
                 @foreach($rewards as $reward)
                     <div class="rewardbox">
-                        <img src="images/longhorn@2x.gif" alt="No Image provided"/>
+                        <img src="images/alternate.jpg" alt="No Image provided"/>
                         <h6>{{$reward->name}}</h6><br>
                         <div class="detbtncont"><a href="{{action('PublicRewardController@show',[$reward->id]) }}" class="getdetailsbtn"><p>get details</p><img src="images/detarrow.png"></a></div>
                         <div class="clear"></div>
@@ -80,8 +80,14 @@
 </div><!--end mainwrap-->
 <!--footer-->
 @include('home.partials.Footer')
-@
+
 <!--end footer-->
+
+<!--modals-->
+@include('home.partials.modal.Login')
+@include('home.partials.modal.Logout')
+
+<!--end modals-->
 
 <!--responsive menu-->
 <script type="text/javascript">

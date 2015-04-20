@@ -1,4 +1,4 @@
-<?php namespace App\FridgeWorthy;
+<?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,13 +21,18 @@ class Course extends Model {
 
     public function students(){
 
-        return $this->belongsToMany('User')->withTimestamps();
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
 
     public function assignments(){
 
 
         return $this->hasMany('App\Assignment');
+    }
+
+    public function grades(){
+
+        return $this->hasManyThrough('App\Grade','App\Assignment');
     }
 
     /**@TODO define methods

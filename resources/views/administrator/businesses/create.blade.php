@@ -9,13 +9,13 @@
     <h1>Create a New Business</h1>
 
     {!! Form::open(['url'=>'businesses']) !!}
-    @include('businesses.partials.form',['submitButtonText'=> 'Create Business'])
+    @include('administrator.businesses.partials.form',['submitButtonText'=> 'Create Business'])
     {!! Form::close() !!}
     <br>
 
     @include('errors.list')
     <br>
-    <a href="{{action('BusinessController@index')}}" class="btn btn-default">Back to Businesses</a>
+    <a href="{{action('Admin\BusinessController@index')}}" class="btn btn-default">Back to Businesses</a>
     <br>
     <br>
 

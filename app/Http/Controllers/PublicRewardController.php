@@ -11,7 +11,7 @@ class PublicRewardController extends Controller {
     public function index(){
 
         $user = Auth::user();
-        $rewards = Reward::all();
+        $rewards = Reward::available()->get();
         return view("public.rewards.index",compact('rewards','user'));
 
     }

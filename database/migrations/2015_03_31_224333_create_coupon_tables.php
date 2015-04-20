@@ -20,6 +20,7 @@ class CreateCouponTables extends Migration {
             $table->string('access_code')->unique();
             $table->enum('status',['unredeemed','redeemed','flagged']);
 			$table->timestamps();
+
 		});
 	}
 

@@ -1,14 +1,21 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Business;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Reward;
+use App\Repositories\Interfaces\BusinessRepositoryInterface;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
+
 
 class RewardController extends Controller {
 
+
+    public function __construct(RewardRepositoryInterface $rewardRepositoryInterface,BusinessRepositoryInterface $businessRepositoryInterface){
+
+        $this->rewardRepository = $rewardRepositoryInterface;
+        $this->businessRepository = $businessRepositoryInterface;
+    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,9 +23,9 @@ class RewardController extends Controller {
 	 */
 	public function index()
 	{
-        $rewards = Reward::all();
+        $rewards = $this->rewardRepository->all();
         $pageTitle = "Rewards Manager";
-        return view('rewards.index',compact('rewards','pageTitle'));
+        return view('administrator.rewards.index',compact('rewards','pageTitle'));
 	}
 
 	/**
@@ -29,8 +36,8 @@ class RewardController extends Controller {
 	public function create()
 	{
         $pageTitle = "Create New Reward";
-        $businesses = Business::all();
-        return view('rewards.create',compact('pageTitle','businesses'));
+        $businesses = $this->businessRepository->all();
+        return view('administrator.rewards.create',compact('pageTitle','businesses'));
 	}
 
     /**
@@ -42,8 +49,8 @@ class RewardController extends Controller {
 	public function store(Requests\RewardRequest $request)
 	{
         $request['expiration'] = Carbon::createFromFormat('d/m/Y',$request['expiration']);
-        Reward::create($request->all());
-        return redirect('admin/rewards');
+        $this->rewardRepository->store($request->all());
+        return redirect()->action('Admin\RewardController@index');
 	}
 
 	/**
@@ -54,9 +61,9 @@ class RewardController extends Controller {
 	 */
 	public function show($id)
 	{
-        $reward = Reward::findOrFail($id);
+        $reward = $this->rewardRepository->find($id);
         $pageTitle = $reward->name;
-        return view('rewards.show',compact('reward','pageTitle'));
+        return view('administrator.rewards.show',compact('reward','pageTitle'));
 	}
 
 	/**
@@ -67,10 +74,10 @@ class RewardController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $reward = Reward::findOrFail($id);
+        $reward = $this->rewardRepository->find($id);
+        $businesses = $this->businessRepository->all();
         $pageTitle = "Edit ".$reward->name;
-        $businesses = Business::all();
-        return view('rewards.edit',compact('reward','pageTitle','businesses'));
+        return view('administrator.rewards.edit',compact('reward','pageTitle','businesses'));
 	}
 
     /**
@@ -83,10 +90,9 @@ class RewardController extends Controller {
 	public function update($id,Requests\RewardRequest $request)
 	{
         $request['expiration'] = Carbon::createFromFormat('d/m/Y',$request['expiration']);
-        $reward = Reward::findOrFail($id);
-        $reward->update($request->all());
+        $this->rewardRepository->update($id,$request->all());
 
-        return redirect('admin/rewards');
+        return redirect()->action('Admin\RewardController@index');
 	}
 
 	/**
@@ -97,9 +103,8 @@ class RewardController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $reward = Reward::findOrFail($id);
-        $reward->delete();
-        return redirect('admin/rewards');
+        $this->rewardRepository->destroy($id);
+        return redirect()->action('Admin\RewardController@index');
 	}
 
 }

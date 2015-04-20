@@ -4,25 +4,24 @@
     <div id="regpancnt">
         <h1 class="whitedkgray">register here</h1>
 
-        <form action="#" method="post" id="signup">
+        <form action="{{action('HomeController@register')}}" method="post" id="signup">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div id="userinfo" class="regthird">
                 <h3 class="orange">user profile</h3>
-                <label for="user_name"></label>
-                <input type="text" placeholder="username" name="user_name"/>
+                <input type="email" placeholder="email" name="email"/>
                 <label for="user_password_new"></label>
-                <input type="password" placeholder="password" name="user_password_new"/>
+                <input type="password" placeholder="password" name="password"/>
                 <label for="user_password_repeat"></label>
-                <input type="password" placeholder="re-enter password" name="user_password_repeat"/>
+                <input type="password" placeholder="re-enter password" name="password_confirmation"/>
                 <label for="user_email"></label>
-                <input type="text" placeholder="email" name="user_email"/>
                 <p class="white">Please ensure this is a valid email. It will be used to confirm your account.</p>
             </div><!--end 1st regthird-->
 
 
             <div id="persinfo" class="regthird">
                 <h3 class="orange">personal info</h3>
-                <input type="text" placeholder="first name" name="user_first_name"/>
-                <input type="text" placeholder="last name" name="user_last_name"/>
+                <input type="text" placeholder="first name" name="first_name"/>
+                <input type="text" placeholder="last name" name="last_name"/>
 
                 <div class="clear"></div>
             </div><!--end 2nd regthird-->
@@ -68,13 +67,24 @@
 </span>
 
                     <p class="white">Please enter parent email address</p>
-                    <input type="text" placeholder="parent email address" name="parent_email_address"/>
+                    <input type="text" placeholder="parent email address" name="parent_email"/>
 
                     <div class="clear"></div>
                 </div><!--end 3rd regthird-->
                 <button type="submit" class="smbtn" name="register">submit</button>
         </form>
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="clear"></div><!--clear all regthird-->
     </div><!--end student specific section -->
+
     </div><!--end regspancnt-->
 </section><!--end registration panel-->

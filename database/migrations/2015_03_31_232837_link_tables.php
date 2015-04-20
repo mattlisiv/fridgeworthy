@@ -18,6 +18,13 @@ class LinkTables extends Migration {
                 ->on('schools');
         });
 
+
+        Schema::table('users', function ($table) {
+            $table->foreign('business_id')
+                ->references('id')
+                ->on('businesses');
+        });
+
         Schema::table('grades', function ($table) {
 
             /**Foreign Key to Assignment**/

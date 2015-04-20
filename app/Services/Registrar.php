@@ -19,13 +19,13 @@ class Registrar implements RegistrarContract {
 	{
 		return Validator::make($data, [
 			'first_name' => 'required|max:50',
-            		'last_name' => 'required|max:50',
-            		'school_id'=>'required',
+            'last_name' => 'required|max:50',
+            'school_id'=>'required',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
-            		'grade'=> 'required_if:role,student',
-            		'parent_email'=>'required_if:role,student',
-            		'role'=>'required'
+            'grade'=> 'required_if:role,student',
+            'parent_email'=>'required_if:role,student',
+            'role'=>'required'
 		]);
 
 

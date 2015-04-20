@@ -11,7 +11,7 @@ class UserRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,7 +22,21 @@ class UserRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'first_name'=>'required',
+            'last_name'=>'required',
+            'email'=>'required|email|unique:users,email',
+            'role'=>'required',
+            'parent_email'=>'required_if:role,2',
+            'grade'=>'required_if:role,2',
+            'points'=>'required_if:role,1,2,3',
+            'business_id'=>'required_if:role,4',
+            'school_id'=>'required_if:role,1,2,3',
+            'status'=>'required',
+            'password'=>'min:6|required_if:password_type,manual-creation'
+
+
+
+
 		];
 	}
 

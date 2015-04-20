@@ -1,14 +1,21 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Repositories\Interfaces\SchoolRepositoryInterface as SchoolRepositoryInterface;
+use App\Repositories\Interfaces\RegionRepositoryInterface as RegionRepositoryInterface;
 use App\Region;
 use App\School;
 use Illuminate\Http\Request;
 
 class SchoolController extends Controller {
 
+
+    public function __construct(SchoolRepositoryInterface $schoolRepositoryInterface,RegionRepositoryInterface $regionRepositoryInterface){
+
+        $this->schoolRepository = $schoolRepositoryInterface;
+        $this->regionRepository = $regionRepositoryInterface;
+    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,9 +23,9 @@ class SchoolController extends Controller {
 	 */
 	public function index()
 	{
-        $schools = School::all();
+        $schools = $this->schoolRepository->all();
         $pageTitle = "School Manager";
-        return view('schools.index',compact('schools','pageTitle'));
+        return view('administrator.schools.index',compact('schools','pageTitle'));
 	}
 
 	/**
@@ -29,8 +36,8 @@ class SchoolController extends Controller {
 	public function create()
 	{
         $pageTitle = "Create New School";
-        $regions = Region::all();
-        return view('schools.create',compact('pageTitle','regions'));
+        $regions = $this->regionRepository->all();
+        return view('administrator.schools.create',compact('pageTitle','regions'));
 	}
 
     /**
@@ -41,8 +48,8 @@ class SchoolController extends Controller {
      */
 	public function store(Requests\SchoolRequest $request)
 	{
-        School::create($request->all());
-        return redirect('admin/schools');
+        $this->schoolRepository->store($request->all());
+        return redirect()->action('Admin\SchoolController@index');
 	}
 
 	/**
@@ -54,9 +61,9 @@ class SchoolController extends Controller {
 	public function show($id)
 	{
 
-        $school = School::findOrFail($id);
+        $school = $this->schoolRepository->find($id);
         $pageTitle = $school->name;
-        return view('schools.show',compact('school','pageTitle'));
+        return view('administrator.schools.show',compact('school','pageTitle'));
 	}
 
 	/**
@@ -67,10 +74,10 @@ class SchoolController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $school = School::findOrFail($id);
+        $school = $this->schoolRepository->find($id);
+        $regions = $this->regionRepository->all();
         $pageTitle = "Edit ".$school->name;
-        $regions = Region::all();
-        return view('schools.edit',compact('school','pageTitle','regions'));
+        return view('administrator.schools.edit',compact('school','pageTitle','regions'));
 	}
 
     /**
@@ -82,10 +89,8 @@ class SchoolController extends Controller {
      */
 	public function update($id,Requests\SchoolRequest $request)
 	{
-        $school = School::findOrFail($id);
-        $school->update($request->all());
-
-        return redirect('admin/schools');
+        $this->schoolRepository->update($id,$request->all());
+        return redirect()->action('Admin\SchoolController@index');
 	}
 
 	/**
@@ -96,9 +101,8 @@ class SchoolController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $school = School::findOrFail($id);
-        $school->delete();
-        return redirect('admin/schools');
+        $this->schoolRepository->destroy($id);
+        return redirect()->action('Admin\SchoolController@index');
 	}
 
 }

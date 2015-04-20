@@ -6,7 +6,7 @@
  * Time: 7:46 PM
  */
 
-namespace App\FridgeWorthy;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,7 +20,8 @@ class Grade extends Model{
 
         'numeric_grade',
         'status',
-        'assignment_id'
+        'assignment_id',
+        'student_id'
     ];
 
 
@@ -29,6 +30,11 @@ class Grade extends Model{
         $this->belongsTo('App\User');
     }
 
+    public function assignment(){
+
+
+        $this->belongsTo('App\Assignment');
+    }
 
 
 

@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\BusinessPortal;
+<?php namespace App\Http\Controllers\Business;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;

@@ -1,64 +1,65 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\District;
 use App\Http\Requests\DistrictRequest;
-use Illuminate\Support\Facades\Session;
+use App\Repositories\Interfaces\DistrictRepositoryInterface as DistrictRepositoryInterface;
 
 
 class DistrictController extends Controller {
 
+    public function __construct(DistrictRepositoryInterface $districtRepository){
+
+            $this->districtRepository = $districtRepository;
+    }
+
 	public function index(){
 
-
-        $districts = District::all();
+        $districts = $this->districtRepository->all();
         $pageTitle = "District Manager";
 
-        return view('districts.index', compact('districts','pageTitle'));
+        return view('administrator.districts.index', compact('districts','pageTitle'));
     }
 
     public function show($id){
 
-        $district = District::with('regions')->findOrFail($id);
+        $district = $this->districtRepository->findWithRegion($id);
         $pageTitle = $district->name;
-        return view('districts.show',compact('district','pageTitle'));
+        return view('administrator.districts.show',compact('district','pageTitle'));
     }
 
     public function create(){
 
         $pageTitle = "Create New District";
-        return view('districts.create',compact('pageTitle'));
+        return view('administrator.districts.create',compact('pageTitle'));
     }
 
     public function store(DistrictRequest $request){
 
-
-        District::create($request->all());
-        Session::flash('flash_message','District has been created');
+        $this->districtRepository->store($request->all());
         return redirect()->action('DistrictController@index');
 
     }
 
     public function edit($id){
 
-
-        $district = District::findOrFail($id);
+        $district = $this->districtRepository->find($id);
         $pageTitle = "Edit ".$district->name;
-        return view('districts.edit',compact('district','pageTitle'));
+        return view('administrator.districts.edit',compact('district','pageTitle'));
 
     }
 
     public function update($id,DistrictRequest $request){
 
-        $district = District::findOrFail($id);
-        $district->update($request->all());
-        return redirect()->action('DistrictController@index');
+        $this->districtRepository->update($id,$request->all());
+        return redirect()->action('Admin\DistrictController@index');
     }
 
     public function destroy($id){
-        $district = District::findOrFail($id);
-        $district->delete();
-        return redirect()->action('DistrictController@index');
+
+        $this->districtRepository->destroy($id);
+        return redirect()->action('Admin\DistrictController@index');
 
     }
 

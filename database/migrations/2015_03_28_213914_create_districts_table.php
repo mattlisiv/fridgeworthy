@@ -16,7 +16,7 @@ class CreateDistrictsTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('name')->unique();
-            $table->string('state');
+            $table->string('state')->nullable();
 			$table->timestamps();
 		});
 	}

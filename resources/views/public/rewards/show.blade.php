@@ -33,80 +33,11 @@
 <div class="mainwrap">
 
 
-    <!--start sticky nav-->
-    <nav class="my-sticky-element">
-        <a href="index.html#home"><div class="navlogo"><img src="/images/fwlogo-nav.png" alt="FridgeWorthy logo"></div></a>
+    @include('home.partials.StickyNavigation')
 
-        <div class="navrightcnt">
-            <div class="navpoints"><h6>You currently have <span class="pointshighlight">12</span> Fridge points!</h6></div>
+    @include('home.partials.modal.login')
 
-            <!--main desktop links-->
-            <div class="navmainlinks">
-                <ul>
-                    <li><a href="index.html#home">home</a></li>
-                    <li><a href="index.html#aboutpanel">about us</a></li>
-                    <li><a href="index.html#rewardspanel" class="active">rewards</a>
-                        <ul class="dropdownmenu"><li><a href="rewardscenter.html">rewards center</a></li></ul>
-                    </li>
-                    <li><a href="index.html#mypointspanel">my account</a>
-                        <ul class="dropdownmenu">
-                            <li><a href="index.html#mypointspanel">my points</a>
-                            <li"><a href="index.html#submitgradepanel">submit a grade</a></li>
-                    <li><a href="index.html#managepanel">manage my profile</a></li>
-                    <li><a href="#logoutmodal" class="modal-popup">logout</a>logout</a></li>
-                </ul>
-                </li>
-                </ul>
-            </div><!--end menu-header-->
-
-            <div class="mobile-nav">
-                <!--hamburger icon-->
-                <div class="menu-btn" id="menu-btn">
-                    <div></div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <!--mobilelinks-->
-                <div class="responsive-menu">
-                    <div class="menu-header">
-                        <ul id="menu-mobile-menu" class="menu">
-                            <li class="menu-item"><a href="index.html#home">home</a></li>
-                            <li class="menu-item"><a href="index.html#aboutpanel">about us</a></li>
-                            <li class="menu-item menu-item-has-children"><a href="index.html#rewardspanel">rewards</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="rewardscenter.html">rewards center</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children"><a href="index.html#mypointspanel" style="border-bottom: none;">my account</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="index.html#mypointspanel">my points</a></li>
-                                    <li class="menu-item"><a href="index.html#submitgradepanel">submit a grade</a></li>
-                                    <li class="menu-item"><a href="index.html#managepanel">manage my profile</a></li>
-                                    <li class="menu-item"><a href="#logoutmodal" class="modal-popup">logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!--end menu-header-->
-                </div><!--end responsive-menu-->
-            </div><!--mobile-nav-->
-
-        </div><!--end right content-->
-        <div class="clear"></div><!--clear both cols-->
-    </nav><!--end nav-->
-
-    <!--start logout-->
-    <div id="logoutmodal" class="popup">
-        <div class="popup-container">
-            <div class="popup-content">
-                <h5>Are you sure you want to logout?</h5>
-                <form action="#" method="post">
-                    <button type="button" value="no" class="popup-close js-popup-close modal-close smbtnredmodal">no</button>
-                    <button type="button" value="yes,logout" class="smbtngreenmodal">yes, logout</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    @include('home.partials.modal.logout')
 
     <!--rewarddetail-->
     <section id="rewcentdetailpanelin">
@@ -120,11 +51,22 @@
                         <h3>This reward costs <span class="pointshighlight">{{$reward->points_required}}</span> Fridge points</h3>
                         <p>{{$reward->description}}</p>
                     </div>
-
+                    @if(is_null($user))
                     <div class="rewarddetcol">
-                        <img src="/images/longhorn@2x.gif" class="rewardlogo"/>
+                        <p>This reward is brought to you by {{$reward->business->name}}.</p>
+                        <p>Visit their website at {!! Html::link('http://'.$reward->business->website, $reward->business->website) !!}</p>
+                        <img src="/images/alternate.jpg" class="rewardlogo"/>
+                        <p><a href="#loginmodal" class="plink modal-popup">Login</a> or <a href="{{url('/')."#home"}}" class="plink">Register</a> to see how you can get great rewards like this one!</p>
+                    </div>
+                    @else
+                    <div class="rewarddetcol">
+                        <p>This reward is brought to you by {{$reward->business->name}}.</p>
+                        <p>Visit their website at {!! Html::link('http://'.$reward->business->website, $reward->business->website) !!}</p>
+                        <img src="/images/alternate.jpg" class="rewardlogo"/>
                         <div class="redeemnowbtn"><a href="#">redeem reward<img src="/images/whiterightarrow.png" alt="white right arrow"></a></div>
                     </div>
+                    @endif
+
                 </div>
 
                 <div class="rewarddet2ndrow">

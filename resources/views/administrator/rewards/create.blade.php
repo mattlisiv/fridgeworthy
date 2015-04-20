@@ -9,13 +9,13 @@
     <h1>Create a New Reward</h1>
 
     {!! Form::open(['url'=>'rewards']) !!}
-    @include('rewards.partials.form',['submitButtonText'=> 'Create Reward'])
+    @include('administrator.rewards.partials.form',['submitButtonText'=> 'Create Reward'])
     {!! Form::close() !!}
     <br>
 
     @include('errors.list')
     <br>
-    <a href="{{action('RewardController@index')}}" class="btn btn-default">Back to Rewards</a>
+    <a href="{{action('Admin\RewardController@index')}}" class="btn btn-default">Back to Rewards</a>
     <br>
     <br>
 

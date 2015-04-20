@@ -6,7 +6,7 @@
  * Time: 7:47 PM
  */
 
-namespace App\FridgeWorthy;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,22 +32,15 @@ class Assignment extends Model{
     public function grades(){
 
 
-        $this->hasMany('App\Grade');
+        return $this->hasMany('App\Grade');
     }
 
 
     public function course(){
 
-        $this->belongsTo('App\Course');
+        return $this->belongsTo('App\Course');
 
     }
 
-    /**@TODO define methods
-     * -grades
-     * -pastDueDate
-     *-grades w/ users
-     *
-     *
-     */
 
 }

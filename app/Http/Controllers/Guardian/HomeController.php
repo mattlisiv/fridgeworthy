@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Guardian;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class GuardianController extends Controller {
+class HomeController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

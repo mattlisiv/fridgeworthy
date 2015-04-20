@@ -1,4 +1,4 @@
-<?php namespace App\FridgeWorthy;
+<?php namespace App;
 
 use Zizaco\Entrust\EntrustPermission;
 

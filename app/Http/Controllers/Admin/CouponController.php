@@ -1,14 +1,22 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Coupon;
 use App\Custom\Helper;
 use App\Http\Requests;
 use App\Reward;
+use App\Http\Controllers\Controller;
+use App\Repositories\Interfaces\CouponRepositoryInterface as CouponRepositoryInterface;
+use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CouponController extends Controller {
 
+    public function __construct(CouponRepositoryInterface $couponRepositoryInterface,RewardRepositoryInterface $rewardRepositoryInterface){
+
+        $this->couponRepository = $couponRepositoryInterface;
+        $this->rewardRepository = $rewardRepositoryInterface;
+    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -17,9 +25,8 @@ class CouponController extends Controller {
 	public function index()
 	{
         $pageTitle = "Coupon Manager";
-        $coupons = Coupon::with('reward')->get();
-
-		return view('coupons.index',compact('pageTitle','coupons'));
+        $coupons = $this->couponRepository->allWithReward();
+		return view('administrator.coupons.index',compact('pageTitle','coupons'));
 	}
 
 	/**
@@ -30,8 +37,8 @@ class CouponController extends Controller {
 	public function create()
 	{
         $pageTitle = "Create New Coupon";
-        $rewards = Reward::all();
-        return view('coupons.create',compact('pageTitle','rewards'));
+        $rewards = $this->rewardRepository->all();
+        return view('administrator.coupons.create',compact('pageTitle','rewards'));
 	}
 
     /**
@@ -42,41 +49,8 @@ class CouponController extends Controller {
      */
 	public function store(Requests\CouponRequest $request)
 	{
-
-        $numberOfCoupons = $request['couponNumber'];
-        $reward_id = $request['reward_id'];
-        $couponType = $request['couponType'];
-
-        if($couponType=="managed"){
-
-            for($i=0;$i<$numberOfCoupons;$i++){
-
-
-                $access_code = Helper::generate_random_eight_character_access();
-                $rules = array(
-                    'access_code'=>'unique:coupons,access_code'
-                );
-                $validator = Validator::make(['access_code'=>$access_code],$rules);
-                if($validator->fails()){
-
-                    $i--;
-                }else{
-                    Coupon::create([
-                        'reward_id' => $reward_id,
-                        'status' => 'unredeemed',
-                        'access_code' => Helper::generate_random_eight_character_access()
-
-                    ]);
-                }
-            }
-
-            return redirect()->action('CouponController@index');
-
-        }else{
-
-            return "Not Storing";
-        }
-
+        $this->couponRepository->store($request->all());
+        return redirect()->action('Admin\CouponController@index');
 	}
 
 	/**
@@ -87,9 +61,9 @@ class CouponController extends Controller {
 	 */
 	public function show($id)
 	{
-        $coupon = Coupon::findOrFail($id);
+        $coupon = $this->couponRepository->find($id);
         $pageTitle = "Coupon Details";
-        return view('coupons.show',compact('coupon','pageTitle'));
+        return view('administrator.coupons.show',compact('coupon','pageTitle'));
 	}
 
 	/**

@@ -1,4 +1,4 @@
-<?php namespace App\FridgeWorthy;
+<?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,5 +21,10 @@ class Region extends Model {
     public function schools(){
 
         return $this->hasMany('App\School');
+    }
+
+    public function users(){
+
+        return $this->hasManyThrough('App\User','App\School');
     }
 }

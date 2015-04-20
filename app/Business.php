@@ -1,4 +1,4 @@
-<?php namespace App\FridgeWorthy;
+<?php namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
@@ -24,12 +24,6 @@ class Business extends Model {
         return $this->hasManyThrough('App\Coupon','App\Reward');
     }
 
-    /**
-     *@TODO define methods
-     * -location?
-     * -coupons
-     *-redeemedCoupons
-     * -unredeemedCoupons
-     *
-     */
+
+
 }

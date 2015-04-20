@@ -6,7 +6,7 @@
  * Time: 8:22 PM
  */
 
-namespace App\FridgeWorthy;
+namespace App;
 
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;

@@ -17,7 +17,7 @@ class CreateGradeTables extends Migration {
 			$table->increments('id');
             $table->integer('student_id')->unsigned();
             $table->integer('assignment_id')->unsigned();
-            $table->enum('status',['pending','accepted','flagged']);
+            $table->enum('status',['pending','accepted','flagged','late']);
             $table->integer('numeric_grade')->unsigned();
 
 

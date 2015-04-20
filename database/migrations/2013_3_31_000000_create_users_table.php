@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration {
             $table->string('last_name');
             $table->integer('school_id')->unsigned()->nullable();
             $table->integer('business_id')->unsigned()->nullable();
-            $table->integer('grade')->unsigned();
+            $table->integer('grade')->unsigned()->nullable();
 			$table->string('email')->unique();
             $table->string('parent_email');
             $table->integer('points')->unsigned();
 			$table->string('password', 60);
-            $table->enum('status',['active','pending','supsended']);
+            $table->enum('status',['active','pending','suspended','deactivated']);
 			$table->rememberToken();
 			$table->timestamps();
 

@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller {
 
+
 	public function index(){
+
 
         $user = Auth::user();
         $schools = School::all();
