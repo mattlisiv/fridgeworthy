@@ -3,7 +3,7 @@
 /**Be sure to put wildcard below explicit value **/
 
 
-$domain = getenv('DOMAIN') ?: 'fridge-worthy.com';
+$domain = getenv('DOMAIN') ?: 'fridgeworthy.us';
 
 
 Route::group(array('domain' => 'api.'.$domain), function()
