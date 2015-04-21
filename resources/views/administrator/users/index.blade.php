@@ -4,7 +4,7 @@
 
     @include('administrator.partials.navbar')
     <div class="row">
-        <div class="col-log-8">
+        <div class="col-lg-8">
             <h1>User Management</h1>
             <table class="table table-bordered">
                 <tr><th>ID</th><th>Email</th><th>Role</th><th>Status</th></tr>
@@ -35,7 +35,7 @@
                 <div class="panel-body">
                     <a href="{{action('Admin\UserController@create') }}"> <h4>Create New User</h4></a>
                     <p>Current Number of Users: {{$users->count()}}</p>
-            </div>
+                </div>
         </div>
     </div>
 @endsection
