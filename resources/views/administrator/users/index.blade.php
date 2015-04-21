@@ -10,7 +10,7 @@
         <tr><th>ID</th><th>Email</th><th>Role</th><th>Status</th></tr>
         @foreach($users as $user)
             <tr>
-                <td>{{$user->id}}</td>
+                <td>{{$user->getName()}}</td>
                 <td>{{$user->email}}</td>
                 @if(get_class($user)=='App\Student')
                     <td>Student</td>

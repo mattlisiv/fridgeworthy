@@ -3,16 +3,31 @@
 @section('content')
 
     @include('administrator.partials.navbar')
+<div class="row">
+    <div class="col-lg-8">
+        <h1>District Management</h1>
+        <table class="table table-bordered">
+            <tr><th>Name</th></tr>
+            @foreach($districts as $district)
+                <tr>
+                    <td><a href="{{action('Admin\DistrictController@show',[$district->id]) }}">{{$district->name}}</a></td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+    <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a href="{{action('Admin\DistrictController@create') }}"> <h4>Create New District</h4></a>
+                <p>Current Number of Districts: {{$districts->count()}}</p>
+            </div>
 
-    <h1>District Management</h1>
+        </div>
 
-    @foreach($districts as $district)
-        <article>
+    </div>
+</div>
 
-           <a href="{{action('Admin\DistrictController@show',[$district->id]) }}"> <h2>{{$district->name}}</h2></a>
-        </article>
-    @endforeach
 
-    <a href="{{action('Admin\DistrictController@create') }}"> <h6>Create new District</h6></a>
+
 
 @endsection
