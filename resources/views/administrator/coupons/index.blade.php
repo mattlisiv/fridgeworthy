@@ -5,6 +5,7 @@
     @include('administrator.partials.navbar')
     <div clas="row">
         <div class="col-lg-8">
+            <h1>Coupon Management</h1>
             <table class="table table-bordered">
                 <tr><th>Reward</th><th>Access Code</th><th>Status</th></tr>
                 @foreach($coupons as $coupon)
