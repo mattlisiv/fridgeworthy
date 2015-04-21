@@ -14,11 +14,12 @@
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
             <div class="panel panel-default">
+                 <div class="panel-heading">Edit Business</div>
                 <div class="panel-body">
                     {!! Form::open(['action'=>['Admin\BusinessController@edit',$business->id], 'method' => 'GET']) !!}
                     {!! Form::submit('Edit Business',['class' => 'btn btn-primary form-control']) !!}
                     {!! Form::close() !!}
-        
+                    <br>
                     {!! Form::open(['action'=>['Admin\BusinessController@destroy',$business->id], 'method' => 'DELETE']) !!}
                     {!! Form::submit('Delete Business',['class' => 'btn btn-danger form-control']) !!}
                     {!! Form::close() !!}
