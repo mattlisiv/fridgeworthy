@@ -1,6 +1,6 @@
 @extends('static.staticmaster')
 
-@section('content')\
+@section('content')
     @include('administrator.partials.navbar')
 <div class="row">
     <div class="col-lg-8">
