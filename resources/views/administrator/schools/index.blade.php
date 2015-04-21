@@ -14,7 +14,7 @@
             @endforeach
         </table>
     </div>
-    <div class="col-log-3 col-lg-offset-1" style="padding-top:50px;">
+    <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
         <div class="panel panel-default">
             <div class="panel-body">
                 <a href="{{action('Admin\SchoolController@create') }}"> <h4>Create New School</h4></a>
