@@ -35,9 +35,9 @@
 
     @include('home.partials.StickyNavigation')
 
-    @include('home.partials.modal.login')
+    @include('home.partials.modal.Login')
 
-    @include('home.partials.modal.logout')
+    @include('home.partials.modal.Logout')
 
     <!--rewarddetail-->
     <section id="rewcentdetailpanelin">
