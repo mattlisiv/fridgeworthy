@@ -9,8 +9,8 @@
                 <tr><th>Reward</th><th>Access Code</th><th>Status</th></tr>
                 @foreach($coupons as $coupon)
                     <tr>
-                        <td><a href="{{action('Admin\CouponController@show',[$coupon->id])}}">{{$coupon->reward->name}}</a></td>
-                        <td>{{$coupon->access_code}}</td>
+                        <td><a href="{{action('Admin\RewardController@show',[$coupon->reward->id])}}">{{$coupon->reward->name}}</a></td>
+                        <td><a href="{{action('Admin\CouponController@show',[$coupon->id])}}">{{$coupon->access_code}}</a></td>
                         <td>{{$coupon->status}}</td>
                     </tr>
                 @endforeach
