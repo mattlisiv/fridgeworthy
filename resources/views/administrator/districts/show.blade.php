@@ -19,6 +19,7 @@
         <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit District</div>
+                    <div class="panel-body"> 
                     {!! Form::open(['action'=>['Admin\DistrictController@edit',$district->id], 'method' => 'GET']) !!}
                     {!! Form::submit('Edit District',['class' => 'btn btn-primary form-control']) !!}
                     {!! Form::close() !!}
