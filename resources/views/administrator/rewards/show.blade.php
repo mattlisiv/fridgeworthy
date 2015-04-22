@@ -16,13 +16,18 @@
                 <a href="{{action('Admin\RewardController@index') }}"> <h6>Back to Reward Management</h6></a>
             </div>
             <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px">
-                 {!! Form::open(['action'=>['Admin\RewardController@edit',$reward->id], 'method' => 'GET']) !!}
-                {!! Form::submit('Edit Reward',['class' => 'btn btn-primary form-control']) !!}
-                {!! Form::close() !!}
-                <br>
-                {!! Form::open(['action'=>['Admin\RewardController@destroy',$reward->id], 'method' => 'DELETE']) !!}
-                {!! Form::submit('Delete Reward',['class' => 'btn btn-danger form-control']) !!}
-                {!! Form::close() !!}
+                <div class="panel panel-default">
+                    <div class="panel-heading">Edit Reward</div>
+                    <div class="panel-body">
+                        {!! Form::open(['action'=>['Admin\RewardController@edit',$reward->id], 'method' => 'GET']) !!}
+                        {!! Form::submit('Edit Reward',['class' => 'btn btn-primary form-control']) !!}
+                        {!! Form::close() !!}
+                        <br>
+                        {!! Form::open(['action'=>['Admin\RewardController@destroy',$reward->id], 'method' => 'DELETE']) !!}
+                        {!! Form::submit('Delete Reward',['class' => 'btn btn-danger form-control']) !!}
+                        {!! Form::close() !!}    
+                    </div>
+                </div>
             </div>
         </div>
     @include('errors.list')
