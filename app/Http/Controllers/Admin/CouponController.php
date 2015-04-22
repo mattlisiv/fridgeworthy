@@ -9,6 +9,8 @@ use App\Repositories\Interfaces\CouponRepositoryInterface as CouponRepositoryInt
 use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use League\Csv\Reader;
+use SplFileObject;
 
 class CouponController extends Controller {
 
@@ -49,7 +51,21 @@ class CouponController extends Controller {
      */
 	public function store(Requests\CouponRequest $request)
 	{
+        if($request->hasFile('couponCSV')){
+            $reader =Reader::createFromPath($request->file('couponCSV'));
+            $reader->setFlags(SplFileObject::READ_AHEAD|SplFileObject::SKIP_EMPTY);
+            foreach($reader as $index =>$row){
+
+                var_dump($row);
+            }
+        }else{
+            var_dump('Nope');
+            return;
+        }
+
+        return;
         $this->couponRepository->store($request->all());
+
         return redirect()->action('Admin\CouponController@index');
 	}
 

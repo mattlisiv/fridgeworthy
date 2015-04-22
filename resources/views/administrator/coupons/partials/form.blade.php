@@ -11,6 +11,11 @@
     </label>
 
 </div>
+<div class="form-group" id="csvFileDiv" style="display:none">
+    {!! Form::label('couponCSV', 'Load Codes from CSV file') !!}
+    {!! Form::file('couponCSV') !!}
+</div>
+
 <div class="form-group">
     {!! Form::label('numberOfCoupons', 'Enter Number of Coupons to be Generated:') !!}
     {!! Form::text('couponNumber',null,['class' => 'form-control']) !!}
@@ -23,3 +28,6 @@
 <div class="form-group">
     {!! Form::submit($submitButtonText,['class' => 'btn btn-primary form-control']) !!}
 </div>
+
+<script src="{{ URL::asset('js/jquery-1.11.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/admin/create_coupons.js') }}"></script>
