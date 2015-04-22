@@ -12,7 +12,19 @@ class CreateRelatedImageTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('related_images', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->integer('reward_id')->unsigned();
+            $table->string('file_path');
+
+            $table->foreign('reward_id')
+                ->references('id')->on('rewards');
+
+            $table->timestamps();
+
+
+        });
 	}
 
 	/**
@@ -22,7 +34,7 @@ class CreateRelatedImageTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('related_images');
 	}
 
 }

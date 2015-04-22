@@ -8,7 +8,7 @@
 
     <h1>Create a New Reward</h1>
 
-    {!! Form::open(['url'=>'rewards']) !!}
+    {!! Form::open(['url'=>'rewards','files'=>true]) !!}
     @include('administrator.rewards.partials.form',['submitButtonText'=> 'Create Reward'])
     {!! Form::close() !!}
     <br>

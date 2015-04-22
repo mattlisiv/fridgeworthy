@@ -11,7 +11,10 @@ namespace App;
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
+use Exception;
 
 class Reward extends Model{
 
@@ -31,6 +34,22 @@ class Reward extends Model{
     protected $dates = [
         'expiration'
     ];
+
+    public function delete(){
+
+        if($this->relatedImages->first()) {
+            $image = $this->relatedImages()->first();
+
+            $image_path = substr($image->file_path, 1);
+            unlink($image_path);
+
+        }
+
+        $this->relatedImages()->delete();
+
+        return parent::delete();
+
+    }
 
 
     public function business(){
@@ -52,11 +71,21 @@ class Reward extends Model{
         });
     }
 
-    /**@TODO methods
-     * -unredeemedCoupons
-     * -redeemedCoupons
-     *
-     */
+    public function relatedImages(){
+
+        return $this->hasMany('App\RelatedImage');
+    }
+
+    public function getFilePath(){
+
+        if($this->relatedImages->first()){
+            $file_path = $this->relatedImages->first()->file_path;
+            return $file_path;
+        }else{
+            return null;
+        }
+
+    }
 
 
 }

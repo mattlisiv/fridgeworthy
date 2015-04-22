@@ -6,6 +6,8 @@ interface RewardRepositoryInterface{
 
     public function find($id);
 
+    public function findWithImage($id);
+
     public function store($input);
 
     public function update($id,$input);

@@ -7,7 +7,7 @@
 
     <h4>Edit {{$reward->name}} Information</h4>
     {!! Form::model($reward,['action'=>['Admin\RewardController@update',$reward->id],'method'=>'PATCH']) !!}
-    @include('administrator.rewards.partials.form',['submitButtonText'=> 'Edit Reward'])
+    @include('administrator.rewards.partials.editform',['submitButtonText'=> 'Edit Reward'])
 
     {!! Form::close() !!}
     <br>

@@ -148,6 +148,7 @@ return [
         'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'App\Repositories\DBServiceProvider',
+        'Codesleeve\LaravelStapler\Providers\L5ServiceProvider'
 
 
 
@@ -203,6 +204,8 @@ return [
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'QrCode'    => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
+        'Stapler'   => 'Codesleeve\LaravelStapler\Providers\L5ServiceProvider'
+
 
 
     ],
