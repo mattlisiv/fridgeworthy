@@ -3,8 +3,12 @@
 @section('content')
 
     @include('administrator.partials.navbar')
-    <div clas="row">
+    <div class="row">
         <div class="col-lg-8">
+            <ol class="breadcrumb">
+                <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
+                <li class="active">Coupon Management</li>
+            </ol>
             <h1>Coupon Management</h1>
             <table class="table table-bordered">
                 <tr><th>Reward</th><th>Access Code</th><th>Status</th></tr>

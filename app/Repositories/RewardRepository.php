@@ -18,9 +18,23 @@ class RewardRepository implements RewardRepositoryInterface{
 
     public function all(){
 
-
         return Reward::all();
 
+    }
+
+    public function allWithImage(){
+
+        return Reward::with('relatedImages')->get();
+    }
+
+    public function allWithCoupons(){
+
+        return Reward::with('coupons')->get();
+    }
+
+    public function allWithImageAndCoupons(){
+
+        return Reward::with('coupons')->with('relatedImages')->get();
     }
 
     public function find($id){
@@ -51,5 +65,15 @@ class RewardRepository implements RewardRepositoryInterface{
     {
         return Reward::with('relatedImages')->findOrFail($id);
 
+    }
+
+    public function findWithCoupons($id){
+
+        return Reward::with('coupons')->findOrFail($id);
+    }
+
+    public function findWithImageAndCoupons($id)
+    {
+        return Reward::with('coupons')->with('relatedImages')->findOrFail($id);
     }
 }

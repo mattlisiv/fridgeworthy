@@ -5,6 +5,11 @@
     @include('administrator.partials.navbar')
     <div class="row">
         <div class="col-lg-8">
+            <ol class="breadcrumb">
+                <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
+                <li><a href="{{action('Admin\RegionController@index') }}">Region Management</a></li>
+                <li class="active">{{$region->name}}</li>
+            </ol>
              <h1>{{$region->name}}</h1>
              <p>No statistics provided for {{$region->name}}</p>
              <a href="{{action('Admin\RegionController@index') }}"> <h6>Back to Region Management</h6></a>

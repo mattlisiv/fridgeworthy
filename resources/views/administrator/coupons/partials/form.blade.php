@@ -16,7 +16,7 @@
     {!! Form::file('couponCSV') !!}
 </div>
 
-<div class="form-group">
+<div class="form-group" id="numberOfCouponsDiv">
     {!! Form::label('numberOfCoupons', 'Enter Number of Coupons to be Generated:') !!}
     {!! Form::text('couponNumber',null,['class' => 'form-control']) !!}
 </div>

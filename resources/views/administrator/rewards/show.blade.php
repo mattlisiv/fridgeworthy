@@ -4,6 +4,11 @@
     @include('administrator.partials.navbar')
         <div class="row">
             <div class="col-lg-8">
+                <ol class="breadcrumb">
+                    <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
+                    <li><a href="{{action('Admin\RewardController@index') }}">Reward Management</a></li>
+                    <li class="active">{{$reward->name}}</li>
+                </ol>
                  <h1>{{$reward->name}}</h1>
                  @if(!is_null($reward->getFilePath()))
                     <p><img src="{{$reward->getFilePath()}}" alt="No image found"></p>
@@ -11,9 +16,41 @@
                     <p>No image provided</p>
                 @endif
                 <br>
-                <p> No statistics provided for {{$reward->name}}</p>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h3>Reward Information</h3></div>
+                                <div class="panel-body">
+                                    <p>Name: {{$reward->name}}</p>
+                                    <p>Description:{{$reward->description}}</p>
+                                    <p>Points Required To Redeem Reward: {{$reward->points_required}}</p>
+                                    <p>Dollar Worth: {{$reward->dollar_amount}}</p>
+                                    <p>Expiration: {{\Carbon\Carbon::parse($reward->expiration)->diffForHumans()}}</p>
+                                </div>
+                            </div>
+
+                            <br>
+                            <br>
+                    <div class="panel panel-default">
+                            <div class="panel-heading"><h3>Coupon Breakdown</h3></div>
+                                    <div>
+                                        <ul class="list-group stack-list">
+                                            <li class="list-group-item list-group-item-info"><span class="badge">{{count($coupons)}}</span>Total Coupons in circulation</li>
+                                            <li class="list-group-item"><span class="badge">{{count($redeemedCoupons)}}</span>Coupons redeemed</li>
+                                            <li class="list-group-item"><span class="badge">{{count($unredeemedCoupons)}}</span>Coupons unredeemed</li>
+                                            <li class="list-group-item"><span class="badge">{{count($unclaimedCoupons)}}</span>Coupons unclaimed</li>
+                                            <li class="list-group-item @if(count($flaggedCoupons))list-group-item-danger"@else"@endif><span class="badge">{{count($flaggedCoupons)}}</span>Coupons flagged</li>
+                                        </ul>
+                                    </div>
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <p></p>
                 <br>
-                <a href="{{action('Admin\RewardController@index') }}"> <h6>Back to Reward Management</h6></a>
             </div>
             <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px">
                 <div class="panel panel-default">

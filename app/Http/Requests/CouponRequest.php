@@ -21,9 +21,13 @@ class CouponRequest extends Request {
 	 */
 	public function rules()
 	{
+
+
 		return [
-            'couponNumber' => 'required|integer|min:1',
+
             'couponType' => 'required',
+            'couponNumber' => 'required_if:couponType,managed|integer|min:1',
+            'couponCSV'=>'required_if:couponType,auto-managed',
             'reward_id' => 'required',
 		];
 	}

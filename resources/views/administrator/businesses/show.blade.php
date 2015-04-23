@@ -6,6 +6,11 @@
 
     <div class="row">
         <div class="col-lg-8">
+            <ol class="breadcrumb">
+                <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
+                <li><a href="{{action('Admin\BusinessController@index') }}">Business Management</a></li>
+                <li class="active">{{$business->name}}</li>
+            </ol>
              <h1>{{$business->name}}</h1>
             <article>
                 No statistics provided for {{$business->name}}

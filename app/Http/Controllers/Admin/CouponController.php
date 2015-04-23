@@ -51,19 +51,23 @@ class CouponController extends Controller {
      */
 	public function store(Requests\CouponRequest $request)
 	{
+
+
         if($request->hasFile('couponCSV')){
             $reader =Reader::createFromPath($request->file('couponCSV'));
             $reader->setFlags(SplFileObject::READ_AHEAD|SplFileObject::SKIP_EMPTY);
+            $coupon_codes =  array();
             foreach($reader as $index =>$row){
 
-                var_dump($row);
+                var_dump($row[0]);
+                array_push($coupon_codes,$row[0]);
             }
-        }else{
-            var_dump('Nope');
-            return;
+            $request['coupon_codes'] = $coupon_codes;
+            var_dump($request['coupon_codes']);
+
+
         }
 
-        return;
         $this->couponRepository->store($request->all());
 
         return redirect()->action('Admin\CouponController@index');

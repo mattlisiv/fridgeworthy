@@ -17,8 +17,8 @@ class CreateCouponTables extends Migration {
 			$table->increments('id');
             $table->integer('reward_id')->unsigned();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->string('access_code')->unique();
-            $table->enum('status',['unredeemed','redeemed','flagged']);
+            $table->string('access_code');
+            $table->enum('status',['unclaimed','unredeemed','redeemed','flagged']);
 			$table->timestamps();
 
 		});

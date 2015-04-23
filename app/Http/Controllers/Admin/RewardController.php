@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Business;
+use App\Coupon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\RelatedImage;
 use App\Repositories\Interfaces\BusinessRepositoryInterface;
+use App\Repositories\Interfaces\CouponRepositoryInterface;
 use Carbon\Carbon;
 use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
 use Illuminate\Support\Facades\File;
@@ -15,10 +17,12 @@ use Illuminate\Support\Facades\Storage;
 class RewardController extends Controller {
 
 
-    public function __construct(RewardRepositoryInterface $rewardRepositoryInterface,BusinessRepositoryInterface $businessRepositoryInterface){
+    public function __construct(RewardRepositoryInterface $rewardRepositoryInterface,BusinessRepositoryInterface $businessRepositoryInterface,
+                                CouponRepositoryInterface $couponRepositoryInterface){
 
         $this->rewardRepository = $rewardRepositoryInterface;
         $this->businessRepository = $businessRepositoryInterface;
+        $this->couponRepository = $couponRepositoryInterface;
     }
 	/**
 	 * Display a listing of the resource.
@@ -27,7 +31,7 @@ class RewardController extends Controller {
 	 */
 	public function index()
 	{
-        $rewards = $this->rewardRepository->all();
+        $rewards = $this->rewardRepository->allWithCoupons();
         $pageTitle = "Rewards Manager";
         return view('administrator.rewards.index',compact('rewards','pageTitle'));
 	}
@@ -77,9 +81,14 @@ class RewardController extends Controller {
 	{
 
 
-        $reward = $this->rewardRepository->findWithImage($id);
+        $reward = $this->rewardRepository->findWithImageAndCoupons($id);
+        $coupons = $reward->coupons;
+        $unclaimedCoupons = $this->couponRepository->filterCouponsByUnclaimedStatus($coupons);
+        $redeemedCoupons = $this->couponRepository->filterCouponsByRedeemedStatus($coupons);
+        $unredeemedCoupons = $this->couponRepository->filterCouponsByUnredeemedStatus($coupons);
+        $flaggedCoupons = $this->couponRepository->filterCouponsByRedeemedStatus($coupons);
         $pageTitle = $reward->name;
-        return view('administrator.rewards.show',compact('reward','pageTitle'));
+        return view('administrator.rewards.show',compact('reward','pageTitle','coupons','unclaimedCoupons','redeemedCoupons','unredeemedCoupons','flaggedCoupons'));
 	}
 
 	/**

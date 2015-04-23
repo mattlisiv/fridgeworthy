@@ -50,15 +50,14 @@ class LinkTables extends Migration {
 
             /**Foreign key to reward **/
             $table->foreign('reward_id')
-                ->references('id')->on('rewards')
-                ->onDelete('cascade');
+                ->references('id')->on('rewards');
+
 
         });
 
         Schema::table('courses', function ($table) {
             $table->foreign('teacher_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
+                ->references('id')->on('users');
 
         });
         Schema::table('rewards', function ($table) {

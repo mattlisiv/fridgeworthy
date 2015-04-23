@@ -6,25 +6,29 @@ $(document).ready(function() {
         var value = $('input[name=couponType]:checked').val();
         if(value=='auto-managed'){
 
-            displayCSVInput();
+            displayAutoManagedOptions();
 
         }else{
 
-            hideCSVInput();
+            displayFridgeWorthyGeneratedCoupons();
         }
     });
 
 });
 
 
-function displayCSVInput(){
+function displayAutoManagedOptions(){
 
     $("#csvFileDiv").show();
+    $("#numberOfCouponsDiv").hide();
+
 
 }
 
-function hideCSVInput(){
+function displayFridgeWorthyGeneratedCoupons(){
 
     $("#csvFileDiv").hide();
+    $("#numberOfCouponsDiv").show();
+
 
 }

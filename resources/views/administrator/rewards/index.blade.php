@@ -4,6 +4,10 @@
 
     <div class="row">
         <div class="col-lg-8">
+            <ol class="breadcrumb">
+                <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
+                <li class="active">Reward Management</li>
+            </ol>
             <h1>Reward Management</h1>
             <table class="table table-bordered">
                 <tr><th>Name</th></tr>
