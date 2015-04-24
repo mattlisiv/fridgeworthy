@@ -45,6 +45,20 @@ class Student extends User{
 
     }
 
+    public function statusInCourse($course){
+
+        if($this->enrolledInCourse($course)){
+
+            $pivot = $this->courses()->withPivot(['status'])->first()->pivot->status;
+            return $pivot;
+
+        }else{
+
+            return 'NOT_ENROLLED';
+        }
+
+    }
+
     public function enrollInCourse($input){
 
 

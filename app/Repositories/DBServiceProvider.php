@@ -63,6 +63,28 @@ class DBServiceProvider extends ServiceProvider{
             'App\Repositories\UserRepository'
         );
 
+        $this->app->bind(
+            'App\Repositories\Interfaces\AdminRepositoryInterface',
+            'App\Repositories\AdminRepository'
+        );
+
+        $this->app->bind(
+            'App\Repositories\Interfaces\BusinessManagerRepositoryInterface',
+            'App\Repositories\BusinessManagerRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\Interfaces\ParentRepositoryInterface',
+            'App\Repositories\ParentRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\Interfaces\StudentRepositoryInterface',
+            'App\Repositories\StudentRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\Interfaces\TeacherRepositoryInterface',
+            'App\Repositories\TeacherRepository'
+        );
+
 
     }
 

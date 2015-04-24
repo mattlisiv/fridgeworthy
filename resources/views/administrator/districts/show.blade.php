@@ -23,7 +23,6 @@
                     <p>No active regions in this district.</p>
                     @endif
             <br>
-             <a href="{{action('Admin\DistrictController@index') }}"> <h6>Back to District Management</h6></a>
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
             <div class="panel panel-default">

@@ -47,12 +47,11 @@ class School extends Model {
 
         return User::where('school_id', '=', $this->id);
 
-
     }
 
     public function courses(){
 
-        return $this->hasManyThrough('App\Course','App\User','school_id','teacher_id');
+        return $this->hasManyThrough('App\Course','App\User','school_id','teacher_id')->with('teacher');
 
     }
 

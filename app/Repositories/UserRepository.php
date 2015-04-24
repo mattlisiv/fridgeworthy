@@ -27,6 +27,32 @@ class UserRepository implements UserRepositoryInterface{
 
     }
 
+    public function allTeachers(){
+
+        return Teacher::all();
+    }
+
+    public function allParents(){
+
+        return Guardian::all();
+    }
+
+    public function allStudents(){
+
+        return Student::all();
+    }
+
+    public function allAdmins(){
+
+        return Admin::all();
+
+    }
+
+    public function allBusinessManagers(){
+
+        return BusinessManager::all();
+    }
+
     public function find($id){
 
         return User::findOrFail($id);

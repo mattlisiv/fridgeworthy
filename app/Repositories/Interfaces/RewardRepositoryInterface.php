@@ -16,7 +16,6 @@ interface RewardRepositoryInterface{
 
     public function findWithImageAndCoupons($id);
 
-
     public function store($input);
 
     public function update($id,$input);

@@ -28,4 +28,27 @@ class CourseRepository implements CourseRepositoryInterface{
     }
 
 
+    public function findWithAssignments($id){
+
+        return Course::with('assignments')->find($id);
+    }
+
+    public function findWithAssignmentsAndGrades($id){
+
+
+        return Course::with('assignments')->with('grades')->with('students')->find($id);
+
+    }
+
+    public function update($id, $input)
+    {
+        $course = Course::findOrFail($id);
+        $course->update($input);
+    }
+
+    public function destroy($id)
+    {
+        $course = Course::findOrFail($id);
+        $course->delete();
+    }
 }

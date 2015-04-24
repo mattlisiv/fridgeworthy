@@ -5,6 +5,16 @@ interface UserRepositoryInterface{
 
     public function all();
 
+    public function allStudents();
+
+    public function allTeachers();
+
+    public function allAdmins();
+
+    public function allBusinessManagers();
+
+    public function allParents();
+
     public function find($id);
 
     public function destroy($id);
@@ -12,4 +22,5 @@ interface UserRepositoryInterface{
     public function update($id,$input);
 
     public function store($input);
+
 }

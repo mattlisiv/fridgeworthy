@@ -11,9 +11,45 @@
                 <li class="active">{{$school->name}}</li>
             </ol>
             <h1>{{$school->name}}</h1>
-            <br>
-            <a href="{{action('Admin\SchoolController@index') }}"> <h6>Back to School Management</h6></a>
-        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>School Information</h3></div>
+                        <div class="panel-body">
+                            <p>Name: {{$school->name}}</p>
+                            <p>Region: {{$school->region->name}}</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Course Breakdown</h3></div>
+                        <div class="panel-body">
+                            @if(count($courses))
+                                <table class="table table-striped">
+                                    <tr><th>Course Name</th><th>Teacher</th></tr>
+                                    @foreach($courses as $course)
+                                        <tr><td>{{$course->name}}</td><td><a href="{{action('Admin\UserController@show',$course->teacher->id)}}">{{$course->teacher->getName()}}</a></td></tr>
+                                        @endforeach
+                                </table>
+                            @else
+                                <p>No current courses at this time.</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>User Breakdown</h3></div>
+                        <div>
+                            <ul class="list-group stack-list">
+                                <li class="list-group-item list-group-item-info"><span class="badge">{{count($students)+count($teachers)+count($parents)}}</span>Total Users</li>
+                                <li class="list-group-item"><span class="badge">{{count($students)}}</span>Students</li>
+                                <li class="list-group-item"><span class="badge">{{count($teachers)}}</span>Teachers</li>
+                                <li class="list-group-item"><span class="badge">{{count($parents)}}</span>Parents</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit School</div>
@@ -29,6 +65,7 @@
             </div>
         </div>
     </div>
+
     @include('errors.list')
 
 @endsection

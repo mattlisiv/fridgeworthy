@@ -62,8 +62,13 @@ class SchoolController extends Controller {
 	{
 
         $school = $this->schoolRepository->find($id);
+        $courses = $school->courses;
+        $students = $school->students()->get();
+
+        $parents = $school->parents()->get();
+        $teachers = $school->teachers()->get();
         $pageTitle = $school->name;
-        return view('administrator.schools.show',compact('school','pageTitle'));
+        return view('administrator.schools.show',compact('school','pageTitle','courses','students','parents','teachers'));
 	}
 
 	/**

@@ -14,9 +14,7 @@ use App\Repositories\Interfaces\AssignmentRepositoryInterface;
 
 class AssignmentRepository implements AssignmentRepositoryInterface{
 
-
     public function all(){
-
 
         return Assignment::all();
 
@@ -27,7 +25,25 @@ class AssignmentRepository implements AssignmentRepositoryInterface{
         return Assignment::find($id);
     }
 
+    public function findWithGrades($id)
+    {
+        return Assignment::with('grades')->findOrFail($id);
+    }
 
+    public function store($input)
+    {
+        return Assignment::create($input);
+    }
 
+    public function update($id, $input)
+    {
+        $assignment = Assignment::findOrFail($id);
+        return $assignment->update($input);
+    }
 
+    public function delete($id)
+    {
+        $assignment = Assignment::findOrFail($id);
+        return $assignment->delete();
+    }
 }
