@@ -112,6 +112,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->first_name.' '.$this->last_name;
     }
 
+    public function getFullNameAttribute(){
+
+        return $this->first_name.' '.$this->last_name;
+    }
+
     public function removeThisUser(){
 
         return User::where('users.id','=',$this->id)->delete();

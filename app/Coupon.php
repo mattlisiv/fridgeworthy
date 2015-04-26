@@ -32,6 +32,11 @@ class Coupon extends Model{
 
         return $this->belongsTo('App\Reward');
     }
+
+    public function user(){
+
+        return $this->belongsTo('App\User');
+    }
     
     /**Query Scope 
     *@TODO Verify Functionality

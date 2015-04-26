@@ -28,7 +28,7 @@ class RewardRequest extends Request {
             'points_required'=> 'required',
             'business_id'=>'required',
             'dollar_amount'=>'required',
-            'image' => 'mimes:jpeg,bmp,png'
+
 		];
 	}
 

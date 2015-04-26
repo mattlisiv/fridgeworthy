@@ -11,27 +11,28 @@ namespace App\Repositories;
 
 
 use App\Repositories\Interfaces\TeacherRepositoryInterface;
+use App\Teacher;
 
 class TeacherRepository implements TeacherRepositoryInterface{
 
 
     public function all()
     {
-        // TODO: Implement all() method.
+        return Teacher::all();
     }
 
     public function find($id)
     {
-        // TODO: Implement find() method.
+        return Teacher::findOrFail($id);
     }
 
     public function findWithCourses($id)
     {
-        // TODO: Implement findWithCourses() method.
+        return Teacher::with('courses')->findOrFail($id);
     }
 
     public function findWithCoursesAndAssignments($id)
     {
-        // TODO: Implement findWithCoursesAndAssignments() method.
+        return Teacher::with('courses')->with('assignments')->findOrFail($id);
     }
 }

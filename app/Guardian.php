@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\DB;
+
 class Guardian extends User{
 
 
@@ -20,19 +22,22 @@ class Guardian extends User{
     }
 
 
-
     public function school(){
-
 
         return $this->belongsTo('App\School');
 
     }
 
+    public function students(){
 
+        return $this->belongsToMany('App\Student','parent_student','parent_id','student_id');
+
+    }
 
     public function coupons(){
 
-        $coupons = DB::table('coupons')->where('user_id', '=', $this->id)->get();
+        $coupons = Coupon::where('user_id','=',$this->id)->with('reward');
+
         return $coupons;
     }
 }

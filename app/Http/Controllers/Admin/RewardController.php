@@ -86,7 +86,7 @@ class RewardController extends Controller {
         $unclaimedCoupons = $this->couponRepository->filterCouponsByUnclaimedStatus($coupons);
         $redeemedCoupons = $this->couponRepository->filterCouponsByRedeemedStatus($coupons);
         $unredeemedCoupons = $this->couponRepository->filterCouponsByUnredeemedStatus($coupons);
-        $flaggedCoupons = $this->couponRepository->filterCouponsByRedeemedStatus($coupons);
+        $flaggedCoupons = $this->couponRepository->filterCouponsByFlaggedStatus($coupons);
         $pageTitle = $reward->name;
         return view('administrator.rewards.show',compact('reward','pageTitle','coupons','unclaimedCoupons','redeemedCoupons','unredeemedCoupons','flaggedCoupons'));
 	}

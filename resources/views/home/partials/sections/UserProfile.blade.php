@@ -7,12 +7,9 @@
             <div class="manageinfo">
                 <h3 class="bluenoshad">user info</h3>
                 <p>
-                    name: {{$user->first_name}} {{$user->last_name}}<br>
+                    name: {{$user->fullname}}<br>
                     email: {{$user->email}}<br>
-                    school: {{$user->school->name}}<br>
-                    @if($user->hasRole('student'))
-                    grade: {{$user->grade}}
-                        @endif
+
                 </p>
             </div>
 

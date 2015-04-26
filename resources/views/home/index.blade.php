@@ -72,6 +72,8 @@
 </script>
 <script>
     jQuery(document).ready(function($){
+
+
         $(".menu-item-has-children").append("<div class='open-menu-link open'>+</div>");
         $('.menu-item-has-children').append("<div class='open-menu-link close'>—</div>");
         $('.open').addClass('visible');
@@ -90,6 +92,7 @@
 
 
         $(document).ready( function() {
+
             $('#teachstudselect').bind('change', function (e) {
 
                 if( $('#teachstudselect').val() == '2') {

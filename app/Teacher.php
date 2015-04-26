@@ -1,6 +1,8 @@
 <?php namespace App;
 
 
+use Illuminate\Support\Facades\DB;
+
 class Teacher extends User{
 
 
@@ -41,7 +43,7 @@ class Teacher extends User{
 
     public function coupons(){
 
-        $coupons = DB::table('coupons')->where('user_id', '=', $this->id)->get();
+        $coupons = Coupon::where('user_id','=',$this->id)->with('reward');
         return $coupons;
     }
 

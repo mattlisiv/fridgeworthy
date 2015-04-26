@@ -14,4 +14,6 @@ interface CourseRepositoryInterface{
 
     public function destroy($id);
 
+    public function store($input);
+
 }

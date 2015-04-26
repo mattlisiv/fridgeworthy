@@ -41,12 +41,10 @@ class Course extends Model {
         return $this->hasManyThrough('App\Grade','App\Assignment');
     }
 
-    /**@TODO define methods
-     * -school
-     *
-     *
-     *
-     */
+    public function uploadedFiles(){
+
+        return $this->hasMany('App\UploadedCourseFile');
+    }
 
 
 

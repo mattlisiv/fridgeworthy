@@ -30,6 +30,7 @@ Route::group(array('domain' => 'admin.'.$domain,'middleware'=>'authorize','user_
     Route::resource('users','Admin\UserController');
     Route::resource('coupons','Admin\CouponController');
     Route::resource('courses','Admin\CourseController');
+    Route::resource('fileuploads','Admin\CourseFilesController');
 
 });
 

@@ -29,13 +29,6 @@ class Student extends User{
     }
 
 
-    public function coupons(){
-
-        $coupons = DB::table('coupons')->where('user_id', '=', $this->id)->get();
-        return $coupons;
-    }
-
-
     public function enrolledInCourse($course){
 
 
@@ -67,6 +60,8 @@ class Student extends User{
 
     }
 
+
+
     public function courses(){
 
         return $this->belongsToMany('App\Course','course_user','user_id','course_id');
@@ -83,6 +78,22 @@ class Student extends User{
 
 
 
+    }
+
+    public function parent(){
+
+        return $this->belongsToMany('App\User','parent_student','student_id','parent_id');
+    }
+
+    public function grades(){
+
+        return $this->hasMany('App\Grade');
+    }
+
+    public function coupons(){
+
+        $coupons = Coupon::where('user_id','=',$this->id)->with('reward');
+        return $coupons;
     }
 
 

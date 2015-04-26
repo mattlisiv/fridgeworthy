@@ -46,12 +46,16 @@ class HomeController extends Controller {
 
         if (Auth::attempt($credentials, $request->has('remember')))
         {
-            return Redirect::to('/');
+            return Redirect::back();
+        }else{
+
+               $validator->getMessageBag()->add('incorrect_login','The login entered does not match our records. Please try again.');
+                return Redirect::back()
+                ->withInput($request->only('email', 'remember'))
+                ->withErrors($validator,'login');
         }
 
-        return Redirect::to('/')
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors($validator);
+
 
     }
 
@@ -72,7 +76,7 @@ class HomeController extends Controller {
 
         if($validator->fails()){
 
-            return Redirect::to('/')->withErrors($validator);
+            return Redirect::back()->withErrors($validator,'registration');
 
 
         }else{

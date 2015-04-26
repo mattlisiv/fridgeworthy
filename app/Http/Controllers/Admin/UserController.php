@@ -80,9 +80,39 @@ class UserController extends Controller {
 	{
 
         $user = $this->userRepository->find($id);
+        $courses = null;
+        $assignment = null;
+        $grades = null;
+        $coupons = null;
+        $students = null;
+        if(get_class($user)==('App\Student')){
+
+            $grades = $user->grades()->with('assignment')->get();
+            $courses = $user->courses()->with('assignments')->get();
+            $coupons = $user->coupons()->with('reward')->get();
+
+
+        }
+        if(get_class($user)==('App\Teacher')){
+
+            $courses = $user->courses()->with('assignments')->get();
+            $coupons = $user->coupons()->with('reward')->get();
+
+
+        }
+
+        if(get_class($user)==('App\Guardian')){
+
+            $coupons = $user->coupons()->with('reward')->get();
+            $students = $user->students()->with('school')->get();
+
+        }
+
+
+
         $pageTitle = "User Details";
 
-        return view('administrator.users.show',compact('user','pageTitle'));
+        return view('administrator.users.show',compact('user','pageTitle','courses','grades','coupons','students'));
 	}
 
 	/**

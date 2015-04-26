@@ -73,11 +73,11 @@
                 </div><!--end 3rd regthird-->
                 <button type="submit" class="smbtn" name="register">submit</button>
         </form>
-        @if (count($errors) > 0)
+        @if (!$errors->registration->isEmpty())
             <div class="alert alert-danger">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
                 <ul>
-                    @foreach ($errors->all() as $error)
+                    @foreach ($errors->registration->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>

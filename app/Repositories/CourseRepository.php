@@ -51,4 +51,9 @@ class CourseRepository implements CourseRepositoryInterface{
         $course = Course::findOrFail($id);
         $course->delete();
     }
+
+    public function store($input)
+    {
+        Course::create($input);
+    }
 }

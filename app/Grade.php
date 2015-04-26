@@ -27,13 +27,13 @@ class Grade extends Model{
 
     public function student(){
         
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','student_id');
     }
 
     public function assignment(){
 
 
-        $this->belongsTo('App\Assignment');
+        return $this->belongsTo('App\Assignment','assignment_id')->with('course');
     }
 
 

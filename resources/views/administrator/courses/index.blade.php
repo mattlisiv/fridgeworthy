@@ -24,7 +24,7 @@
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <a href="{{action('Admin\CouponController@create') }}"> <h4>Create New Courses</h4></a>
+                    <a href="{{action('Admin\CourseController@create') }}"> <h4>Create New Courses</h4></a>
                     <p>Current Number of Courses: {{$courses->count()}}</p>
                 </div>
             </div>

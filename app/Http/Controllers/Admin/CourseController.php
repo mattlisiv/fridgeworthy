@@ -2,15 +2,18 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AdminCourseRequest as AdminCourseRequest;
 use App\Repositories\Interfaces\CourseRepositoryInterface as CourseRepositoryInterface;
+use App\Repositories\Interfaces\TeacherRepositoryInterface;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller {
 
 
-    public function __construct( CourseRepositoryInterface $courseRepositoryInterface){
+    public function __construct( CourseRepositoryInterface $courseRepositoryInterface,TeacherRepositoryInterface $teacherRepositoryInterface){
 
         $this->courseRepository = $courseRepositoryInterface;
+        $this->teacherRepository = $teacherRepositoryInterface;
 
     }
 	/**
@@ -32,7 +35,9 @@ class CourseController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$pageTitle = "Create Course";
+        $teachers = $this->teacherRepository->all();
+        return view('administrator.courses.create',compact('pageTitle','teachers'));
 	}
 
 	/**
@@ -40,9 +45,10 @@ class CourseController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(AdminCourseRequest $request)
 	{
-		//
+        $this->courseRepository->store($request->all());
+        return redirect()->action('Admin\CourseController@index');
 	}
 
 	/**
@@ -55,7 +61,6 @@ class CourseController extends Controller {
 	{
 
         $course = $this->courseRepository->findWithAssignmentsAndGrades($id);
-
 	    $pageTitle = $course->name;
         return view('administrator.courses.show',compact('course','pageTitle'));
 	}
@@ -68,18 +73,22 @@ class CourseController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$course = $this->courseRepository->find($id);
+        $pageTitle = 'Edit '.$course->name;
+        return view('administrator.courses.edit',compact('course','pageTitle'));
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @param Requests\Admin\AdminCourseEditRequest $request
+     * @return Response
+     */
+	public function update($id,Requests\Admin\AdminCourseEditRequest $request)
 	{
-		//
+		$this->courseRepository->update($id,$request->all());
+        return redirect()->action('Admin\CourseController@index');
 	}
 
 	/**
@@ -90,7 +99,8 @@ class CourseController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $this->courseRepository->destroy($id);
+        return redirect()->action('Admin\CourseController@index');
 	}
 
 }
