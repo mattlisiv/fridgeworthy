@@ -18,7 +18,7 @@ class Assignment extends Model{
     protected $table = 'assignments';
 
     protected $fillable = [
-
+        'name',
         'course_id',
         'description',
         'due_date'

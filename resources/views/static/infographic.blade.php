@@ -1,59 +1,66 @@
-<!doctype html>
-<html>
-<head>
+<!DOCTYPE HTML>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <title>FridgeWorthy Infographic</title>
-    <link href="/css/infographic.css" rel="stylesheet" type="text/css">
+    <title>fridge-worthy.com</title>
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-
-    <link href="/css/pages.css" rel="stylesheet" type="text/css">
-    <link href="/css/responsive.css" rel="stylesheet" type="text/css">
+    <!--CSS links-->
+    <link href="{{asset('css/reset.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/pages.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css">
 
     <!--JS links-->
-    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="/js/waypoints.sticky.js"></script>
-    <script type="text/javascript" src="/js/parallax.js"></script>
-    <script type="text/javascript" src="/js/retina.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.stepframemodal.js"></script>
-    <script type="text/javascript" src="/js/fridgeworthy.js"></script>
-
-    <!--favicon-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/waypoints.sticky.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/retina.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.stepframemodal.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/fridgeworthy.js')}}"></script>
 
 
+    @include('home.partials.favico')
 </head>
 
-<body>
+<body class="infographicbg" ontouchstart="">
 
-<!--start login-->
-@include('home.partials.modal.login')
+<div class="mainwrap">
 
-@include('home.partials.StickyNavigation')
+    @include('navigation.masternav')
 
-<div id="headerwrapper">
-    <div id="title">
+    @include('home.partials.modal.Logout')
 
-        <img src="images/infographic-dektop-h-1.svg" alt="How Hard Work Pays Off">
-        <div id="stars">
-            <img src="images/infographic-dektop-h-2.svg" alt="stars">
+    @include('home.partials.modal.Login')
+
+
+    <!--start infographic-->
+    <section id="infographicpancnt">
+
+        <div id="infographictitle">
+            <img src="images/infographic-dektop-h-1.svg" alt="How Hard Work Pays Off">
+            <div id="stars"><img src="images/infographic-dektop-h-2.svg" alt="stars"></div>
         </div>
-    </div>
+
+        <div id="infographic-h">
+            <div><img src="images/infographic-dektop-h-3.svg" alt="infographic"></div>
+        </div>
+
+        <div id="infographic-v">
+            <div><img src="images/infographic-dektop-v-3.svg" alt="infographic"></div>
+        </div>
+
+    </section><!--end infographic-->
 
 
-    <div id="infographic-h">
-        <img src="images/infographic-dektop-h-3.svg" alt="infographic">
-        <!--footer-->
-       @include('home.partials.Footer')
-    </div>
+    <div class="push"></div>
+</div><!--end mainwrap-->
 
-    <div id="infographic-v">
-        <img src="images/infographic-dektop-v-3.svg" alt="infographic">
-        @include('home.partials.Footer')
-    </div>
-</div>
+@include('home.partials.Footer')
+
 <!--responsive menu-->
 <script type="text/javascript">
     jQuery(function($){
@@ -79,10 +86,7 @@
                 $(e.currentTarget.parentNode.children[3]).addClass("visible");
             }
         });
-
     });
-
-
 </script>
 </body>
 </html>

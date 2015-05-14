@@ -8,24 +8,7 @@
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-    <!--CSS links-->
-    <link href="/css/reset.css" rel="stylesheet" type="text/css">
-    <link href="/css/main.css" rel="stylesheet" type="text/css">
-    <link href="/css/pages.css" rel="stylesheet" type="text/css">
-    <link href="/css/responsive.css" rel="stylesheet" type="text/css">
-
-    <!--JS links-->
-    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="/js/waypoints.sticky.js"></script>
-    <script type="text/javascript" src="/js/parallax.js"></script>
-    <script type="text/javascript" src="/js/retina.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.stepframemodal.js"></script>
-    <script type="text/javascript" src="/js/fridgeworthy.js"></script>
-
-    <!--favicon-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    @include('js.maincssandjs')
 </head>
 
 <body class="rcbg" ontouchstart="">
@@ -33,7 +16,7 @@
 <div class="mainwrap">
 
 
-    @include('home.partials.StickyNavigation')
+    @include('navigation.masternav')
 
     @include('home.partials.modal.Login')
 
@@ -56,7 +39,7 @@
                         <p>This reward is brought to you by {{$reward->business->name}}.</p>
                         <p>Visit their website at {!! Html::link('http://'.$reward->business->website, $reward->business->website) !!}</p>
                         <img src="/images/alternate.jpg" class="rewardlogo"/>
-                        <p><a href="#loginmodal" class="plink modal-popup">Login</a> or <a href="{{url('/')."#home"}}" class="plink">Register</a> to see how you can get great rewards like this one!</p>
+                        <p><a href="#loginmodal" class="plink modal-popup">Login</a> or <a href="{{url('/')."#registration"}}" class="plink">Register</a> to see how you can get great rewards like this one!</p>
                     </div>
                     @else
                     <div class="rewarddetcol">

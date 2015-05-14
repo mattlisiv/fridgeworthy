@@ -1,1 +1,1 @@
-<li><a href="{{url('/')."#registrationpanel"}}">registration</a>
+<li><a href="{{url('/')."#registration"}}">registration</a>

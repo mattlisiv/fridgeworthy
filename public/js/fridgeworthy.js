@@ -1,7 +1,9 @@
 $(document).ready(function() {
 var isfirst=true;
 	
-//stickyhead//
+// ======================================
+// Sticky Header
+// ======================================
 $('.my-sticky-element').waypoint('sticky');
 $(window).resize(function() {
 	if(document.documentElement.scrollWidth<680){
@@ -18,7 +20,9 @@ $(window).resize(function() {
 	}
 });
 
-//modal//
+// ======================================
+// Modal
+// ======================================
 $('.modal-popup').setupModal()
 	
 
@@ -36,7 +40,7 @@ function getRelatedNavigation(el){
 
 
 // ======================================
-// Smooth scroll to content
+// smooth scroll to content
 // ======================================
 $('.scrollbtn').on('click',function(e){
   e.preventDefault();
@@ -49,12 +53,32 @@ $('.scrollbtn').on('click',function(e){
   }
 });
 
+// ======================================
+// jump with offset
+// ======================================
+// The function actually applying the offset
+function offsetAnchor() {
+    if(location.hash.length !== 0) {
+        window.scrollTo(window.scrollX, window.scrollY - 120);
+    }
+}
+
+// This will capture hash changes while on the page
+$(window).on("hashchange", function () {
+    offsetAnchor();
+});
+
+// This is here so that when you enter the page with a hash,
+// it can provide the offset in that case too. Having a timeout
+// seems necessary to allow the browser to jump to the anchor first.
+window.setTimeout(function() {
+    offsetAnchor();
+}, 1); // The delay of 1 is arbitrary
+
 
 // ======================================
-// Waypoints
+// toggle active button
 // ======================================
-// Default cwaypoint settings
-// - just showing
 var wpDefaults={
   context: window,
   continuous: true,
@@ -71,7 +95,7 @@ $('section,article')
      // remove if below
      getRelatedNavigation(this).toggleClass('active', direction === 'down');
    }, {
-     offset: '90%' // 
+     offset: '50%' // 
    })
    .waypoint(function(direction) {
      // Highlight element when bottom of related content
@@ -79,10 +103,16 @@ $('section,article')
      // TODO - make function for this
      getRelatedNavigation(this).toggleClass('active', direction === 'up');
    }, {
-     offset: function() {  return -$(this).height() + 100; }
+     offset: function() {  return -$(this).height() + 350; }
    });
 });
 
+// ======================================
+// cleanup active buttons upon exit
+// ======================================
+$( window ).unload(function() {
+  return true;
+});
 
 
 

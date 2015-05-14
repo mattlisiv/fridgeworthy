@@ -257,12 +257,12 @@ margin-bottom: 8px;
 }
 
 .pointscirc {
-	width: 33.33%;
+	width: 25%;
 	float: left;
 	cursor:pointer;
 }
 
-a#viewstudyguides, a#submitgrade, a#checkprogress {
+a#myclasses, a#enrollinclass, a#viewassign, a#myrewards {
 display: block;
 margin: 0 auto;
 height: 115px;
@@ -274,181 +274,127 @@ background-repeat: no-repeat;
 background-size: contain;	
 }
 
-a#viewstudyguides {
-background-image: url(../images/viewstudyguides.svg);
+a#myclasses {
+background-image: url(../images/myclasses.svg);
 }
 
-a#submitgrade {
-background-image: url(../images/submitgrade.svg);
+a#enrollinclass {
+background-image: url(../images/enrollclass.svg);
 }
 
-a#checkprogress {
-background-image: url(../images/viewprogress.svg);
+a#viewassign {
+background-image: url(../images/viewassignments.svg);
 }
 
-a#viewstudyguides:hover, a#submitgrade:hover, a#checkprogress:hover {
+a#myrewards {
+background-image: url(../images/viewredrew.svg);		
+}
+
+a#myclasses:hover, a#enrollinclass:hover, a#viewassign:hover, a#myrewards:hover {
 -moz-transform: scale(1.1);
 -ms-transform: scale(1.1);
 -o-transform: scale(1.1);
 -webkit-transform: scale(1.1);
 transform: scale(1.1);	
-}
-
-/*interact*/
-#teachcirccont {
-	width: 100%;	
-}
-
-#teachcirccont:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-.teachcirc {
-	width: 33.33%;
-	float: left;
-	cursor:pointer;
-}
-
-a#uploadtest, a#uploadstudyguide, a#reviewgrades {
-display: block;
-margin: 0 auto;
-height: 115px;
-width: 200px;
-padding-top: 85px;
-text-decoration: none;
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;	
-}
-
-a#uploadtest {
-background-image: url(../images/uploadtest.svg);
-}
-
-a#uploadstudyguide{
-background-image: url(../images/uploadstudyguide.svg);
-}
-
-a#reviewgrades {
-background-image: url(../images/reviewgrades.svg);
-}
-
-a#uploadtest:hover, a#uploadstudyguide:hover, a#reviewgrades:hover {
--moz-transform: scale(1.1);
--ms-transform: scale(1.1);
--o-transform: scale(1.1);
--webkit-transform: scale(1.1);
-transform: scale(1.1);	
-}
-
-/*submit a grade*/
-form#submitgrade {
-	width: 458px;
-	margin: 0 auto;
-}
-
-/*submit grade dropdown*/
-#submitgrade .custom-dropdownBlue {
-	float: left;
-	width: 49%;
-	margin-bottom: 8px;
-	display: block;
-}
-
-#submitgrade .customSelect {
-	width: 100%;
-	display: block;
-}
-
-#selectteacher {
-	margin-right: 2%;
-}
-
-#numgrade {
-	float: left;
-	width: 49% /*300/916*/;
-}
-
-#submitgradepancnt .smbtn {	
-	float: right;
 }
 
 /*manage profile*/
-.managehalf {
-	width: 46.532593619972% /*671/1442*/;
+#manageinnerwrap {
+	max-width: 458px;
+	margin: 0 auto;
+}
+
+#userinfomanage, #managebtns {
 	float: left;
-	text-align: left;
 }
 
 #userinfomanage {
-	margin-right: 06.934812760055% /*100/1442*/;
-}
-
-.manageinfo {
 display: block;
 background-color: #ffffff;
-height: 150px;
-width: 90%;	
-padding: 8px 5%;
+width: 48%;
+margin-right: 4%;
+padding: 15px 0;
 }
 
-/*review grades*/
-#reviewtable {
-	width: 100% /*1420/1420*/;
-	display: table;
-	border-top: 1px solid #e2e4e5;
-	border-left: 1px solid #e2e4e5;
-	border-right: 1px solid #e2e4e5;
+#managebtns {
+	width: 48%;
 }
 
-.reviewrow {
+#changepassbtn {
+	margin-bottom: 12px;
+}
+
+/*infographic*/
+#infographictitle, #stars {
 	width: 100%;
-	display: table-row;
-}
-
-.reviewrow:after {
-	content: "";
 	display: block;
-	clear: both;
 }
 
-.namecell, .asscell, .gradecell, .statuscell, .responsecell {
-	display: table-cell;
-	text-align: left;
-	vertical-align: bottom;
-	padding: 5px 0;
-	border-bottom: 1px solid #e2e4e5;
-}
-
-.namecell {
-	width: 19.014084507042%/*270/1420*/;
-	padding-left: 1%;
-	
-}
-
-.asscell {
-	width: 19.014084507042%/*270/1420*/;
-	
-}
-
-.gradecell {
-	width: 13.732394366197%/*195/1420*/;
-	
-}
-
-.statuscell {
-	width: 30%/*195/1420*/;
-	
-}
-
-.responsecell {
-	padding-right: 1%;
-}
-
-.responsecell form {
+#infographic-h {
 	width: 100%;
+	display: block;
+}
+
+#infographic-v {
+	display: none;
+}
+
+
+/*my classes & individual classes*/
+.classescol1, .classescol2 {
+	float: left;
+	height: 400px;
+}
+
+.classescol1 {
+	width: 30%;/*300/1000*/
+	margin-right: 5%;/*50/1000*/ 
+}
+
+.classescol2 {
+	width: 65%;/*650/1000*/
+}
+
+#classlist, .viewupcomingassign {
+	margin-bottom: 50px;
+}
+
+.classdetbox {
+	display: block;
+	float: left;
+	width: 46.153846153846% /*300/650*/;
+	margin-bottom: 50px;
+	height: 245px;	
+}
+
+.classdetbox:nth-of-type(odd) {
+margin-right: 7.692307692308% /*50/650*/;
+}
+
+#mainclassimg {
+	height: 200px;
+	background-image:url(../images/mainclassimg.jpg);
+	margin-bottom: 50px;
+}
+
+.viewgradesimg, .viewstudyguidesimg, .createassgnsubgradeimg, .manageclassrosterimg {
+	height: 190px;
+}
+
+.viewgradesimg {
+	background-image:url(../images/viewgradesmain.jpg);
+}
+
+.viewstudyguidesimg {
+	background-image:url(../images/viewstudyguidesmain.jpg);
+}
+
+.createassgnsubgradeimg {
+	background-image:url(../images/createassgnsubgrademain.jpg);
+}
+
+.manageclassrosterimg{
+	background-image:url(../images/managerostermain.jpg);
 }
 
 /*rewards center*/
@@ -545,18 +491,6 @@ padding-right: 5%;
 	display: block;
 }
 
-a.plink {
-	color: #ee7830;
-	text-decoration: none;	
-}
-
-a.plink:visited {
-}
-
-a.plink:hover, a.plink:focus, a.plink:active {
-	color: #ee7830;
-	border-bottom: 1px dotted #ee7830;	
-}
 
 	
 	

@@ -20,7 +20,7 @@ class HomeController extends Controller {
 
         $user = Auth::user();
         $schools = School::all();
-        return view('home.index',compact('schools','user'));
+        return view('integration.indexintegration',compact('schools','user'));
     }
 
     public function logout(){
@@ -112,10 +112,25 @@ class HomeController extends Controller {
 
         }
 
-
-
-
         }
+
+    public function changePassword(){
+
+        $user = Auth::user();
+        return view('home.changepassword',compact('user'));
+    }
+
+    public function forgotPassword(){
+
+        $user = Auth::user();
+        if(is_null($user)){
+            return view('home.forgotpassword',compact('user'));
+        }else{
+           return redirect()->action('HomeController@index');
+        }
+
+    }
+
 
     public function error(){
 

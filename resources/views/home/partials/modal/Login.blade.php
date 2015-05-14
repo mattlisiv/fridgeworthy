@@ -11,7 +11,7 @@
                 <button type="submit" name="login_submit" value="submit" class="smbtngreenmodal">submit</button>
             </form>
             <br>
-            <a href="#"><p>Forgot Password? Click here.</p></a>
+            <a href="{{action('HomeController@forgotPassword')}}"><p style="color: #ffffff">Forgot Password? Click here.</p></a>
             <br>
             <div style="color:#ff0000">
                 <ul>

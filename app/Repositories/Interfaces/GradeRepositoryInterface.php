@@ -6,5 +6,8 @@ interface GradeRepositoryInterface{
 
     public function find($id);
 
+    public function findWithAssignment($id);
+
+    public function store($input);
 
 }

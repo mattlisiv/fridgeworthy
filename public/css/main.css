@@ -47,16 +47,20 @@ height: 100%;
 background-color: #efefef;
 }
 
-body.indexbg .mainwrap, body.rcbg .mainwrap {
+body.indexbg .mainwrap, body.rcbg .mainwrap, body.infographicbg .mainwrap, body.innerbg .mainwrap {
 min-height: 100%;
 height: auto !important;
 height: 100%;
-margin: 0 auto -30px;
+margin: 0 auto -45px;
 background-position: top left;	
 }
 
-body.indexbg .mainwrap {
+body.indexbg .mainwrap, body.infographicbg .mainwrap, body.innerbg .mainwrap {
 background-image: url(../images/chalkboardbg.jpg);
+}
+
+body.infographicbg .mainwrap, body.innerbg .mainwrap {
+background-size: cover;
 }
 
 body.rcbg .mainwrap {
@@ -78,7 +82,6 @@ line-height: 18px;
 color: #666666;
 }
 
-
 .white {
 color: #ffffff;
 }
@@ -96,6 +99,33 @@ text-shadow: 2px 2px 0px #3b9a47;
 
 .navpoints span.pointshighlight {
 text-shadow: 2px 2px 0px #f4f4f4;
+}
+
+/*links*/
+a.plink {
+	color: #ee7830;
+	text-decoration: none;	
+}
+
+a.plink:visited {
+}
+
+a.plink:hover, a.plink:focus, a.plink:active {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;	
+}
+
+a.plinkwhite {
+	color: #ffffff;
+	text-decoration: none;	
+}
+
+a.plinkwhite :visited {
+}
+
+a.plinkwhite:hover, a.plinkwhite:focus, a.plinwhite:active {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;	
 }
 
 /*head tags*/
@@ -146,6 +176,11 @@ h1.whitedkorange {
 	margin-bottom: 50px;	
 }
 
+#myclassespancnt h1, .indclassespancnt h1 {
+	font-size: 90px;
+	margin-bottom: 30px;
+}
+
 #rewcentpancnt h1 {
 	margin-bottom: 18px;	
 }
@@ -156,7 +191,7 @@ h1.whitedkorange {
 	line-height: 60px;
 }
 
-#regpancnt h1, #mypointspancnt h1, #teacherintpancnt h1, #submitgradepanel h1, #managepanel h1, #reviewgradepanel h1 {
+#regpancnt h1, #myacctpancnt h1, #manage h1 {
 	margin-bottom: 30px;	
 	font-size: 60px;
 	line-height: 64px;
@@ -176,10 +211,6 @@ h3 {
 	line-height: 36px;
 	color: #666666;
 	text-align: center;	
-}
-
-h3.bluenoshad {
-	color: #01aef0;
 }
 
 h3.orange {
@@ -204,11 +235,6 @@ h3.orange {
 	font-size: 24px;
 	line-height: 28px;
 	margin-bottom: 15px;
-}
-
-.managehalf h3 {
-	text-align: left;
-	margin-bottom: 15px;	
 }
 
 h4 {
@@ -251,7 +277,7 @@ h6	{
 
 
 #sublock h6, #liblock h6 {
-    margin-bottom
+	margin-bottom: 15px;
 }
 
 .reviewrow h6 {
@@ -261,7 +287,7 @@ h6	{
 }
 
 /*box-sizing*/
-nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnred, .smbtngreen, .smbtnredmodal, .smbtngreenmodal, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn,#logoblock, #sublock, #liblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol {
+nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #logoblock, #sublock, #liblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol, #userinfomanage, .listtable, .listtabletitle, .listtablerow, .classlisttable, .classlisttabletitle, .classlisttablerow, .rcrimg, .classescol1, .classescol2 {
 -moz-box-sizing: border-box;
 -ms-box-sizing: border-box;
 -o-box-sizing: border-box;
@@ -271,7 +297,7 @@ box-sizing: border-box;
 
 
 /*transitions*/
-h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnred, .smbtngreen, .smbtnredmodal, .smbtngreenmodal, #mainlearnbtn a, #mainfindrewbtn a,  a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#viewstudyguides, a#submitgrade, a#checkprogress, #uploadtest, #uploadstudyguide, #reviewgrades {
+h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #mainfindrewbtn a,  a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#myclasses, a#enrollinclass, a#viewassign, a#myrewards, .classlisttabletitle {
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -280,12 +306,77 @@ h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnred, .smbtngreen, .smbtnredmod
 }
 
 /*border radius*/
-input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtngreen, .smbtnredmodal, .smbtngreenmodal, #mainlearnbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, .manageinfo {
+input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, #userinfomanage, .listtable, .classlisttable, .rcrimg {
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
+}
+
+/*rounded corner images*/
+.rcrimg {
+	display: block;
+	width: 100%;
+	border: 1px solid #4d5155;
+	background-size: cover;	
+	background-position: center;	
+}
+
+	
+/*lists & list template*/
+.listtable, .classlisttable {
+	width: 100%;
+	height: auto;
+	border: 1px solid #4d5155;
+}
+
+.classlisttable {
+	text-align: center;
+}
+
+.listtabletitle, .listtablerow, .classlisttabletitle, .classlisttablerow {
+	width: 100%;
+	height: 40px;
+}
+
+.listtabletitle, .classlisttabletitle {
+padding: 10px 0 0 0;
+text-align: center;
+font-family: 'ralewaylight', Helvetica, sans-serif;
+font-size: 18px;
+line-height: 22px;
+color: #ffffff;
+border-radius: 5px 5px 0px 0px;
+-moz-border-radius: 5px 5px 0px 0px;
+-ms-border-radius: 5px 5px 0px 0px;
+-o-border-radius: 5px 5px 0px 0px;
+-webkit-border-radius: 5px 5px 0px 0px;
+background-color: #01aef0;
+}
+
+.listtablerow, .classlisttablerow {
+	border-top: 1px solid #4d5155;
+}
+
+.listitemname {
+	padding: 13px 0 0 15px; 
+	float: left;
+}
+
+.listviewbutton {
+	padding: 8px 8px 0 0; 
+	float: right;
+}
+
+.listviewbutton:after {
+	content: "";
+	display: block;
+	clear: both;	
+}
+
+.classlisttablerow {
+	padding-top: 13px; 
 }
 
 
@@ -373,7 +464,7 @@ opacity:1;
 
 
 /*buttons*/
-.smbtn, .smbtnblue, .smbtngreen, .smbtnred, .smbtngreenmodal, .smbtnredmodal {
+.smbtn, .smbtnblue, .smbtngreenmodal, .smbtnredmodal {
 font-family: Helvetica, sans-serif;
 font-size: 14px;
 color: #ffffff;
@@ -396,24 +487,6 @@ border: 1px solid #2690be;
 background-color: #01aef0;
 }
 
-.smbtngreen {
-width: 48%;
-max-width: 100px;
-display: block;
-float: left;
-margin-right: 4%;
-border: 1px solid #3b9a47;
-background-color: #13cf56;
-}
-
-.smbtnred {
-width: 48%;
-max-width: 100px;
-display: block;
-border: 1px solid #b40000;
-background-color: #ff0000;
-}
-
 .smbtngreenmodal {
 width: 100px;
 display: inline-block;
@@ -429,7 +502,30 @@ background-color: #ff0000;
 margin-right: 8px;
 }
 
-.smbtn:hover, .smbtnblue:hover, .smbtngreen:hover, .smbtnred:hover, .smbtngreenmodal:hover, .smbtnredmodal:hover {
+.managebtn, .classdetbtn {
+font-family: 'ralewaylight', Helvetica, sans-serif;	
+color: #ffffff;
+width: 100%;
+height: 40px;
+cursor:pointer;
+}
+
+.managebtn {
+font-size: 16px;
+line-height: 20px;
+border: 1px solid #2690be;
+background-color: #01aef0;
+}
+
+.classdetbtn {
+font-size: 18px;
+line-height: 22px;
+border: 1px solid #c56426;
+background-color: #ee7830;
+margin-bottom: 15px;
+}
+
+.smbtn:hover, .smbtnblue:hover, .smbtngreenmodal:hover, .smbtnredmodal:hover, .managebtn:hover, .classdetbtn:hover {
 -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
@@ -437,7 +533,7 @@ margin-right: 8px;
   transform: scale(1.1);	
 }
 
-.smbtn:focus, .smbtnblue:focus, .smbtngreen:focus, .smbtnred:focus, .smbtngreenmodal:focus, .smbtnredmodal:focus {
+.smbtn:focus, .smbtnblue:focus, .smbtngreenmodal:focus, .smbtnredmodal:focus, .managebtn:focus, .classdetbtn:focus {
 -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
@@ -445,7 +541,7 @@ margin-right: 8px;
   transform: scale(1.1);	
 }
 
-.smbtn:active, .smbtnblue:active, .smbtngreen:active, .smbtnred:active, .smbtngreenmodal:active, .smbtnredmodal:active {
+.smbtn:active, .smbtnblue:active, .smbtngreenmodal:active, .smbtnredmodal:active, .managebtn:active, .classdetbtn:active{
 -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
@@ -817,8 +913,8 @@ display: none;
 }
 
 /*separators*/
-.whiterevsep {
-	background-image: url(../images/panelsepf4f4f4rev.png);
+.orangerevsep {
+	background-image: url(../images/panelseporangerev.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 38px;	
@@ -867,8 +963,9 @@ margin-bottom: 8px;
 }
 
 /*footer*/
-.footer, .push {
-height: 30px;
+footer, .push {
+height: 45px;
+width: 100%;
 }
 
 .footercnt {
@@ -926,7 +1023,7 @@ background-repeat: no-repeat;
 	height: 100%;
 }
 
-#aboutpanel {
+#about {
 	background-color: #f4f4f4;	
 }
 
@@ -937,7 +1034,7 @@ background-repeat: no-repeat;
 	text-align: center;
 }
 
-#aboutpanel2 {
+#about2 {
 background-image: url(../images/notebookpaper.jpg);
 background-position: top center;
 background-size: cover;
@@ -946,7 +1043,7 @@ background-repeat: no-repeat;
 
 #about2cnt {
 	width: 75.260416666667% /*2890/3840*/;
-	padding: 95px 0 70px 0;
+	padding: 85px 0 70px 0;
 	margin: 0 12.369791666667% /*475/3840*/;
 	text-align: center;
 	background-image:url(../images/panelsepf4f4f4.png);
@@ -954,7 +1051,7 @@ background-repeat: no-repeat;
 	background-repeat: no-repeat;
 }
 
-#rewardspanel {
+#rewards {
 	background-color: #01aef0;
 	text-align: center;
 }
@@ -966,13 +1063,7 @@ background-repeat: no-repeat;
 	text-align: center;
 }
 
-#registrationextoffset {
-	height: 150px;
-	margin-top: -150px; 
-	background: transparent; 
-}
-
-#registrationpanel {
+#registration {
 background-image: url(../images/chalkboardbg.jpg);
 background-position: top center;
 background-size: cover;
@@ -981,6 +1072,7 @@ background-repeat: no-repeat;
 
 #regpancnttemp {
 	max-width: 800px;
+	min-height: 384px;
 	padding: 70px 0;
 	margin: 0 auto;
 	text-align: center;
@@ -988,72 +1080,68 @@ background-repeat: no-repeat;
 
 #regpancnt {
 	width: 75.260416666667% /*2890/3840*/;
+	min-height: 384px;
 	padding: 70px 0;
 	margin: 0 12.369791666667% /*475/3840*/;
 	text-align: center;	
 }
 
-#mypointspanel {
+#myacct {
 background-image: url(../images/chalkboardbg.jpg);
 background-position: top center;
 background-size: cover;
 background-repeat: no-repeat;
 }
 
-#mypointspancnt {
+#myacctpancnt {
 	width: 75.260416666667% /*2890/3840*/;
 	padding: 70px 0;
 	margin: 0 12.369791666667% /*475/3840*/;
 	text-align: center;
 }
 
-#teacherintpanel {
-background-image: url(../images/chalkboardbg.jpg);
-background-position: top center;
-background-size: cover;
-background-repeat: no-repeat;
-}
-
-#teacherintpancnt {
-	width: 75.260416666667% /*2890/3840*/;
-	padding: 70px 0;
-	margin: 0 12.369791666667% /*475/3840*/;
-	text-align: center;
-}
-
-#submitgradepanel {
-	background-color: #f4f4f4;
-}
-
-#submitgradepancnt {
-	width: 100%;
-	padding: 70px 0;
-	text-align: center;
-}
-
-#managepanel {
+#manage {
 	background-color: #ee7830;
-	background-image:url(../images/panelsepf4f4f4.png);
-	background-position: top center;
-	background-repeat: no-repeat;
 }
 
 #managepancnt {
-	width: 75.260416666667% /*2890/3840*/;
-	padding: 95px 0 70px 0;
-	margin: 0 12.369791666667% /*475/3840*/;
+	width: 100%;
+	padding: 55px 0 70px 0;
 	text-align: center;
 }
 
-#reviewgradepanel {
-	background-color: #f4f4f4;
+#about2cnt:after, #rewardspancnt:after, #myacctpancnt:after, #managepancnt:after, #regpancnttemp:after, #regpancnt:after {
+	content: "";
+	display: block;
+	clear: both;	
 }
 
-#reviewgradepancnt {
+#infographicpancnt {
+	width: 75.260416666667% /*2890/3840*/;
 	padding: 70px 0;
-	text-align: center;
-	width: 75.260416666667% /*2890/3840*/;
 	margin: 0 12.369791666667% /*475/3840*/;
+}
+
+#listtemplatecnt {
+	width: 500px;
+	padding: 70px 0;
+	margin: 0 auto;
+}
+
+#myclassespancnt {
+	width: 52.083333333333% /*2000/3840*/;
+	min-height: 850px;
+	padding: 70px 0 0 0;
+	margin: 0 23.958333333333% /*920/3840*/;
+	text-align: center;	
+}
+
+.indclassespancnt {
+	width: 52.083333333333% /*2000/3840*/;
+	min-height: 650px;
+	padding: 70px 0;
+	margin: 0 23.958333333333% /*920/3840*/;
+	text-align: center;	
 }
 
 #rewcentpancnt {
@@ -1068,14 +1156,19 @@ background-repeat: no-repeat;
 	text-align: center;
 }
 
-#about2cnt:after, #rewardspancnt:after, #mypointspancnt:after, #submitgradepancnt:after, #managepancnt:after, #regpancnttemp:after, #regpancnt:after, #teacheracct:after {
-	content: "";
-	display: block;
-	clear: both;	
+
+@media all and (max-width:1400px){
+
+    .social-media-banner{
+        display:none !important;
+    }
 }
 
-
-
+@media all and (max-width:1150px ) {
+    .social-media-icon{
+        display: none !important;
+    }
+}
 
 
 

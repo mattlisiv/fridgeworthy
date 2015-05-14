@@ -32,23 +32,7 @@
 
 <div class="mainwrap">
 
-   @include('home.partials.StickyNavigation')
-
-    <!--start login-->
-    <div id="loginmodal" class="popup">
-        <div class="popup-container">
-            <div class="popup-content">
-                <h5>Login Here</h5>
-                <form action="#" method="post">
-                    <input type="text" placeholder="username"/>
-                    <input type="text" placeholder="password"/> <br>
-                    <button type="button" value="submit" class="popup-close js-popup-close modal-close smbtnredmodal">cancel</button>
-                    <button type="button" value="submit" class="smbtngreenmodal">submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
+   @include('navigation.masternav')
 
     <!--rewardcenter-->
     <section id="rewardscenterpanel">

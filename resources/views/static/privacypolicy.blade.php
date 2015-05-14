@@ -1,6 +1,7 @@
 @extends('static.staticmaster')
 
 
+
 @section('content')
 
 		<div class="row">

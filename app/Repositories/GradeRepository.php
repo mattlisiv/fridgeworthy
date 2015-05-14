@@ -28,4 +28,13 @@ class GradeRepository implements GradeRepositoryInterface{
     }
 
 
+    public function findWithAssignment($id)
+    {
+        return Grade::findOrFail($id)->with('assignment');
+    }
+
+    public function store($input)
+    {
+       return Grade::create($input);
+    }
 }

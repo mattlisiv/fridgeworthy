@@ -1,5 +1,6 @@
+
 <!--start about-->
-<section id="aboutpanel">
+<section id="about">
     <div id="aboutcnt">
         <h3>We improve students' academic performance</h3>
 
@@ -11,7 +12,7 @@
 
         <h1 class="orange">hard work pays off.</h1>
 
-        <img src="/images/goldstarrule.svg" align="golden stars">
+        <img src="{{asset('images/goldstarrule.svg')}}" align="golden stars">
 
         <p>At Fridgeworthy, our goal is to incite academic success by rewarding the combined
             efforts of students, teachers, and parents. We know sometimes students need
@@ -21,19 +22,19 @@
             effort that engages the entire community. With our proud partners, we present exciting rewards that can be redeemed by Fridgeworthy members.</p>
 
     </div>
-    <!--start about 2 div-->
-    <div id="aboutpanel2">
+    <!--start about 2-->
+    <section id="about2">
         <div id="about2cnt">
             <div class="forthecol" id="studentscol">
-                <div id="studentscirc" ></div>
+                <div id="studentscirc"></div>
                 <h5>for the students...</h5>
-                <p id="studentsdescrip">Students earn points based on their quality of grades. These points can be redeemed for deals and items from local businesses and organizations.</p><br>
+                <p id="studentsdescrip">Students earn points based on their quality of grades. These rewards can be redeemed for deals and items from businesses and organizations.</p><br>
             </div>
 
             <div class="forthecol" id="teacherscol">
                 <div id="teacherscirc"></div>
                 <h5>for the teachers...</h5>
-                <p id="teachersdescrip">Teachers can upload study material and verify students' grades in order to help students suceed academically.</p><br>
+                <p id="teachersdescrip">Teachers can track students grades and accumulate their own points to use toward rewards.</p><br>
             </div>
 
             <div class="forthecol" id="parentscol">
@@ -51,5 +52,7 @@
 
             <div class="clear"></div><!--clear all 4forthecolumns-->
         </div><!--end about2cnt-->
-    </div><!--end about2-->
+    </section><!--end about2-->
 </section><!--end about-->
+
+

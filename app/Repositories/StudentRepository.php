@@ -22,7 +22,7 @@ class StudentRepository implements StudentRepositoryInterface{
 
     public function find($id)
     {
-        // TODO: Implement find() method.
+        return Student::findOrFail($id);
     }
 
     public function findWithCourses($id)

@@ -1,5 +1,25 @@
-@media (max-width:1220px) {
+@media (max-width:1300px) {
+/*panel wrappers*/
+#myclassespancnt, .indclassespancnt {
+	width: 90%;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
 
+.indclassespancnt {
+	min-height: 885px;
+}
+
+/*my classes & individual classes*/
+.classescol1, .classescol2 {
+	float: none;
+	width: 100%;
+	height: auto;
+}
+}
+
+@media (max-width:1220px) {
 /*about 2*/
 .forthecol {
 	width: 46%;
@@ -74,6 +94,7 @@ ul.dropdownmenu li a {
 padding: 8px;	
 }
 
+
 /*rewards center*/
 .rewardbox {
 width: 48%;
@@ -87,6 +108,22 @@ height: 380px;
 #rewcentpancnt h1 {
 	font-size: 70px;
 	line-height: 62px;
+}
+
+/*infographic*/
+#infographicpancnt {
+	width: 90%;
+	margin: 0 5%;
+	padding: 50px 0;
+}
+
+#infographic-v {
+		width: 100%;
+		display: block;
+}
+
+#infographic-h {
+	display: none;
 }
 
 /*rewards center details*/
@@ -105,7 +142,6 @@ padding-right: 0;
 }
 }
 
-
 @media (max-width:900px) {
 /*panel wrappers*/
 #regpancnttemp {
@@ -114,14 +150,8 @@ padding-right: 0;
 	padding: 50px 0;
 }
 
-#reviewgradepancnt {
-	width: 90%;
-	margin: 0 5%;
-	padding: 50px 0;
-}
-
 /*my points*/
-a#viewstudyguides, a#submitgrade, a#checkprogress {
+a#myclasses, a#enrollinclass, a#viewassign, a#myrewards {
 height: 95px;
 width: 165px;
 padding-top: 70px;
@@ -129,19 +159,6 @@ margin-bottom: 0;
 }
 
 .pointscirc h5 {
-	font-size: 16px;
-	line-height: 20px;
-}
-
-/*interact*/
-a#uploadtest, a#uploadstudyguide, #reviewgrades {
-height: 95px;
-width: 165px;
-padding-top: 70px;
-margin-bottom: 0;
-}
-
-.teachcirc h5 {
 	font-size: 16px;
 	line-height: 20px;
 }
@@ -220,7 +237,7 @@ text-align: right;
 }
 
 /*footer*/
-.footertxt{
+.footertxt {
 	display: block;
 	margin-right: 0;
 	margin-bottom: 2px;	
@@ -250,31 +267,9 @@ text-align: right;
 	float: none;
 }
 
-a#viewstudyguides, a#submitgrade {
+a#myclasses, a#enrollinclass, a#viewassign {
 margin-bottom: 30px;	
 }
-
-/*interact*/
-.teachcirc {
-	width: 100%;
-	float: none;
-}
-
-a#uploadtest, a#uploadstudyguide {
-margin-bottom: 30px;	
-}
-
-/*review grades*/
-.reviewrow h6 {
-margin-bottom: 0;
-}
-
-.reviewrow span {
-display: none;
-}
-
-
-
 }
 
 
@@ -295,6 +290,11 @@ h3 {
 h4 {
 	font-size: 18px;	
 }
+
+#myclassespancnt h1, .indclassespancnt h1 {
+	font-size: 70px;
+}
+
 
 /*buttons*/
 #mainlearnbtn a {
@@ -462,7 +462,6 @@ background-color: #2690be;
 	display:block;
 }
 
-
 /*panel wrappers*/
 #home {
 height: 690px;
@@ -529,28 +528,6 @@ img#logomain {
 #regpancnt .smbtn {
 	margin-top: 76px;
 }
-
-/*manage profile*/
-.managehalf {
-	width: 100%;
-	float: none;
-}
-
-#userinfomanage {
-	margin-right: 0;
-}
-
-.manageinfo {
-height: auto;
-width: 90%;	
-padding: 8px 5% 15px;
-}
-
-#mailinginfomanage {
-	margin-top: 16px;
-}
-
-
 }
 
 
@@ -582,19 +559,19 @@ margin: 0 0 10px 0;
 	padding: 50px 0;
 }
 
-#mypointspancnt {
-	width: 90%;
-	margin: 0 5%;
-	padding: 50px 0;
-}
-
-#teacherintpancnt {
+#myacctpancnt {
 	width: 90%;
 	margin: 0 5%;
 	padding: 50px 0;
 }
 
 #submitgradepancnt {
+	width: 90%;
+	margin: 0 5%;
+	padding: 50px 0;
+}
+
+#managepancnt {
 	width: 90%;
 	margin: 0 5%;
 	padding: 50px 0;
@@ -623,11 +600,20 @@ margin: 0 0 10px 0;
 	margin-bottom: 0;
 }
 
-
-/*submit a grade*/
-form#submitgrade {
+/*manage profile*/
+#userinfomanage, #manageinnerwrap, #managebtns {
 	width: 100%;
 }
+
+#userinfomanage {
+	margin-bottom: 12px;
+}
+
+.managebtn {
+	width: 200px;
+	margin: 0 auto;
+}
+
 
 /*rewards center*/
 .rewardbox {
@@ -657,6 +643,36 @@ margin-bottom: 30px;
 #regpancnt .smbtn {
 	margin-top: 0;
 }
+
+}
+
+@media(max-width: 500px){
+/*panel wrappers*/
+#listtemplatecnt {
+	width: 90%;
+	margin: 0 5%;
+	padding: 50px 0;
+}
+
+#myclassespancnt, .indclassespancnt {
+	min-height: 390px;
+}
+
+
+/*my classes & individual classes*/
+.classdetbox {
+	float: none;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 15px;
+}
+
+.classdetbox:nth-of-type(odd) {
+margin-right: none;
+}
+
+#mainclassimg, .classdetbox .rcrimg {
+	display: none;
 }
 
 
@@ -709,55 +725,6 @@ img#logomain {
 	float: none;
 }
 
-
-/*review grades*/
-.reviewrow {
-display: block;
-}
-
-.namecell {
-	width: 33%;
-	padding-left: 3%;
-}
-
-.assell {
-	width: 22%;
-}
-
-.gradecell {
-	width: 22%;
-}
-
-.statuscell {
-	width: 20%;
-	padding-right: 3%;
-
-}
-
-.namecell, .asscell, .gradecell, .statuscell {
-	margin: 0 0 5px 0;
-	padding-top: 10px;
-	display: inline-block;
-	float: left;
-	border: none;
-}
-
-.responsecell:before {
-	clear: both;
-	display: block;
-	content: "";	
-}
-
-.responsecell {
-	width: 100%;
-	display: block;	
-	padding: 0 0 15px 0;
-}
-
-.responsecell button:first-of-type {
-	margin-left: 3%;
-}
-
 /*rewards center*/
 .rewardbox {
 height: 380px;
@@ -767,7 +734,7 @@ height: 380px;
 
 @media(max-width: 460px){
 /*global*/
-#mypointspancnt h1 span.pointshighlight {
+#myacctpancnt h1 span.pointshighlight {
 font-size: 1.25em;
 line-height: 51px;	
 }
@@ -782,7 +749,7 @@ h1 {
 	margin-bottom: 30px;	
 }
 
-#regpancnt h1, #mypointspancnt h1, #teacherintpancnt h1, #submitgradepanel h1, #managepanel h1 {
+#regpancnt h1, #myacctpancnt h1, #manage h1 {
 	font-size: 50px;
 	line-height: 42px;
 }
@@ -889,36 +856,12 @@ padding-top: 60px;
 .responsive-menu .menu-header li {
 		text-align: center;
 }
-
-/*panel wrappers*/
-#registrationextoffset {
-	height: 128px;
-	margin-top: -128px; 
-	background: transparent; 
-}
 }
 
 @media(max-width: 400px){
 	/*modals*/
 .popup-content input{ 
 
-}
-/*submit grade*/
-#submitgradepancnt #selectteacher, #submitgradepancnt #selectassn {
-	float: none;
-	width: 100%;
-	margin-bottom: 8px;
-	margin-right: 0;
-}
-
-#submitgradepancnt #numgrade {
-	float: none;
-	width: 100%;
-	margin-bottom: 8px;
-}
-
-#submitgradepancnt .smbtn {	
-	float: right;
 }
 
 /*rewards center*/

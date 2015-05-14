@@ -96,6 +96,17 @@ class Student extends User{
         return $coupons;
     }
 
+    public function gradesByCourse($id){
+
+        return Grade::select('grades.*')
+            ->leftJoin('assignments','grades.assignment_id','=','assignments.id')
+            ->leftJoin('courses','courses.id','=','assignments.course_id')
+            ->where('grades.student_id','=',$this->id)
+            ->where('courses.id','=',$id)
+            ->with('assignment');
+
+    }
+
 
 }
 

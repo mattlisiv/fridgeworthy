@@ -25,6 +25,7 @@ class Grade extends Model{
     ];
 
 
+
     public function student(){
         
         return $this->belongsTo('App\User','student_id');
@@ -35,6 +36,8 @@ class Grade extends Model{
 
         return $this->belongsTo('App\Assignment','assignment_id')->with('course');
     }
+
+
 
 
 

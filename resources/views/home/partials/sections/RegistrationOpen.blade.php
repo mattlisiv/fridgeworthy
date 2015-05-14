@@ -1,7 +1,6 @@
-<!--registration-->
-<div id="registrationextoffset"></div>
-<section id="registrationpanel">
-    <div id="regpancnt">
+
+<section id="registration">
+    <div id="regpancnttemp">
         <h1 class="whitedkgray">register here</h1>
 
         <form action="{{action('HomeController@register')}}" method="post" id="signup">
