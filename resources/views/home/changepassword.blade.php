@@ -28,26 +28,26 @@
             <div style="height:400px">
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
-                    {!! Form::open(['url'=>'']) !!}
+                    {!! Form::open(['url'=>'update_password']) !!}
                     <div>
                         <br>
                         <h6>{!! Form::label('password', 'Enter current password',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::password('name',null,['style'=>'padding:10px']) !!}</h6>
+                        <h6>{!! Form::password('password',null,['style'=>'padding:10px;text-align:center']) !!}</h6>
                     </div>
                     <br>
                     <br>
                     <div>
-                        <h6>{!! Form::label('new_password', 'Enter new password',['style'=>'margin:25px 0px']) !!}</h6>
+                        <h6>{!! Form::label('newpassword', 'Enter new password',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::password('name',null,['style'=>'padding:10px']) !!}</h6>
+                        <h6>{!! Form::password('newpassword',null,['style'=>'padding:10px;text-align:center']) !!}</h6>
                     </div>
                     <div>
                     <br>
                     <br>
-                        <h6>{!! Form::label('confirm_password', 'Confirm new password',['style'=>'margin:25px 0px']) !!}</h6>
+                        <h6>{!! Form::label('newpassword_confirmation', 'Confirm new password',['style'=>'margin:25px 0px;text-align:center']) !!}</h6>
                         <br>
-                        <h6>{!! Form::password('name',null,['style'=>'padding:10px']) !!}</h6>
+                        <h6>{!! Form::password('newpassword_confirmation',null,['style'=>'padding:10px;text-align:center']) !!}</h6>
                     </div>
                     <br>
                     <br>

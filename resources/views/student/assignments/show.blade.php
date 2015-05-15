@@ -42,7 +42,13 @@
                     <br>
                     <br>
                     <br>
-                    <a href="{{action('AssignmentManagerController@submitGrade',$assignment->id)}}"><button type="button" value="view grades" class="classdetbtn">submit grade</button></a>
+                    @if(is_null($grade))
+                        <a href="{{action('AssignmentManagerController@submitGrade',$assignment->id)}}"><button type="button" value="view grades" class="classdetbtn">submit grade</button></a>
+                    @else
+                        <h5>You have submitted a grade of <span style="font-weight: bold;color:white">{{$grade->numeric_grade}}</span> at {{$grade->created_at}} for this assignment.
+                            The grade is currently <span style="font-weight: bold;color:white;">{{$grade->status}}</span>.
+                        </h5>
+                    @endif
                 </div>
             </div>
 

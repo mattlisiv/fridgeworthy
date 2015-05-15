@@ -18,7 +18,7 @@
                     @if(is_null($user))
                         @include('home.partials.sections.GetInvolved')
                     @else
-                        <div class="fb-like" data-href="https://www.facebook.com/fridgeworthyrewards?fref=ts&amp;ref=br_tf" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                      <!--  <div class="fb-like" data-href="https://www.facebook.com/fridgeworthyrewards?fref=ts&amp;ref=br_tf" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div> -->
                     @endif
                 </div><!--end homeblocks-->
             </div>

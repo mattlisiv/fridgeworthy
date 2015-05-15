@@ -98,6 +98,7 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::post('store_assignment',"AssignmentManagerController@storeAssignment");
     Route::post('update_assignment',"AssignmentManagerController@updateAssignment");
     Route::get('mygradebook/{id}/edit',"AssignmentManagerController@editGrade");
+    Route::post('update_grade',"AssignmentManagerController@updateGrade");
 
 });
 
@@ -116,6 +117,7 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
 Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['App\Student','App\Teacher','App\Guardian','App\BusinessManager','App\Admin']), function(){
 
     Route::get("changepassword","HomeController@changePassword");
+    Route::post("update_password","HomeController@updatePassword");
 });
 
 

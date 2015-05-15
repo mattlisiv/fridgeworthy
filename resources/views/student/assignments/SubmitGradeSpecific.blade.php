@@ -30,24 +30,33 @@
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     <br>
-                    {!! Form::open(['url'=>'']) !!}
+                    @if(count($assignments))
+                    {!! Form::open(['url'=>'store_grade']) !!}
                     <div>
                         <h6>{!! Form::label('Name', 'Assignment:',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$assignments->lists('name','id'), 'default',['class'=>'customSelect']) !!}</h6>
+                        <h6>{!! Form::select('assignment_id',array('default'=>'Please Select ') +$assignments->lists('name','id'), 'default',['class'=>'customSelect']) !!}</h6>
 
                     </div>
                     <br>
                     <br>
                     <div>
-                        <h6>{!! Form::label('grade', 'Enter in a numeric grade.') !!}</h6>
+                        <h6>{!! Form::label('numeric_grade', 'Enter in a numeric grade.') !!}</h6>
                         <br>
-                        <h6>{!! Form::text('grade',null) !!}</h6>
+                        <h6>{!! Form::text('numeric_grade',null) !!}</h6>
                         <br>
                     </div>
                     <br>
                     {!! Form::submit('Submit',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
+                    @else
+                     <br>
+                     <br>
+                     <h5>There are no current assignments for {{$course->name}} that require your submission.</h5>
+                     <br>
+                     <br>
+                     <h6>Keep up the good work and check back later!</h6>
+                    @endif
                 </div>
                 </form>
             </div>

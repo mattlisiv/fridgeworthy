@@ -120,6 +120,12 @@ class HomeController extends Controller {
         return view('home.changepassword',compact('user'));
     }
 
+    public function updatePassword(Requests\UpdatePasswordRequest $request){
+
+        var_dump($request->all());
+
+    }
+
     public function forgotPassword(){
 
         $user = Auth::user();

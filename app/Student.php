@@ -80,6 +80,15 @@ class Student extends User{
 
     }
 
+    public function upcomingAssignments(){
+        return Assignment::select('assignments.*')
+            ->leftJoin('courses','courses.id','=','assignments.course_id')
+            ->leftJoin('course_user','course_user.course_id','=','courses.id')
+            ->where('course_user.user_id','=',$this->id)->orderBy('assignments.due_date')
+            ->get();
+
+    }
+
     public function parent(){
 
         return $this->belongsToMany('App\User','parent_student','student_id','parent_id');
@@ -95,6 +104,19 @@ class Student extends User{
         $coupons = Coupon::where('user_id','=',$this->id)->with('reward');
         return $coupons;
     }
+
+    public function unsubmittedAssignments(){
+
+        return Assignment::select('assignments.*')
+            ->leftJoin('courses','courses.id','=','assignments.course_id')
+            ->leftJoin('course_user','course_user.course_id','=','courses.id')
+            ->leftJoin('grades','grades.assignment_id','=','assignments.id')
+            ->where('course_user.user_id','=',$this->id)
+            ->whereRaw(' NOT EXISTS (SELECT * FROM assignments WHERE student_id = '.$this->id.')');
+
+    }
+
+
 
     public function gradesByCourse($id){
 

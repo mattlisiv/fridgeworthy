@@ -62,7 +62,7 @@ class CourseManagerController extends Controller {
 
 
         if(get_class($user)=='App\Student'){
-            $assignments = $user->assignments()->orderBy('due_date')->get();
+            $assignments = $user->upcomingAssignments();
             return view('student.courses.index',compact('user','courses','assignments'));
         }else if(get_class($user)=='App\Teacher'){
             $assignments = $user->assignments()->orderBy('due_date')->get();

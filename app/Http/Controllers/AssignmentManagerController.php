@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Interfaces\AssignmentRepositoryInterface;
 use App\Repositories\Interfaces\CourseRepositoryInterface;
 use App\Repositories\Interfaces\GradeRepositoryInterface;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,11 +16,12 @@ class AssignmentManagerController extends Controller {
 
 
     function __construct(CourseRepositoryInterface $courseRepositoryInterface,AssignmentRepositoryInterface $assignmentRepositoryInterface,
-                            GradeRepositoryInterface $gradeRepositoryInterface){
+                            GradeRepositoryInterface $gradeRepositoryInterface, UserRepositoryInterface $userRepositoryInterface){
 
         $this->courseRepository = $courseRepositoryInterface;
         $this->assignmentRepository = $assignmentRepositoryInterface;
         $this->gradeRepository = $gradeRepositoryInterface;
+        $this->userRepository = $userRepositoryInterface;
     }
 
     public function createAssignment($id){
@@ -53,7 +55,8 @@ class AssignmentManagerController extends Controller {
         $user = Auth::user();
         $assignment = $this->assignmentRepository->find($id);
         if(get_class($user)=='App\Student'){
-            return view('student.assignments.show',compact('user','assignment'));
+            $grade = $user->grades()->where('assignment_id','=',$assignment->id)->first();
+            return view('student.assignments.show',compact('user','assignment','grade'));
         }else if(get_class($user)=='App\Teacher'){
             return view('teacher.assignments.show',compact('user','assignment'));
 
@@ -72,9 +75,42 @@ class AssignmentManagerController extends Controller {
 
     }
 
-    public function editGrade(){
+    public function editGrade($id){
 
+       $user = Auth::user();
+       $grade = $this->gradeRepository->find($id);
+       return view('teacher.grades.edit',compact('user','grade'));
 
+    }
+
+    public function updateGrade(Requests\UpdateGradeRequest $request){
+
+        var_dump($request->all());
+        $grade = $this->gradeRepository->find($request['grade_id']);
+        $grade->status = 'accepted';
+        if($request['action'] == 'edit'){
+
+            $grade->numeric_grade = $request['revised_grade'];
+        }
+        $grade->save();
+        $student = $this->userRepository->find($grade->student_id);
+        if($grade->numeric_grade>=90){
+
+            $student->points +=3;
+            $student->save();
+
+        }else if($grade->numeric_grade>=80) {
+
+            $student->points+=2;
+            $student->save();
+
+        }else
+        if($grade->numeric_grade>=70){
+
+            $student->points+=1;
+            $student->save();
+        }
+        return redirect()->action('CourseManagerController@viewMyCourses');
     }
 
     public function submitGrade($id){
@@ -106,8 +142,9 @@ class AssignmentManagerController extends Controller {
     public function submitAssignment($id){
 
         $user = Auth::user();
-        $assignments = $this->courseRepository->find($id)->assignments;
-        return view('student.assignments.submitassignment',compact('user','assignments'));
+        $course = $this->courseRepository->find($id);
+        $assignments = $user->unsubmittedAssignments()->where('courses.id','=',$course->id)->get();
+        return view('student.assignments.SubmitGradeSpecific',compact('user','assignments','course'));
     }
 
     public function storeAssignment(Requests\StoreAssignmentRequest $request){
