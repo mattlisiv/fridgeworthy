@@ -41,7 +41,7 @@
                         <br>
                         <h6>{!! Form::label('Name', 'Numeric Grade:',['style'=>'margin:25px 0px;']) !!}</h6>
                         <br>
-                        <h6>{!! Form::text('numeric_grade',null,['style'=>'padding:10px;text-align:center;']) !!}</h6>
+                        <h6>{!! Form::text('numeric_grade',null,['style'=>'text-align:center;']) !!}</h6>
                         <br>
                         {!! Form::hidden('assignment_id',$assignment->id) !!}
                     </div>

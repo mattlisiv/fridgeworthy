@@ -36,7 +36,7 @@
                     <div>
                         <h6>{!! Form::label('Name', 'Assignment name:',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::text('name',null,['style'=>'padding:10px']) !!}</h6>
+                        <h6>{!! Form::text('name',null,['style'=>'text-align:center']) !!}</h6>
                     </div>
                     <br>
                     <div>
@@ -49,7 +49,7 @@
                         <br>
                         <h6>{!! Form::label('due_date', 'Select a due date:',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::text('due_date', 'Select Date', array('id' => 'datepicker')) !!}</h6>
+                        <h6>{!! Form::text('due_date', 'Select Date', array('id' => 'datepicker','style'=>'text-align:center')) !!}</h6>
                     </div>
                     <br>
                     <br>

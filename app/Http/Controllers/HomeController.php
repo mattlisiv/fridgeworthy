@@ -8,6 +8,7 @@ use App\School;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -122,8 +123,27 @@ class HomeController extends Controller {
 
     public function updatePassword(Requests\UpdatePasswordRequest $request){
 
-        var_dump($request->all());
+        $user = Auth::user();
 
+        if(Hash::check($request['password'],$user->password)){
+
+
+            $user->password = bcrypt($request['newpassword']);
+            $user->save();
+
+            return redirect()->action('HomeController@passwordChanged');
+        }else{
+
+            return redirect()->back();
+        }
+
+
+    }
+
+    public function passwordChanged(){
+
+        $user = Auth::user();
+        return view('home.changedpassword',compact('user'));
     }
 
     public function forgotPassword(){

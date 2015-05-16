@@ -117,6 +117,7 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
 Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['App\Student','App\Teacher','App\Guardian','App\BusinessManager','App\Admin']), function(){
 
     Route::get("changepassword","HomeController@changePassword");
+    Route::get("passwordchanged","HomeController@passwordChanged");
     Route::post("update_password","HomeController@updatePassword");
 });
 

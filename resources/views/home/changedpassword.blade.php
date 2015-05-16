@@ -9,9 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
     @include('js.maincssandjs')
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-
 </head>
 
 <body class="innerbg" ontouchstart="">
@@ -20,63 +17,48 @@
 
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Logout')
+    @include('home.partials.modal.Login')
 
 
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Edit Assignment For {{$assignment->name}}</div>
+            <div class="listtabletitle">Password changed.</div>
 
-            <div style="height:550px">
-                <div style="color: #808080;font-size:16px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
-                    <br>
-                    <br>
-                    {!! Form::open(['url'=>'update_assignment']) !!}
-                    <div>
-                        <h6>{!! Form::label('Name', 'Assignment name:',['style'=>'margin:25px 0px']) !!}</h6>
-                        <br>
-                        <h6>{!! Form::text('name',$assignment->name,['style'=>'text-align:center']) !!}</h6>
-                    </div>
+            <div>
+                <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     <div>
-                        <h6>{!! Form::label('description','Edit Description',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        {!! Form::textarea('description',$assignment->description,['style'=>'padding:10px']) !!}
-                        {!!Form::hidden('assignment_id',$assignment->id)!!}
-                    </div>
-                    <div>
                         <br>
-                        <h6>{!! Form::label('due_date', 'Select a due date:',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        <h6>{!! Form::text('due_date', $assignment->due_date->format('m/d/Y'), array('id' => 'datepicker','style'=>'text-align:center')) !!}</h6>
+                        <h5>Your password has been changed.</h5>
+                        <br>
+                        <br>
+                        <br>
+
+                        <a href="{{action('HomeController@index')}}"><button class="classdetbtn">Return Home</button></a>
+                        <br>
                     </div>
                     <br>
                     <br>
-                    {!! Form::submit('Update',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
+                    <br>
+
                 </div>
             </div>
         </div>
 
-</div><!--end list table-->
-</section><!--end list template-->
+    </section><!--end list template-->
 
 
 
-<div class="push"></div>
+    <div class="push"></div>
 </div><!--end mainwrap-->
 <!--footer-->
 
 
 @include('home.partials.Footer')
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<script>
-    $(function() {
-        $( "#datepicker" ).datepicker();
-    });
-</script>
+
 <!--responsive menu-->
 <script type="text/javascript">
     jQuery(function($){
