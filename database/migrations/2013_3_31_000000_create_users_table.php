@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique();
             $table->string('parent_email');
             $table->integer('points')->unsigned();
-			$table->string('password', 60);
+			$table->string('password', 255);
             $table->enum('status',['active','pending','suspended','deactivated']);
 			$table->rememberToken();
 			$table->timestamps();
