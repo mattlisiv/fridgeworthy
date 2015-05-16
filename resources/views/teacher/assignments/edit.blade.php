@@ -42,7 +42,7 @@
                     <div>
                         <h6>{!! Form::label('description','Edit Description',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
-                        {!! Form::textarea('description',$assignment->description,['style'=>'padding:10px']) !!}
+                        {!! Form::textarea('description',$assignment->description,null) !!}
                         {!!Form::hidden('assignment_id',$assignment->id)!!}
                     </div>
                     <div>

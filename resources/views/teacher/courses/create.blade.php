@@ -8,23 +8,7 @@
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-    <!--CSS links-->
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/pages.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
-
-    <!--JS links-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.sticky.js"></script>
-    <script type="text/javascript" src="js/retina.min.js"></script>
-    <script type="text/javascript" src="js/jquery.stepframemodal.js"></script>
-    <script type="text/javascript" src="js/fridgeworthy.js"></script>
-
-    <!--favicon-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    @include('js.maincssandjs')
 </head>
 
 <body class="innerbg" ontouchstart="">
@@ -48,21 +32,20 @@
                         <div>
                             <h6>{!! Form::label('Name', 'Class name:',['style'=>'margin:25px 0px']) !!}</h6>
                             <br>
-                            <h6>{!! Form::text('name',null,) !!}</h6>
+                            <h6>{!! Form::text('name',null,['style'=>'text-align:center']) !!}</h6>
                         </div>
-                            <br>
+                        <br>
                         <div>
-                            <h6>{!! Form::label('description', 'Give a description of the course:',['style'=>'margin:25px 0px']) !!}</h6>
+                            <h6>{!! Form::label('description', 'Give a description of the course:',null) !!}</h6>
                             <br>
-                            <h6>{!! Form::textarea('description',null,['style'=>'padding:10px']) !!}</h6>
+                            <h6>{!! Form::textarea('description',null,null) !!}</h6>
                         </div>
-                            <br>
+                        <br>
                         {!! Form::submit('Create Class',['class'=>'classdetbtn']) !!}
                         {!! Form::close()!!}
-                        </div>
-                </form>
                 </div>
             </div>
+        </div>
 
         </div><!--end list table-->
     </section><!--end list template-->
