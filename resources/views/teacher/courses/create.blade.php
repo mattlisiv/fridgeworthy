@@ -38,7 +38,9 @@
                         <div>
                             <h6>{!! Form::label('description', 'Give a description of the course:',null) !!}</h6>
                             <br>
-                            <h6>{!! Form::textarea('description',null,null) !!}</h6>
+                            <div style="width: 70%;margin:0 auto">
+                            {!! Form::textarea('description',null,['style'=>'margin: 0 auto;width:100%']) !!}
+                            </div>
                         </div>
                         <br>
                         {!! Form::submit('Create Class',['class'=>'classdetbtn']) !!}
