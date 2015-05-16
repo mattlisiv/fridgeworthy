@@ -48,7 +48,7 @@
                         <div>
                             <h6>{!! Form::label('Name', 'Class name:',['style'=>'margin:25px 0px']) !!}</h6>
                             <br>
-                            <h6>{!! Form::text('name',null,['style'=>'padding:10px']) !!}</h6>
+                            <h6>{!! Form::text('name',null,) !!}</h6>
                         </div>
                             <br>
                         <div>

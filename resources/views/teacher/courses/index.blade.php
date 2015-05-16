@@ -57,7 +57,7 @@
             <div class="classlisttable viewupcomingassign">
                 <div class="classlisttabletitle">upcoming assignments</div>
                 @if(count($assignments))
-                    @for($i = 0; $i<3 || $i > count($assignments); $i++)
+                    @for($i = 0; $i<3 && $i<count($assignments) ; $i++)
                         <div class="classlisttablerow"><p><a href="{{action('AssignmentManagerController@viewAssignment',$assignments[$i]->id)}}" class="plinkwhite">{{$assignments[$i]->name}}</a></p></div>
                     @endfor
                 @else
