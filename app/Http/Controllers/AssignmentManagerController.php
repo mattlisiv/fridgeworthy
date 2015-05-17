@@ -17,11 +17,14 @@ class AssignmentManagerController extends Controller {
 
     function __construct(CourseRepositoryInterface $courseRepositoryInterface,AssignmentRepositoryInterface $assignmentRepositoryInterface,
                             GradeRepositoryInterface $gradeRepositoryInterface, UserRepositoryInterface $userRepositoryInterface){
-
+        //Register Repositories
         $this->courseRepository = $courseRepositoryInterface;
         $this->assignmentRepository = $assignmentRepositoryInterface;
         $this->gradeRepository = $gradeRepositoryInterface;
         $this->userRepository = $userRepositoryInterface;
+
+        //Handle Course Management
+        $this->middleware('CourseVerification', ['only' => ['createAssignment','viewGradeBook','submitAssignment','viewGrades']]);
     }
 
     public function createAssignment($id){

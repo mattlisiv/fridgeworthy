@@ -72,10 +72,10 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     /**User Routes **/
     Route::get("account","AccountController@index");
     Route::get("mycourses","CourseManagerController@viewMyCourses");
-    Route::get("course/{id}","CourseManagerController@viewCourse");
+    Route::get("course/{id}",['as'=>'id','uses'=>"CourseManagerController@viewCourse"]);
     Route::get("myassignments","AssignmentManagerController@viewMyAssignments");
     Route::get("myassignments/{id}","AssignmentManagerController@viewAssignment");
-    Route::get("course/{id}/viewgrades","AssignmentManagerController@viewGrades");
+    Route::get("course/{id}/viewgrades",['as'=>'id','uses'=>"AssignmentManagerController@viewGrades"]);
     Route::get("mygrades/{id}","AssignmentManagerController@viewIndividualGrade");
     Route::get("myassignments/{id}/submitgrade","AssignmentManagerController@submitGrade");
     Route::post("store_grade","AssignmentManagerController@storeGrade");
@@ -91,8 +91,8 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::post("store_course",['as'=>'store_course','uses'=>'CourseManagerController@storeCourse']);
     Route::get("course/{id}/createassignment", array('as'=>'id','uses'=>'AssignmentManagerController@createAssignment'));
     Route::get("course/{id}/roster",array('as'=>'id','uses'=>'CourseManagerController@managerRoster'));
-    Route::get('course/{course_id}/roster/{student_id}','CourseManagerController@editCourseRoster');
-    Route::get('course/{course_id}/mygradebook','AssignmentManagerController@viewGradeBook');
+    Route::get('course/{id}/roster/{student_id}',array('as'=>'id','uses'=>'CourseManagerController@editCourseRoster'));
+    Route::get('course/{id}/mygradebook',array('as'=>'id','uses'=>'AssignmentManagerController@viewGradeBook'));
     Route::post('update_roster',"CourseManagerController@updateRoster");
     Route::get("myassignments/{id}/edit","AssignmentManagerController@editAssignment");
     Route::post('store_assignment',"AssignmentManagerController@storeAssignment");

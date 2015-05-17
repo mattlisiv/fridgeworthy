@@ -14,6 +14,15 @@ class Course extends Model {
     ];
 
 
+    public function isTeacher(Teacher $teacher){
+
+        if($this->teacher->id==$teacher->id){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function teacher(){
 
         return $this->belongsTo('App\User','teacher_id');

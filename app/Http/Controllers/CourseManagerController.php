@@ -15,6 +15,9 @@ class CourseManagerController extends Controller {
 
         $this->courseRepository = $courseRepositoryInterface;
         $this->studentRepository = $studentRepositoryInterface;
+
+        $this->middleware('CourseVerification', ['only' => ['viewCourse','managerRoster']]);
+
     }
 
     public function createCourse(){
