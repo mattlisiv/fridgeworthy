@@ -20,6 +20,16 @@ class StoreCourseRequest extends Request {
         }
 	}
 
+    public function messages(){
+
+        return [
+          'name.required' => 'Please provide a class name.',
+          'description.required' =>'Please provide a description.',
+          'name.min' => 'Class name must be at least 5 characters.',
+          'description.min' => 'Class description must be at least 10 characters.'
+        ];
+    }
+
 	/**
 	 * Get the validation rules that apply to the request.
 	 *
@@ -32,5 +42,6 @@ class StoreCourseRequest extends Request {
             'description' => 'required|min:10'
 		];
 	}
+
 
 }

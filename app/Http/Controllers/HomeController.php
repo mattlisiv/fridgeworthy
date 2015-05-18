@@ -69,6 +69,20 @@ class HomeController extends Controller {
 
         $input = $request->all();
 
+        $messages = [
+
+            'first_name.required' =>'First name is required.',
+            'first_name.max' => 'First name cannot be more than 50 characters.',
+            'last_name.required' => 'Last name is required.',
+            'last_name.max' => 'Last name cannot be more than 50 characters.',
+            'school_id.required' => 'Please select a school.',
+            'role.required'=> 'Please select whether you are a student or teacher.',
+            'parent_email' => 'A parent email is required if you are a student.',
+            'grade' => 'Please select a grade if you are a student.'
+
+
+        ];
+
         $validator = Validator::make($input, [
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50',
@@ -78,7 +92,7 @@ class HomeController extends Controller {
             'grade'=> 'required_if:role,2',
             'parent_email'=>'required_if:role,2',
             'role'=>'required'
-        ]);
+        ],$messages);
 
         if($validator->fails()){
 

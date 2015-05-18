@@ -73,7 +73,8 @@
                 <button type="submit" class="smbtn" name="register">submit</button>
         </form>
         @if (!$errors->registration->isEmpty())
-            <div class="alert alert-danger">
+            <div style="color:red">
+                <br>
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
                 <ul>
                     @foreach ($errors->registration->all() as $error)

@@ -32,23 +32,33 @@
                         <div>
                             <h6>{!! Form::label('Name', 'Class name:',['style'=>'margin:25px 0px']) !!}</h6>
                             <br>
-                            <h6>{!! Form::text('name',null,['style'=>'text-align:center']) !!}</h6>
+                            <h6>{!! Form::text('name',old('name'),['style'=>'text-align:center']) !!}</h6>
                         </div>
                         <br>
                         <div>
                             <h6>{!! Form::label('description', 'Give a description of the course:',null) !!}</h6>
                             <br>
                             <div style="width: 70%;margin:0 auto">
-                            {!! Form::textarea('description',null,['style'=>'margin: 0 auto;width:100%']) !!}
+                            {!! Form::textarea('description',old('description'),['style'=>'margin: 0 auto;width:100%']) !!}
                             </div>
                         </div>
                         <br>
                         {!! Form::submit('Create Class',['class'=>'classdetbtn']) !!}
                         {!! Form::close()!!}
+                    <br>
+                    @if($errors)
+                        <div style="color:red;margin: 0 auto;text-align: center">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    <br>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
-            </div>
-        </div>
 
+            </div>
         </div><!--end list table-->
     </section><!--end list template-->
 

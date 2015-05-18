@@ -58,11 +58,18 @@
                     {!! Form::submit('Create',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
                 </div>
-                </form>
+                @if($messages)
+                <div style="color:red">
+                    <ul>
+                    @foreach ($message->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
 
-</div><!--end list table-->
 </section><!--end list template-->
 
 
