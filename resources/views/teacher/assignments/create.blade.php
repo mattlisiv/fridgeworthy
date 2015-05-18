@@ -58,10 +58,10 @@
                     {!! Form::submit('Create',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
                 </div>
-                @if($messages)
+                @if($errors)
                 <div style="color:red">
                     <ul>
-                    @foreach ($message->all() as $error)
+                    @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                     </ul>
