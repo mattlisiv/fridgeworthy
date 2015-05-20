@@ -29,9 +29,22 @@ class StoreGradeRequest extends Request {
 	public function rules()
 	{
 		return [
-			'assignment_id'=>'required',
-            'numeric_grade'=>'required'
+			'assignment_id'=>'required|not_in:default',
+            'numeric_grade'=>'required|integer|min:0|max:100'
 		];
 	}
+
+    public function messages(){
+
+        return [
+            'assignment_id.not_in' => 'Please select an assignment.',
+            'numeric_grade.integer'=> 'Please input a grade between 0 and 100.',
+            'numeric_grade.required'=> 'Please input a grade between 0 and 100.',
+            'numeric_grade.max'=> 'Please input a grade between 0 and 100.',
+            'numeric_grade.min'=> 'Please input a grade between 0 and 100.'
+
+
+        ];
+    }
 
 }

@@ -26,16 +26,17 @@
         <div class="listtable">
             <div class="listtabletitle">Submit Grade</div>
 
-            <div style="height:300px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     <br>
                     @if(count($assignments))
                     {!! Form::open(['url'=>'store_grade']) !!}
                     <div>
-                        <h6>{!! Form::label('Name', 'Assignment:',['style'=>'margin:25px 0px']) !!}</h6>
+                        <h6>{!! Form::label('Name', 'Assignment:',['style'=>'text-align:center']) !!}</h6>
                         <br>
-                        <h6>{!! Form::select('assignment_id',array('default'=>'Please Select ') +$assignments->lists('name','id'), 'default',['class'=>'customSelect']) !!}</h6>
+                        <h6>{!! Form::select('assignment_id',array('default'=>'Please Select') +$assignments->lists('name','id'),
+                                'default',['class'=>'customSelect','style'=>'text-indent:50px']) !!}</h6>
 
                     </div>
                     <br>
@@ -43,12 +44,26 @@
                     <div>
                         <h6>{!! Form::label('numeric_grade', 'Enter in a numeric grade.') !!}</h6>
                         <br>
-                        <h6>{!! Form::text('numeric_grade',null) !!}</h6>
+                        <h6>{!! Form::text('numeric_grade',null,['style'=>'text-align:center']) !!}</h6>
                         <br>
+                        @if($errors)
+                            <div style="color:red;margin: 0 auto;text-align: center">
+                                <br>
+                                <br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        <br>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                     <br>
                     {!! Form::submit('Submit',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
+                    <br>
+                    <br>
                     @else
                      <br>
                      <br>
@@ -56,12 +71,11 @@
                      <br>
                      <br>
                      <h6>Keep up the good work and check back later!</h6>
+                     <br>
+                     <br>
                     @endif
                 </div>
-                </form>
             </div>
-        </div>
-
 </div><!--end list table-->
 </section><!--end list template-->
 

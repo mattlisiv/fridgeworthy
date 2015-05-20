@@ -42,6 +42,12 @@ class CourseManagerController extends Controller {
        $user = Auth::user();
        $school = $user->school;
        $courses = $school->courses()->get();
+       for($i=0;$i<count($courses);$i++){
+
+           if($user->enrolledInCourse($courses[$i])){
+               unset($courses[$i]);
+           }
+       }
        return view('student.courses.enrollincourse',compact('user','courses','school'));
     }
 

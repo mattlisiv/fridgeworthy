@@ -28,7 +28,7 @@
         <div class="listtable">
             <div class="listtabletitle">Create Assignment For {{$course->name}}</div>
 
-            <div style="height:550px">
+            <div>
                 <div style="color: #808080;font-size:16px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     <br>
@@ -55,18 +55,23 @@
                     </div>
                     <br>
                     <br>
+                    @if($errors)
+                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <br>
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            <br>
+                            <br>
+                        </div>
+                    @endif
                     {!! Form::submit('Create',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
+                    <br>
                 </div>
-                @if($errors)
-                <div style="color:red">
-                    <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
-                </div>
-                @endif
+
             </div>
         </div>
 

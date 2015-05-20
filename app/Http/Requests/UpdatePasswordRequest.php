@@ -24,9 +24,21 @@ class UpdatePasswordRequest extends Request {
 	public function rules()
 	{
 		return [
-			'password'=>'required',
+			'password'=>'required|different:newpassword',
             'newpassword'=>'required|confirmed'
+
 		];
 	}
+
+    public function messages(){
+
+        return [
+          'newpassword.required' => 'Please enter in a new password',
+          'newpassword.confirmed'=> 'Your new password does not match the new password confirmation.' ,
+          'password.different' => 'Your new password must be different than your previous password.',
+          'password.required' => 'Please enter in your required.'
+
+        ];
+    }
 
 }

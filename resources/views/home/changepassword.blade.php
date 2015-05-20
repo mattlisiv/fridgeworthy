@@ -25,7 +25,7 @@
         <div class="listtable">
             <div class="listtabletitle">Change Password</div>
 
-            <div style="height:400px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     {!! Form::open(['url'=>'update_password']) !!}
@@ -52,6 +52,18 @@
                     <br>
                     <br>
                     <br>
+                    @if($errors)
+                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <br>
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            <br>
+                            <br>
+                        </div>
+                    @endif
                     {!! Form::submit('Update',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
                 </div>

@@ -8,23 +8,7 @@
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-    <!--CSS links-->
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/pages.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
-
-    <!--JS links-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.sticky.js"></script>
-    <script type="text/javascript" src="js/retina.min.js"></script>
-    <script type="text/javascript" src="js/jquery.stepframemodal.js"></script>
-    <script type="text/javascript" src="js/fridgeworthy.js"></script>
-
-    <!--favicon-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    @include('js.maincssandjs')
 </head>
 
 <body class="innerbg" ontouchstart="">
@@ -41,8 +25,15 @@
         <div class="listtable">
             <div class="listtabletitle">Enroll In Class Today</div>
 
-            <div style="height:300px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
+                @if(!count($courses))
+                    <br>
+                    <br>
+                    <h5>There are currently no courses available, but check back soon! </h5>
+                    <br>
+                    <br>
+                @else
                     <br>
                     <br>
                     {!! Form::open(['url'=>'enrollment']) !!}
@@ -50,7 +41,8 @@
                         <h6>{!! Form::label('Name', 'Class name:',['style'=>'margin:25px 0px']) !!}</h6>
                         <br>
                         <br>
-                        <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$courses->lists('name','id'), 'default',['class'=>'customSelect']) !!}</h6>
+                        <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$courses->lists('name','id'), 'default',
+                            ['class'=>'customSelect','style'=>'text-indent:50px']) !!}</h6>
 
                     </div>
                     <br>
@@ -60,13 +52,25 @@
                             {!! Form::label('checkDescription', 'By checking this box, I am verifying I am enrolled in the above class.') !!}</h6>
                         <br>
                     </div>
+                    @if($errors)
+                        <div style="color:red;margin: 0 auto;text-align: center">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    <br>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <br>
                     {!! Form::submit('Enroll in Class',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
+                    <br>
+                    <br>
+                @endif
                 </div>
-                </form>
             </div>
-        </div>
+
 
 </div><!--end list table-->
 </section><!--end list template-->

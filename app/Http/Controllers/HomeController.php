@@ -77,8 +77,12 @@ class HomeController extends Controller {
             'last_name.max' => 'Last name cannot be more than 50 characters.',
             'school_id.required' => 'Please select a school.',
             'role.required'=> 'Please select whether you are a student or teacher.',
-            'parent_email' => 'A parent email is required if you are a student.',
-            'grade' => 'Please select a grade if you are a student.'
+            'parent_email.required' => 'A parent email is required if you are a student.',
+            'parent_email.required_if' => 'A parent email is required if you are a student.',
+            'grade.required' => 'Please select a grade if you are a student.',
+            'grade.required_if' => 'Please select a grade if you are a student.'
+
+
 
 
         ];
@@ -127,8 +131,8 @@ class HomeController extends Controller {
                 $user->attachRole(Role::student());
 
             }
-
-            return Redirect::to('/');
+            $user = null;
+            return view('registration.created',compact('user'));
 
         }
 

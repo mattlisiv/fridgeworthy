@@ -120,7 +120,12 @@ class AssignmentManagerController extends Controller {
 
         $user = Auth::user();
         $assignment = $this->assignmentRepository->find($id);
-        return view('student.grades.create',compact('user','assignment'));
+        $course = $assignment->course()->first();
+        if($user->statusInCourse($course)=='confirmed'){
+            return view('student.grades.create',compact('user','assignment'));
+        }else{
+            return view('student.courses.notenrolled',compact('user','assignment'));
+        }
 
     }
 
@@ -146,8 +151,13 @@ class AssignmentManagerController extends Controller {
 
         $user = Auth::user();
         $course = $this->courseRepository->find($id);
-        $assignments = $user->unsubmittedAssignments()->where('courses.id','=',$course->id)->get();
-        return view('student.assignments.SubmitGradeSpecific',compact('user','assignments','course'));
+        if($user->statusInCourse($course)=='confirmed') {
+            $assignments = $user->unsubmittedAssignments()->where('courses.id', '=', $course->id)->get();
+            return view('student.assignments.SubmitGradeSpecific', compact('user', 'assignments', 'course'));
+        }else{
+            return view('student.courses.notenrolled',compact('user','assignment'));
+        }
+
     }
 
     public function storeAssignment(Requests\StoreAssignmentRequest $request){

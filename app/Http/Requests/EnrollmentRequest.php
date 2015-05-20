@@ -33,4 +33,14 @@ class EnrollmentRequest extends Request {
 		];
 	}
 
+    public function messages(){
+
+        return [
+           'course_id.required' => 'Please select a course.',
+            'course_id.not_in' => 'Please select a course.',
+            'authorization.required' => 'Please check box to verify you are a student in this course.'
+
+        ];
+    }
+
 }

@@ -9,7 +9,7 @@
                 <h3 class="orange">user profile</h3>
                 <input type="email" placeholder="email" name="email"/>
                 <label for="user_password_new"></label>
-                <input type="password" placeholder="password" name="password"/>
+                <input class="tooltip" type="password" placeholder="password" name="password"/>
                 <label for="user_password_repeat"></label>
                 <input type="password" placeholder="re-enter password" name="password_confirmation"/>
                 <label for="user_email"></label>
@@ -72,6 +72,7 @@
                 </div><!--end 3rd regthird-->
                 <button type="submit" class="smbtn" name="register">submit</button>
         </form>
+
         @if (!$errors->registration->isEmpty())
             <div style="color:red">
                 <br>
@@ -88,3 +89,4 @@
 
     </div><!--end regspancnt-->
 </section><!--end registration panel-->
+

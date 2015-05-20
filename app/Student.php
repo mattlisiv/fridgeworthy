@@ -42,7 +42,7 @@ class Student extends User{
 
         if($this->enrolledInCourse($course)){
 
-            $pivot = $this->courses()->withPivot(['status'])->first()->pivot->status;
+            $pivot = $this->courses()->withPivot(['status'])->where('id','=',$course->id)->first()->pivot->status;
             return $pivot;
 
         }else{
