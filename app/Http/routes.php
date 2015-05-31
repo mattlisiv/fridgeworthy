@@ -6,17 +6,6 @@
 $domain = getenv('DOMAIN') ?: 'fridgeworthy.us';
 
 
-Route::group(array('domain' => 'api.'.$domain), function()
-{
-    Route::get("/",function(){
-
-        return 'API HOME';
-    });
-
-
-});
-
-
 
 Route::group(array('domain' => 'admin.'.$domain,'middleware'=>'authorize','user_type'=>['App\Admin']), function()
 {
@@ -38,6 +27,13 @@ Route::group(array('domain' => 'admin.'.$domain,'middleware'=>'authorize','user_
 Route::group(array('domain' => 'business.'.$domain,'middleware'=>'authorize','user_type'=>['App\BusinessManager']), function()
 {
     Route::get('/','Business\HomeController@index');
+});
+
+Route::group(array('domain' => 'business.'.$domain,'middleware'=>'authorize','user_type'=>['App\BusinessManager']), function(){
+
+    Route::post("submit_access_code",'Business\RewardController@submitAccessCode');
+
+
 });
 
 
@@ -120,6 +116,17 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("passwordchanged","HomeController@passwordChanged");
     Route::post("update_password","HomeController@updatePassword");
 });
+
+
+Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['App\Student','App\Teacher','App\Guardian']), function(){
+
+    Route::get("myredeemedrewards","PublicRewardController@viewMyRedeemedRewards");
+    Route::get("myrewards","PublicRewardController@viewMyUnredeemedRewards");
+    Route::post("redeem_reward","PublicRewardController@redeemReward");
+    Route::get("viewcoupon/{id}","PublicRewardController@viewCoupon");
+
+});
+
 
 
 /**Authorization Routes **/

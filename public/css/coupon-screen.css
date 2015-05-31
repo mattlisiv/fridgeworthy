@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+/*fonts*/
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('../fonts/BebasNeue-webfont.eot');
+    src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BebasNeue-webfont.woff') format('woff'),
+         url('../fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('../fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../fonts/raleway-regular-webfont.eot');
+    src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-regular-webfont.woff') format('woff'),
+         url('../fonts/raleway-regular-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ralewaylight';
+    src: url('../fonts/raleway-light-webfont.eot');
+    src: url('../fonts/raleway-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff'),
+         url('../fonts/raleway-light-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-light-webfont.svg#ralewaylight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewayitalic';
+    src: url('../fonts/raleway-italic-webfont.eot');
+    src: url('../fonts/raleway-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-italic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-italic-webfont.woff') format('woff'),
+         url('../fonts/raleway-italic-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-italic-webfont.svg#ralewayitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*global*/
+* {
+margin: 0;
+}
+
+html {
+height: 100%;
+background-position: top left;	
+background-image: url(../images/chalkboardbg.jpg);
+background-size: cover;
+background-attachment: scroll;
+background-repeat: repeat-y;
+}
+
+body {
+min-height: 100%;
+height: auto !important;
+position: relative;
+text-align: center;
+}
+
+h1, h2 {
+	font-family: 'bebas_neueregular', Helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 85px;
+	line-height: 80px;
+	color: #ee7830;
+	text-shadow: 3px 3px 0px #e5e5e5;	
+	margin-bottom: 15px;
+}
+
+h1 span {
+	font-size: .2em;
+    vertical-align: top;
+    line-height: 35px;
+}
+
+h2 {
+	font-size: 40px;
+	line-height: 38px;
+	color: #ffffff;
+}
+
+.qrbox h2 {
+	text-shadow: 3px 3px 0px #c56426;
+}
+
+.couplogobox h2 {
+	text-shadow: 3px 3px 0px #4e5155;
+	margin-bottom: 5px;
+}
+
+h3, h4 {
+	font-family: 'ralewayitalic', Helvetica, sans-serif;	
+}
+
+h3 {
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.offerstroke h3 {
+	color: #01aef0;
+	
+}
+
+.couplogobox h3 {
+	color: #999999;
+	
+}
+
+h4 {
+	font-size: 12px;
+	color: #999999;
+}
+
+p {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	color: #666666;
+}
+
+a {
+	text-decoration: none;
+	color: #999999;
+}
+
+a:hover {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;	
+}
+
+/*transitions*/
+* {
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;	
+}
+
+
+/*box-sizing*/
+* {
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+-o-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/*coupon*/
+.couponwrap {
+	width: 900px;
+	height: 600px;
+  	margin: 100px auto;
+}
+
+.offerbox, .offerstroke, .rightcoupwrap {
+	height: 100%;
+}
+
+
+.offerbox, .rightcoupwrap {
+	float: left;	
+}
+
+.rightcoupwrap:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.offerbox {
+	width: 56.666666666667% /*510/900*/;
+	background-color: #ffffff;
+	margin-right: 6.666666666667% /*60/900*/;
+	border: 1px solid #ffffff;
+	padding:14px;
+}
+
+.offerstroke {
+	height: 100%;
+	border: 1px dashed #cccccc;	
+	padding: 18px 2% /*18/900*/;
+}
+
+.offerlogo {
+	width: 100%;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.offerlogo img {
+	width: 250px;
+}
+
+.rightcoupwrap {
+	width: 36.666666666667%/*330/900*/;	
+}
+
+.qrbox {
+	width: 100%;
+	height: 200px;
+	background-color: #ee7830;	
+	margin-bottom: 60px;
+	padding: 34px;
+}
+
+.qrbox div {
+	float: left;
+}
+
+.qrbox div:first-of-type {
+	width: 102px;
+	padding: 25px 0;
+	margin-right: 30px;
+}
+
+.qr {
+	width: 130px;
+	height: 130px;
+}
+
+.qr img {
+	width: 130px;
+	height: 130px;
+}
+
+
+.qr:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.couplogobox {
+	width: 100%;
+	height: 340px;
+	padding-top: 34px;
+	border: 1px solid #666666;
+}
+
+.couplogobox img {
+	width: 220px;
+	height: 159px;
+	margin-bottom: 25px;
+}
+
+@media (max-width:900px) {
+/*coupon*/
+.couponwrap {
+	width: 90%;
+	margin: 30px auto;
+}
+
+.offerbox {
+	width: 100%;
+	margin-right: 0;
+	margin-bottom: 30px;
+}
+
+.rightcoupwrap {
+	width: 100%;	
+}
+
+.qrbox {
+	width: 48%;
+	height: 340px;
+	margin-bottom: 0px;
+	margin-right: 4%;
+	float: left;
+}
+
+.qrbox div:first-of-type {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.qr {
+	width: 100%;	
+}
+
+.qr img {
+	margin: 0 auto;
+}
+
+.couplogobox {
+	width: 48%;
+	float: left;
+}
+}
+
+@media (max-width:700px) {
+/*global*/	
+h1 {
+	font-size: 65px;
+	line-height: 60px;
+}
+
+p {
+	font-size: 11px;
+	line-height: 15px;
+}
+
+/*coupon*/
+.couponwrap {
+	height: auto;
+}
+
+.qrbox, .couplogobox  {
+	width: 100%;
+	margin-bottom: 30px;
+}
+}
+
+
+

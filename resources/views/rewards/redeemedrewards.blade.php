@@ -3,58 +3,52 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <title>fridgeworthyrewards.com</title>
+    <title>fridge-worthy.com</title>
     <meta name="description" content="#">
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-   @include('js.maincssandjs')
+    @include('js.maincssandjs')
 </head>
 
-<body class="rcbg" ontouchstart="">
+<body class="innerbg" ontouchstart="">
 
 <div class="mainwrap">
 
-   @include('navigation.masternav')
+    @include('navigation.masternav')
 
-    <!--rewardcenter-->
-    <section id="rewardscenterpanel">
+    @include('home.partials.modal.Logout')
 
-        <div id="rewcentpancnt">
-            <h1 class="orange">find great rewards!</h1>
-            <form action="#" method="post">
-                <input type="text" placeholder="search rewards" class="magicon"/>
-                <button type="button" value="submit" class="smbtn searchbtn">submit</button>
-            </form>
+    <!--start list template-->
+    <section id="listtemplatecnt">
+        <div class="listtable">
+            <div class="listtabletitle">My Redeemed Rewards</div>
+            @if(count($coupons))
+                <div style="font-weight: bold" class="listtablerow">
+                    <div  style="width: 40%" class="listitemname"><p class="white">Reward</p></div>
+                    <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">Business</p></div>
+                </div>
+                @foreach($coupons as $coupon)
+                    <div class="listtablerow">
+                        <div  style="width: 40%" class="listitemname"><p class="white">{{$coupon->reward->name}}</p></div>
+                        <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
 
-            <div id="rewardsboxwrap">
-
-                @foreach($rewards as $reward)
-                    <div class="rewardbox">
-                        <img src="images/alternate.jpg" alt="No Image provided"/>
-                        <h6>{{$reward->name}}</h6><br>
-                        <div class="detbtncont"><a href="{{action('PublicRewardController@show',[$reward->id]) }}" class="getdetailsbtn"><p>get details</p><img src="{{asset('images/detarrow.png')}}"></a></div>
-                        <div class="clear"></div>
                     </div>
-                    @endforeach
+                @endforeach
+            @else
+                <div class="listtablerow">
+                    <div class="listitemname"><p class="white">No coupons have been redeemed.</p></div>
+                </div>
+            @endif
 
-            </div><!--endrewardsboxwrap-->
+        </div><!--end list table-->
+    </section><!--end list template-->
 
-        </div><!--endrewardscentpancnt-->
-    </section>
 
     <div class="push"></div>
 </div><!--end mainwrap-->
-<!--footer-->
+
 @include('home.partials.Footer')
-
-<!--end footer-->
-
-<!--modals-->
-@include('home.partials.modal.Login')
-@include('home.partials.modal.Logout')
-
-<!--end modals-->
 
 <!--responsive menu-->
 <script type="text/javascript">

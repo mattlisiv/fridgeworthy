@@ -57,7 +57,7 @@ class CouponRepository implements CouponRepositoryInterface{
                 }else{
                     Coupon::create([
                         'reward_id' => $reward_id,
-                        'status' => 'unredeemed',
+                        'status' => 'unclaimed',
                         'access_code' => $access_code
 
                     ]);

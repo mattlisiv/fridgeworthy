@@ -65,7 +65,7 @@ class Reward extends Model{
 
         return $query->whereHas('coupons',function($q){
 
-           $q->where('status','=','unredeemed');
+           $q->where('status','=','unclaimed');
         });
     }
 

@@ -1,5 +1,7 @@
 <!--my points-->
+
 <section id="myacct">
+    @if(get_class($user)!='App\BusinessManager' && get_class($user)!='App\Admin')
     <div id="myacctpancnt">
         <h1 class="whitedkgray">you have <span class="pointshighlight">{{$user->points}}</span> Fridge points!</h1>
         @if(get_class($user)=='App\Student' || get_class($user)=='App\Teacher')
@@ -12,7 +14,7 @@
                 <div class="pointscirc"><a href="{{action('CourseManagerController@createCourse')}}" id="enrollinclass"><h5 class="white">create<br>a class</h5></a></div>
             @endif
             <div class="pointscirc"><a href="{{action('AssignmentManagerController@viewMyAssignments')}}" id="viewassign"><h5 class="white">view<br>assignments</h5></a></div>
-            <div class="pointscirc"><a href="#" id="myrewards"><h5 class="white">my<br>rewards</h5></a></div>
+            <div class="pointscirc"><a href="{{action('PublicRewardController@viewMyUnredeemedRewards')}}" id="myrewards"><h5 class="white">my<br>rewards</h5></a></div>
         </div>
         @endif
         @if(get_class($user)=='App\Guardian')
@@ -26,4 +28,4 @@
     </div><!--end my points cnt-->
     <div class="orangerevsep"></div>
 
-
+    @endif

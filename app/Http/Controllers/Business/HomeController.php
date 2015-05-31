@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
 
@@ -14,7 +15,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return "Business Portal";
+        $user = Auth::user();
+        $business = $user->business;
+        $customers = $business->customers()->get();
+		return view('business.home.index',compact('user','business','customers'));
 	}
 
 

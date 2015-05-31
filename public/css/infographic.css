@@ -901,6 +901,15 @@ input {
 	margin: 0 auto 0 auto;
 }
 
+.redeemnowbtn button {
+    background-color: #13cf56;
+    border: 1px solid #3b9a47;
+    color: #ffffff;
+    font-size: 22px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+
 .redeemnowbtn a:visited {
 }
 

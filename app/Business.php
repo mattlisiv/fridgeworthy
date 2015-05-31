@@ -24,6 +24,17 @@ class Business extends Model {
         return $this->hasManyThrough('App\Coupon','App\Reward');
     }
 
+    public function customers(){
+
+
+        return User::select('users.*')
+            ->leftJoin('coupons','users.id','=','coupons.user_id')
+            ->leftJoin('rewards','coupons.reward_id','=','rewards.id')
+            ->leftJoin('businesses','rewards.business_id','=','businesses.id')
+            ->where('businesses.id','=',$this->id)->distinct();
+
+    }
+
 
 
 }

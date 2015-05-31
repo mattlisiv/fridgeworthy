@@ -15,36 +15,33 @@
 
 <div class="mainwrap">
 
-
-
     @include('navigation.masternav')
-
 
     @include('home.partials.modal.Logout')
 
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Grades for {{$course->name}}</div>
-            @if(count($grades))
-                <div class="listtablerow">
-                    <div style="width: 33%;font-weight: bold" class="listitemname"><p class="white">Assignment</p></div>
-                    <div style="width: 33%;font-weight: bold" class="listitemname"><p class="white">Status</p></div>
-                    <div style="padding-right: 30px;font-weight: bold" class="listitemname"><p class="white">Grade</p></div>
-                </div>
-                @foreach($grades as $grade)
-                    <div class="listtablerow">
-                        <div  style="width: 33%" class="listitemname"><p class="white">{{$grade->assignment->name}}</p></div>
-                        <div style="width: 33%" class="listitemname"><p class="white">{{$grade->status}}</p></div>
+            <div class="listtabletitle">My Rewards</div>
+            @if(count($coupons))
+                <div style="font-weight: bold" class="listtablerow">
+                    <div  style="width: 40%" class="listitemname"><p class="white">Reward</p></div>
+                    <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">Business</p></div>
 
-                        <div style="float: left" class="listviewbutton">
-                            <form action="#" method="post"> <a href="{{action('AssignmentManagerController@viewIndividualGrade',$grade->id)}}"><button type="button" value="view" class="smbtn">{{$grade->numeric_grade}}</button></a></form>
-                        </div>
+                </div>
+                @foreach($coupons as $coupon)
+                    <div class="listtablerow">
+                        <div  style="width: 40%" class="listitemname">
+                            <p class="white">
+                                <a href="{{action('PublicRewardController@viewCoupon',['coupon_id'=>$coupon->id])}}" class="plinkwhite">{{$coupon->reward->name}}</a>
+                            </p></div>
+                        <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
+
                     </div>
                 @endforeach
             @else
                 <div class="listtablerow">
-                    <div class="listitemname"><p class="white">No current grades.</p></div>
+                    <div class="listitemname"><p class="white">No coupons have been claimed.</p></div>
                 </div>
             @endif
 

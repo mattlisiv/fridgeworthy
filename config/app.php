@@ -148,6 +148,7 @@ return [
         'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'App\Repositories\DBServiceProvider',
+        'Barryvdh\DomPDF\ServiceProvider',
 
 
 
@@ -203,7 +204,7 @@ return [
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'QrCode'    => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
-
+        'PDF' => 'Barryvdh\DomPDF\Facade',
 
 
     ],

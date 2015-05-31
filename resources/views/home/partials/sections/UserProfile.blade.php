@@ -20,8 +20,10 @@
 
             <div id="managebtns">
                 <form action="#" method="post">
-                    <a href="{{action('HomeController@changePassword')}}"><button type="button" value="change password" id="changepassbtn" class="managebtn">change password</button></a><br>
-                    <a href="#"><button type="button" value="view redeemed rewards" id="viewredrewbtn" class="managebtn">view redeemed rewards</button></a>
+                        <a href="{{action('HomeController@changePassword')}}"><button type="button" value="change password" id="changepassbtn" class="managebtn">change password</button></a><br>
+                    @if(get_class($user)=='App\Teacher' || get_class($user) == 'App\Student')
+                        <a href="{{action('PublicRewardController@viewMyRedeemedRewards')}}"><button type="button" value="view redeemed rewards" id="viewredrewbtn" class="managebtn">view redeemed rewards</button></a>
+                    @endif
                 </form>
             </div>
 

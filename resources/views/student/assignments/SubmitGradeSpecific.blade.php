@@ -37,7 +37,6 @@
                         <br>
                         <h6>{!! Form::select('assignment_id',array('default'=>'Please Select') +$assignments->lists('name','id'),
                                 'default',['class'=>'customSelect','style'=>'text-indent:50px']) !!}</h6>
-
                     </div>
                     <br>
                     <br>
