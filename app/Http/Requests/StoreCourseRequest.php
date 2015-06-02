@@ -38,7 +38,7 @@ class StoreCourseRequest extends Request {
 	public function rules()
 	{
 		return [
-            'name' => 'required|min:5',
+            'name' => 'required|min:5|max:25',
             'description' => 'required|min:10'
 		];
 	}

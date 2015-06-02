@@ -25,7 +25,7 @@ class HomeController extends Controller {
 
 
         $user = Auth::user();
-        $schools = School::all();
+        $schools = School::orderBy('name','ASC')->get();
         return view('integration.indexintegration',compact('schools','user'));
     }
 

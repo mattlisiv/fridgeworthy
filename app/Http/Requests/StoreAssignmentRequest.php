@@ -1,6 +1,7 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class StoreAssignmentRequest extends Request {
@@ -27,10 +28,11 @@ class StoreAssignmentRequest extends Request {
 	 */
 	public function rules()
 	{
+        $today = Carbon::today('US/Eastern');
 		return [
-			'name'=>'required|min:5',
+			'name'=>'required|min:5|max:25',
             'description'=>'required|min:10',
-            'due_date'=>'required|not_in:Select Date',
+            'due_date'=>'date_format:"m/d/Y"|required|not_in:Select Date|after:'.$today,
             'course_id'=>'required'
 		];
 	}

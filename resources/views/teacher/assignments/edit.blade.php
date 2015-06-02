@@ -54,6 +54,18 @@
                         <h6>{!! Form::text('due_date', $assignment->due_date->format('m/d/Y'), array('id' => 'datepicker','style'=>'text-align:center')) !!}</h6>
                     </div>
                     <br>
+                    @if($errors)
+                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <br>
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            <br>
+                            <br>
+                        </div>
+                    @endif
                     <br>
                     {!! Form::submit('Update',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}

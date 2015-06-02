@@ -32,7 +32,10 @@
         <div class="offerstroke">
             <div class="offerlogo"><img src="{{$reward->getFilePath()}}" alt="FridgeWorthy logo"></div>
             <h1>{{$reward->name}}<span>*</span></h1>
-            <h3>*redeemable only at participating locations</h3>
+            <h3>*redeemable only at participating locations <br>
+                *valid only for single transaction <br>
+                *no cash value
+            </h3>
             <br>
             <h2 style="color:#000088">Access Code: {{$coupon->access_code}}</h2>
 
