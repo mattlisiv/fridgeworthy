@@ -100,7 +100,7 @@ class HomeController extends Controller {
 
         if($validator->fails()){
 
-            return Redirect::back()->withErrors($validator,'registration');
+            return Redirect::back()->withErrors($validator,'registration')->withInput($request->except('password','password_confirmation'));
 
 
         }else{

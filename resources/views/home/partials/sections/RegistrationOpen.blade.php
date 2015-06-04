@@ -7,7 +7,7 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div id="userinfo" class="regthird">
                 <h3 class="orange">user profile</h3>
-                <input type="email" placeholder="email" name="email"/>
+                <input type="email" placeholder="email" name="email" value="{{old('email')}}"/>
                 <label for="user_password_new"></label>
                 <input class="tooltip" type="password" placeholder="password" name="password"/>
                 <label for="user_password_repeat"></label>
@@ -19,8 +19,8 @@
 
             <div id="persinfo" class="regthird">
                 <h3 class="orange">personal info</h3>
-                <input type="text" placeholder="first name" name="first_name"/>
-                <input type="text" placeholder="last name" name="last_name"/>
+                <input type="text" placeholder="first name" name="first_name" value="{{old('first_name')}}"/>
+                <input type="text" placeholder="last name" name="last_name" value="{{old('last_name')}}"/>
 
                 <div class="clear"></div>
             </div><!--end 2nd regthird-->
@@ -66,7 +66,7 @@
 </span>
 
                     <p class="white">Please enter parent email address</p>
-                    <input type="text" placeholder="parent email address" name="parent_email"/>
+                    <input type="text" placeholder="parent email address" name="parent_email" value="{{old('parent_email')}}"/>
 
                     <div class="clear"></div>
                 </div><!--end 3rd regthird-->
