@@ -43,6 +43,10 @@
                     <br>
                     <br>
                     <a href="{{action('AssignmentManagerController@editAssignment',$assignment->id)}}"><button type="button" value="view grades" class="classdetbtn">Edit Assignment</button></a>
+                    <br>
+                    <br>
+                    <a href="{{action('CourseManagerController@viewCourse',$assignment->course->id)}}"><button type="button" value="view course" class="classdetbtn">View Course</button></a>
+
                 </div>
             </div>
 
