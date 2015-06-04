@@ -83,6 +83,7 @@
                     @endforeach
                 </ul>
             </div>
+
         @endif
         <div class="clear"></div><!--clear all regthird-->
     </div><!--end student specific section -->
@@ -90,3 +91,9 @@
     </div><!--end regspancnt-->
 </section><!--end registration panel-->
 
+
+@if (!$errors->registration->isEmpty())
+    <script type="text/javascript">
+        $(document).ready().scrollTo(document.getElementById('registration'), 800);
+    </script>
+    @endif

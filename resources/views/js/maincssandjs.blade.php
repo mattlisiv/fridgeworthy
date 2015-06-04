@@ -12,5 +12,6 @@
 <script type="text/javascript" src="{{asset('js/retina.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/jquery.stepframemodal.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/fridgeworthy.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
 
 @include('home.partials.favico')
