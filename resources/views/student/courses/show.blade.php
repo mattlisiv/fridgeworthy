@@ -60,7 +60,7 @@
                 <div class="rcrimg viewgradesimg"></div>
             </div>
             <div class="classdetbox">
-                <form action="#" method="post"><a href="#"><button type="button" value="view study guides" class="classdetbtn">view study guides</button></a></form>
+                <form action="#" method="post"><a href="#"><button type="button" value="view study guides" class="classdetbtn">view study materials</button></a></form>
                 <div class="rcrimg viewstudyguidesimg"></div>
             </div>
             <div class="classdetbox">

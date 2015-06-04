@@ -15,7 +15,7 @@
 
                     <ul>
                         <li><a href="#home" class="scrollbtn">home</a></li>
-                        <li><a href="#about" class="scrollbtn">about us</a></li>
+                        <li><a href="{{action('StaticPagesController@infographic')}}" >about us</a></li>
                         <li><a href="#rewards" class="scrollbtn">rewards</a>
                             <ul class="dropdownmenu"><li><a href="{{action('PublicRewardController@index')}}" >rewards center</a></li></ul>
                         </li>
@@ -42,7 +42,7 @@
                         <div class="menu-header">
                             <ul id="menu-mobile-menu" class="menu">
                                 <li class="menu-item"><a href="#home" class="scrollbtn">home</a></li>
-                                <li class="menu-item"><a href="#about" class="scrollbtn">about us</a></li>
+                                <li class="menu-item"><a href="{{action('StaticPagesController@infographic')}}">about us</a></li>
                                 <li class="menu-item menu-item-has-children"><a href="#rewards" class="scrollbtn">rewards</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="{{action('PublicRewardController@index')}}">rewards center</a></li>

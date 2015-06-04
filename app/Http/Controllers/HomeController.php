@@ -131,7 +131,8 @@ class HomeController extends Controller {
                 $user->attachRole(Role::student());
 
             }
-            $user = null;
+            Auth::login($user);
+            $user = Auth::user();
             return view('registration.created',compact('user'));
 
         }

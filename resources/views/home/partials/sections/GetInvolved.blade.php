@@ -11,6 +11,8 @@
                                         <option value='' disabled selected style='display:none;'>i am a...</option>
                                         <option value="student">student</option>
                                         <option value="teacher">teacher</option>
+                                        <option value="parent">parent</option>
+                                        <option value="business">business owner/affiliate</option>
                                     </select>
                                     </span>
             <div class="clear"></div>

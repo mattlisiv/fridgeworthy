@@ -32,7 +32,9 @@
 
     @include('home.partials.modal.Logout')
 
-    @include('home.partials.sections.About')
+    @if(is_null($user))
+        @include('home.partials.sections.About')
+    @endif
 
     @include('home.partials.sections.Rewards')
 
