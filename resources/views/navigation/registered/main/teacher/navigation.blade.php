@@ -2,7 +2,7 @@
 <nav class="my-sticky-element">
     <div class="navlogo">
         <div>
-            <img src="{{asset('images/fwlogo-nav.png')}}" alt="FridgeWorthy logo">
+            <a href="{{action('HomeController@index')}}"><img src="images/fwlogo-nav.png" alt="FridgeWorthy logo"></a>
         </div>
     </div>
     <div class="navrightcnt">

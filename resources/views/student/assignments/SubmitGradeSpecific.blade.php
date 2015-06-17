@@ -36,7 +36,7 @@
                         <h6>{!! Form::label('Name', 'Assignment:',['style'=>'text-align:center']) !!}</h6>
                         <br>
                         <h6>{!! Form::select('assignment_id',array('default'=>'Please Select') +$assignments->lists('name','id'),
-                                'default',['class'=>'customSelect','style'=>'text-indent:50px']) !!}</h6>
+                                'default',['class'=>'customSelect','style'=>'text-indent:10px']) !!}</h6>
                     </div>
                     <br>
                     <br>

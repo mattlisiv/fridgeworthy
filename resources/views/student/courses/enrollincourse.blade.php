@@ -42,7 +42,7 @@
                         <br>
                         <br>
                         <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$courses->lists('name','id'), 'default',
-                            ['class'=>'customSelect','style'=>'text-indent:50px']) !!}</h6>
+                            ['class'=>'customSelect','style'=>'text-indent:10px']) !!}</h6>
 
                     </div>
                     <br>
