@@ -55,7 +55,7 @@
                                 <li class="menu-item"><a href="{{url('/')}}#manage">manage my profile</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item menu-item-has-children"><a href="#logoutmodal" class="modal-popup">logout</a></li>
+                        <li class="menu-item"><a href="#logoutmodal" class="modal-popup">logout</a></li>
                     </ul>
                 </div><!--end menu-header-->
             </div><!--end responsive-menu-->
