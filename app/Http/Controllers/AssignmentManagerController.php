@@ -113,7 +113,10 @@ class AssignmentManagerController extends Controller {
             $student->points+=1;
             $student->save();
         }
-        return redirect()->action('CourseManagerController@viewMyCourses');
+
+        $assignment = $this->assignmentRepository->find($grade->assignment_id);
+
+        return redirect()->action('AssignmentManagerController@viewGradeBook',$assignment->course_id);
     }
 
     public function submitGrade($id){
