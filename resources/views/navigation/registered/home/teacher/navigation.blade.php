@@ -17,7 +17,10 @@
                 <li><a href="#home" class="scrollbtn">home</a></li>
                 <li><a href="{{action('StaticPagesController@infographic')}}">about us</a></li>
                 <li><a href="#rewards" class="scrollbtn">rewards</a>
-                    <ul class="dropdownmenu"><li><a href="{{action('PublicRewardController@index')}}" >rewards center</a></li></ul>
+                    <ul class="dropdownmenu">
+                        <li><a href="{{action('PublicRewardController@index')}}" >rewards center</a></li>
+                        <li><a href="{{action('PublicRewardController@viewMyUnredeemedRewards')}}" >my rewards</a></li>
+                    </ul>
                 </li>
                 <li><a href="#myacct" class="scrollbtn">my account</a>
                     <ul class="dropdownmenu">
@@ -46,6 +49,8 @@
                         <li class="menu-item menu-item-has-children"><a href="#rewards" class="scrollbtn">rewards</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{action('PublicRewardController@index')}}">rewards center</a></li>
+                                <li class="menu-item"><a href="{{action('PublicRewardController@viewMyUnredeemedRewards')}}">my rewards</a></li>
+
                             </ul>
                         </li>
                         <li class="menu-item menu-item-has-children"><a href="#myacct" class="scrollbtn">my account</a>
