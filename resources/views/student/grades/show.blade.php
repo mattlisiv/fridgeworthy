@@ -44,7 +44,11 @@
                         The current numeric points entered for the grade is <span style="color:white;font-weight: bold">{{$grade->numeric_grade}}</span>.
                     </h6>
                     <br>
+                    <br>
+                    <a href="{{action('CourseManagerController@viewCourse',$grade->assignment->course_id)}}"><button type="button" value="submit assignment" class="classdetbtn">Back to Class</button></a>
                 </div>
+                <br>
+
             </div>
 
 

@@ -28,7 +28,7 @@
         <div class="listtable">
             <div class="listtabletitle">{{$assignment->name}}</div>
 
-            <div style="height:350px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     <br>
@@ -49,6 +49,10 @@
                             The grade is currently <span style="font-weight: bold;color:white;">{{$grade->status}}</span>.
                         </h5>
                     @endif
+                    <br>
+                    <br>
+                    <a href="{{action('CourseManagerController@viewCourse',$assignment->course_id)}}"><button type="button" value="submit assignment" class="classdetbtn"> Back to Course</button></a>
+                    <br>
                 </div>
             </div>
 
