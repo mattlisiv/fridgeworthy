@@ -36,6 +36,9 @@
                     the assignment {{$grade->assignment->name}}.
                 </h5>
                 <br>
+                <br>
+                <br>
+                    <a href="{{action('AssignmentManagerController@viewGradeBook',$grade->assignment->course_id)}}"><button type="button" value="submit assignment" class="classdetbtn">Back to Gradebook</button></a>
                 </div>
             @else
             <div class="listtabletitle">Confirm Grade</div>
