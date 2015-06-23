@@ -21,7 +21,6 @@
                 </li>
                 <li><a href="#myacct" class="scrollbtn">my account</a>
                     <ul class="dropdownmenu">
-                        <li><a href="{{action('Business\HomeController@index')}}">business portal</a></li>
                         <li><a href="#manage" class="scrollbtn">manage my profile</a></li>
                         <li><a href="#logoutmodal" class="modal-popup">logout</a></li>
                     </ul>
@@ -51,7 +50,6 @@
                         </li>
                         <li class="menu-item menu-item-has-children"><a href="#myacct" class="scrollbtn">my account</a>
                             <ul class="sub-menu">
-                                <li><a href="{{action('Business\HomeController@index')}}">business portal</a></li>
                                 <li class="menu-item"><a href="#manage" class="scrollbtn">manage my profile</a></li>
                             </ul>
                         </li>

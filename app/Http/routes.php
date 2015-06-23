@@ -29,7 +29,7 @@ Route::group(array('domain' => 'business.'.$domain,'middleware'=>'authorize','us
     Route::get('/','Business\HomeController@index');
 });
 
-Route::group(array('domain' => 'business.'.$domain,'middleware'=>'authorize','user_type'=>['App\BusinessManager']), function(){
+Route::group(array('domain' =>$domain,'middleware'=>'authorize','user_type'=>['App\BusinessManager']), function(){
 
     Route::post("submit_access_code",'Business\RewardController@submitAccessCode');
 

@@ -36,6 +36,9 @@
         @include('home.partials.sections.About')
     @endif
 
+    @if(!is_null($user) && get_class($user)=='App\BusinessManager')
+        @include('home.partials.sections.BusinessManager')
+    @endif
     @include('home.partials.sections.Rewards')
 
     @if(is_null($user))

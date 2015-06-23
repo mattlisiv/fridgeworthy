@@ -28,8 +28,14 @@ class HomeController extends Controller {
 
 
         $user = Auth::user();
+        $business = null;
+        $customers = null;
         $schools = School::orderBy('name','ASC')->get();
-        return view('integration.indexintegration',compact('schools','user'));
+        if(get_class($user) =='App\BusinessManager'){
+            $business = $user->business;
+            $customers = $business->customers()->get();
+        }
+        return view('integration.indexintegration',compact('schools','user','business','customers'));
     }
 
     public function logout(){
