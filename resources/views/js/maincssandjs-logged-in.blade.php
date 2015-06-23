@@ -3,7 +3,7 @@
 <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">
 <link href="{{asset('css/pages.css')}}" rel="stylesheet" type="text/css">
 <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('css/index-logged-out.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('css/index-logged-in.css')}}" rel="stylesheet" type="text/css">
 
 <!--JS links-->
 <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>

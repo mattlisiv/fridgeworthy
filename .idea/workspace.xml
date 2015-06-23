@@ -2,62 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/abshair-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/abshair-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/arena-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/arena-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/davebusters-indv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/davebusters-indv@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/dunkin-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/dunkin-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/lazercity-indv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/lazercity-indv@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/marcos-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/marcos-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/mtimes-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/mtimes-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/stars-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/stars-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/tomchee-indv.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/tomchee-indv@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/totalhealth-indv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/rew-cen-logos/totalhealth-indv@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm@2x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/teacher/documents/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/dompdf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/dropbox.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/index-logged-in.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/index-logged-out.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Business/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Business/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/static/infographic.blade.php" afterPath="$PROJECT_DIR$/resources/views/static/infographic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pages.css" afterPath="$PROJECT_DIR$/public/css/pages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/responsive.css" afterPath="$PROJECT_DIR$/public/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/js/maincssandjs-logged-in.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/js/maincssandjs-logged-out.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/download/Frog.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php" afterPath="$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fridgeworthy.iws" />
@@ -83,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="infographic.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/static/infographic.blade.php">
+      <file leaf-file-name="maincssandjs-logged-in.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/js/maincssandjs-logged-in.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5084746" vertical-offset="435" max-vertical-offset="1470">
-              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.09778357" vertical-offset="0" max-vertical-offset="767">
+              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -130,8 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/business/SubmitAccessCode/updated.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home/partials/nav/BusinessManagerBanner.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/partials/sections/Account.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
         <option value="$PROJECT_DIR$/public/css/infographic.css" />
@@ -153,7 +99,6 @@
         <option value="$PROJECT_DIR$/resources/views/home/partials/sections/GetInvolved.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/courses/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student/courses/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/partials/sections/RegistrationOpen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/assignments/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student/courses/enrollincourse.blade.php" />
@@ -181,6 +126,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/static/infographic.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/js/maincssandjs-logged-out.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/js/maincssandjs-logged-in.blade.php" />
       </list>
     </option>
   </component>
@@ -713,7 +661,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -983,7 +931,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22028986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22028986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1043,20 +991,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/home/partials/nav/LoginBanner.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22727273" vertical-offset="0" max-vertical-offset="528">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625" vertical-offset="60" max-vertical-offset="1005">
-          <caret line="26" column="110" selection-start-line="26" selection-start-column="93" selection-end-line="26" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/partials/sections/RegistrationOpen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6761364" vertical-offset="1008" max-vertical-offset="1560">
@@ -1608,8 +1542,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/static/infographic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5084746" vertical-offset="435" max-vertical-offset="1470">
+        <state vertical-scroll-proportion="1.0756193" vertical-offset="0" max-vertical-offset="1470">
           <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding>
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1431207511000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33246416" vertical-offset="0" max-vertical-offset="767">
+          <caret line="17" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/js/maincssandjs-logged-out.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33246416" vertical-offset="0" max-vertical-offset="767">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/js/maincssandjs-logged-in.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09778357" vertical-offset="0" max-vertical-offset="767">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding />
         </state>
       </provider>
