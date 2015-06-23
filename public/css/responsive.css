@@ -54,7 +54,6 @@
 .rewardbox {
 width: 31.333333333333%;
 padding: 10% 4% 0 3%;
-height: 320px;
 }
 }
 
@@ -72,6 +71,7 @@ height: 320px;
 	margin: 65px auto 0 auto;
 
 }
+
 /*rewards center*/
 #rewcentpancnt h1 {
 	font-size: 88px;
@@ -99,7 +99,6 @@ padding: 8px;
 .rewardbox {
 width: 48%;
 padding: 15% 6% 0 4.4%;
-height: 380px;
 }
 }
 
@@ -179,10 +178,9 @@ background-color: #f4f4f4;
 
 #rewcentpancnt {
 	width: 90%;
-	margin: 0 5%;
+	margin: 0 3.5% 0 6.5%;
 	padding: 50px 0;
 }
-
 
 .rewcentdetailpancnt {
 	width: 90%;
@@ -217,7 +215,7 @@ margin-bottom: 30px;
 }
 
 .rewardbox {
-height: 380px;
+height: 410px;
 }
 
 /*rewards center detail*/
@@ -297,8 +295,8 @@ h4 {
 
 
 /*buttons*/
-#mainlearnbtn a {
- margin: 25px auto 0 auto;
+#mainlearnbtn a, #myacctbtn a {
+ margin: 16px auto 17px auto;
 }
 
 /*rules*/
@@ -462,10 +460,7 @@ background-color: #2690be;
 	display:block;
 }
 
-/*panel wrappers*/
-#home {
-height: 690px;
-}
+
 
 /*home*/
 #homecntblocks {
@@ -493,8 +488,7 @@ height: 690px;
 }
 
 #logoblock h6 {
-	max-width: 420px;
-	margin: 0 auto;
+	max-width: 100%;
 }
 
 img#logomain {
@@ -506,22 +500,6 @@ img#logomain {
 	width: 100%;
 	height: auto;
 	float: none;
-}
-
-#sublock {
-	width: 45.5%;
-	height: 265px; 
-	margin: 0 1.5% 0 3%;
-	padding: 17px 5%;
-	
-}
-
-#liblock {
-	width: 45.5%;
-	height: 265px; 
-	padding: 17px 0 0;
-	margin: 0 3% 0 1.5%;
-	
 }
 
 /*register*/
@@ -542,6 +520,12 @@ margin: 0 0 10px 0;
 }
 
 /*panel wrappers*/
+#busportcnt {
+	width: 90%;
+	margin: 0 5%;
+	padding: 50px 0;
+}
+
 #aboutcnt {
 	width: 90%;
 	margin: 0 5%;
@@ -579,7 +563,26 @@ margin: 0 0 10px 0;
 
 #rewcentpancnt {
 	width: 70%;
-	margin: 0 15%;
+	margin: 0 13% 0 17%;
+}
+
+/*bus portal*/
+/*redemption*/
+#redempstats {
+margin: 50px 0;
+}
+
+.redempbox {
+width: 48.260869565217% /*444/460*/;
+margin-bottom: 16px;
+}
+
+#circbox, #cancbox {
+margin-right: 0;
+}
+
+#redbox, #queuebox {
+margin-right: 03.478260869565% /*16/460*/;	
 }
 
 /*about 2*/
@@ -619,7 +622,7 @@ margin: 0 0 10px 0;
 .rewardbox {
 width: 100%;
 padding: 30% 11% 0 9%;
-height: 430px;
+height: 460px;
 }
 
 #rewcentpancnt input:first-of-type {
@@ -627,6 +630,89 @@ height: 430px;
 	margin-bottom: 8px;
 	margin-right: 2%;
 }
+}
+
+@media(max-width:590px){
+	/*sticky header 100% width*/
+nav {
+	width: 100%;
+	padding: 0 10px;
+	height: 130px;	
+}
+
+.navlogo {
+	width: 10%;
+}
+
+.navlogo img {
+	margin-top: 15px;
+	width: 140px;
+	height: 101px;
+}
+
+.navrightcnt {
+	width: 90%;
+}
+
+.navlogin {
+width: 100%;
+text-align: right;
+float: none;
+height: 100px;	
+}
+
+.navlogin h6 {
+	display: none;
+}
+
+.navlogin form button {
+	display: block;
+}
+
+.navlogin .loginbtn {
+	margin-right: 0;
+	margin-bottom: 8px;
+}
+
+.navlogin, .navpoints {
+text-align: right;
+width: 40%;
+float: right;
+padding-top: 60px;
+}
+
+.navpoints h6 {
+	text-align: right;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.menu-btn {
+	position:relative;
+	top: 5px;
+	right: 0;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.menu-btn span {
+	width:30px;
+	height:4px;
+	margin:6px 0;	
+}
+
+.responsive-menu {
+	top: 130px;
+	right:0px;	
+}
+
+.responsive-menu, .responsive-menu .menu-header, .responsive-menu .menu-header .menu{
+		width: 100%;
+}
+.responsive-menu .menu-header li {
+		text-align: center;
+}
+	
 }
 
 @media(max-width: 550px){
@@ -658,7 +744,6 @@ margin-bottom: 30px;
 	min-height: 390px;
 }
 
-
 /*my classes & individual classes*/
 .classdetbox {
 	float: none;
@@ -684,13 +769,8 @@ line-height: 19px;
 }
 
 /*buttons*/
-#mainlearnbtn a {
- margin: 17px auto 0 auto;
-}
-
-/*panel wrappers*/
-#home {
-height: 845px;
+#mainlearnbtn a, #myacctbtn a {
+ margin: 0 auto;
 }
 
 /*home*/
@@ -704,30 +784,13 @@ height: 845px;
 	padding: 17px 5%;
 }
 
-
 img#logomain {
 	margin: 0 auto 17px;	
 }
 
-#sublock {
-	width: 94%; 
-	margin: 0 3% 12px;
-	padding: 17px 5%;
-	height: auto;
-	float: none;
-}
-
-#liblock {
-	width: 94%; 
-	margin: 0 3%;
-	height: auto;
-	padding: 17px 5%;
-	float: none;
-}
-
 /*rewards center*/
 .rewardbox {
-height: 380px;
+height: 400px;
 }
 }
 
@@ -774,99 +837,12 @@ h4 {
 #textwrulesabt, #textwrulesrew {
 	height: 28px;	
 }
-
-
-/*sticky header 100% width*/
-nav {
-	width: 100%;
-	padding: 0 15px;
-	height: 130px;	
-}
-
-.navlogo {
-	width: 10%;	
-}
-
-.navlogo img {
-	margin-top: 15px;
-	width: 140px;
-}
-
-.navrightcnt {
-	width: 90%;
-}
-
-.navlogin {
-width: 100%;
-text-align: right;
-float: none;
-height: 100px;	
-}
-
-.navlogin h6 {
-	display: none;
-}
-
-.navlogin form button {
-	display: block;
-}
-
-.navlogin .loginbtn {
-	margin-right: 0;
-	margin-bottom: 8px;
-}
-
-.navlogin, .navpoints {
-text-align: right;
-width: 40%;
-float: right;
-padding-top: 60px;
-}
-
-.navpoints h6 {
-	text-align: right;
-	font-size: 13px;
-	line-height: 15px;
-}
-
-.menu-btn {
-	position:relative;
-	top: 5px;
-	right: 0;
-	display:inline-block;
-	cursor:pointer;
-}
-
-.menu-btn span {
-	width:30px;
-	height:4px;
-	margin:6px 0;
-	
-}
-
-.responsive-menu {
-	top: 130px;
-	right:0px;	
-}
-
-
-.responsive-menu, .responsive-menu .menu-header, .responsive-menu .menu-header .menu{
-		width: 100%;
-}
-.responsive-menu .menu-header li {
-		text-align: center;
-}
 }
 
 @media(max-width: 400px){
-	/*modals*/
-.popup-content input{ 
-
-}
-
 /*rewards center*/
 .rewardbox {
-height: 310px;
+height: 350px;
 }
 }
 

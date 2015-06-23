@@ -11,6 +11,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../fonts/raleway-regular-webfont.eot');
+    src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-regular-webfont.woff') format('woff'),
+         url('../fonts/raleway-regular-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 @font-face {
     font-family: 'ralewaylight';
@@ -82,6 +94,22 @@ line-height: 18px;
 color: #666666;
 }
 
+#buslogos p{
+text-align: center;
+font-style: italic;
+margin-bottom: 8px;
+}
+
+.rewardbox p {
+	margin-bottom: 10px;
+}
+
+.redempbox p {
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666666;
+}
+
 .white {
 color: #ffffff;
 }
@@ -91,6 +119,7 @@ color: #000000;
 }
 
 span.pointshighlight {
+font-family: 'ralewaylight', Helvetica, sans-serif;
 color: #13cf56;
 font-size: 1.5em;
 font-weight: bolder;
@@ -99,6 +128,10 @@ text-shadow: 2px 2px 0px #3b9a47;
 
 .navpoints span.pointshighlight {
 text-shadow: 2px 2px 0px #f4f4f4;
+}
+
+.rewardbox span.pointshighlight {
+text-shadow: 1px 1px 0px #3b9a47;
 }
 
 /*links*/
@@ -110,9 +143,14 @@ a.plink {
 a.plink:visited {
 }
 
-a.plink:hover, a.plink:focus, a.plink:active {
+a.plink:hover {
 	color: #ee7830;
 	border-bottom: 1px dotted #ee7830;	
+}
+
+a.plink:hover, a.plink:focus, a.plink:active {
+	color: #ee7830;
+	text-decoration: none;	
 }
 
 a.plinkwhite {
@@ -197,12 +235,26 @@ h1.whitedkorange {
 	line-height: 64px;
 }
 
+#redempstats h1 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	font-size: 28px;
+	line-height: 1.1em;
+	color: #ee7830;
+	margin-bottom: 30px;
+}
+
 h2 {
 	font-family: 'ralewaylight', Helvetica, sans-serif;
 	font-size: 33px;
 	line-height: 45px;
 	color: #ffffff;
 	text-align: center;	
+}
+
+#redempstats h2 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	font-size: 26px;
+	color: #000000;
 }
 
 h3 {
@@ -273,8 +325,8 @@ h6	{
 
 #logoblock h6 {
 	color: #000000;
+	margin-bottom: 25px; 
 }
-
 
 #sublock h6, #liblock h6 {
 	margin-bottom: 15px;
@@ -286,8 +338,13 @@ h6	{
 	margin-bottom: 15px;
 }
 
+.rewardbox h6{
+	color: #666666;
+	margin-bottom: 10px;
+}
+
 /*box-sizing*/
-nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #logoblock, #sublock, #liblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol, #userinfomanage, .listtable, .listtabletitle, .listtablerow, .classlisttable, .classlisttabletitle, .classlisttablerow, .rcrimg, .classescol1, .classescol2 {
+nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #logoblock, #sublock, #liblock, #learnblock, #myacctblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol, #userinfomanage, .listtable, .listtabletitle, .listtablerow, .classlisttable, .classlisttabletitle, .classlisttablerow, .rcrimg, .classescol1, .classescol2, #redempstats, .redempbox {
 -moz-box-sizing: border-box;
 -ms-box-sizing: border-box;
 -o-box-sizing: border-box;
@@ -295,18 +352,18 @@ nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect
 box-sizing: border-box;
 }
 
-
 /*transitions*/
-h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #mainfindrewbtn a,  a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#myclasses, a#enrollinclass, a#viewassign, a#myrewards, .classlisttabletitle {
+h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, .navlogo, .navlogo a, .navlogo a img, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#myclasses, a#enrollinclass, a#viewassign, a#myrewards, .classlisttabletitle, #redempstats, .redempbox {
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;	
+  transition: all 0.2s ease;
+  -webkit-transform: translateZ(0); /*removes text flicker on safari*/	
 }
 
 /*border radius*/
-input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, #userinfomanage, .listtable, .classlisttable, .rcrimg {
+input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a,  #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, #userinfomanage, .listtable, .classlisttable, .rcrimg {
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
@@ -549,7 +606,7 @@ margin-bottom: 15px;
   transform: scale(1.1);	
 }
 
-#mainlearnbtn a, #mainfindrewbtn a, .redeemnowbtn a {
+#mainlearnbtn a, #myacctbtn a, #mainfindrewbtn a, .redeemnowbtn a {
   display: block;
   font-family: 'ralewaylight', Helvetica, sans-serif;
   padding: 15px;
@@ -577,6 +634,29 @@ margin-bottom: 15px;
 }
 
 #mainlearnbtn a:focus, #mainlearnbtn a:active {  
+}
+
+#myacctbtn a {
+  background-color: #ee7830;
+  border: 1px solid #c56426;
+  color: #ffffff;
+  font-size: 18px;
+  width: 120px;
+  margin: 25px auto;
+}
+
+#myacctbtn a:visited {
+}
+
+#myacctbtn a:hover {
+  -moz-transform: scale(1.07);
+  -ms-transform: scale(1.07);
+  -o-transform: scale(1.07);
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
+}
+
+#myacctbtn a:focus, #myacctbtn a:active {  
 }
 
 #mainfindrewbtn a {
@@ -629,7 +709,7 @@ redeemnowbtn a:hover {
 padding-left: 10px;
 }
 
-#mainlearnbtn a img {
+#mainlearnbtn a img, #myacctbtn a img {
 float: right;
 width: 15px;
 height: 20px;
@@ -719,7 +799,6 @@ height: 11px;
 padding-top: 2px;
 }
 
-
 /*  desktop sticky header  */
 nav {
 	width: 100%;
@@ -744,16 +823,14 @@ nav a {
 }
 
 .navlogo {
-	width: 14.784946236559% /*550/3720px*/;		
-}
-
-.navlogo a, .navlogo a:hover, .navlogo a:active {
-	width: 170px;
+	width: 14.784946236559% /*550/3720px*/;
+	text-align: left;
 	background-color: #ffffff;
 }
 
 .navlogo img {
-	width: 170px;		
+	width: 170px;
+	height: 123px;		
 }
 
 .navrightcnt {
@@ -991,7 +1068,7 @@ width: 100%;
 }
 
 .footertxt a:hover {
-	text-decoration: underline;	
+	border-bottom: 1px dotted #ffffff;	
 }
 
 .footertxt a:focus, a:active {
@@ -1010,7 +1087,7 @@ width: 100%;
 #home {
 position: relative;
 width: 100%;
-height: 800px;
+height: 900px;
 overflow: hidden;
 background-image: url(../images/homeimg.png);
 background-size: cover;
@@ -1021,6 +1098,17 @@ background-repeat: no-repeat;
 #homecnt, #homecnt img {
 	width: 100%;
 	height: 100%;
+}
+
+#busport {
+	background-color: #cccccc;	
+}
+
+#busportcnt{
+	width: 90%;
+	padding: 150px 0;
+	margin: 0 5%;
+	text-align: center;
 }
 
 #about {
@@ -1157,18 +1245,8 @@ background-repeat: no-repeat;
 }
 
 
-@media all and (max-width:1400px){
 
-    .social-media-banner{
-        display:none !important;
-    }
-}
 
-@media all and (max-width:1150px ) {
-    .social-media-icon{
-        display: none !important;
-    }
-}
 
 
 

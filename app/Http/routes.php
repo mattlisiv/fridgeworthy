@@ -56,6 +56,8 @@ Route::group(array('domain' => $domain), function()
     Route::get("rewards","PublicRewardController@index");
     Route::get("rewards/{id}","PublicRewardController@show");
     Route::get("forgotpassword","HomeController@forgotPassword");
+    Route::post("uploadtest","HomeController@uploadTest");
+    Route::get("upload","HomeController@upload");
 
 
 });

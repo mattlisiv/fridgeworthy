@@ -21,14 +21,20 @@
 
 #homeblocks {
 	width: 100%;
-	height: 450px;
+	height: 563px;
+}
+
+#homeblocks:after {
+	content: "";
+	display: block;
+	clear: both;	
 }
 
 #logoblock {
 	width: 300px; 
 	margin-right: 13px;
 	padding: 30px;
-	height: 450px;
+	height: 563px;
 	background-color: rgba(255,255,255,.95);
 	display: block;
 	float: left;
@@ -41,6 +47,26 @@ img#logomain {
 	margin-bottom: 25px; 
 }
 
+#buslogos {
+	width: 100%;
+}
+
+div#buslogoscroll {
+	width: 100%;
+	height: 108px;
+	overflow: scroll;
+	text-align: center;
+	background-color: #ffffff;
+	padding: 13px 0px;
+	vertical-align: middle;
+}
+
+#buslogoscroll img {
+	height: auto;
+	width: 130px;
+	margin: 13px 0px;	
+}
+
 #homeformblock {
 	width: 207px;
 	height: 100%;
@@ -48,40 +74,92 @@ img#logomain {
 	float: left;
 }
 
-#sublock {
-	width: 100%; 
-	height: 270px;
-	margin-bottom: 13px;
-	padding: 17px 5%;
-	background-color: rgba(238,120,48,.9);
+/*bus portal*/
+.busportwrap {
+width: 460px;
+height: 100%;
+padding-top: 100px;
+margin: 0 auto;
+text-align: center;
+}
+
+/*form fields*/
+#codeform {
+	width: 250px;
+	margin: 0 auto;
+}
+
+#codeform input {
+width: 100%;
+padding: 2px 5px;
+height: 23px;
+margin-bottom: 8px;
+background-color: #ffffff;
+border: none;
+font-family: Helvetica, sans-serif;
+font-size: 14px;
+text-align: center;
+color: #000000;
+}
+
+/*buttons*/
+#codeform button {
+width: 100px;
+height: 23px;
+padding: 2px 5px;
+cursor: pointer;
+font-family: Helvetica, sans-serif;
+font-size: 14px;
+color: #ffffff;
+border: 1px solid #c56426;
+background-color: #ee7830;
+}
+
+#codeform button:hover {
+-moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);	
+}
+
+/*redemption*/
+#redempstats {
+width: 100%;
+max-width: 800px;
+padding: 25px;
+margin: 100px auto;
+background-color: #ffffff;
+border: 9px solid #01aef0;
+-webkit-box-shadow: 5px 5px 21px 0px rgba(0,0,0,.17);
+-moz-box-shadow: 5px 5px 21px 0px rgba(0,0,0,.17);
+-o-box-shadow: 5px 5px 21px 0px rgba(0,0,0,.17);
+-ms-box-shadow: 5px 5px 21px 0px rgba(0,0,0,.17);
+box-shadow: 5px 5px 21px 0px rgba(0,0,0,.17);
+}
+
+.redempbox {
+width: 21.951219512195% /*90/410*/;
+height: 120px;
+padding-top: 25px;
+margin-right: 04.065040650407% /*16.66666666666667/410*/;
+border: 1px solid #e2e4e5;
+float: left;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+#cancbox {
+	margin-right: 0;
+}
+
+#redempstats:after {
+	content: "";
 	display: block;
-	float: left;
-	text-align: center;
-}
-
-#liblock {
-	width: 100%; 
-	height: 167px;
-	padding: 17px 0 0;
-	background-color: rgba(1,174,240,.9);
-	display: block;
-	float: left;
-	text-align: center;
-}
-
-form#signup .tfield {
-	width: 100%;
-	margin-bottom: 8px;
-}
-
-#liblock button {
-	margin-bottom: 8px;
-}
-
-
-#signup .custom-dropdownBlue, #signup .customSelect {
-	width: 100%;
-	display: block;
+	clear: both;
 }
 
 /*about*/
@@ -364,7 +442,7 @@ padding: 15px 0;
 	float: left;
 	width: 46.153846153846% /*300/650*/;
 	margin-bottom: 50px;
-	height: 245px;	
+	height: 245px;
 }
 
 .classdetbox:nth-of-type(odd) {
@@ -407,7 +485,8 @@ margin-right: 7.692307692308% /*50/650*/;
 }
 
 #rewardsboxwrap {
-	margin-top: 50px;	
+	margin-top: 50px;
+	width: 100%;
 }
 
 .rewardbox {
@@ -415,8 +494,8 @@ display: block;
 float: left;
 width: 23%;
 margin: 0 2% 10px 0;
-height: 320px;
-padding: 10% 2.65% 0 2%;
+height: 380px;
+padding: 80px 2.65% 0 2%;
 overflow: hidden;
 background-image: url(../images/notemag@2x.png);
 background-position: top;
@@ -429,16 +508,13 @@ background-repeat: no-repeat;
 	margin-bottom: 10px;
 }
 
-.rewardbox h6{
-	color: #666666;
-}
-
 #rewardsboxwrap:after {
 	content: "";
 	display: block;
 	clear:both;
 	height: 10px;
 }
+
 
 /*rewards center details*/
 .rewardboxlg {

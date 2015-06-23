@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use App\School;
 use App\User;
+use GrahamCampbell\Dropbox\Facades\Dropbox;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -187,4 +190,54 @@ class HomeController extends Controller {
         return view('home.partials.errors');
     }
 
+    public function uploadTest(Request $request){
+
+        if($request->hasFile('study_file')){
+
+
+       //     $img_name = "new_name";
+        //    $destination = 'uploads';
+        //    $request->file('image')->move($destination,$img_name);
+
+            $fd = fopen($request->file('study_file')->getRealPath(), "rb");
+            var_dump($fd);
+            $md1 = Dropbox::uploadFile("/Frog.pdf", \Dropbox\WriteMode::add(), $fd);
+            fclose($fd);
+            print_r($md1);
+
+            //PDF file is stored under project/public/download/info.pdf
+            $file= public_path(). "/download/Frog.pdf";
+            $fd = fopen($file, "wb") or die("Unable to open file");
+            $metadata = Dropbox::getFile("/Frog.pdf", $fd);
+            fclose($fd);
+            $headers = array(
+                'Content-Type: application/pdf',
+            );
+
+            if(File::isFile($file)) {
+                ob_end_clean();
+                return response()->download($file);
+
+
+            }else{
+                return "No file available";
+            }
+
+
+        }else{
+
+            return 'No file added';
+        }
+
+        $result = Dropbox::createFolder('/foo2');
+        return $result;
+    }
+
+
+    public function upload(){
+
+
+
+        return view('teacher.documents.create');
+    }
 }

@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use GrahamCampbell\Dropbox\Facades\Dropbox;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,6 +21,8 @@ class HomeController extends Controller {
         $customers = $business->customers()->get();
 		return view('business.home.index',compact('user','business','customers'));
 	}
+
+
 
 
 

@@ -149,6 +149,8 @@ return [
         'Zizaco\Entrust\EntrustServiceProvider',
         'App\Repositories\DBServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',
+        'GrahamCampbell\Dropbox\DropboxServiceProvider',
+
 
 
 
@@ -205,7 +207,7 @@ return [
         'QrCode'    => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'PDF' => 'Barryvdh\DomPDF\Facade',
-
+        'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox',
 
     ],
 

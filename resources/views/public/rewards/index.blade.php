@@ -31,8 +31,9 @@
 
                 @foreach($rewards as $reward)
                     <div class="rewardbox">
+                        <h6>{{$reward->name}}</h6>
                         <img src="images/alternate.jpg" alt="No Image provided"/>
-                        <h6>{{$reward->name}}</h6><br>
+                        <p><span class="pointshighlight">{{$reward->points_required}}</span> Fridge points</p>
                         <div class="detbtncont"><a href="{{action('PublicRewardController@show',[$reward->id]) }}" class="getdetailsbtn"><p>get details</p><img src="{{asset('images/detarrow.png')}}"></a></div>
                         <div class="clear"></div>
                     </div>

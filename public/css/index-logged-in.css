@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*home*/
+#learnblock {
+	width: 100%;
+	background-color: rgba(238,120,48,.9);
+	display: block;
+	float: left;
+	text-align: center;
+	margin-bottom: 13px;
+}
+
+#myacctblock {
+	width: 100%;
+	background-color: rgba(1,174,240,.9);
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+@media (max-width:700px) {
+/*panel wrappers*/
+#home {
+height: 600px;
+}
+
+/*home*/
+#learnblock {
+	width: 45.5%;
+	margin: 0px 3% 0 3%;
+}
+
+#myacctblock {
+	width: 45.5%;
+	margin: 0px 0 0 0;
+}
+}
+
+@media(max-width: 490px){
+/*panel wrappers*/
+#home {
+height: 705px;
+}
+
+/*home*/
+#learnblock {
+	width: 94%; 
+	margin: 0 3% 12px;
+	height: auto;
+	padding: 17px 0;
+	float: none;
+}
+
+#myacctblock {
+	width: 94%; 
+	margin: 0 3% 12px;
+	height: auto;
+	padding: 17px 0;
+	float: none;
+}
+}
+
+
+
