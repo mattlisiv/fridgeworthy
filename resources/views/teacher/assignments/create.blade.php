@@ -34,9 +34,14 @@
                     <br>
                     {!! Form::open(['url'=>'store_assignment']) !!}
                     <div>
-                        <h6>{!! Form::label('Name', 'Assignment name:',['style'=>'margin:25px 0px']) !!}</h6>
+                        <h6>{!! Form::label('Name', 'Assignment name:',['style'=>'margin:10px 0px']) !!}</h6>
                         <br>
                         <h6>{!! Form::text('name',null,['style'=>'text-align:center']) !!}</h6>
+                        <br>
+                        <h6>{!! Form::label('Name', 'Type of Assignment:',['style'=>'margin:10px 0px']) !!}</h6>
+                        <br>
+                        <h6>{!! Form::select('type',array('default'=>'Please Select','assignment'=>'Assignment','quiz'=>'Quiz','test'=>'Test'), 'default',
+                            ['class'=>'customSelect','style'=>'text-indent:10px']) !!}</h6>
                     </div>
                     <br>
                     <div>

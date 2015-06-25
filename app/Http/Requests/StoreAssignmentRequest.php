@@ -33,7 +33,8 @@ class StoreAssignmentRequest extends Request {
 			'name'=>'required|min:5|max:25',
             'description'=>'required|min:10',
             'due_date'=>'date_format:"m/d/Y"|required|not_in:Select Date|after:'.$today,
-            'course_id'=>'required'
+            'course_id'=>'required',
+            'type'=>'required|not_in:default'
 		];
 	}
 

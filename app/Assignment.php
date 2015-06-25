@@ -21,7 +21,8 @@ class Assignment extends Model{
         'name',
         'course_id',
         'description',
-        'due_date'
+        'due_date',
+        'type'
     ];
     
      protected $dates = [

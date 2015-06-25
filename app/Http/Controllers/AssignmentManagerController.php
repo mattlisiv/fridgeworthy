@@ -90,31 +90,47 @@ class AssignmentManagerController extends Controller {
 
         var_dump($request->all());
         $grade = $this->gradeRepository->find($request['grade_id']);
+        $assignment = $this->assignmentRepository->find($grade->assignment_id);
         $grade->status = 'accepted';
         if($request['action'] == 'edit'){
 
             $grade->numeric_grade = $request['revised_grade'];
         }
         $grade->save();
-        $student = $this->userRepository->find($grade->student_id);
-        if($grade->numeric_grade>=90){
+        $points_rewarded = 0;
+        switch($assignment->type){
 
-            $student->points +=3;
-            $student->save();
+            case 'test':
+                if($grade->numeric_grade>=90){
+                    $points_rewarded = 5;
+                }elseif($grade->numeric_grade>=80){
+                    $points_rewarded = 3;
+                }elseif($grade->numeric_grade>=70){
+                    $points_rewarded = 1;
+                }
+                break;
 
-        }else if($grade->numeric_grade>=80) {
+            case 'assignment':
+                if($grade->numeric_grade>=80){
+                    $points_rewarded = 1;
+                }
+                break;
 
-            $student->points+=2;
-            $student->save();
-
-        }else
-        if($grade->numeric_grade>=70){
-
-            $student->points+=1;
-            $student->save();
+            case 'quiz':
+                if($grade->numeric_grade>=90){
+                    $points_rewarded = 3;
+                }elseif($grade->numeric_grade>=80){
+                    $points_rewarded = 2;
+                }
+                break;
+            default:
+                break;
         }
 
-        $assignment = $this->assignmentRepository->find($grade->assignment_id);
+                $student = $this->userRepository->find($grade->student_id);
+                $student->points +=$points_rewarded;
+                $student->save();
+
 
         return redirect()->action('AssignmentManagerController@viewGradeBook',$assignment->course_id);
     }
@@ -167,6 +183,17 @@ class AssignmentManagerController extends Controller {
 
         $request['due_date'] = Carbon::createFromFormat('m/d/Y',$request['due_date']);
         $id = $this->assignmentRepository->store($request->all());
+        $user = Auth::user();
+        if($request['type']=='test'){
+            $user->points +=5;
+        }elseif($request['type']=='quiz'){
+            $user->points +=3;
+        }elseif($request['type']=='assignment'){
+            $user->points +=1;
+        }else{
+            throw new \Exception('Error in retrieving type');
+        }
+        $user->save();
         return redirect()->action('AssignmentManagerController@viewAssignment',$id);
     }
 
