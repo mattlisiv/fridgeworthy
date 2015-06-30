@@ -207,23 +207,20 @@ class HomeController extends Controller {
 
             $fd = fopen($request->file('study_file')->getRealPath(), "rb");
             var_dump($fd);
-            $md1 = Dropbox::uploadFile("/Frog.pdf", \Dropbox\WriteMode::add(), $fd);
+            $md1 = Dropbox::uploadFile("/Frog.".$request->file('study_file')->getClientOriginalExtension(), \Dropbox\WriteMode::add(), $fd);
             fclose($fd);
             print_r($md1);
 
             //PDF file is stored under project/public/download/info.pdf
-            $file= public_path(). "/download/Frog.pdf";
+            $file= public_path(). "/download/Frog.".$request->file('study_file')->getClientOriginalExtension();
             $fd = fopen($file, "wb") or die("Unable to open file");
-            $metadata = Dropbox::getFile("/Frog.pdf", $fd);
+            $metadata = Dropbox::getFile("/Frog.".$request->file('study_file')->getClientOriginalExtension(), $fd);
             fclose($fd);
-            $headers = array(
-                'Content-Type: application/pdf',
-            );
 
             if(File::isFile($file)) {
                 ob_end_clean();
                 return response()->download($file);
-
+                unlink($file);
 
             }else{
                 return "No file available";

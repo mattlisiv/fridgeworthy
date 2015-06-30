@@ -58,6 +58,11 @@ padding: 10% 4% 0 3%;
 }
 
 @media (max-width:1180px) {	
+/*head tags*/
+#infographicpancnt h1 {
+	font-size: 70px;
+}
+
 /*home*/
 #home {
 	background-image: none;
@@ -116,14 +121,24 @@ padding: 15% 6% 0 4.4%;
 	padding: 50px 0;
 }
 
-#infographic-v {
-		width: 100%;
-		display: block;
+/*infographic*/
+#stars, #stars img {
+	width: 100%;
+	display: block;
+	margin: 0px 0 20px 0;
 }
 
-#infographic-h {
+#infographic-v, #infographic-v img {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#infographic-h, #infographic-h img {
 	display: none;
 }
+
 
 /*rewards center details*/
 .rewardboxlg {
@@ -225,6 +240,12 @@ padding: 120px 6.5% 30px 5%;
 }
 
 @media (max-width:750px) {
+/*head tags*/
+#infographicpancnt h1 {
+	white-space: normal;
+	font-size: 60px;
+}
+
 /*sticky header*/
 .navlogin h6 {
 font-size: 15px;
@@ -633,7 +654,7 @@ height: 460px;
 }
 
 @media(max-width:590px){
-	/*sticky header 100% width*/
+/*sticky header 100% width*/
 nav {
 	width: 100%;
 	padding: 0 10px;
@@ -716,6 +737,17 @@ padding-top: 60px;
 }
 
 @media(max-width: 550px){
+/*head tags*/
+#infographicpancnt h1 {
+	font-size: 50px;
+	line-height: 42px;
+	margin-bottom: 12px;
+}
+
+#infographicpancnt h1 span {
+	display: block;
+}
+
 /*registration*/
 .regthird {
 width: 100%;
@@ -808,6 +840,7 @@ h1 {
 	line-height: 62px;
 }
 
+/*head tags*/
 #regpancnt h1 {
 	margin-bottom: 30px;	
 }
@@ -816,7 +849,6 @@ h1 {
 	font-size: 50px;
 	line-height: 42px;
 }
-
 
 #rewcentpancnt h1 {
 	font-size: 50px;

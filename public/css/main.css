@@ -210,6 +210,11 @@ h1.whitedkorange {
 	line-height: 40px;
 }
 
+#infographicpancnt h1 {
+	white-space: nowrap;
+	line-height: normal;
+}
+
 #regpancnt h1 {
 	margin-bottom: 50px;	
 }
@@ -1102,11 +1107,11 @@ background-repeat: no-repeat;
 
 #busport {
 	background-color: #cccccc;	
+	padding: 140px 0;
 }
 
 #busportcnt{
 	width: 90%;
-	padding: 150px 0;
 	margin: 0 5%;
 	text-align: center;
 }

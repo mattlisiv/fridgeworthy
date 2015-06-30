@@ -97,6 +97,8 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::post('update_assignment',"AssignmentManagerController@updateAssignment");
     Route::get('mygradebook/{id}/edit',"AssignmentManagerController@editGrade");
     Route::post('update_grade',"AssignmentManagerController@updateGrade");
+    Route::get('course/{id}/uploadfile',array('as'=>'id','uses'=>"DocumentManagerController@create"));
+    Route::post('store_file',"DocumentManagerController@store");
 
 });
 

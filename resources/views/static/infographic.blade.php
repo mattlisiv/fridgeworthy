@@ -21,6 +21,20 @@
     <script type="text/javascript" src="{{asset('js/retina.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.stepframemodal.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/fridgeworthy.js')}}"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script>
+        if (!Modernizr.svg) {
+            var imgs = document.getElementsByTagName('img');
+            var svgExtension = /.*\.svg$/
+            var l = imgs.length;
+            for(var i = 0; i < l; i++) {
+                if(imgs[i].src.match(svgExtension)) {
+                    imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+                    console.log(imgs[i].src);
+                }
+            }
+        }
+    </script>
 
 
     @include('home.partials.favico')
@@ -35,26 +49,21 @@
     @include('home.partials.modal.Logout')
 
     @include('home.partials.modal.Login')
-
-
+    
     <!--start infographic-->
     <section id="infographicpancnt">
-
-        <div id="infographictitle">
-            <img src="images/infographic-dektop-h-1.svg" alt="How Hard Work Pays Off">
-            <div id="stars"><img src="images/infographic-dektop-h-2.svg" alt="stars"></div>
-        </div>
+        <h1 class="whitedkgray">how hard work <span>pays off</span></h1>
+        <div id="stars"><img src="images/infographic-stars.svg" alt="stars"></div>
 
         <div id="infographic-h">
-            <div><img src="images/infographic-dektop-h-3.svg" alt="infographic"></div>
+            <img src="images/infographic-desktop-h.svg" alt="infographic">
         </div>
 
         <div id="infographic-v">
-            <div><img src="images/infographic-dektop-v-3.svg" alt="infographic"></div>
+            <img src="images/infographic-desktop-v.svg" alt="infographic">
         </div>
 
     </section><!--end infographic-->
-
 
     <div class="push"></div>
 </div><!--end mainwrap-->
