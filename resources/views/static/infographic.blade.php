@@ -21,8 +21,8 @@
     <script type="text/javascript" src="{{asset('js/retina.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.stepframemodal.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/fridgeworthy.js')}}"></script>
-    <script type="text/javascript" src="js/modernizr.js"></script>
-    <script>
+    <script type="text/javascript" src="{{asset('js/modernizr.js')}}"></script>
+    <script type="text/javascript">
         if (!Modernizr.svg) {
             var imgs = document.getElementsByTagName('img');
             var svgExtension = /.*\.svg$/
@@ -49,7 +49,7 @@
     @include('home.partials.modal.Logout')
 
     @include('home.partials.modal.Login')
-    
+
     <!--start infographic-->
     <section id="infographicpancnt">
         <h1 class="whitedkgray">how hard work <span>pays off</span></h1>

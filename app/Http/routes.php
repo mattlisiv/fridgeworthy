@@ -77,6 +77,8 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("mygrades/{id}","AssignmentManagerController@viewIndividualGrade");
     Route::get("myassignments/{id}/submitgrade","AssignmentManagerController@submitGrade");
     Route::post("store_grade","AssignmentManagerController@storeGrade");
+    Route::get("course/{id}/viewfile","DocumentManagerController@show");
+    Route::get("course/{id}/studyfiles","DocumentManagerController@index");
 
 });
 
@@ -99,6 +101,9 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::post('update_grade',"AssignmentManagerController@updateGrade");
     Route::get('course/{id}/uploadfile',array('as'=>'id','uses'=>"DocumentManagerController@create"));
     Route::post('store_file',"DocumentManagerController@store");
+    Route::get('files/{id}/delete',"DocumentManagerController@delete");
+    Route::get('files/{id}/deleting',"DocumentManagerController@destroy");
+
 
 });
 

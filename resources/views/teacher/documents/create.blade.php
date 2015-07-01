@@ -25,9 +25,9 @@
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Create Class</div>
+            <div class="listtabletitle">Store File</div>
 
-            <div style="height:400px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
                     {!! Form::open(['url'=>'store_file','files'=>'true']) !!}
@@ -50,6 +50,8 @@
                     <br>
                     {!! Form::submit('Upload Study Material',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
+                    <br>
+                    <img width="200em" height="100em" src="{{asset('images/dropbox-logos_powered-by-dropbox.png')}}">
                     <br>
                     @if($errors)
                         <div style="color:red;margin: 0 auto;text-align: center">

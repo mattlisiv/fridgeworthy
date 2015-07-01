@@ -14,13 +14,10 @@
 
         <img src="{{asset('images/goldstarrule.svg')}}" align="golden stars">
 
-        <p>At Fridgeworthy, our goal is to incite academic success by rewarding the combined
-            efforts of students, teachers, and parents. We know sometimes students need
-            motivation to stay focused on their education, especially with so many other
-            activities going on in their lives. We are here to remove that pressure from students,
-            teachers, and parents. We want to make learning a fun, rewarding, and collaborative
-            effort that engages the entire community. With our proud partners, we present exciting rewards that can be redeemed by Fridgeworthy members.</p>
-
+        <p>At FridgeWorthy, we seek to recognize academic success by rewarding the combined efforts of students, teachers, and parents.
+            By rewarding students’ academic success in the community, we build a support system that promotes individual growth for both students
+            and teachers alike.  Through our unique program, students, teachers, and parents work together, along with local businesses, to build
+            an environment of academic achievement and support.</p>
     </div>
     <!--start about 2-->
     <section id="about2">
@@ -46,7 +43,7 @@
             <div class="forthecol" id="businessescol">
                 <div id="businessescirc"></div>
                 <h5>for the businesses...</h5>
-                <p id="businessesdescrip">Businesses, small and large, can gain exposure and customers from contributing to furthering future education.</p><br>
+                <p id="businessesdescrip">Businesses, small and large, can gain exposure and customers from promoting education in their communities. </p><br>
             </div>
 
 
