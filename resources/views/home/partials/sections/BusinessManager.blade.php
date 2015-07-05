@@ -2,15 +2,16 @@
 <!--start business portal-->
 <section id="busport">
 <div id="busportcnt">
+    <h1 class="whiteltgray ">business portal</h1>
     {!! Form::open(['url'=>'submit_access_code','id'=>'codeform']) !!}
     <br>
-    {!! Form::label('Select Reward') !!}
-    <h6>{!! Form::select('reward_id',array('default'=>'Select Reward') +$business->rewards->lists('name','id'),
+    <h5>{!! Form::label('Select Reward') !!}</h5>
+    <h6>{!! Form::select('reward_id',array('default'=>'Reward') +$business->rewards->lists('name','id'),
         'default',['class'=>'customSelect']) !!}</h6>
     <br>
     <br>
-    {!! Form::label('Enter access code') !!}
-    <h6>{!! Form::text('access_code',null,['placeholder'=>'enter access code','class'=>'tfield']) !!}</h6>
+        <h5>{!! Form::label('Enter access code') !!}</h5>
+    <h6>{!! Form::text('access_code',null,['placeholder'=>'access code','class'=>'tfield']) !!}</h6>
 {!! Form::button('Submit',['type'=>'submit']) !!}
 {!! Form::close()!!}
     @if($errors)
