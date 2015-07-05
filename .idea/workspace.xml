@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/static/pointsystem-student.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/static/pointsystem-teacher.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/abshair-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/arena-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm@2x.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/davebusters-sm@2x.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/dunkin-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm@2x.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/lazercity-sm@2x.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/marcos-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/mtimes-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/stars-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm@2x.gif" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/tomchee-sm@2x.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm@2x.jpg" afterPath="$PROJECT_DIR$/public/images/part-bus-logos/totalhealth-sm@2x.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StaticPagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StaticPagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/static/infographic.blade.php" afterPath="$PROJECT_DIR$/resources/views/static/infographic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/navigation/registered/home/student/navigation.blade.php" afterPath="$PROJECT_DIR$/resources/views/navigation/registered/home/student/navigation.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/navigation/registered/home/teacher/navigation.blade.php" afterPath="$PROJECT_DIR$/resources/views/navigation/registered/home/teacher/navigation.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pages.css" afterPath="$PROJECT_DIR$/public/css/pages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/responsive.css" afterPath="$PROJECT_DIR$/public/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php" />
     </list>
     <ignored path="fridgeworthy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="navigation.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/navigation/registered/home/student/navigation.blade.php">
+      <file leaf-file-name="About.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2542373" vertical-offset="0" max-vertical-offset="1215">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.84093875" vertical-offset="30" max-vertical-offset="915">
+              <caret line="45" column="132" selection-start-line="45" selection-start-column="132" selection-end-line="45" selection-end-column="132" />
               <folding />
             </state>
           </provider>
@@ -143,7 +113,6 @@
         <option value="$PROJECT_DIR$/resources/views/teacher/courses/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/documents/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/documents/delete.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php" />
         <option value="$PROJECT_DIR$/public/js/clndr-site.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DocumentManagerController.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
@@ -155,6 +124,7 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/home/teacher/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/home/student/navigation.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php" />
       </list>
     </option>
   </component>
@@ -1321,7 +1291,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22028986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22028986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1548,13 +1518,6 @@
         <state vertical-scroll-proportion="0.589309" vertical-offset="133" max-vertical-offset="975">
           <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84093875" vertical-offset="30" max-vertical-offset="915">
-          <caret line="45" column="150" selection-start-line="45" selection-start-column="150" selection-end-line="45" selection-end-column="150" />
         </state>
       </provider>
     </entry>
@@ -2735,8 +2698,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/navigation/registered/home/student/navigation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2542373" vertical-offset="0" max-vertical-offset="1215">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.48891786" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436126624000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/partials/sections/About.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84093875" vertical-offset="30" max-vertical-offset="915">
+          <caret line="45" column="132" selection-start-line="45" selection-start-column="132" selection-end-line="45" selection-end-column="132" />
           <folding />
         </state>
       </provider>

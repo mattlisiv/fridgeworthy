@@ -43,7 +43,7 @@
             <div class="forthecol" id="businessescol">
                 <div id="businessescirc"></div>
                 <h5>for the businesses...</h5>
-                <p id="businessesdescrip">Businesses, small and large, can gain exposure and customers from promoting education in their communities. </p><br>
+                <p id="businessesdescrip">Businesses, small and large, can gain exposure and customers from promoting education within their communities. </p><br>
             </div>
 
 
