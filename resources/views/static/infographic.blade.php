@@ -12,6 +12,7 @@
     <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/pages.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/infographic.css')}}" rel="stylesheet" type="text/css">
 
     <!--JS links-->
     <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
@@ -53,14 +54,75 @@
     <!--start infographic-->
     <section id="infographicpancnt">
         <h1 class="whitedkgray">how hard work <span>pays off</span></h1>
-        <div id="stars"><img src="images/infographic-stars.svg" alt="stars"></div>
+        <div id="stars"><img src="{{asset('images/infographic-stars.svg')}}" alt="stars"></div>
 
-        <div id="infographic-h">
-            <img src="images/infographic-desktop-h.svg" alt="infographic">
-        </div>
+        <div id="infographicwrap">
 
-        <div id="infographic-v">
-            <img src="images/infographic-desktop-v.svg" alt="infographic">
+            <div id="igstudrow" class="igrow">
+                <div class="igsubtitle"><h1>students</h1></div>
+                <div class="igcnt">
+
+                    <div id="igstudcellrow1" class="igrow">
+                        <div class="igcell"><h5>Students register for FridgeWorthy through our online portal</h5></div>
+                        <div class="igarrow"></div>
+                        <div class="igcell"><h5>Students take their usual tests and quizzes at school</h5></div>
+                        <div class="igarrow"></div>
+                        <div class="igcell"><h5>Students post their grades on their online FridgeWorthy profile</h5></div>
+                        <div class="igarrow"></div>
+                        <div class="igcell" id="yellowdownleft"><h5>Students receive FridgePoints for good grades after teacher verification</h5></div>
+                    </div>
+
+                    <div id="igstudcellrow2" class="igrow">
+                        <div class="igcell" id="studcell1"><h5>Students use their FridgePoints to redeem rewards from participating local businesses</h5></div>
+                        <div class="igarrow"></div>
+                        <div class="igcell" id="studcell2"><h5>Students can access study materials, provided by teachers, to help them prepare for upcoming assessments</h5></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="igteachrow" class="igrow">
+                <div class="igsubtitle"><h1>teachers</h1></div>
+                <div class="igcnt">
+                    <div class="igcell"><h5>Teachers register for FridgeWorthy through our online portal</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Teachers post test submission forms at <a href="http://www.fridge-worthy.com" target="_self" class="iglink">www.fridge-worthy.com</a></h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Teachers verify the grades of their students and grant students FridgePoints</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Teachers receive FridgePoints for providing online study materials and participating in the success of their students</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Teachers use their FridgePoints to redeem rewards from participating local businesses</h5></div>
+                </div>
+            </div>
+
+            <div id="igparentrow" class="igrow">
+                <div class="igsubtitle"><h1>parents</h1></div>
+                <div class="igcnt">
+                    <div class="igcell"><h5>Parents register with their child to gain access to FridgeWorthy</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Parents earn FridgePoints as their child succeeds academically</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Parents use their FridgePoints to redeem rewards from participating local businesses</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Parents receive updates regarding the academic achievements of their child</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Parents gain direct access into the relationship between their child and their teachers</h5></div>
+                </div>
+            </div>
+
+            <div id="igbusrow" class="igrow">
+                <div class="igsubtitle"><h1>businesses</h1></div>
+                <div class="igcnt">
+                    <div class="igcell"><h5>Local businesses partner with FridgeWorthy to provide unique rewards for students, parents, and teachers</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Students, parents, and teachers redeem their rewards at individual businesses, providing the business with more patronage and community involvement</h5></div>
+                    <div class="igarrow"></div>
+                    <div class="igcell"><h5>Businesses are able to reach a larger market through the community, while also engaging in multiple fundraising opportunities and events</h5></div>
+                    <div class="igcell" id="igtrophy"><img src="images/trophy.svg" alt="trophy"></div>
+
+                </div>
+            </div>
         </div>
 
     </section><!--end infographic-->

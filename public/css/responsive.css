@@ -59,8 +59,15 @@ padding: 10% 4% 0 3%;
 
 @media (max-width:1180px) {	
 /*head tags*/
-#infographicpancnt h1 {
+#infographicpancnt h1.whitedkgray {
 	font-size: 70px;
+}
+
+/*panel wrappers*/
+#infographicpancnt {
+	width: 90%;
+	margin: 0 5%;
+	padding: 50px 0;
 }
 
 /*home*/
@@ -75,6 +82,16 @@ padding: 10% 4% 0 3%;
 	right: 0;
 	margin: 65px auto 0 auto;
 
+}
+
+/*teacher points system infographic*/
+.teacherpointscol {
+	width: 47.5%;
+	margin-right: 0px;
+}
+
+#testteachpts, #assignteachpts {
+	margin-right: 5%;
 }
 
 /*rewards center*/
@@ -109,16 +126,24 @@ padding: 15% 6% 0 4.4%;
 
 @media (max-width:1000px) {
 /*head tags*/
+.pointssystemcnt h1.whitedkgray {
+	font-size: 80px;
+	line-height: 72px;
+}
+
+.pointssystemcnt h2 {
+	line-height: 25px;
+}
+
+.studentpointscol h2, .teacherpointscol h2 {
+	padding-top: 10px;
+	font-size: 26px;
+	line-height: 25px;
+}
+
 #rewcentpancnt h1 {
 	font-size: 70px;
 	line-height: 62px;
-}
-
-/*infographic*/
-#infographicpancnt {
-	width: 90%;
-	margin: 0 5%;
-	padding: 50px 0;
 }
 
 /*infographic*/
@@ -128,15 +153,14 @@ padding: 15% 6% 0 4.4%;
 	margin: 0px 0 20px 0;
 }
 
-#infographic-v, #infographic-v img {
-	width: 100%;
-	display: block;
-	margin: 0;
-	padding: 0;
+
+/*student points system infographic*/
+.psstudheadorange, .psstudheadgreen, .psstudheadblue {
+	height: 75px;
 }
 
-#infographic-h, #infographic-h img {
-	display: none;
+.studentpointscol h2 span {
+	display: block;
 }
 
 
@@ -224,6 +248,95 @@ margin-bottom: 30px;
 	margin-top: 82px;
 }
 
+/*main infographic*/
+#infographicwrap, .igrow, .igsubtitle, .igcnt, .igarrow {
+width: 100%;
+}
+
+.igsubtitle, .igcnt, .igcell, .igarrow, #igtrophy {
+	float: none;
+	height: auto;
+}
+
+/*arrows*/
+.igarrow {
+	height: 30px;
+	background-position: center center;
+}
+
+#igstudcellrow1 .igarrow {
+	background-image: url(../images/yellow-triangle-down.png);
+}
+
+#igstudcellrow2 .igarrow {
+	background-image: url(../images/yellow-triangle-down.png);
+}
+
+#yellowdownleft {
+	padding-bottom: 10px;
+	background-image: none;
+}
+
+#igteachrow .igarrow {
+	background-image: url(../images/orange-triangle-down.png);
+}
+
+#igparentrow .igarrow {
+	background-image: url(../images/blue-triangle-down.png);
+}
+
+#igbusrow .igarrow {
+	background-image: url(../images/green-triangle-down.png);
+}
+/*end arrows*/
+
+/*student row*/
+#igstudcellrow1 .igcell, #igstudcellrow2 .igcell {
+	width: 100%;
+}
+
+#igstudcellrow2 #studcell1 {
+	width: 100%;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	background-image: url(../images/yellow-triangle-down.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#igstudcellrow2 #studcell2 {
+	margin-right: 0px;
+	padding-top: 0px;
+}
+/*end student row*/
+
+/*teacher row*/
+#igteachrow .igcell {
+	width: 100%;	
+}
+
+/*parent row*/
+#igparentrow .igcell {
+	width: 100%;
+}
+
+/*business row*/
+#igbusrow .igcell {
+	width: 100%;
+}
+
+#igtrophy {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+#igtrophy img {
+	width: 50%;
+}
+
+
 /*rewards center*/
 #rewardsboxwrap {
 	margin-top: 50px;	
@@ -241,7 +354,7 @@ padding: 120px 6.5% 30px 5%;
 
 @media (max-width:750px) {
 /*head tags*/
-#infographicpancnt h1 {
+#infographicpancnt h1.whitedkgray {
 	white-space: normal;
 	font-size: 60px;
 }
@@ -309,6 +422,8 @@ h3 {
 h4 {
 	font-size: 18px;	
 }
+
+
 
 #myclassespancnt h1, .indclassespancnt h1 {
 	font-size: 70px;
@@ -529,6 +644,41 @@ img#logomain {
 }
 }
 
+@media (max-width:650px) {
+/*head tags*/
+.pointssystemcnt h1.whitedkgray {
+	font-size: 65px;
+	line-height: 57px;
+}
+
+.pointssystemcnt h2 {
+	font-size: 22px;
+	line-height: 21px;
+}
+
+.studentpointscol h2, .teacherpointscol h2 {
+	font-size: 26px;
+	line-height: 25px;
+}
+
+.studentpointscol h2 span, .teacherpointscol h2 span {
+	display: inline;
+}
+
+/*points system infographic*/
+.studentpointscol, .teacherpointscol {
+	width: 100%;/*300/1000*/
+	margin-right: 0; /*50/1000*/
+	height: auto;
+	float: none;
+	margin-bottom: 50px;
+}
+
+.psstudheadorange, .psstudheadgreen, .psstudheadblue, .psteachheadorange, .psteachheadgreen, .psteachheadblue, .psteachheadpink {
+	height: 50px;
+}
+}
+
 
 @media (max-width:600px) {
 /*sticky header*/
@@ -738,13 +888,13 @@ padding-top: 60px;
 
 @media(max-width: 550px){
 /*head tags*/
-#infographicpancnt h1 {
+#infographicpancnt h1.whitedkgray {
 	font-size: 50px;
 	line-height: 42px;
 	margin-bottom: 12px;
 }
 
-#infographicpancnt h1 span {
+#infographicpancnt h1.whitedkgray span {
 	display: block;
 }
 
@@ -840,7 +990,6 @@ h1 {
 	line-height: 62px;
 }
 
-/*head tags*/
 #regpancnt h1 {
 	margin-bottom: 30px;	
 }
@@ -876,6 +1025,8 @@ h4 {
 .rewardbox {
 height: 350px;
 }
+}
+
 }
 
 

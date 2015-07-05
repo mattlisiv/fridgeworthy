@@ -12,6 +12,18 @@
 }
 
 @font-face {
+    font-family: 'ralewaybold';
+    src: url('../fonts/raleway-bold-webfont.eot');
+    src: url('../fonts/raleway-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-bold-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-bold-webfont.woff') format('woff'),
+         url('../fonts/raleway-bold-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-bold-webfont.svg#ralewaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'ralewayregular';
     src: url('../fonts/raleway-regular-webfont.eot');
     src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -166,6 +178,24 @@ a.plinkwhite:hover, a.plinkwhite:focus, a.plinwhite:active {
 	border-bottom: 1px dotted #ee7830;	
 }
 
+a.iglink {
+	color: #ee7830;
+	text-decoration: none;	
+}
+
+a.iglink:visited {
+}
+
+a.iglink:hover {
+	color: #ee7830;
+	border-bottom: 1px dotted #ee7830;	
+}
+
+a.iglink:hover, a.iglink:focus, a.iglink:active {
+	color: #ee7830;
+	text-decoration: none;	
+}
+
 /*head tags*/
 h1 {
 	font-family: 'bebas_neueregular', Helvetica, sans-serif;
@@ -210,9 +240,48 @@ h1.whitedkorange {
 	line-height: 40px;
 }
 
-#infographicpancnt h1 {
+#infographicpancnt h1.whitedkgray {
 	white-space: nowrap;
 	line-height: normal;
+}
+
+.igsubtitle h1 {
+	font-size: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+
+#igstudrow h1 {
+	color: #fef300;
+}
+
+#igteachrow h1 {
+	color: #ee7830;
+}
+
+#igparentrow h1 {
+	color: #01aef0;
+}
+
+#igbusrow h1 {
+	color: #13cf56;
+}
+
+
+.psgradeorange h1, .psgradegreen h1, .psgradeblue h1, .teachpointvalorange h1, .teachpointvalgreen h1, .teachpointvalblue h1, .teachpointvalpink h1 {
+	font-size: 110px;
+	line-height: 80px;
+	color: #ffffff;
+}
+
+.psgradeorange h1, .psgradegreen h1, .psgradeblue h1 {
+	text-align: left;
+}
+
+.studpointval h1 {
+	font-size: 75px;
+	line-height: 60px;
+	color: #ffffff;
 }
 
 #regpancnt h1 {
@@ -260,6 +329,18 @@ h2 {
 	font-family: 'ralewayregular', Helvetica, sans-serif;
 	font-size: 26px;
 	color: #000000;
+}
+
+.pointssystemcnt h2 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	font-size: 26px;
+	margin: 20px 0px;
+}
+
+.studentpointscol h2, .teacherpointscol h2 {
+	font-family: 'ralewaybold', Helvetica, sans-serif;
+	font-size: 26px;
+	margin: 0px;
 }
 
 h3 {
@@ -320,12 +401,48 @@ h5 {
 	margin-bottom: 15px;
 }
 
+.igcell h5 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 21px;	
+}
+
+.peruploadtxt h5 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	text-align: left;
+	color: #ffffff;
+	font-size: 18px;
+	line-height: 22px;
+	padding-top: 26px;
+}
+
+#studyteachpts h5 {
+	padding-top: 37px;
+}
+
 h6	{
 	font-family: 'ralewaylight', Helvetica, sans-serif;
 	font-size: 18px;
 	line-height: 22px;
 	color: #999999;
 	text-align: center;	
+}
+
+h6.orange {
+	color: #ee7830;
+}
+
+h6.green {
+	color: #13cf56;
+}
+
+h6.blue {
+	color: #01aef0;
+}
+
+h6.pink {
+	color: #ff6bb9;
 }
 
 #logoblock h6 {
@@ -336,6 +453,13 @@ h6	{
 #sublock h6, #liblock h6 {
 	margin-bottom: 15px;
 }
+
+.studpointval h6, .teachpointvalorange h6, .teachpointvalgreen h6, .teachpointvalblue h6, .teachpointvalpink h6 {
+	font-family: 'ralewayregular', Helvetica, sans-serif;
+	font-size: 17px;
+}
+
+
 
 .reviewrow h6 {
 	color: #01aef0;
@@ -349,7 +473,7 @@ h6	{
 }
 
 /*box-sizing*/
-nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #logoblock, #sublock, #liblock, #learnblock, #myacctblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol, #userinfomanage, .listtable, .listtabletitle, .listtablerow, .classlisttable, .classlisttabletitle, .classlisttablerow, .rcrimg, .classescol1, .classescol2, #redempstats, .redempbox {
+nav, .responsive-menu, .responsive-menu ul, input, button, select, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, #logoblock, #sublock, #liblock, #learnblock, #myacctblock, #regbannercal, .rewardbox, .rewardboxlg, .rewarddetcol, #userinfomanage, .listtable, .listtabletitle, .listtablerow, .classlisttable, .classlisttabletitle, .classlisttablerow, .rcrimg, .classescol1, .classescol2, #redempstats, .redempbox, .studentpointscol,.psstudheadorange, .psstudheadgreen, .psstudheadblue, .studpointsbox, .psgradeorange, .psgradegreen, .psgradeblue, .studpointval, .teacherpointscol,.teachpointsbox, .teachpointvalorange, .teachpointvalgreen, .teachpointvalblue, .teachpointvalpink, .peruploadtxt, .psteachheadorange, .psteachheadgreen, .psteachheadblue, .psteachheadpink, #infographicwrap, .igrow {
 -moz-box-sizing: border-box;
 -ms-box-sizing: border-box;
 -o-box-sizing: border-box;
@@ -358,7 +482,7 @@ box-sizing: border-box;
 }
 
 /*transitions*/
-h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, .navlogo, .navlogo a, .navlogo a img, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#myclasses, a#enrollinclass, a#viewassign, a#myrewards, .classlisttabletitle, #redempstats, .redempbox {
+h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a, #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.backrewbtn, .navlogo, .navlogo a, .navlogo a img, #regbannertype a, #studentscirc, #teacherscirc, #parentscirc, #businessescirc, a#myclasses, a#enrollinclass, a#viewassign, a#myrewards, .classlisttabletitle, #redempstats, .redempbox, .studentpointscol,.psstudheadorange, .psstudheadgreen, .psstudheadblue, .studpointsbox, .psgradeorange, .psgradegreen, .psgradeblue, .studpointval, .teacherpointscol, .teachpointsbox, .teachpointvalorange, .teachpointvalgreen, .teachpointvalblue, .teachpointvalpink, .peruploadtxt, .psteachheadorange, .psteachheadgreen, .psteachheadblue, .psteachheadpink, #stars, #stars img, #infographicwrap, .igrow, .igsubtitle, .igcnt, .igcell, #igtrophy img {
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -368,7 +492,7 @@ h1, h2, h3, h4, h5, h6, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .m
 }
 
 /*border radius*/
-input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a,  #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, #userinfomanage, .listtable, .classlisttable, .rcrimg {
+input, button, select, .custom-dropdown, .customSelect, .smbtn, .smbtnblue, .smbtnredmodal, .smbtngreenmodal, .managebtn, .classdetbtn, #mainlearnbtn a,  #myacctbtn a, #mainfindrewbtn a, a.getdetailsbtn, .redeemnowbtn a, a.getdetailsbtn, a.backrewbtn, #userinfomanage, .listtable, .classlisttable, .rcrimg, .psstudheadorange, .psstudheadgreen, .psstudheadblue, .psteachheadorange, .psteachheadgreen, .psteachheadblue, .psteachheadpink {
 -moz-border-radius: 5px;
 -ms-border-radius: 5px;
 -o-border-radius: 5px;
@@ -699,7 +823,7 @@ margin-bottom: 15px;
 .redeemnowbtn a:visited {
 }
 
-redeemnowbtn a:hover {
+.redeemnowbtn a:hover {
   -moz-transform: scale(1.07);
   -ms-transform: scale(1.07);
   -o-transform: scale(1.07);
@@ -1213,6 +1337,15 @@ background-repeat: no-repeat;
 	width: 75.260416666667% /*2890/3840*/;
 	padding: 70px 0;
 	margin: 0 12.369791666667% /*475/3840*/;
+}
+
+.pointssystemcnt {
+	width: 90%;
+	max-width: 1000px;
+	min-height: 850px;
+	padding: 70px 0 0 0;
+	margin: 0 auto;
+	text-align: center;	
 }
 
 #listtemplatecnt {

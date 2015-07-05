@@ -43,6 +43,8 @@ Route::group(array('domain' => $domain), function()
     Route::get("/","HomeController@index");
     Route::get("privacypolicy","StaticPagesController@privacy");
     Route::get("infographic","StaticPagesController@infographic");
+    Route::get("student-point-system","StaticPagesController@studentPointSystemInfographic");
+    Route::get("teacher-point-system","StaticPagesController@teacherPointSystemInfographic");
     Route::post("logout","HomeController@logout");
     Route::post("login","HomeController@login");
     Route::post("register","HomeController@register");

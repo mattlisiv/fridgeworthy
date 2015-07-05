@@ -23,4 +23,16 @@ class StaticPagesController extends Controller {
         return view("static.infographic",compact('user'));
     }
 
+    public function studentPointSystemInfographic(){
+
+        $user = Auth::user();
+        return view("static.pointsystem-student",compact('user'));
+    }
+
+    public function teacherPointSystemInfographic(){
+
+        $user = Auth::user();
+        return view("static.pointsystem-teacher",compact('user'));
+    }
+
 }
