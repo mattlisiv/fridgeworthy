@@ -55,5 +55,30 @@
 @include('home.partials.Footer')
 
 @include('home.js.homejs')
+
+<!--scrolling logos-->
+<script>
+    $(function () {
+        $('#buslogoscroll').scrollbox({
+            linear: true,
+            step: 1,
+            delay: 0,
+            speed: 40,
+            onMouseOverPause: false
+        });
+    });
+
+    var firstItem = Math.floor(Math.random() * (11 - 1)) + 1;
+    $('#sbox ul li').each(function(idx,cnt){
+        if(idx>=firstItem){
+            $(this).appendTo($('#buslogoscroll ul'));
+        }
+    });
+    $('#sbox ul li').each(function(idx,cnt){
+        if(idx<firstItem){
+            $(this).appendTo($('#buslogoscroll ul'));
+        }
+    });
+</script>
 </body>
 </html>

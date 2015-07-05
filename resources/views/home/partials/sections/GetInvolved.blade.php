@@ -1,4 +1,5 @@
 <div id="homeformblock">
+    @if(is_null($user))
     <div id="sublock">
         <h1 class="whitedkorange">sign up</h1>
         <h6 class="white">for emails & updates</h6>
@@ -27,4 +28,16 @@
             <a href="#registration" data-scroll="#registration" class="scrollbtn"><button type="button" value="register" class="smbtn">register</button></a>
         </form>
     </div>
+    <div id="learnblock">
+        <div id="mainlearnbtn"><a href="#about" data-scroll="#about" class="scrollbtn">learn more<img src="images/whitedownarrow-sm.png" alt="white down arrow"></a></div>
+    </div>
+    @else
+        <div id="learnblock">
+            <div id="mainlearnbtn"><a href="{{action('StaticPagesController@infographic')}}">learn more</a></div>
+        </div>
+
+        <div id="myacctblock">
+            <div id="myacctbtn"><a href="#manage" data-scroll="#manage" class="scrollbtn">my profile<img src="images/whitedownarrow-sm.png" alt="white down arrow"></a></div>
+        </div>
+    @endif
 </div>

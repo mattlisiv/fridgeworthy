@@ -24,6 +24,8 @@
                 $(e.currentTarget.parentNode.children[2]).removeClass("visible");
                 $(e.currentTarget.parentNode.children[3]).addClass("visible");
             }
+
+
         });
 
 
