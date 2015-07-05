@@ -38,7 +38,7 @@
                     <div class="rewarddetcol">
                         <p>This reward is brought to you by {{$reward->business->name}}.</p>
                         <p>Visit their website at {!! Html::link('http://'.$reward->business->website, $reward->business->website) !!}</p>
-                        <img src="{{asset('images/alternate.jpg')}}" class="rewardlogo"/>
+                        <img src="{{asset($reward->getFilePath())}}" class="rewardlogo"/>
                         <p><a href="#loginmodal" class="plink modal-popup">Login</a> or <a href="{{url('/')."#registration"}}" class="plink">Register</a> to see how you can get great rewards like this one!</p>
                     </div>
                     @else

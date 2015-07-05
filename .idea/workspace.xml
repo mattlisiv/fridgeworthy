@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/partials/sections/BusinessManager.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/partials/sections/BusinessManager.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/rewards/partials/rewardrightpanel.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/rewards/partials/rewardrightpanel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fridgeworthy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BusinessManager.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/home/partials/sections/BusinessManager.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15645371" vertical-offset="0" max-vertical-offset="767">
-              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.6649283" vertical-offset="0" max-vertical-offset="1410">
+              <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -74,9 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/student/assignments/SubmitGradeSpecific.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/navigation/unregistered/home/navigation.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/navigation/unregistered/main/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/home/admin/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/main/admin/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/main/student/navigation.blade.php" />
@@ -87,7 +87,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Business/HomeController.php" />
         <option value="$PROJECT_DIR$/vendor/graham-campbell/flysystem/config/flysystem.php" />
         <option value="$PROJECT_DIR$/config/dropbox.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/grades/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/main/businessmanager/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/home/businessmanager/navigation.blade.php" />
@@ -125,6 +124,10 @@
         <option value="$PROJECT_DIR$/resources/views/js/maincssandjs.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/partials/sections/GetInvolved.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/partials/sections/BusinessManager.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PublicRewardController.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/rewards/partials/rewardrightpanel.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
       </list>
     </option>
   </component>
@@ -1022,7 +1025,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="uploads" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fridgeworthy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fridgeworthy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fridgeworthy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fridgeworthy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1377,49 +1416,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/UploadedCourseFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49323016" vertical-offset="0" max-vertical-offset="517">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/DocumentStorageRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7253385" vertical-offset="0" max-vertical-offset="555">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/administrator/rewards/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4352031" vertical-offset="0" max-vertical-offset="517">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/teacher/documents/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5280313" vertical-offset="300" max-vertical-offset="1725">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.726206" vertical-offset="223" max-vertical-offset="990">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/teacher/assignments/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60625815" vertical-offset="15" max-vertical-offset="1485">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/student/assignments/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44980443" vertical-offset="210" max-vertical-offset="1470">
@@ -3088,25 +3084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/business/home/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.863103" vertical-offset="358" max-vertical-offset="1155">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/integration/indexintegration.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4498044" vertical-offset="103" max-vertical-offset="1350">
@@ -3133,6 +3110,144 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15645371" vertical-offset="0" max-vertical-offset="767">
           <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding>
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436135245000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/reward-45.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Reward.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7431551" vertical-offset="450" max-vertical-offset="1290">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="31" />
+          <folding>
+            <marker date="1433089651000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1433089651000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433089651000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublicRewardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31551498" vertical-offset="118" max-vertical-offset="1515">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding>
+            <marker date="1436136236000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136236000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/partials/rewardrightpanel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6649283" vertical-offset="0" max-vertical-offset="767">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136452000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44980443" vertical-offset="255" max-vertical-offset="1485">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436136397000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/business/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.863103" vertical-offset="358" max-vertical-offset="1155">
+          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+          <folding>
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433016618000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6649283" vertical-offset="0" max-vertical-offset="1410">
+          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
           <folding />
         </state>
       </provider>

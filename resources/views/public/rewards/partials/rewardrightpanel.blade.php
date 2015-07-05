@@ -1,8 +1,8 @@
 <div class="rewarddetcol">
     <p>This reward is brought to you by {{$reward->business->name}}.</p>
     <p>Visit their website at {!! Html::link('http://'.$reward->business->website, $reward->business->website) !!}</p>
-    <img src="{{asset('images/alternate.jpg')}}" class="rewardlogo"/>
-    @if(get_class($user) == 'App\Student' || get_class($user)=='App\Teacher' || get_class($user)=='App\Guardian')
+    <img alt="No image found" src="{{asset($reward->getFilePath())}}" class="rewardlogo"/>
+@if(get_class($user) == 'App\Student' || get_class($user)=='App\Teacher' || get_class($user)=='App\Guardian')
         @if($user->points>=$reward->points_required)
             <div id="redeem" style="display:none">
             {!! Form::open(['url'=>'redeem_reward']) !!}
