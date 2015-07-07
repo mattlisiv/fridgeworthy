@@ -37,7 +37,11 @@
         </div>
 
         <div id="myacctblock">
-            <div id="myacctbtn"><a href="#manage" data-scroll="#manage" class="scrollbtn">my profile<img src="images/whitedownarrow-sm.png" alt="white down arrow"></a></div>
+            @if(get_class($user)!='App\BusinessManager')
+                <div id="myacctbtn"><a href="#myacct" data-scroll="#myacct" class="scrollbtn">my profile<img src="images/whitedownarrow-sm.png" alt="white down arrow"></a></div>
+            @else
+                <div id="myacctbtn"><a href="#manage" data-scroll="#manage" class="scrollbtn">my profile<img src="images/whitedownarrow-sm.png" alt="white down arrow"></a></div>
+            @endif
         </div>
     @endif
 </div>
