@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php" />
     </list>
     <ignored path="fridgeworthy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,14 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php">
+      <file leaf-file-name="RewardController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64537156" vertical-offset="0" max-vertical-offset="767">
-              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-              <folding>
-                <element signature="e#1055#1081#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.41329858" vertical-offset="463" max-vertical-offset="1980">
+              <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/navigation/registered/main/student/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/navigation/registered/main/teacher/navigation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student/assignments/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student/grades/show.blade.php" />
@@ -127,6 +124,7 @@
         <option value="$PROJECT_DIR$/resources/views/public/rewards/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/partials/Footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php" />
       </list>
     </option>
   </component>
@@ -1441,13 +1439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/teacher/courses/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7235984" vertical-offset="375" max-vertical-offset="1785">
-          <caret line="62" column="113" selection-start-line="62" selection-start-column="113" selection-end-line="62" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/coupon-lp.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3810">
@@ -3315,40 +3306,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09517601" vertical-offset="73" max-vertical-offset="1965">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46936116" vertical-offset="0" max-vertical-offset="767">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
-            <marker date="1430083799000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
-            <marker date="1430083799000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436230714000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/administrator/rewards/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/RewardRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64537156" vertical-offset="0" max-vertical-offset="767">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="791">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1055#1081#0#HTML" expanded="true" />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder=" Determine if the user is authorized to make this request. ..." />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder=" Get the validation rules that apply to the request. ..." />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429998969000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41329858" vertical-offset="463" max-vertical-offset="1980">
+          <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
