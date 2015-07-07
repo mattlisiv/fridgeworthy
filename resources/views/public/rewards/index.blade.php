@@ -22,11 +22,12 @@
 
         <div id="rewcentpancnt">
             <h1 class="orange">find great rewards!</h1>
+            <!--
             <form action="#" method="post">
                 <input type="text" placeholder="search rewards" class="magicon"/>
                 <button type="button" value="submit" class="smbtn searchbtn">submit</button>
             </form>
-
+            -->
             <div id="rewardsboxwrap">
 
                 @foreach($rewards as $reward)
