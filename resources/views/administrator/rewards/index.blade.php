@@ -11,12 +11,14 @@
             <h1>Reward Management</h1>
             <table class="table table-bordered">
                 <tr><th>Name</th><th>Business</th></tr>
+                @if(count($rewards))
                 @foreach($rewards as $reward)
                     <tr>
                         <td><a href="{{action('Admin\RewardController@show',[$reward->id]) }}">{{$reward->name}}</a></td>
                         <td><a href="{{action('Admin\BusinessController@show',[$reward->business->id]) }}">{{$reward->business->name}}</a></td>
                     </tr>
                 @endforeach
+                @endif
             </table>
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">
