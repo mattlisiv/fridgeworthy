@@ -31,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.41329858" vertical-offset="463" max-vertical-offset="1980">
-              <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+              <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -3344,7 +3344,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RewardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41329858" vertical-offset="463" max-vertical-offset="1980">
-          <caret line="63" column="81" selection-start-line="63" selection-start-column="81" selection-end-line="63" selection-end-column="81" />
+          <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -61,7 +61,7 @@ class RewardController extends Controller {
         if($request->hasFile('image') && ($request->file('image')->getClientOriginalExtension()=='jpg'
                 || $request->file('image')->getClientOriginalExtension()=='png'
                 || $request->file('image')->getClientOriginalExtension()=='svg'
-                || || $request->file('image')->getClientOriginalExtension()=='gif')){
+                || $request->file('image')->getClientOriginalExtension()=='gif')){
 
             $disk = Storage::disk('local');
             $img_name = 'reward-'.$reward->id.".".$request->file('image')->getClientOriginalExtension();
