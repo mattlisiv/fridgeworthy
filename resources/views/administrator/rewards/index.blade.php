@@ -25,7 +25,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <a href="{{action('Admin\RewardController@create') }}"> <h4>Create New Reward</h4></a>
-                    <p>Current Number of Rewards: {{$reward->count()}}</p>
+
+                    <p>Current Number of Rewards:
+                        @if(isset($reward))
+                        {{$reward->count()}}
+                        @else
+                        0
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>
