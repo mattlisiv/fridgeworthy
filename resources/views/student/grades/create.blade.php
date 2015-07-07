@@ -50,12 +50,11 @@
                     {!! Form::submit('Submit',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
                 </div>
-                </form>
             </div>
-        </div>
+
 
 </div><!--end list table-->
-</section><!--end list template-->
+    </section><!--end list template-->
 
 
 

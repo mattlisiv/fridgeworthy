@@ -79,8 +79,11 @@
 
             </div>
         </div>
+        <br>
+        <br>
+        <a href="{{action('CourseManagerController@viewCourse',$course->id)}}"><button class="managebtn">View Course</button></a>
 
-</section><!--end list template-->
+    </section><!--end list template-->
 
 
 

@@ -76,7 +76,10 @@
                 </div>
             </div>
 </div><!--end list table-->
-</section><!--end list template-->
+        <br>
+        <br>
+        <a href="{{action('CourseManagerController@viewCourse',$course->id)}}"><button class="managebtn">View Course</button></a>
+    </section><!--end list template-->
 
 
 
