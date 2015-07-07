@@ -11,7 +11,7 @@
             <h1>Reward Management</h1>
             <table class="table table-bordered">
                 <tr><th>Name</th><th>Business</th></tr>
-                @if(count($rewards))
+                @if(isset($rewards))
                 @foreach($rewards as $reward)
                     <tr>
                         <td><a href="{{action('Admin\RewardController@show',[$reward->id]) }}">{{$reward->name}}</a></td>

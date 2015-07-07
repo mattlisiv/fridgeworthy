@@ -9,7 +9,6 @@
             <li class="footertxt" style="padding:3px"><a href="https://www.facebook.com/fridgeworthyrewards"><img src="{{asset('images/fblogo50.png')}}"></a></li>
             <li class="footertxt" style="padding:3px"><a href="https://twitter.com/fridge_worthy"><img width="50em" height="50em" src="{{asset('images/twitterlogo.png')}}"></a></li>
             <li class="footertxt" style="padding:3px"><a href="https://www.linkedin.com/company/fridgeworthy"><img width="50em" height="50em" src="{{asset('images/linkedin.png')}}"></a></li>
-
         </ul>
     </div>
 </footer>
