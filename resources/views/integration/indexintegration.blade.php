@@ -42,7 +42,11 @@
     @include('home.partials.sections.Rewards')
 
     @if(is_null($user))
+        @if(!is_null($registration) && $registration->value=='open')
         @include('home.partials.sections.RegistrationOpen')
+        @else
+            @include('home.partials.sections.RegistrationClosed')
+        @endif
     @else
         @include('home.partials.sections.Account')
         @include('home.partials.sections.UserProfile')

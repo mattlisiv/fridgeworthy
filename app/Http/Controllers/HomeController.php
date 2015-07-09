@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Control;
+use App\EmailListServ;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -28,14 +30,16 @@ class HomeController extends Controller {
 
 
         $user = Auth::user();
+        $registration = null;
         $business = null;
         $customers = null;
         $schools = School::orderBy('name','ASC')->get();
+        $registration = Control::where('name','=','registration')->first();
         if(get_class($user) =='App\BusinessManager'){
             $business = $user->business;
             $customers = $business->customers()->get();
         }
-        return view('integration.indexintegration',compact('schools','user','business','customers'));
+        return view('integration.indexintegration',compact('schools','user','business','customers','registration'));
     }
 
     public function logout(){
@@ -196,46 +200,6 @@ class HomeController extends Controller {
         return view('home.partials.errors');
     }
 
-    public function uploadTest(Request $request){
-
-        if($request->hasFile('study_file')){
-
-
-       //     $img_name = "new_name";
-        //    $destination = 'uploads';
-        //    $request->file('image')->move($destination,$img_name);
-
-            $fd = fopen($request->file('study_file')->getRealPath(), "rb");
-            var_dump($fd);
-            $md1 = Dropbox::uploadFile("/Frog.".$request->file('study_file')->getClientOriginalExtension(), \Dropbox\WriteMode::add(), $fd);
-            fclose($fd);
-            print_r($md1);
-
-            //PDF file is stored under project/public/download/info.pdf
-            $file= public_path(). "/download/Frog.".$request->file('study_file')->getClientOriginalExtension();
-            $fd = fopen($file, "wb") or die("Unable to open file");
-            $metadata = Dropbox::getFile("/Frog.".$request->file('study_file')->getClientOriginalExtension(), $fd);
-            fclose($fd);
-
-            if(File::isFile($file)) {
-                ob_end_clean();
-                return response()->download($file);
-                unlink($file);
-
-            }else{
-                return "No file available";
-            }
-
-
-        }else{
-
-            return 'No file added';
-        }
-
-        $result = Dropbox::createFolder('/foo2');
-        return $result;
-    }
-
 
     public function upload(){
 
@@ -243,4 +207,13 @@ class HomeController extends Controller {
 
         return view('teacher.documents.create');
     }
+
+
+    public function signupForListserv(Requests\SignupListservRequest $request){
+
+
+            EmailListServ::create($request->all());
+            $user = Auth::user();
+            return view('home.email-signup-complete',compact('user'));
+        }
 }

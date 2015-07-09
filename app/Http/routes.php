@@ -49,6 +49,7 @@ Route::group(array('domain' => $domain), function()
     Route::post("login","HomeController@login");
     Route::post("register","HomeController@register");
     Route::get("error","HomeController@error");
+    Route::post("signup-for-listserv","HomeController@signupForListserv");
 
 
 

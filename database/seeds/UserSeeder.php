@@ -17,7 +17,8 @@ class UserSeeder extends Seeder{
     public function run()
     {
 
-        /**Create Teachers **/
+
+        /**Create Teachers
         $faker = \Faker\Factory::create();
         $schools = App\School::all();
 
@@ -146,6 +147,7 @@ class UserSeeder extends Seeder{
 
         }
 
+         **/
 
         $input=['first_name' => 'Matt',
             'last_name' => 'Lisivick',
@@ -155,7 +157,7 @@ class UserSeeder extends Seeder{
 
         $user = \App\Admin::create($input);
 
-        $input=['first_name' => 'Test',
+  /**      $input=['first_name' => 'Test',
             'last_name' => 'Student',
             'email'=>'teststudent@gmail.com',
             'password'=>bcrypt('teststudent'),
@@ -204,6 +206,6 @@ class UserSeeder extends Seeder{
             'status'=>'active'];
         $admin = \App\Admin::create($input);
 
-
+**/
     }
 }
