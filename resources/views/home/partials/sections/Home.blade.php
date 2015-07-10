@@ -11,7 +11,7 @@
 
                     <div id="logoblock">
                         <img src="{{asset('images/fwlogo-main.png')}}" alt="FridgeWorthy Logo" id="logomain"/>
-                        <h6>We are here to improve students' learning, educators' teaching, and parents' involvement through rewards and recognition.</h6>
+                        <h6>We are here to improve the pathway between education and community through rewards and recognition.</h6>
                         <div id="buslogos">
                             <p>Some of our participating businesses:</p>
 
