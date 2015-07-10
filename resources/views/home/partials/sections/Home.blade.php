@@ -22,13 +22,13 @@
 
                             <div id="sbox" style="display: none;">
                                 <ul>
-                                    <li><img src="images/part-bus-logos/abshair-sm.gif" alt="Absolute Hair Inc"></li>
+                               <!--     <li><img src="images/part-bus-logos/abshair-sm.gif" alt="Absolute Hair Inc"></li> -->
                                     <li><img src="images/part-bus-logos/arena-sm.gif" alt="Arena Tavern"></li>
                                     <li><img src="images/part-bus-logos/davebusters-sm.jpg" alt="Dave &amp; Buster's"></li>
                                     <li><img src="images/part-bus-logos/dunkin-sm.gif" alt="Dunkin' Donuts"></li>
                                     <li><img src="images/part-bus-logos/lazercity-sm.jpg" alt="Lazer City"></li>
                                     <li><img src="images/part-bus-logos/marcos-sm.gif" alt="Marco's Pizza"></li>
-                                    <li><img src="images/part-bus-logos/mtimes-sm.gif" alt="Medieval Times"></li>
+                               <!--     <li><img src="images/part-bus-logos/mtimes-sm.gif" alt="Medieval Times"></li> -->
                                     <li><img src="images/part-bus-logos/stars-sm.gif" alt="Stars and Strikes"></li>
                                     <li><img src="images/part-bus-logos/tomchee-sm.gif" alt="Tom + Chee"></li>
                                     <li><img src="images/part-bus-logos/totalhealth-sm.jpg" alt="Total Health Spa"></li>
