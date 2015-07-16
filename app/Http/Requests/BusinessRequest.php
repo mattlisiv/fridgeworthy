@@ -23,7 +23,8 @@ class BusinessRequest extends Request {
 	{
 		return [
             'name' => 'required|min:3',
-            'website' => 'min:7'
+            'website' => 'min:7',
+            'location'=>'required'
 		];
 	}
 

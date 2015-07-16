@@ -48,9 +48,15 @@ class AssignmentManagerController extends Controller {
             $assignments = $user->assignments()->get();
             return view('teacher.assignments.index',compact('user','assignments'));
 
-        }else{
-            return redirect()->back();
+        }else if(get_class($user)=='App\Guardian') {
+
+            $assignments = $user->assignments();
+            return view('guardian.assignments.index', compact('user', 'assignments'));
         }
+        else{
+                return redirect()->back();
+            }
+
     }
 
     public function viewAssignment($id){
@@ -63,6 +69,9 @@ class AssignmentManagerController extends Controller {
         }else if(get_class($user)=='App\Teacher'){
             return view('teacher.assignments.show',compact('user','assignment'));
 
+        }else if(get_class($user)=='App\Guardian'){
+
+            return view('guardian.assignments.show',compact('user','assignment'));
         }else{
             return redirect()->back();
         }

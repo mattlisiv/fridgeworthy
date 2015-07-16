@@ -11,6 +11,7 @@ class Business extends Model {
 
         'name',
         'website',
+        'location'
     ];
 
     /**Relationships **/

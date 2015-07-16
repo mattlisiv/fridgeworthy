@@ -29,7 +29,7 @@
             </form>
             -->
             <div id="rewardsboxwrap">
-
+                @if(sizeof($rewards)!=0)
                 @foreach($rewards as $reward)
                     <div class="rewardbox">
                         <h6>{{$reward->name}}</h6>
@@ -39,7 +39,9 @@
                         <div class="clear"></div>
                     </div>
                     @endforeach
-
+                @else
+                    <h3>Check back for rewards soon!</h3>
+                @endif
             </div><!--endrewardsboxwrap-->
 
         </div><!--endrewardscentpancnt-->

@@ -74,8 +74,6 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("account","AccountController@index");
     Route::get("mycourses","CourseManagerController@viewMyCourses");
     Route::get("course/{id}",['as'=>'id','uses'=>"CourseManagerController@viewCourse"]);
-    Route::get("myassignments","AssignmentManagerController@viewMyAssignments");
-    Route::get("myassignments/{id}","AssignmentManagerController@viewAssignment");
     Route::get("course/{id}/viewgrades",['as'=>'id','uses'=>"AssignmentManagerController@viewGrades"]);
     Route::get("mygrades/{id}","AssignmentManagerController@viewIndividualGrade");
     Route::get("myassignments/{id}/submitgrade","AssignmentManagerController@submitGrade");
@@ -127,6 +125,10 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("changepassword","HomeController@changePassword");
     Route::get("passwordchanged","HomeController@passwordChanged");
     Route::post("update_password","HomeController@updatePassword");
+    Route::get("myassignments","AssignmentManagerController@viewMyAssignments");
+    Route::get("myassignments/{id}","AssignmentManagerController@viewAssignment");
+
+
 });
 
 

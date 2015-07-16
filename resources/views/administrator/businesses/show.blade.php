@@ -12,6 +12,7 @@
                 <li class="active">{{$business->name}}</li>
             </ol>
              <h1>{{$business->name}}</h1>
+             <h3>{{$business->location}}</h3>
             <article>
                 No statistics provided for {{$business->name}}
                 <a href="{{action('Admin\BusinessController@index') }}"> <h6>Back to Business Management</h6></a>

@@ -32,7 +32,7 @@
         <div class="offerstroke">
             <div class="offerlogo"><img src="{{$reward->getFilePath()}}" alt="FridgeWorthy logo"></div>
             <h1>{{$reward->name}}<span>*</span></h1>
-            <h3>*redeemable only at participating locations <br>
+            <h3>*redeemable only at @if(!is_null($reward->business->location) && $reward->business->location!='')<span style="font-weight: bolder">{{$reward->business->location}}</span> or other @endif participating locations <br>
                 *valid only for single transaction <br>
                 *no cash value
             </h3>
