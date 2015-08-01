@@ -15,59 +15,55 @@
 
 <div class="mainwrap">
 
+
+
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Login')
 
+    @include('home.partials.modal.Logout')
 
     <!--start list template-->
     <section id="listtemplatecnt">
-        <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
 
-            <div style="height:400px">
-                <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
-                    <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
-                    <div>
-                        <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
+            <div class="listtable">
+                <div class="listtabletitle">Get Involved Today!</div>
+
                         <br>
                         <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address',['style'=>'margin:25px 0px']) !!}</h6>
+                        <h5>At FridgeWorthy, we want to know what the hardworking parents think,
+                            because we know how important you are to educational success.</h5>
                         <br>
-                        <h6>{!! Form::email('email',null,['style'=>'padding:10px']) !!}</h6>
-                    </div>
+                        <br>
+                        <br>
+                        <h6>Take some time to  write us your thoughts and suggestions below, so we
+                        can make our service better for you and your student.</h6>
+
+                {!! Form::open(['url'=>'store_suggestion']) !!}
+                <div>
                     <br>
                     <br>
+
                     <br>
+                    <h6>{!! Form::textarea('suggestion',null,['style'=>'font:large']) !!}</h6>
                     <br>
-                    @if($errors)
-                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <br>
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                            <br>
-                            <br>
-                        </div>
-                    @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
+                    <h5>{!! Form::submit('Submit',['class'=>'classdetbtn','style'=>'width:75%']) !!}</h5>
                     {!! Form::close()!!}
                 </div>
-            </div>
-        </div>
+                <br>
+                <br>
 
+
+
+                <br>
+            </div><!--end list table-->
+
+        <br>
+        <a href="{{action('HomeController@index')}}"><button class="managebtn">Back Home</button></a>
     </section><!--end list template-->
-
 
 
     <div class="push"></div>
 </div><!--end mainwrap-->
-<!--footer-->
-
 
 @include('home.partials.Footer')
 

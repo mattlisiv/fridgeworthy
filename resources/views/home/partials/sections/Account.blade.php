@@ -19,9 +19,9 @@
         @endif
         @if(get_class($user)=='App\Guardian')
             <div id="pointscirccont">
-                <div class="pointscirc"><a href="#" id="enrollinclass"><h5 class="white">learn about<br> parent's plus rewards</h5></a></div>
+                <div class="pointscirc"><a href="{{action('GuardianController@index')}}" id="enrollinclass"><h5 class="white">get<br>involved<br>today!</h5></a></div>
                 <div class="pointscirc"><a href="{{action('AssignmentManagerController@viewMyAssignments')}}" id="viewassign"><h5 class="white">view my<br>student's assignments</h5></a></div>
-                <div class="pointscirc"><a href="myclasses.html" id="myclasses"><h5 class="white">view my<br>student's classes</h5></a></div>
+                <div class="pointscirc"><a href="{{action('CourseManagerController@viewMyCourses')}}" id="myclasses"><h5 class="white">view my<br>student's <br>classes</h5></a></div>
                 <div class="pointscirc"><a href="{{action('PublicRewardController@viewMyUnredeemedRewards')}}" id="myrewards"><h5 class="white">my<br>rewards</h5></a></div>
             </div>
         @endif

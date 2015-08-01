@@ -47,8 +47,6 @@
                     @foreach($course->assignments as $assignment)
                         <div class="classlisttablerow"><p><a href="{{action('AssignmentManagerController@viewAssignment',$assignment->id)}}" class="plinkwhite">{{$assignment->name}}</a></p></div>
                     @endforeach
-                        <div class="classlisttablefooter"><a href="{{action('AssignmentManagerController@deleteAssignment',$course->id)}}">delete an assignment</a></div>
-
                 @else
                     <div class="classlisttablerow"><p>No upcoming assignments</p></div>
 
@@ -58,21 +56,14 @@
 
         <div class="classescol2">
             <div class="classdetbox">
-                <form action="#" method="post"><a href="{{action('AssignmentManagerController@viewGradeBook',$course->id)}}"><button type="button" value="view grades" class="classdetbtn">view grades</button></a></form>
+                <form action="#" method="post"><a href="{{action('AssignmentManagerController@viewGrades',$course->id)}}"><button type="button" value="view grades" class="classdetbtn">view grades</button></a></form>
                 <div class="rcrimg viewgradesimg"></div>
             </div>
             <div class="classdetbox">
-                <form action="#" method="post"><a href="{{action('DocumentManagerController@index',$course->id)}}"><button type="button" value="view study guides" class="classdetbtn">upload study materials</button></a></form>
+                <form action="#" method="post"><a href="{{action('DocumentManagerController@index',$course->id)}}"><button type="button" value="view study guides" class="classdetbtn">view study materials</button></a></form>
                 <div class="rcrimg viewstudyguidesimg"></div>
             </div>
-            <div class="classdetbox">
-                <form action="#" method="post"><a href="{{action('AssignmentManagerController@createAssignment',$course->id)}}"><button type="button" value="create assignment" class="classdetbtn">create assignment</button></a></form>
-                <div class="rcrimg createassgnsubgradeimg"></div>
-            </div>
-            <div class="classdetbox">
-                <form action="#" method="post"><a href="{{action('CourseManagerController@managerRoster',$course->id)}}"><button type="button" value="manage class roster" class="classdetbtn">manage class roster</button></a></form>
-                <div class="rcrimg manageclassrosterimg"></div>
-            </div>
+
         </div><!--end col2-->
 
         <div class="clear"></div><!--clear cols-->

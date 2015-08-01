@@ -15,59 +15,53 @@
 
 <div class="mainwrap">
 
+
+
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Login')
 
+    @include('home.partials.modal.Logout')
 
     <!--start list template-->
     <section id="listtemplatecnt">
+        @foreach($grade_information as $information)
+        <br>
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">Grades for {{$information['full_name']}}</div>
+            @if(count($information)>1)
+                <div class="listtablerow">
+                    <div style="width: 33%;font-weight: bold" class="listitemname"><p class="white">Assignment</p></div>
+                    <div style="width: 33%;font-weight: bold" class="listitemname"><p class="white">Status</p></div>
+                    <div style="padding-right: 30px;font-weight: bold" class="listitemname"><p class="white">Grade</p></div>
+                </div>
+                @foreach($information as $info)
+                    @if(is_array($info))
+                        <div class="listtablerow">
+                            <div  style="width: 33%" class="listitemname"><p class="white">{{$info['assignment']['name']}}</p></div>
+                            <div style="width: 33%" class="listitemname"><p class="white">{{$info['status']}}</p></div>
 
-            <div style="height:400px">
-                <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
-                    <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
-                    <div>
-                        <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
-                        <br>
-                        <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address',['style'=>'margin:25px 0px']) !!}</h6>
-                        <br>
-                        <h6>{!! Form::email('email',null,['style'=>'padding:10px']) !!}</h6>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    @if($errors)
-                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <br>
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                            <br>
-                            <br>
+                            <div style="float: left" class="listviewbutton">
+                                <button type="button" value="view" class="smbtn">{{$info['numeric_grade']}}</button>
+                            </div>
                         </div>
                     @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
+                @endforeach
+            @else
+                <div class="listtablerow">
+                    <div class="listitemname"><p class="white">No current grades.</p></div>
                 </div>
-            </div>
-        </div>
-
+            @endif
+            <br>
+        </div><!--end list table-->
+        @endforeach
+        <br>
+        <br>
+        <a href="{{action('CourseManagerController@viewCourse',$course->id)}}"><button class="managebtn">View Course</button></a>
     </section><!--end list template-->
-
 
 
     <div class="push"></div>
 </div><!--end mainwrap-->
-<!--footer-->
-
 
 @include('home.partials.Footer')
 

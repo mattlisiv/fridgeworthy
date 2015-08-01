@@ -65,4 +65,26 @@ class Guardian extends User{
             ->get();
 
     }
+
+    public function upcomingAssignments(){
+
+        return Assignment::select('assignments.*')
+            ->join('courses','courses.id','=','assignments.course_id')
+            ->join('course_user','courses.id','=','course_user.course_id')
+            ->join('parent_student','course_user.user_id','=','parent_student.student_id')
+            ->join('users','parent_student.parent_id','=','users.id')
+            ->where('users.id','=',$this->id)
+            ->groupBy('assignments.id')->orderBy('assignments.due_date')
+            ->get();
+
+    }
+
+
+
+    public function hasStudentInCourse($course){
+
+
+        return !is_null($this->courses()->where('courses.id','=',$course->id)->first());
+
+    }
 }

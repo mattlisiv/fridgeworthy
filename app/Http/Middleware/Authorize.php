@@ -41,10 +41,10 @@ class Authorize {
                                 return redirect()->action('HomeController@index');
                                 break;
                             case 'App\BusinessManager':
-                                return redirect()->action('Business\HomeController@index');
+                                return redirect()->action('HomeController@index');
                                 break;
                             case 'App\Guardian':
-                                return redirect()->action('Mentor\HomeController@index');
+                                return redirect()->action('HomeController@index');
                                 break;
                             case 'App\Admin':
                                 return redirect()->action('Admin\AdministratorController@index');

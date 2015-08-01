@@ -17,29 +17,45 @@
 
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Login')
+    @include('home.partials.modal.Logout')
 
 
-    <!--start list template-->
+    <!--start list templaOte-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">Delete A Class</div>
+            <br>
 
-            <div style="height:400px">
-                <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
-                    <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
+
+
+            <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
+
+                <div id="delete" style="display:none">
+                    {!! Form::open(['url'=>'destroy_course']) !!}
                     <div>
                         <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
+                        <h6>Are you sure you would like to delete this class?
+                            <br>
+                            By deleting this class, all associated assignments and grades will also be deleted.
+                        </h6>
                         <br>
-                        <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address',['style'=>'margin:25px 0px']) !!}</h6>
-                        <br>
-                        <h6>{!! Form::email('email',null,['style'=>'padding:10px']) !!}</h6>
                     </div>
+                    {!! Form::submit('Yes, Delete',['class'=>'classdetbtn','style'=>'border-color:#13cf56;background-color:#13cf56']) !!}
+                    <br>
+
+                </div>
+                <div id="deleteDisplay">
+                    <br>
+                    <h6>By deleting a class, you will be removing all associated assignments and grades.</h6>
+                    <br>
+                    <h5>Select Class</h5>
+                    <br>
+                    <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$courses->lists('name','id'), 'default',
+                        ['class'=>'customSelect','style'=>'text-indent:10px']) !!}</h6>
                     <br>
                     <br>
+                    {!! Form::close()!!}
+                    <button class="classdetbtn" onclick="displayDelete()">Delete Class</button>
                     <br>
                     <br>
                     @if($errors)
@@ -54,12 +70,34 @@
                             <br>
                         </div>
                     @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
+                    <br>
                 </div>
-            </div>
-        </div>
+                <button id="no_button" style="border-color: red;background-color: red;display:none" class="classdetbtn" onclick="hideDelete()">No</button>
 
+                <script type="text/javascript">
+
+                    function displayDelete(){
+
+                        $("#deleteDisplay").hide();
+                        $("#delete").show();
+                        $("#no_button").show();
+                    }
+
+                    function hideDelete(){
+
+                        $("#delete").hide();
+                        $("#deleteDisplay").show();
+                        $("#no_button").hide();
+
+                    }
+
+                </script>
+
+            </div>
+
+
+
+        </div><!--end list table-->
     </section><!--end list template-->
 
 

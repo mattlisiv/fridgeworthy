@@ -1,12 +1,10 @@
 <?php namespace App\Http\Middleware;
 
-use App\Repositories\Interfaces\CourseRepositoryInterface;
-use App\Repositories\CourseRepository;
-
+use App\Repositories\AssignmentRepository;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class CourseVerification {
+class AssignmentVerification {
 
 	/**
 	 * Handle an incoming request.
@@ -18,11 +16,11 @@ class CourseVerification {
 	public function handle($request, Closure $next)
 	{
 
-        $courseRepository = new CourseRepository();
-        $course_id = $request->route()->parameters('id')['id'];
-        $course = $courseRepository->find($course_id);
+        $assignmentRepository = new AssignmentRepository();
+        $assignment_id = $request->route()->parameters('id')['id'];
+        $assignment = $assignmentRepository->find($assignment_id);
+        $course = $assignment->course;
         $user = Auth::user();
-
         if(get_class($user)=='App\Teacher' && $course->isTeacher($user))
         {
             return $next($request);
@@ -31,9 +29,9 @@ class CourseVerification {
         }else if(get_class($user) == 'App\Guardian' && $user->hasStudentInCourse($course)){
             return $next($request);
         }
-            else{
-                return 'Could not be authorized';
-            }
+        else{
+            return 'Could not be authorized';
+        }
 
 	}
 

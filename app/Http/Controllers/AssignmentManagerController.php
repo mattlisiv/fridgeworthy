@@ -25,6 +25,9 @@ class AssignmentManagerController extends Controller {
 
         //Handle Course Management
         $this->middleware('CourseVerification', ['only' => ['createAssignment','viewGradeBook','submitAssignment','viewGrades']]);
+        //Handle Assignment Management
+        $this->middleware('AssignmentVerification', ['only' => ['viewAssignment']]);
+
     }
 
     public function createAssignment($id){
@@ -33,6 +36,31 @@ class AssignmentManagerController extends Controller {
         $course = $this->courseRepository->find($id);
 
         return view('teacher.assignments.create',compact('user','course'));
+    }
+
+    public function deleteAssignment($id){
+
+        $user = Auth::user();
+        $course = $this->courseRepository->find($id);
+        $assignments = $course->assignments();
+
+        return view('teacher.assignments.delete',compact('user','assignments','course'));
+
+    }
+
+    public function destroyAssignment(Requests\DeleteAssignmentRequest $request){
+
+        $assignment_id = $request['assignment_id'];
+
+        $assignment = $this->assignmentRepository->find($assignment_id);
+
+        $course_id = $assignment->course_id;
+
+        Grade::where('assignment_id','=',$assignment->id)->delete();
+
+        $assignment->delete();
+
+        return redirect()->action('CourseManagerController@viewCourse',$course_id);
     }
 
 
@@ -63,6 +91,8 @@ class AssignmentManagerController extends Controller {
 
         $user = Auth::user();
         $assignment = $this->assignmentRepository->find($id);
+        $course_id = $assignment->course_id;
+        $course = $this->courseRepository->find($course_id);
         if(get_class($user)=='App\Student'){
             $grade = $user->grades()->where('assignment_id','=',$assignment->id)->first();
             return view('student.assignments.show',compact('user','assignment','grade'));
@@ -70,8 +100,25 @@ class AssignmentManagerController extends Controller {
             return view('teacher.assignments.show',compact('user','assignment'));
 
         }else if(get_class($user)=='App\Guardian'){
+            $students = $user->students;
+            $array = [];
+            $i = 0;
+            foreach($students as $student){
 
-            return view('guardian.assignments.show',compact('user','assignment'));
+                if($student->enrolledInCourse($course)) {
+
+                    $grade = $student->grades()->where('assignment_id', '=', $assignment->id)->first();
+                    if (!is_null($grade)) {
+                        $array = array_add($array, $i, array('name' => $student->full_name, 'grade' => $grade->numeric_grade, 'status' => $grade->status));
+                    }else{
+                        $array = array_add($array, $i, array('name' => $student->full_name, 'grade' => 'none', 'status' => 'none'));
+                    }
+
+                }
+            }
+            $grades = $array;
+
+            return view('guardian.assignments.show',compact('user','assignment','grades'));
         }else{
             return redirect()->back();
         }
@@ -96,6 +143,7 @@ class AssignmentManagerController extends Controller {
     }
 
     public function updateGrade(Requests\UpdateGradeRequest $request){
+
 
         var_dump($request->all());
         $grade = $this->gradeRepository->find($request['grade_id']);
@@ -136,9 +184,27 @@ class AssignmentManagerController extends Controller {
                 break;
         }
 
-                $student = $this->userRepository->find($grade->student_id);
+
+
+        $student = $this->userRepository->find($grade->student_id);
+
+
+
                 $student->points +=$points_rewarded;
                 $student->save();
+
+                //Attach Reward to parent account
+
+                $parent = $student->parent()->first();
+
+
+
+                if(!is_null($parent) && get_class($parent)=='App\Guardian'){
+
+                    $parent->points +=$points_rewarded;
+                    $parent->save();
+
+                }
 
 
         return redirect()->action('AssignmentManagerController@viewGradeBook',$assignment->course_id);
@@ -214,6 +280,22 @@ class AssignmentManagerController extends Controller {
             $grades = $user->gradesByCourse($course->id)->get();
             return view('student.grades.index',compact('user','grades','course'));
 
+        }else if(get_class($user)=='App\Guardian'){
+            $students = $user->students()->get();
+            $i = 0;
+            $grade_information = [];
+
+            foreach($students as $student){
+                $grades = $student->gradesByCourse($course->id)->get()->toArray();
+                $grades = array_add($grades,'full_name',$student->full_name);
+                $grade_information = array_add($grade_information,$i,$grades);
+
+                $i++;
+
+            }
+
+
+            return view('guardian.grades.index',compact('user','grades','course','grade_information'));
         }
 
     }

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Control;
+use App\Custom\Helper;
 use App\EmailListServ;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -195,18 +196,21 @@ class HomeController extends Controller {
 
     }
 
+    public function resetPassword(Requests\ForgotPasswordRequest $request){
+
+        $email = $request['email'];
+        $user = User::where('email','=',$email)->firstOrFail();
+        $new_password = Helper::generate_random_twelve_character_access();
+        $user->password = bcrypt($new_password);
+        $user->save();
+        var_dump($user->password);
+        var_dump($new_password);
+
+    }
 
     public function error(){
 
         return view('home.partials.errors');
-    }
-
-
-    public function upload(){
-
-
-
-        return view('teacher.documents.create');
     }
 
 

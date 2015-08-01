@@ -16,13 +16,19 @@ class DocumentManagerController extends Controller {
     public function __construct(CourseRepositoryInterface $courseRepositoryInterface){
 
         $this->courseRepository = $courseRepositoryInterface;
+        $this->middleware('CourseVerification', ['only' => ['index','create']]);
+
     }
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index($id)
+
+
+
+
+    public function index($id)
 	{
 
         $course = $this->courseRepository->find($id);

@@ -15,59 +15,37 @@
 
 <div class="mainwrap">
 
+
+
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Login')
 
+    @include('home.partials.modal.Logout')
 
     <!--start list template-->
     <section id="listtemplatecnt">
+
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">Get Involved Today!</div>
 
-            <div style="height:400px">
-                <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
-                    <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
-                    <div>
-                        <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
-                        <br>
-                        <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address',['style'=>'margin:25px 0px']) !!}</h6>
-                        <br>
-                        <h6>{!! Form::email('email',null,['style'=>'padding:10px']) !!}</h6>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    @if($errors)
-                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <br>
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                            <br>
-                            <br>
-                        </div>
-                    @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
-                </div>
-            </div>
-        </div>
+            <br>
+            <br>
+            <h5>Thanks for your feedback. We greatly appreciate your support.</h5>
+            <br>
+            <br>
 
+
+
+            <br>
+        </div><!--end list table-->
+
+        <br>
+        <a href="{{action('HomeController@index')}}"><button class="managebtn">Back Home</button></a>
     </section><!--end list template-->
-
 
 
     <div class="push"></div>
 </div><!--end mainwrap-->
-<!--footer-->
-
 
 @include('home.partials.Footer')
 

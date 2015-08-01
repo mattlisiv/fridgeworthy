@@ -39,7 +39,7 @@
 
     <!--start my classes content-->
     <section id="myclassespancnt">
-        <h1 class="whitedkgray">my classes</h1>
+        <h1 class="whitedkgray">my student's classes</h1>
 
         <div class="classescol1">
             <div class="classlisttable" id="classlist">
@@ -48,7 +48,6 @@
                     @foreach($courses as $course)
                         <div class="classlisttablerow"><p><a class="plinkwhite" href="{{action('CourseManagerController@viewCourse',$course->id)}}">{{$course->name}}</a></p></div>
                     @endforeach
-                        <div class="classlisttablefooter"><a href="{{action('CourseManagerController@deleteCourse',$course->id)}}">delete a class</a></div>
                 @else
                     <div class="classlisttablerow"><p>No current classes.</p></div>
                 @endif

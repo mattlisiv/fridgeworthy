@@ -61,6 +61,7 @@ Route::group(array('domain' => $domain), function()
     Route::get("forgotpassword","HomeController@forgotPassword");
     Route::post("uploadtest","HomeController@uploadTest");
     Route::get("upload","HomeController@upload");
+    Route::post("sendpassword","HomeController@resetPassword");
 
 
 });
@@ -72,14 +73,10 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
 
     /**User Routes **/
     Route::get("account","AccountController@index");
-    Route::get("mycourses","CourseManagerController@viewMyCourses");
-    Route::get("course/{id}",['as'=>'id','uses'=>"CourseManagerController@viewCourse"]);
-    Route::get("course/{id}/viewgrades",['as'=>'id','uses'=>"AssignmentManagerController@viewGrades"]);
     Route::get("mygrades/{id}","AssignmentManagerController@viewIndividualGrade");
     Route::get("myassignments/{id}/submitgrade","AssignmentManagerController@submitGrade");
     Route::post("store_grade","AssignmentManagerController@storeGrade");
-    Route::get("course/{id}/viewfile","DocumentManagerController@show");
-    Route::get("course/{id}/studyfiles","DocumentManagerController@index");
+
 
 });
 
@@ -89,6 +86,8 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
 
     /**Course Creation Routes **/
     Route::get("createcourse","CourseManagerController@createCourse");
+    Route::get("deletecourse","CourseManagerController@deleteCourse");
+    Route::post("destroy_course","CourseManagerController@destroyCourse");
     Route::post("store_course",['as'=>'store_course','uses'=>'CourseManagerController@storeCourse']);
     Route::get("course/{id}/createassignment", array('as'=>'id','uses'=>'AssignmentManagerController@createAssignment'));
     Route::get("course/{id}/roster",array('as'=>'id','uses'=>'CourseManagerController@managerRoster'));
@@ -98,6 +97,8 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("myassignments/{id}/edit","AssignmentManagerController@editAssignment");
     Route::post('store_assignment',"AssignmentManagerController@storeAssignment");
     Route::post('update_assignment',"AssignmentManagerController@updateAssignment");
+    Route::get("deleteassignment/{id}","AssignmentManagerController@deleteAssignment");
+    Route::post("destroy_assignment","AssignmentManagerController@destroyAssignment");
     Route::get('mygradebook/{id}/edit',"AssignmentManagerController@editGrade");
     Route::post('update_grade',"AssignmentManagerController@updateGrade");
     Route::get('course/{id}/uploadfile',array('as'=>'id','uses'=>"DocumentManagerController@create"));
@@ -129,7 +130,16 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("myassignments/{id}","AssignmentManagerController@viewAssignment");
 
 
+
 });
+
+Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['App\Guardian']), function(){
+
+    Route::get("getinvolved","GuardianController@index");
+    Route::post("store_suggestion","GuardianController@store_suggestion");
+
+});
+
 
 
 Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['App\Student','App\Teacher','App\Guardian']), function(){
@@ -138,6 +148,14 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("myrewards","PublicRewardController@viewMyUnredeemedRewards");
     Route::post("redeem_reward","PublicRewardController@redeemReward");
     Route::get("viewcoupon/{id}","PublicRewardController@viewCoupon");
+
+    /**Course Information**/
+    Route::get("mycourses","CourseManagerController@viewMyCourses");
+    Route::get("course/{id}",['as'=>'id','uses'=>"CourseManagerController@viewCourse"]);
+    Route::get("course/{id}/viewfile","DocumentManagerController@show");
+    Route::get("course/{id}/studyfiles","DocumentManagerController@index");
+    Route::get("course/{id}/viewgrades",['as'=>'id','uses'=>"AssignmentManagerController@viewGrades"]);
+
 
 });
 

@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Assignment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\Interfaces\CourseRepositoryInterface;
 use App\Repositories\Interfaces\StudentRepositoryInterface;
+use App\Grade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +33,42 @@ class CourseManagerController extends Controller {
         $user = Auth::user();
         $request['teacher_id']=$user->id;
         $this->courseRepository->store($request->all());
+        return redirect()->action('CourseManagerController@viewMyCourses');
+
+
+    }
+
+    public function deleteCourse(){
+
+        $user = Auth::user();
+        $courses = $user->courses();
+        return view('teacher.courses.delete',compact('user','courses'));
+
+    }
+
+    public function destroyCourse(Requests\DeleteCourseRequest $request){
+
+        $course_id = $request['course_id'];
+
+
+        $course = $this->courseRepository->find($course_id);
+
+
+        $assignments = $course->assignments;
+
+
+        foreach($assignments as $assignment){
+
+            Grade::where('assignment_id','=',$assignment->id)->delete();
+
+        }
+
+        Assignment::where('course_id','=',$course->id)->delete();
+
+        $course->delete();
+
+
+
         return redirect()->action('CourseManagerController@viewMyCourses');
 
 
@@ -76,9 +114,12 @@ class CourseManagerController extends Controller {
         }else if(get_class($user)=='App\Teacher'){
             $assignments = $user->assignments()->orderBy('due_date')->get();
             return view('teacher.courses.index',compact('user','courses','assignments'));
+        }else if(get_class($user)=='App\Guardian'){
+            $assignments = $user->upcomingAssignments();
+            return view('guardian.courses.index',compact('user','courses','assignments'));
         }
         else{
-            return redirect()->to(action('HomeController@index'));
+            return redirect()->action('HomeController@index');
         }
 
 
@@ -93,8 +134,12 @@ class CourseManagerController extends Controller {
         }else if(get_class($user)=='App\Teacher'){
             return view('teacher.courses.show',compact('user','course'));
         }
-        else{
-            return redirect()->to(action('HomeController@index'));
+        else if(get_class($user)=='App\Guardian'){
+
+            return view('guardian.courses.show',compact('user','course'));
+
+        }else{
+            return "Could not verify enrollment";
         }
 
     }

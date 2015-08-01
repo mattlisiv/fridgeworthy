@@ -541,6 +541,23 @@ border-radius: 5px 5px 0px 0px;
 background-color: #01aef0;
 }
 
+.classlisttablefooter{
+    padding: 6px 0 10px 0;
+    text-align: center;
+    font-family: 'ralewaylight', Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #01aef0;
+    border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -ms-border-radius: 0px 0px 5px 5px;
+    -o-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    background-color: #FAF0E6;
+
+}
+
+
 .listtablerow, .classlisttablerow {
 	border-top: 1px solid #4d5155;
 }

@@ -42,7 +42,16 @@
                     <br>
                     <br>
                     <br>
-                    <p>TODO : Include GRADE</p>
+                    @foreach($grades as $grade)
+                        @if($grade['grade']=='none')
+                            <h5><span style="font-weight:bold;color:white ">{{$grade['name']}}</span> has not submitted a grade for this assignment.</h5>
+                        @else
+                            <h5><span style="font-weight:bold;color:white ">{{$grade['name']}}</span> has submitted a grade for this assignment with the numeric grade of
+                               <span style="font-weight:bold;color:white "> {{$grade['grade']}}</span>, and the status is currently <span style="font-weight:bold;color:white ">{{$grade['status']}}</span>.
+                            </h5>
+
+                        @endif
+                    @endforeach
                     <br>
                     <br>
                     <a href="{{action('CourseManagerController@viewCourse',$assignment->course_id)}}"><button type="button" value="submit assignment" class="classdetbtn"> Back to Course</button></a>

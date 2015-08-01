@@ -15,7 +15,7 @@
 
             <ul>
                 <li><a href="{{url('/')}}#home" >home</a></li>
-                <li><a href="{{action('CourseManagerController@viewMyCourses')}}">my students' classes</a>
+                <li><a href="{{action('CourseManagerController@viewMyCourses')}}">my student's classes</a>
                     <ul class="dropdownmenu">
                         @if(count($user->courses()->get()))
                             @foreach($user->courses()->get() as $course)
@@ -53,7 +53,7 @@
                 <div class="menu-header">
                     <ul id="menu-mobile-menu" class="menu">
                         <li class="menu-item"><a href="{{url('/')}}#home" >home</a></li>
-                        <li class="menu-item"><a href="{{action('CourseManagerController@viewMyCourses')}}" >my students' classes</a>
+                        <li class="menu-item"><a href="{{action('CourseManagerController@viewMyCourses')}}" >my student's classes</a>
                             <ul class="sub-menu">
                                 @if(count($user->courses()->get()))
                                     @foreach($user->courses()->get() as $course)
