@@ -30,8 +30,8 @@
                 </div>
                 @foreach($coupons as $coupon)
                     <div class="listtablerow">
-                        <div  style="width: 40%" class="listitemname"><p class="white">{{$coupon->reward->name}}</p></div>
-                        <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
+                        <div  class="listitemname"><p class="white">{{$coupon->reward->name}}</p></div>
+                        <div  class="listitemname"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
 
                     </div>
                 @endforeach
