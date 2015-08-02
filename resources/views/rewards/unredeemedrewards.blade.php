@@ -26,16 +26,17 @@
             @if(count($coupons))
                 <div style="font-weight: bold" class="listtablerow">
                     <div  style="width: 40%" class="listitemname"><p class="white">Reward</p></div>
-                    <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">Business</p></div>
+                    <div  style="width: 40%" class="listviewbutton"><p class="white" style="text-align: right">Business</p></div>
 
                 </div>
                 @foreach($coupons as $coupon)
                     <div class="listtablerow">
-                        <div  style="width: 40%" class="listitemname">
+                        <div class="listitemname">
                             <p class="white">
                                 <a href="{{action('PublicRewardController@viewCoupon',['coupon_id'=>$coupon->id])}}" class="plinkwhite">{{$coupon->reward->name}}</a>
-                            </p></div>
-                        <div  style="width: 40%" class="listitemname"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
+                            </p>
+                        </div>
+                        <div class="listviewbutton"><p class="white" style="text-align: right">{{$coupon->reward->business->name}}</p></div>
 
                     </div>
                 @endforeach
