@@ -14,18 +14,10 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-        $this->call('DistrictSeeder');
-        $this->call('RegionSeeder');
-        $this->call('SchoolSeeder');
-        $this->call('BusinessSeeder');
-        $this->call('RewardSeeder');
-        $this->call('RoleSeeder');
-		$this->call('UserSeeder');
-        $this->call('CourseSeeder');
-        $this->call('CourseEnrollmentSeeder');
-        $this->call('AssignmentSeeder');
-        $this->call('GradeSeeder');
-        $this->call('CouponSeeder');
+
+        $this->call('UserSeeder');
+        $this->call('StartupScriptTableSeeder');
+   
 
 	}
 
