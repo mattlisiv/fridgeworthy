@@ -41,6 +41,8 @@ class CouponRepository implements CouponRepositoryInterface{
         $reward_id = $input['reward_id'];
         $couponType = $input['couponType'];
 
+
+
         if($couponType=='managed'){
 
             for($i=0;$i<$numberOfCoupons;$i++){
@@ -58,7 +60,8 @@ class CouponRepository implements CouponRepositoryInterface{
                     Coupon::create([
                         'reward_id' => $reward_id,
                         'status' => 'unclaimed',
-                        'access_code' => $access_code
+                        'access_code' => $access_code,
+                        'coupon_type'=> 'inhouse'
 
                     ]);
                 }
@@ -69,12 +72,31 @@ class CouponRepository implements CouponRepositoryInterface{
                 $coupon_codes = $input['coupon_codes'];
                 foreach($coupon_codes as $key=>$coupon_code){
 
-                    Coupon::create(['reward_id'=>$reward_id,'status'=>'unclaimed','access_code'=>$coupon_code]);
+                    Coupon::create(['reward_id'=>$reward_id,'status'=>'unclaimed','access_code'=>$coupon_code,'coupon_type'=>'auto']);
                 }
 
-        }else{
+        }else if($couponType=='imaged'){
 
+            $coupons = [];
+            for($i=0;$i<$numberOfCoupons;$i++) {
+
+               $coupon =  Coupon::create([
+                    'reward_id' => $reward_id,
+                    'status' => 'unclaimed',
+                    'coupon_type' => 'imaged',
+                    'access_code' => 'IMG'
+
+                ]);
+
+                $coupons = array_add($coupons,$i,$coupon);
+
+            }
+
+            return $coupons;
+
+        }else{
             throw new \Exception("Error in retrieving information");
+
         }
 
     }

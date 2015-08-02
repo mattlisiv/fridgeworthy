@@ -16,7 +16,9 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
+                                @if(!$coupon->coupon_type=='imaged')
                                 <p>Access Code:{{$coupon->access_code}}</p>
+                                @endif
                                 <p>Status: {{$coupon->status}}</p>
                                 @if($coupon->user)
                                         <p>Coupon claimed by: <span><a href="{{action('Admin\UserController@show',$coupon->user->id)}}">{{$coupon->user->fullname}}</a></span></p>
@@ -26,7 +28,11 @@
                                 <p><a href="{{action('Admin\RewardController@show',$coupon->reward->id)}}">View Reward Information</a></p>
                             </div>
                             <div class="col-lg-3 col-lg-offset-1">
+                                @if($coupon->coupon_type=='imaged')
+                                    <div><img width="75%" height="75%" src="{{$coupon->getImage()}}"></div>
+                                @else
                                 <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(200)->generate($coupon->access_code))}} ">
+                                @endif
                             </div>
                             <div class="col-lg-1">
                             </div>

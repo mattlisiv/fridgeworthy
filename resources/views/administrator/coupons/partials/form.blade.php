@@ -7,13 +7,22 @@
     <br>
     <label>
         <input type="radio" name="couponType" value="auto-managed">
-        Auto-Managed Coupons:This option is for businesses incorporating existing coupon systems.
+        Auto-Managed Coupons: This option is for businesses incorporating existing coupon systems.
     </label>
-
+    <br>
+    <label>
+        <input type="radio" name="couponType" value="imaged">
+        Imaged Coupons: Quick option for untracked, photoshopped coupons.
+    </label>
 </div>
 <div class="form-group" id="csvFileDiv" style="display:none">
     {!! Form::label('couponCSV', 'Load Codes from CSV file') !!}
     {!! Form::file('couponCSV') !!}
+</div>
+
+<div class="form-group" id="imageDiv" style="display:none">
+    {!! Form::label('couponCSV', 'Load Image') !!}
+    {!! Form::file('image') !!}
 </div>
 
 <div class="form-group" id="numberOfCouponsDiv">

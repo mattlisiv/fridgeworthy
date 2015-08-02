@@ -48,7 +48,7 @@ class Guardian extends User{
             ->leftJoin('course_user','courses.id','=','course_user.course_id')
             ->leftJoin('parent_student','course_user.user_id','=','parent_student.student_id')
             ->leftJoin('users','parent_student.parent_id','=','users.id')
-            ->where('users.id','=',$this->id);
+            ->where('users.id','=',$this->id)->groupBy('courses.id');
 
 
     }

@@ -677,7 +677,7 @@ background-color: #ff6bb9;
 /*my classes & individual classes*/
 .classescol1, .classescol2 {
 	float: left;
-	height: 400px;
+	height: auto;
 }
 
 .classescol1 {

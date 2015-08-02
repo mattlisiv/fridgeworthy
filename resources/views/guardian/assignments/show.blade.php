@@ -38,7 +38,7 @@
                     <h6><span style="font-weight:bold ">Additional Notes:</span> {{$assignment->description}}</h6>
                     <br>
                     <br>
-                    <h6><span style="font-weight:bold "> Due Date:</span> {{$assignment->due_date}}</h6>
+                    <h6><span style="font-weight:bold "> Due Date:</span> {{$assignment->due_date->toFormattedDateString()}}</h6>
                     <br>
                     <br>
                     <br>

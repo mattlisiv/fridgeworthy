@@ -23,39 +23,27 @@
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">Error in Registration.</div>
 
-            <div style="height:400px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
                     <div>
                         <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
                         <br>
                         <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address') !!}</h6>
+                        <h5>There was in an error in processing your registration request. If the issue persists, contact <span style="color:white;"><a class="plinkwhite" href="mailto:support@fridge-worthy.com"> support@fridge-worthy.com</a></span> .</h5>
                         <br>
-                        <h6>{!! Form::email('email',null) !!}</h6>
+                        <br>
+                        <br>
+
+                        <a href="{{action('HomeController@index')}}"><button class="classdetbtn">Return Home</button></a>
+                        <br>
                     </div>
                     <br>
                     <br>
                     <br>
-                    <br>
-                    @if($errors)
-                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <br>
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                            <br>
-                            <br>
-                        </div>
-                    @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
+
                 </div>
             </div>
         </div>

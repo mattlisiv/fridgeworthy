@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Coupon;
+use App\CouponImage;
 use App\Custom\Helper;
 use App\Http\Requests;
 use App\Reward;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Interfaces\CouponRepositoryInterface as CouponRepositoryInterface;
 use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use League\Csv\Reader;
 use SplFileObject;
@@ -67,9 +69,32 @@ class CouponController extends Controller {
 
 
         }
+        $coupons = $this->couponRepository->store($request->all());
 
-        $this->couponRepository->store($request->all());
 
+
+        if($request['couponType']=='imaged'){
+
+            $reward_id =$coupons[0]->reward_id;
+            if($request->hasFile('image') && ($request->file('image')->getClientOriginalExtension()=='jpg'
+                    || $request->file('image')->getClientOriginalExtension()=='png'
+                    || $request->file('image')->getClientOriginalExtension()=='svg'
+                    || $request->file('image')->getClientOriginalExtension()=='gif')){
+
+                $disk = Storage::disk('local');
+                $img_name = 'couponIMG-'.$request['reward_id'].".".$request->file('image')->getClientOriginalExtension();
+                $destination = 'uploads';
+                $request->file('image')->move($destination,$img_name);
+
+                foreach($coupons as $coupon){
+
+                    $relatedImg= CouponImage::create(['coupon_id'=>$coupon->id,'file_path'=>'/'.$destination.'/'.$img_name]);
+
+                }
+                return redirect()->action('Admin\CouponController@index');
+
+            }
+        }
         return redirect()->action('Admin\CouponController@index');
 	}
 

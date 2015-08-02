@@ -64,6 +64,13 @@ Route::group(array('domain' => $domain), function()
     Route::post("sendpassword","HomeController@resetPassword");
 
 
+    /**Registration Confirmation**/
+    Route::get("parent-confirmation/{registration_hash}","HomeController@parent_confirmation");
+    Route::get("terms-and-conditions","HomeController@TermsAndConditions");
+    Route::post("parent_confirmation","HomeController@ConfirmAndCreateParentAccount");
+    Route::post("parent_confirmation_additional","HomeController@ConfirmAdditionalStudent");
+
+
 });
 
 
@@ -76,6 +83,7 @@ Route::group(array('domain' => $domain,'middleware'=>'authorize','user_type'=>['
     Route::get("mygrades/{id}","AssignmentManagerController@viewIndividualGrade");
     Route::get("myassignments/{id}/submitgrade","AssignmentManagerController@submitGrade");
     Route::post("store_grade","AssignmentManagerController@storeGrade");
+
 
 
 });

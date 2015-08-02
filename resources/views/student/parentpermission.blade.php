@@ -17,49 +17,27 @@
 
     @include('navigation.masternav')
 
-    @include('home.partials.modal.Login')
+    @include('home.partials.modal.Logout')
 
 
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">You have not been confirmed to submit grades.</div>
 
-            <div style="height:400px">
+            <div style="height:300px">
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
-                    <div>
-                        <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
-                        <br>
-                        <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address') !!}</h6>
-                        <br>
-                        <h6>{!! Form::email('email',null) !!}</h6>
-                    </div>
+                    <br>
+                    <h5>We appreciate your participation, but you have not been authorized by your parent or guardian to submit grades at this time.</h5>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    @if($errors)
-                        <div style="color:red;margin: 0 auto;text-align: center;color:red">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <br>
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                            <br>
-                            <br>
-                        </div>
-                    @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
-                    {!! Form::close()!!}
+                    <h6>Please check back shortly! If you believe this is an error have your parent/guardian contact FridgeWorthy at
+                        <br> <span style="font-weight: bold">support@fridge-worthy.com.</span></h6>
                 </div>
             </div>
-        </div>
 
+        </div><!--end list table-->
     </section><!--end list template-->
 
 

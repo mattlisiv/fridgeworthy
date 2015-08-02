@@ -29,6 +29,7 @@ class CouponRequest extends Request {
             'couponNumber' => 'required_if:couponType,managed|integer|min:1',
             'couponCSV'=>'required_if:couponType,auto-managed',
             'reward_id' => 'required',
+            'image'=>'required_if:couponType,imaged'
 		];
 	}
 

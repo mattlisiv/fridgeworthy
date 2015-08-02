@@ -5,7 +5,7 @@ use App\Custom\Helper;
 use App\EmailListServ;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\ParentStudentRelation;
 use App\Role;
 use App\School;
 use App\User;
@@ -80,6 +80,10 @@ class HomeController extends Controller {
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
     public function register(Request $request){
 
         $input = $request->all();
@@ -95,9 +99,9 @@ class HomeController extends Controller {
             'parent_email.required' => 'A parent email is required if you are a student.',
             'parent_email.required_if' => 'A parent email is required if you are a student.',
             'grade.required' => 'Please select a grade if you are a student.',
-            'grade.required_if' => 'Please select a grade if you are a student.'
-
-
+            'grade.required_if' => 'Please select a grade if you are a student.',
+            'email.unique'=> 'This email already is registered to another user.',
+            'email.different'=>'A student\'s email may not be the same as a parent\'s email.',
 
 
         ];
@@ -106,7 +110,7 @@ class HomeController extends Controller {
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50',
             'school_id'=>'required',
-            'email' => 'required|email|max:255|unique:users,email',
+            'email' => 'required|email|max:255|unique:users,email|unique:users,parent_email|different:parent_email',
             'password' => 'required|confirmed|min:6',
             'grade'=> 'required_if:role,2',
             'parent_email'=>'required_if:role,2',
@@ -125,6 +129,34 @@ class HomeController extends Controller {
                 $input['grade'] = null;
             }
 
+            $parent_confirmation = 'confirmed';
+
+            if($input['role']==2){
+                $parent_confirmation = 'unconfirmed';
+            }
+
+            $hash_created = false;
+
+            $registration_hash = null;
+
+
+
+            while(!$hash_created) {
+
+                $registration_hash = Helper::generate_random_twelve_character_access();
+
+                $rules = array(
+                    'registration_hash' => 'unique:users,registration_hash'
+                );
+
+
+                $validator = Validator::make(['registration_hash' => $registration_hash], $rules);
+                if (!$validator->fails()) {
+
+                    $hash_created = true;
+                }
+
+            }
             $user = User::create([
                 'email' => $input['email'],
                 'password' => bcrypt($input['password']),
@@ -133,7 +165,9 @@ class HomeController extends Controller {
                 'last_name'=> $input['last_name'],
                 'parent_email' =>$input['parent_email'],
                 'grade'=>$input['grade'],
-                'points'=> 0
+                'points'=> 0,
+                'parent_confirmation'=>$parent_confirmation,
+                'registration_hash'=> $registration_hash
 
             ]);
 
@@ -144,6 +178,23 @@ class HomeController extends Controller {
             }else if($input['role']==2){
 
                 $user->attachRole(Role::student());
+
+                $parent = new User();
+
+                $message1 = 'Your student, '.$user->full_name.', has created an account with FridgeWorthy, a fun, rewarding site where students, teachers, and parents all earn rewards.';
+                $message2 = 'We need your help. Please complete your account and verify that your student has the ability to submit grades. The sooner your account is created, the sooner you can earn rewards.';
+                $signer = 'The FridgeWorthy Support Team';
+                $link_message = 'Complete My Account';
+                $link = 'http://www.' . env('DOMAIN').'/parent-confirmation/'.$user->registration_hash.'?email='.$user->parent_email;
+
+                $data = ['generic'=>true,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+
+                Mail::send('emails.template', $data, function ($message) use($user) {
+                    $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+                    $message->to($user->parent_email);
+                    $message->subject('Complete Your FridgeWorthy Account.');
+                });
+
 
             }
             Auth::login($user);
@@ -179,6 +230,103 @@ class HomeController extends Controller {
 
     }
 
+    public function parent_confirmation(Request $request,$registration_hash){
+
+        $parent_email = $request['email'];
+
+        $registration_id = $registration_hash;
+
+        $student = User::where('parent_email','=',$parent_email)->where('registration_hash','=',$registration_hash)->first();
+
+        $user = null;
+
+        if(is_null($student)){
+
+            $user = null;
+            return view("registration.failed",compact('user'));
+
+        }else{
+
+            $parent = User::where('email','=',$parent_email);
+            if(count($parent->get())==0){
+
+                return view('home.confirmstudent',compact('student','user','registration_id'));
+            }else{
+
+                return view('home.confirm-additional-student',compact('student','user','registration_id'));
+
+            }
+
+        }
+
+
+    }
+
+    public function ConfirmAdditionalStudent(Requests\AdditonalStudentConfirmationRequest $request){
+
+
+        $registration_hash = $request['registration_id'];
+        $parent_email = $request['email'];
+
+        $parent = User::where('email','=',$parent_email)->first();
+
+        $student = User::where('parent_email','=',$parent_email)->where('registration_hash','=',$registration_hash)->first();
+
+        if(is_null($student) || is_null($parent)){
+
+            $user = null;
+            return view("registration.failed",compact('user'));
+
+        }else {
+
+            $student->parent_confirmation = 'confirmed';
+            $student->registration_hash = 'CONFIRMED';
+            $student->save();
+
+            ParentStudentRelation::create(['parent_id'=>$parent->id,'student_id'=>$student->id,'status'=>'confirmed']);
+
+            Auth::login($parent);
+            $user = Auth::user();
+            return view('registration.studentadded',compact('user'));
+
+
+            }
+        }
+
+
+    public function ConfirmAndCreateParentAccount(Requests\ConfirmStudentRequest $request){
+
+        $first_name = $request['first_name'];
+        $last_name = $request['last_name'];
+        $password = $request['password'];
+        $registration_hash = $request['registration_id'];
+        $parent_email = $request['email'];
+
+        $student = User::where('parent_email','=',$parent_email)->where('registration_hash','=',$registration_hash)->first();
+
+        if(is_null($student)){
+
+            $user = null;
+            return view("registration.failed",compact('user'));
+
+        }else{
+
+            $student->parent_confirmation = 'confirmed';
+            $student->registration_hash = 'CONFIRMED';
+            $student->save();
+
+            $parent = User::create(['email'=>$parent_email,'first_name'=>$first_name,'last_name'=>$last_name,'password'=>bcrypt($password),'school_id'=>$student->school_id]);
+            $parent->attachRole(Role::guardian());
+            ParentStudentRelation::create(['parent_id'=>$parent->id,'student_id'=>$student->id,'status'=>'confirmed']);
+
+            Auth::login($parent);
+            $user = Auth::user();
+            return view('registration.parentcreated',compact('user'));
+
+
+        }
+    }
+
     public function passwordChanged(){
 
         $user = Auth::user();
@@ -196,6 +344,12 @@ class HomeController extends Controller {
 
     }
 
+    public function TermsAndConditions(){
+
+
+        return "";
+    }
+
     public function resetPassword(Requests\ForgotPasswordRequest $request){
 
         $email = $request['email'];
@@ -203,9 +357,20 @@ class HomeController extends Controller {
         $new_password = Helper::generate_random_twelve_character_access();
         $user->password = bcrypt($new_password);
         $user->save();
-        var_dump($user->password);
-        var_dump($new_password);
+        $message1 = 'Your password has been changed! It seems that you have forgot your password, so we have reset it for you. If you did not change your password, please contact FridgeWorthy at support@fridge-worthy.com .';
+        $message2 = 'Your new password: '.$new_password.'. We suggest you change your password when logging in again for the first time.';
+        $signer = 'The FridgeWorthy Support Team';
+        $link_message = 'Click here to login';
+        $link = 'http://www.fridge-worthy.com';
 
+        $data = ['generic'=>false,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+            Mail::send('emails.template', $data, function ($message) use($email) {
+                 $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+                 $message->to($email);
+                 $message->subject('Your FridgeWorthy password has been reset.');
+             });
+
+        return view('home.passwordreset');
     }
 
     public function error(){
@@ -219,11 +384,21 @@ class HomeController extends Controller {
 
             EmailListServ::create($request->all());
 
-            $data = ['user'=>'Matt'];
-        //    Mail::send('emails.demo', $data, function ($message) {
-       //         $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
-       //         $message->to('lisivickmatt@gmail.com');
-      //      });
+        $message1 = 'Thanks for wanting to know more about FridgeWorthy. We\'ll keep you updated with exciting news and let you know how you can become involved.';
+        $message2 = null;
+        $signer = 'The FridgeWorthy Support Team';
+        $link_message = 'Check out our website';
+        $link = 'http://www.fridge-worthy.com';
+        $user = new User();
+        $user->first_name = $request['first_name'];
+        $user->last_name = $request['last_name'];
+        $email = $request['email'];
+        $data = ['generic'=>false,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+        Mail::send('emails.template', $data, function ($message) use($email) {
+            $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+            $message->to($email);
+            $message->subject('Welcome to FridgeWorthy!');
+        });
 
             $user = Auth::user();
             return view('home.email-signup-complete',compact('user'));

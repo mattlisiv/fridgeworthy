@@ -205,6 +205,19 @@ box-sizing: border-box;
 	margin-right: 27px;
 }
 
+.imaged-coupon-box{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 60px;
+    padding: 34px;
+
+}
+
+.imaged-coupon-box div{
+
+    float: left;
+}
+
 .qr {
 	width: 130px;
 	height: 130px;

@@ -23,22 +23,43 @@
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">Forgot Your Password?</div>
+            <div class="listtabletitle">Complete Your Account and Start Earning Rewards!</div>
 
-            <div style="height:400px">
+            <div>
                 <div style="color: #ffffff;font-size:14px;font-family: 'ralewaylight', Helvetica, sans-serif;width:75%;margin: 0 auto">
                     <br>
-                    {!! Form::open(['url'=>'sendpassword']) !!}
+                    {!! Form::open(['url'=>'parent_confirmation']) !!}
                     <div>
                         <br>
-                        <h5>Forgot Your Password? That's no problem. We'll send you an email.</h5>
+                        <h5>Enter in your information below.</h5>
                         <br>
                         <br>
-                        <h6>{!! Form::label('email', 'Enter in your email address') !!}</h6>
+                        <h6>Email: <br><span style="font-weight: bolder">{{$student->parent_email}}</span></h6>
                         <br>
-                        <h6>{!! Form::email('email',null) !!}</h6>
+                        <br>
+                        <br>
+                        <p>Name</p>
+                        <br>
+                        <p> {!! Form::label('first_name', 'First Name ',['style'=>'margin:25px 0px;color:white']) !!}<span style="padding-right: 25px"></span>{!! Form::text('first_name',null) !!}</p>
+                        <br>
+                        <p> {!! Form::label('last_name', 'Last Name ',['style'=>'margin:25px 0px;color:white']) !!}<span style="padding-right: 25px"></span>{!! Form::text('last_name',null) !!}</p>
+                        <br>
+                        <br>
+                        <p>Password</p>
+                        <br>
+                        <p> {!! Form::label('password', 'Password ',['style'=>'margin:25px 0px;color:white']) !!}<span style="padding-right: 25px"></span>{!! Form::password('password',null) !!}</p>
+                        <br>
+                        <p> {!! Form::label('password_confirmation', 'Confirm Password',['style'=>'margin:25px 0px;color:white']) !!}<span style="padding-right: 25px"></span>{!! Form::password('password_confirmation',null) !!}</p>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="{{action("HomeController@TermsAndConditions")}}" target="__blank" class="plinkwhite">Terms and Conditions</a>
+
+                        <h6>{!! Form::checkbox('authorization','checked',false,['style'=>'padding-bottom:50px;padding-left:10px']) !!}
+                            {!! Form::label('checkDescription', 'By checking this box, I am verifying I am the parent/guardian of '.$student->full_name.', and I have read through the Terms and Conditions above.') !!}</h6>
+                        <br>
+
                     </div>
-                    <br>
                     <br>
                     <br>
                     <br>
@@ -54,7 +75,9 @@
                             <br>
                         </div>
                     @endif
-                    {!! Form::submit('Send Email',['class'=>'classdetbtn']) !!}
+                    {!! Form::hidden('registration_id',$registration_id)!!}
+                    {!! Form::hidden('email',$student->parent_email)!!}
+                    {!! Form::submit('Create Account',['class'=>'classdetbtn']) !!}
                     {!! Form::close()!!}
                 </div>
             </div>

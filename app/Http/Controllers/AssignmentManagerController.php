@@ -111,13 +111,15 @@ class AssignmentManagerController extends Controller {
                     if (!is_null($grade)) {
                         $array = array_add($array, $i, array('name' => $student->full_name, 'grade' => $grade->numeric_grade, 'status' => $grade->status));
                     }else{
+
                         $array = array_add($array, $i, array('name' => $student->full_name, 'grade' => 'none', 'status' => 'none'));
                     }
 
                 }
+
+                $i++;
             }
             $grades = $array;
-
             return view('guardian.assignments.show',compact('user','assignment','grades'));
         }else{
             return redirect()->back();
@@ -215,10 +217,17 @@ class AssignmentManagerController extends Controller {
         $user = Auth::user();
         $assignment = $this->assignmentRepository->find($id);
         $course = $assignment->course()->first();
-        if($user->statusInCourse($course)=='confirmed'){
+        if($user->statusInCourse($course)=='confirmed' && $user->parent_confirmation=='confirmed'){
             return view('student.grades.create',compact('user','assignment'));
         }else{
-            return view('student.courses.notenrolled',compact('user','assignment'));
+            if($user->parent_confirmation!='confirmed'){
+
+                return view('student.parentpermission',compact('user','assignment'));
+            }else{
+
+                return view('student.courses.notenrolled',compact('user','assignment'));
+
+            }
         }
 
     }
@@ -245,11 +254,20 @@ class AssignmentManagerController extends Controller {
 
         $user = Auth::user();
         $course = $this->courseRepository->find($id);
-        if($user->statusInCourse($course)=='confirmed') {
+        if($user->statusInCourse($course)=='confirmed' && $user->parent_confirmation=='confirmed') {
             $assignments = $user->unsubmittedAssignments()->where('courses.id', '=', $course->id)->get();
             return view('student.assignments.SubmitGradeSpecific', compact('user', 'assignments', 'course'));
         }else{
-            return view('student.courses.notenrolled',compact('user','assignment'));
+
+            if($user->parent_confirmation!='confirmed'){
+
+                return view('student.parentpermission',compact('user','assignment'));
+            }else{
+
+                return view('student.courses.notenrolled',compact('user','assignment'));
+
+            }
+
         }
 
     }

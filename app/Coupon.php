@@ -23,8 +23,26 @@ class Coupon extends Model{
         'reward_id',
         'status',
         'user_id',
-        'access_code'
+        'access_code',
+        'coupon_type'
     ];
+
+
+    public function delete(){
+
+        if($this->image->first()) {
+            $image = $this->image()->first();
+
+            $image_path = substr($image->file_path, 1);
+            unlink($image_path);
+
+        }
+
+        $this->image()->delete();
+
+        return parent::delete();
+
+    }
 
     /**Relationships**/
     public function reward(){
@@ -36,6 +54,11 @@ class Coupon extends Model{
     public function user(){
 
         return $this->belongsTo('App\User');
+    }
+
+    public function image(){
+
+        return $this->hasMany('App\CouponImage');
     }
     
     /**Query Scope 
@@ -58,16 +81,15 @@ class Coupon extends Model{
     }
 
 
+    public function getImage(){
 
+        if($this->image->first()){
+            $file_path = $this->image->first()->file_path;
+            return $file_path;
+        }else{
+            return null;
+        }
 
-    /**
-     *@TODO define methods
-     * -owner
-     * -isRedeemed
-     * -reward
-     *
-     */
-
-
+    }
 
 }

@@ -37,19 +37,25 @@
                 *no cash value
             </h3>
             <br>
+            @if(!$coupon->coupon_type =='imaged')
             <h2 style="color:#000088">Access Code: {{$coupon->access_code}}</h2>
-
-            <p>{{$reward->business->name}} | {{$reward->business->website}}<br>
+            @endif
+            <p>{{$reward->business->name}} | <a href="{{$reward->business->website}}">{{$reward->business->website}}</a><br>
         </div>
     </div>
 
     <div class="rightcoupwrap">
 
-        <div class="qrbox">
-            <div><h2>scan to<br>redeem</h2></div>
-            <div class="qr"><img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(1200)->generate($coupon->access_code))}}" alt="qr code"></div>
+        @if($coupon->coupon_type =='imaged')
+        <div class="imaged-coupon-box">
+            <div><img width="100%" height="100%" src="{{$coupon->getImage()}}"></div>
         </div>
-
+        @else
+            <div class="qrbox">
+                <div><h2>scan to<br>redeem</h2></div>
+                <div class="qr"><img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(1200)->generate($coupon->access_code))}}" alt="qr code"></div>
+            </div>
+        @endif
         <div class="couplogobox">
             <h3>courtesy of</h3>
             <img src="/images/fw-logo-300.png" alt="FridgeWorthy logo">
