@@ -29,7 +29,7 @@
             @if(count($assignments) || is_null($assignments))
                 @foreach($assignments as $assignment)
                     <div class="listtablerow">
-                        <div style="width: 33%" class="listitemname"><p class="white">{{$assignment->name}}</p></div>
+                        <div class="listitemname"><p class="white">{{$assignment->name}}</p></div>
                         <div class="listviewbutton">
                             <form action="#" method="post"> <a href="{{action('AssignmentManagerController@viewAssignment',$assignment->id)}}"><button type="button" value="view" class="smbtn">View </button></a></form>
                         </div>
