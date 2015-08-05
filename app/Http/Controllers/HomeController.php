@@ -174,6 +174,21 @@ class HomeController extends Controller {
             if($input['role']==1){
 
                 $user->attachRole(Role::teacher());
+                
+                $message1 = "Thank you for registering for FridgeWorthy!
+                We are beyond excited to provide our service for your school and could not be more ecstatic for your participation. Leading up to the 2015-2016 school year, we have partnered with a number of local businesses in an effort to provide exclusive offers,
+                deals, and rewards for the continued promotion of academic success. Start earning your FridgePoints, because Hard Work Pays Off!";
+                $message2 = null;
+                $signer = 'The FridgeWorthy Team';
+                $link_message = 'Check out our website';
+                $link = 'http://www.fridge-worthy.com';
+                $email = $user->email;
+                $data = ['generic'=>false,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+                Mail::send('emails.template', $data, function ($message) use($email) {
+                    $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+                    $message->to($email);
+                    $message->subject('Welcome to FridgeWorthy!');
+                });
 
             }else if($input['role']==2){
 
@@ -194,6 +209,25 @@ class HomeController extends Controller {
                     $message->to($user->parent_email);
                     $message->subject('Complete Your FridgeWorthy Account.');
                 });
+
+                $message1 = "Thank you for registering for FridgeWorthy! We are
+                beyond excited to provide our service for your school and
+                could not be more ecstatic for your participation. Leading up to the 2015-2016 school year,
+                we have partnered with a number of local businesses in an effort to provide exclusive offers, deals, and rewards for the
+                continued promotion of academic success. Crack open your books and start earning your FridgePoints, because Hard Work Pays Off!";
+                $message2 = null;
+                $signer = 'The FridgeWorthy Team';
+                $link_message = 'Check out our website';
+                $link = 'http://www.fridge-worthy.com';
+                $email = $user->email;
+                $data = ['generic'=>false,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+                Mail::send('emails.template', $data, function ($message) use($email) {
+                    $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+                    $message->to($email);
+                    $message->subject('Welcome to FridgeWorthy!');
+                });
+
+
 
 
             }
@@ -321,6 +355,22 @@ class HomeController extends Controller {
 
             Auth::login($parent);
             $user = Auth::user();
+
+            $message1 = "Thank you for registering for FridgeWorthy!
+            We are beyond excited to provide our service for your school and could not be more ecstatic for your participation. Leading up to the 2015-2016 school year, we have partnered with a number of local businesses in an effort to provide exclusive offers,
+            deals, and rewards for the continued promotion of academic success. Start earning your FridgePoints, because Hard Work Pays Off!";
+            $message2 = null;
+            $signer = 'The FridgeWorthy Team';
+            $link_message = 'Check out our website';
+            $link = 'http://www.fridge-worthy.com';
+            $email = $user->email;
+            $data = ['generic'=>false,'user'=>$user,'message1'=>$message1,'message2'=>$message2,'signer'=>$signer,'link_text'=>$link_message,'link'=>$link];
+            Mail::send('emails.template', $data, function ($message) use($email) {
+                $message->from('customerservice@fridge-worthy.com', 'The FridgeWorthy Team');
+                $message->to($email);
+                $message->subject('Welcome to FridgeWorthy!');
+            });
+
             return view('registration.parentcreated',compact('user'));
 
 
