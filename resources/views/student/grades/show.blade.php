@@ -64,6 +64,15 @@
 
 @include('home.partials.Footer')
 
+<!--responsive menu-->
+<script type="text/javascript">
+    jQuery(function($){
+        $( '.menu-btn' ).click(function(){
+            $('.responsive-menu').toggleClass('expand')
+        })
+    })
+</script>
+
 <script>
     jQuery(document).ready(function($){
         $(".menu-item-has-children").append("<div class='open-menu-link open'>+</div>");

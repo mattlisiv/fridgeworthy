@@ -42,9 +42,18 @@
                         <br>
                         <br>
                         <h6>{!! Form::select('course_id',array('default'=>'Please Select ') +$courses->lists('name','id'), 'default',
-                            ['class'=>'customSelect','style'=>'text-indent:10px']) !!}</h6>
+                            ['class'=>'customSelect','style'=>'text-indent:10px','id'=>'course-selector']) !!}</h6>
 
                     </div>
+                    @foreach($courses as $course)
+                        <div id="course-description-{{$course->id}}" style="display: none;" class="courseDescription">
+                            <br>
+                            <br>
+                            <h5>This class is instructed by {{$course->teacher->full_name}}.</h5>
+                            <br>
+                            <p>Description: {{$course->description}}</p>
+                        </div>
+                    @endforeach
                     <br>
                     <br>
                     <div>
@@ -108,6 +117,14 @@
                 $(e.currentTarget.parentNode.children[2]).removeClass("visible");
                 $(e.currentTarget.parentNode.children[3]).addClass("visible");
             }
+        });
+
+        $("#course-selector").change(function(){
+
+            var val = $("#course-selector").val();
+            $(".courseDescription").hide("slow");
+            var id = '#course-description-'+val;
+            $(id).show("slow");
         });
     });
 </script>

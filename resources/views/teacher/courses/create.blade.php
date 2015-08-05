@@ -38,6 +38,9 @@
                         <div>
                             <h6>{!! Form::label('description', 'Give a description of the course:',null) !!}</h6>
                             <br>
+                            <p>This description will be displayed to help students identify your specific class.</p>
+                            <br>
+                            <br>
                             <div style="width: 70%;margin:0 auto">
                             {!! Form::textarea('description',old('description'),['style'=>'margin: 0 auto;width:100%']) !!}
                             </div>

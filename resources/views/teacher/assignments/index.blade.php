@@ -44,18 +44,6 @@
         </div><!--end list table-->
     </section><!--end list template-->
 
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="push"></div>
 </div><!--end mainwrap-->
 

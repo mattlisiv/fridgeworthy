@@ -7,12 +7,7 @@
     <meta name="keywords" content="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-    <!--CSS links-->
-    <link href="{{asset('css/reset.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/pages.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/infographic.css')}}" rel="stylesheet" type="text/css">
+    @include('js.maincssandjs')
 
     <!--JS links-->
     <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
@@ -48,9 +43,6 @@
     @include('navigation.masternav')
 
     @include('home.partials.modal.Logout')
-
-    @include('home.partials.modal.Login')
-
 
     <!--start points system teacher-->
     <section class="pointssystemcnt">
