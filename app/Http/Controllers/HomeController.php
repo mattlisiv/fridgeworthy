@@ -174,7 +174,7 @@ class HomeController extends Controller {
             if($input['role']==1){
 
                 $user->attachRole(Role::teacher());
-                
+
                 $message1 = "Thank you for registering for FridgeWorthy!
                 We are beyond excited to provide our service for your school and could not be more ecstatic for your participation. Leading up to the 2015-2016 school year, we have partnered with a number of local businesses in an effort to provide exclusive offers,
                 deals, and rewards for the continued promotion of academic success. Start earning your FridgePoints, because Hard Work Pays Off!";
@@ -396,8 +396,9 @@ class HomeController extends Controller {
 
     public function TermsAndConditions(){
 
-
-        return "";
+        $pageTitle = "Terms and Conditions";
+;
+        return view("static.terms",compact('pageTitle'));
     }
 
     public function resetPassword(Requests\ForgotPasswordRequest $request){
