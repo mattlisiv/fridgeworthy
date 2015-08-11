@@ -32,6 +32,7 @@
                                     <li><img src="images/part-bus-logos/stars-sm.gif" alt="Stars and Strikes"></li>
                                     <li><img src="images/part-bus-logos/tomchee-sm.gif" alt="Tom + Chee"></li>
                                     <li><img src="images/part-bus-logos/totalhealth-sm.jpg" alt="Total Health Spa"></li>
+                                    <li><img src="images/treetop-sm.jpg" alt="Treetop Quest"></li>
                                 </ul>
                             </div>
 
