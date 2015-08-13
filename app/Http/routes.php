@@ -20,6 +20,7 @@ Route::group(array('domain' => 'admin.'.$domain,'middleware'=>'authorize','user_
     Route::resource('coupons','Admin\CouponController');
     Route::resource('courses','Admin\CourseController');
     Route::resource('fileuploads','Admin\CourseFilesController');
+    Route::get('preview/{id}','Admin\CouponController@preview');
 
 });
 

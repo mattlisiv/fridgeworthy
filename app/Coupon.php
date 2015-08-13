@@ -92,4 +92,6 @@ class Coupon extends Model{
 
     }
 
+
+
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Interfaces\CouponRepositoryInterface as CouponRepositoryInterface;
 use App\Repositories\Interfaces\RewardRepositoryInterface as RewardRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use League\Csv\Reader;
@@ -143,6 +144,15 @@ class CouponController extends Controller {
 	{
 		//
 	}
+
+    public function preview($id){
+
+        $coupon = $this->couponRepository->find($id);
+        $reward = $coupon->reward;
+        $user = Auth::user();
+
+        return view('public.coupons.show',compact('coupon','reward','user'));
+    }
 
 
 

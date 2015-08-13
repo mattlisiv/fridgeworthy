@@ -85,5 +85,9 @@ class Reward extends Model{
 
     }
 
+    public function details(){
+
+        return $this->hasMany('App\CouponDetails');
+    }
 
 }

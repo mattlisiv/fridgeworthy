@@ -27,14 +27,8 @@
                                 @endif
                                 <p><a href="{{action('Admin\RewardController@show',$coupon->reward->id)}}">View Reward Information</a></p>
                             </div>
-                            <div class="col-lg-3 col-lg-offset-1">
-                                @if($coupon->coupon_type=='imaged')
-                                    <div><img width="75%" height="75%" src="{{$coupon->getImage()}}"></div>
-                                @else
-                                <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(200)->generate($coupon->access_code))}} ">
-                                @endif
-                            </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-2 col-lg-offset-2">
+                                <button class="btn btn-default"><a target="_blank" href="{{action('Admin\CouponController@preview',$coupon->id)}}">Preview Coupon</a></button>
                             </div>
 
                         </div>

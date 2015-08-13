@@ -34,7 +34,7 @@
                             <br>
                     <div class="panel panel-default">
                             <div class="panel-heading"><h3>Coupon Breakdown</h3></div>
-                                    <div>
+                                    <div class="panel-body">
                                         <ul class="list-group stack-list">
                                             <li class="list-group-item list-group-item-info"><span class="badge">{{count($coupons)}}</span>Total Coupons in circulation</li>
                                             <li class="list-group-item"><span class="badge">{{count($redeemedCoupons)}}</span>Coupons redeemed</li>
@@ -43,8 +43,29 @@
                                             <li class="list-group-item @if(count($flaggedCoupons))list-group-item-danger"@else"@endif><span class="badge">{{count($flaggedCoupons)}}</span>Coupons flagged</li>
                                         </ul>
                                     </div>
+                    </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Reward Details</h3>
+                                <p>These will be displayed on the coupons</p>
                             </div>
+                            <div class="panel-body">
+                                <ul class="list-group stack-list">
+                                    @foreach($reward->details as $detail)
+                                   <li class="list-group-item" style="width: 100%">
 
+                                       <span class="badge btn-danger">Remove</span>
+                                          {{$detail->description}}
+                                   </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+                                <div>
+                                    <button class="btn btn-success">Add Detail</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

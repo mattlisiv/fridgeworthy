@@ -47,6 +47,8 @@
 
                 </div>
 
+
+
                 <div class="rewarddet2ndrow">
                     <a href="{{action('PublicRewardController@index')}}" class="backrewbtn"><img src="/images/backarrowreg.png"><p>back to rewards</p></a>
                 </div>
