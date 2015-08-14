@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <title>fridgeworthyrewards.com</title>
-    <meta name="description" content="#">
-    <meta name="keywords" content="#">
+    <title>FridgeWorthy | Rewards</title>
+    <meta name="description" content="Check out our Reward Center!">
+    <meta name="keywords" content="reward">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
    @include('js.maincssandjs')
