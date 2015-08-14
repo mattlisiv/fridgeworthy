@@ -13,6 +13,8 @@
 
 <body class="rcbg" ontouchstart="">
 
+@include('socialmedia.google-tag-manager')
+
 <div class="mainwrap">
 
    @include('navigation.masternav')

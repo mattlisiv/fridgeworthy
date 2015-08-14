@@ -26,6 +26,9 @@
 
 
 <body>
+
+@include('socialmedia.google-tag-manager')
+
 <div class="container">
 <div class ="row" style="margin-top:4em">
     <div class="col-md-6 col-xs-8">

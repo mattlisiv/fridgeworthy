@@ -28,6 +28,7 @@
 </head>
 
 <body ontouchstart="">
+@include('socialmedia.google-tag-manager')
 
 
 <div class="couponlpwrap">

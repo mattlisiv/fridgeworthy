@@ -39,6 +39,9 @@
 
 <body class="infographicbg" ontouchstart="">
 
+@include('socialmedia.google-tag-manager')
+
+
 <div class="mainwrap">
 
     @include('navigation.masternav')
