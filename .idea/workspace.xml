@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2ae7f5-e0f7-4a7e-b088-57564606aa61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_08_13_213913_create_coupon_details_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CouponDetails.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Coupon.php" afterPath="$PROJECT_DIR$/app/Coupon.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Reward.php" afterPath="$PROJECT_DIR$/app/Reward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administrator/users/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/administrator/users/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administrator/coupons/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/administrator/coupons/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administrator/rewards/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/administrator/rewards/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fridgeworthy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,10 +28,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/administrator/coupons/show.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63829786" vertical-offset="120" max-vertical-offset="780">
-              <caret line="30" column="142" selection-start-line="30" selection-start-column="142" selection-end-line="30" selection-end-column="142" />
+            <state vertical-scroll-proportion="0.20309478" vertical-offset="0" max-vertical-offset="1515">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -133,11 +123,11 @@
         <option value="$PROJECT_DIR$/app/CouponDetails.php" />
         <option value="$PROJECT_DIR$/app/Coupon.php" />
         <option value="$PROJECT_DIR$/app/Reward.php" />
-        <option value="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/administrator/rewards/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" />
         <option value="$PROJECT_DIR$/resources/views/administrator/coupons/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/public/rewards/show.blade.php" />
       </list>
     </option>
   </component>
@@ -1022,34 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9419729" vertical-offset="248" max-vertical-offset="1515">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding>
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439502884000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/administrator/rewards/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84139264" vertical-offset="465" max-vertical-offset="1470">
@@ -1205,8 +1167,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/administrator/coupons/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63829786" vertical-offset="120" max-vertical-offset="780">
-          <caret line="30" column="142" selection-start-line="30" selection-start-column="142" selection-end-line="30" selection-end-column="142" />
+        <state vertical-scroll-proportion="0.78336555" vertical-offset="120" max-vertical-offset="780">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1439504702000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/public/rewards/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20309478" vertical-offset="0" max-vertical-offset="1515">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
