@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>FridgeWorthy | Hard Work Pays Off</title>
-    <meta name="description" content="#">
-    <meta name="keywords" content="#">
+    <meta name="description" content="A cutting edge educational platformed aimed at academic success">
+    <meta name="keywords" content="education,rewards,hardwork,students,teachers,parents">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
     @include('js.maincssandjs')
