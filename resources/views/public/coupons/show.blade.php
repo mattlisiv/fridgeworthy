@@ -47,21 +47,27 @@
     <div class="rightcoupwrap">
 
         @if($coupon->coupon_type =='imaged')
-        <div class="imaged-coupon-box">
+        <div class="imaged-coupon-box-with-image">
             <div><img width="100%" height="100%" src="{{$coupon->getImage()}}"></div>
         </div>
+            <div style="padding-top: 45%" class="couplogobox-with-image">
+                <h3>courtesy of</h3>
+                <img src="/images/fw-logo-300.png" alt="FridgeWorthy logo">
+                <h2>hard work pays off.</h2>
+                <h4>learn more at <a href="http://www.fridge-worthy.com/" target="_blank">fridge-worthy.com</a></h4>
+            </div>
         @else
             <div class="qrbox">
                 <div><h2>scan to<br>redeem</h2></div>
                 <div class="qr"><img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(1200)->generate($coupon->access_code))}}" alt="qr code"></div>
             </div>
-        @endif
         <div class="couplogobox">
             <h3>courtesy of</h3>
             <img src="/images/fw-logo-300.png" alt="FridgeWorthy logo">
             <h2>hard work pays off.</h2>
             <h4>learn more at <a href="http://www.fridge-worthy.com/" target="_blank">fridge-worthy.com</a></h4>
         </div>
+        @endif
 
     </div><!--endrightcoupwrap-->
 
