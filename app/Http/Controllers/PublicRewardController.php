@@ -23,7 +23,7 @@ class PublicRewardController extends Controller {
     public function index(){
 
         $user = Auth::user();
-        $rewards = Reward::available()->get();
+        $rewards = Reward::available()->orderBy('points_required')->get();
         return view("public.rewards.index",compact('rewards','user'));
 
     }
