@@ -95,13 +95,16 @@ class HomeController extends Controller {
             'last_name.required' => 'Last name is required.',
             'last_name.max' => 'Last name cannot be more than 50 characters.',
             'school_id.required' => 'Please select a school.',
-            'role.required'=> 'Please select whether you are a student or teacher.',
-            'parent_email.required' => 'A parent email is required if you are a student.',
+            'role.required'=> 'Please select whether you are a registering as a student/parent or teacher.',
+            'parent_email.required' => 'A parent email is required if you are a registering as student/parent.',
+            'parent_password.required_if'=>'Please ensure the parent profile has entered a valid password that is at least 6 characters.',
             'parent_email.required_if' => 'A parent email is required if you are a student.',
             'grade.required' => 'Please select a grade if you are a student.',
             'grade.required_if' => 'Please select a grade if you are a student.',
             'email.unique'=> 'This email already is registered to another user.',
             'email.different'=>'A student\'s email may not be the same as a parent\'s email.',
+            'parent_first_name.required_if'=>'Please be sure to enter a parent\'s first name.',
+            'parent_last_name.required_if'=>'Please be sure to enter a parent\'s last name.'
 
 
         ];
@@ -110,10 +113,13 @@ class HomeController extends Controller {
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50',
             'school_id'=>'required',
-            'email' => 'required|email|max:255|unique:users,email|unique:users,parent_email|different:parent_email',
+            'email' => 'required|email|max:255|unique:users,email|different:parent_email',
             'password' => 'required|confirmed|min:6',
             'grade'=> 'required_if:role,2',
-            'parent_email'=>'required_if:role,2',
+            'parent_email'=>'required_if:role,2|unique:users,email',
+            'parent_password'=>'required_if:role,2|confirmed|min:6',
+            'parent_first_name'=>'required_if:role,2',
+            'parent_last_name'=>'required_if:role,2',
             'role'=>'required'
         ],$messages);
 
@@ -166,12 +172,17 @@ class HomeController extends Controller {
                 'parent_email' =>$input['parent_email'],
                 'grade'=>$input['grade'],
                 'points'=> 0,
-                'parent_confirmation'=>$parent_confirmation,
+                'parent_confirmation'=>true,
                 'registration_hash'=> $registration_hash
 
             ]);
 
+
+            $role = null;
+
             if($input['role']==1){
+
+                $role = 'teacher';
 
                 $user->attachRole(Role::teacher());
 
@@ -192,10 +203,32 @@ class HomeController extends Controller {
 
             }else if($input['role']==2){
 
+                $role = 'student';
+
+
                 $user->attachRole(Role::student());
 
-                $parent = new User();
+                $parent = User::create([
+                    'email'=>$input['parent_email'],
+                    'password'=>bcrypt($input['parent_password']),
+                    'first_name'=>$input['parent_first_name'],
+                    'last_name'=>$input['parent_last_name'],
+                    'school_id'=>$input['school_id'],
+                    'points'=>0,
+                    'parent_confirmation'=>true,
 
+                ]);
+
+                $parent->attachRole(Role::guardian());
+
+                ParentStudentRelation::create(['parent_id'=>$parent->id,'student_id'=>$user->id,'status'=>'confirmed']);
+
+
+                /**
+                 *
+                 * PARENTS NOW REGISTER WITH STUDENTS - THIS WAS EXISTING CONFIRMATION EMAIL
+                 *
+                 *
                 $message1 = 'Your student, '.$user->full_name.', has created an account with FridgeWorthy, a fun, rewarding site where students, teachers, and parents all earn rewards.';
                 $message2 = 'We need your help. Please complete your account and verify that your student has the ability to submit grades. The sooner your account is created, the sooner you can earn rewards.';
                 $signer = 'The FridgeWorthy Support Team';
@@ -209,6 +242,8 @@ class HomeController extends Controller {
                     $message->to($user->parent_email);
                     $message->subject('Complete Your FridgeWorthy Account.');
                 });
+                **/
+
 
                 $message1 = "Thank you for registering for FridgeWorthy! We are
                 beyond excited to provide our service for your school and
@@ -233,7 +268,7 @@ class HomeController extends Controller {
             }
             Auth::login($user);
             $user = Auth::user();
-            return view('registration.created',compact('user'));
+            return view('registration.created',compact('user','role'));
 
         }
 

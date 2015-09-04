@@ -33,13 +33,23 @@
 
             $('#teachstudselect').bind('change', function (e) {
 
-                if( $('#teachstudselect').val() == '2') {
-                    $('#studentspecific').show();
+                if( $("#teachstudselect").val() == '2') {
+                    $("#studentspecific").show();
+                    $("#parent-personal-info").show();
+                    $("#parent-profile").show();
+                    $("#user-info").text("student info")
+                    $("#user-profile").text("student profile")
+
+
                 }
-                else if ( $('#teachstudselect').val() == '1'){
+                else if ($('#teachstudselect').val() == '1'){
                     $('#studentspecific').hide();
-                }else{
-                    alert('Neither');
+                    $("#parent-personal-info").hide();
+                    $("#parent-profile").hide();
+                    $("#user-info").text("teacher info");
+                    $("#user-profile").text("teacher profile")
+
+
                 }
             });
         });

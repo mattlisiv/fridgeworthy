@@ -32,7 +32,15 @@
                         <br>
                         <br>
                         <br>
+                        @if($role)
+                            @if($role=='student')
+                                <h5>You account has been created. You will now be logged in as a student. Your parent account has also been activated.</h5>
+                            @else
+                                <h5>Your account has been created. Check your email for a confirmation.</h5>
+                            @endif
+                        @else
                         <h5>Your account has been created. Check your email for a confirmation.</h5>
+                        @endif
                         <br>
                         <br>
                         <br>

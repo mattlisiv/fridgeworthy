@@ -2,26 +2,54 @@
 <section id="registration">
     <div id="regpancnttemp">
         <h1 class="whitedkgray">register here</h1>
-
+        <br>
+        <br>
         <form action="{{action('HomeController@register')}}" method="post" id="signup">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div id="userinfo" class="regthird">
                 <h3 class="orange">user profile</h3>
+                    <span style="max-width: 500px"class="custom-dropdownBlue" id="teachstud">
+                <select class="customSelect" name="role" id="teachstudselect">
+                    <option value='' disabled selected style='display:none;'>are you a teacher or student?</option>
+                    <option value="1">teacher</option>
+                    <option value="2">student/parent</option>
+                </select>
+                </span>
+                <br>
+                <br>
+                <p class="white">Parents and students will create a shared account.</p>
+                <br>
+                <h3 id="user-profile" class="orange">registration</h3>
                 <input type="email" placeholder="email" name="email" value="{{old('email')}}"/>
                 <label for="user_password_new"></label>
                 <input class="tooltip" type="password" placeholder="password" name="password"/>
                 <label for="user_password_repeat"></label>
                 <input type="password" placeholder="re-enter password" name="password_confirmation"/>
                 <label for="user_email"></label>
-                <p class="white">Please ensure this is a valid email. It will be used to confirm your account.</p>
+                <br>
+                <br>
+                <div  style="display: none" id="parent-profile">
+                <h3 class="orange">parent profile</h3>
+                <input type="email" placeholder="parent email" name="parent_email" value="{{old('parent_email')}}"/>
+                <label for="user_password_new"></label>
+                <input class="tooltip" type="password" placeholder="parent password" name="parent_password"/>
+                <label for="user_password_repeat"></label>
+                <input type="password" placeholder="re-enter parent password" name="parent_password_confirmation"/>
+                <label for="user_email"></label>
+                </div>
             </div><!--end 1st regthird-->
 
 
             <div id="persinfo" class="regthird">
-                <h3 class="orange">personal info</h3>
+                <h3 id="user-info" class="orange">user info</h3>
                 <input type="text" placeholder="first name" name="first_name" value="{{old('first_name')}}"/>
                 <input type="text" placeholder="last name" name="last_name" value="{{old('last_name')}}"/>
-
+                <br>
+                <div style="display: none" id="parent-personal-info">
+                <h3 class="orange">parent info</h3>
+                <input type="text" placeholder="first name" name="parent_first_name" value="{{old('parent_first_name')}}"/>
+                <input type="text" placeholder="last name" name="parent_last_name" value="{{old('parent_last_name')}}"/>
+                </div>
                 <div class="clear"></div>
             </div><!--end 2nd regthird-->
 
@@ -37,17 +65,11 @@
 
 </select>
 </span>
-<span class="custom-dropdownBlue" id="teachstud">
-<select class="customSelect" name="role" id="teachstudselect">
-    <option value='' disabled selected style='display:none;'>are you a teacher or student?</option>
-    <option value="1">teacher</option>
-    <option value="2">student</option>
-</select>
-</span>
+
                 <div id="studentspecific" style="display: none">
 <span class="custom-dropdownBlue" id="teachstud">
 <select class="customSelect" name="grade">
-    <option value='' disabled selected style='display:none;'>select grade</option>
+    <option value='' disabled selected style='display:none;'>select student's grade</option>
     <option value="0">Kindergarten</option>
     <option value="1">1st</option>
     <option value="2">2nd</option>
@@ -64,9 +86,6 @@
 
 </select>
 </span>
-
-                    <p class="white">Please enter parent email address</p>
-                    <input type="text" placeholder="parent email address" name="parent_email" value="{{old('parent_email')}}"/>
 
                     <div class="clear"></div>
                 </div><!--end 3rd regthird-->
