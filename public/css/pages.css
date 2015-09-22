@@ -824,5 +824,10 @@ padding-right: 5%;
 }
 
 
-	
-	
+
+/* No greater than 900px, no less than 400px */
+@media (max-width:850px) and (min-width:550px) {
+    #schoolinfo {
+        padding-top:120px;
+    }
+}​

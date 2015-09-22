@@ -104,7 +104,9 @@ class HomeController extends Controller {
             'email.unique'=> 'This email already is registered to another user.',
             'email.different'=>'A student\'s email may not be the same as a parent\'s email.',
             'parent_first_name.required_if'=>'Please be sure to enter a parent\'s first name.',
-            'parent_last_name.required_if'=>'Please be sure to enter a parent\'s last name.'
+            'parent_last_name.required_if'=>'Please be sure to enter a parent\'s last name.',
+            'authorization.required'=>'Please confirm that you have read the Terms and Conditions.'
+
 
 
         ];
@@ -117,10 +119,12 @@ class HomeController extends Controller {
             'password' => 'required|confirmed|min:6',
             'grade'=> 'required_if:role,2',
             'parent_email'=>'required_if:role,2|unique:users,email',
+
             'parent_password'=>'required_if:role,2|confirmed|min:6',
             'parent_first_name'=>'required_if:role,2',
             'parent_last_name'=>'required_if:role,2',
-            'role'=>'required'
+            'role'=>'required',
+            'authorization'=>'required'
         ],$messages);
 
         if($validator->fails()){
