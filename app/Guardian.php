@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -74,6 +75,7 @@ class Guardian extends User{
             ->join('parent_student','course_user.user_id','=','parent_student.student_id')
             ->join('users','parent_student.parent_id','=','users.id')
             ->where('users.id','=',$this->id)
+            ->where('assignments.due_date','>',Carbon::now())
             ->groupBy('assignments.id')->orderBy('assignments.due_date')
             ->get();
 

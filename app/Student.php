@@ -2,6 +2,7 @@
 
 
 
+use Carbon\Carbon;
 use phpDocumentor\Reflection\DocBlock\Type\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -85,6 +86,7 @@ class Student extends User{
             ->leftJoin('courses','courses.id','=','assignments.course_id')
             ->leftJoin('course_user','course_user.course_id','=','courses.id')
             ->where('course_user.user_id','=',$this->id)->orderBy('assignments.due_date')
+            ->where('assignments.due_date','>',Carbon::now())
             ->get();
 
     }

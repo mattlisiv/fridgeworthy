@@ -255,7 +255,7 @@ class AssignmentManagerController extends Controller {
         $user = Auth::user();
         $course = $this->courseRepository->find($id);
         if($user->statusInCourse($course)=='confirmed' && $user->parent_confirmation=='confirmed') {
-            $assignments = $user->unsubmittedAssignments()->where('courses.id', '=', $course->id)->get();
+            $assignments = $user->unsubmittedAssignments()->where('courses.id', '=', $course->id)->where('due_date','>',Carbon::now())->get();
             return view('student.assignments.SubmitGradeSpecific', compact('user', 'assignments', 'course'));
         }else{
 

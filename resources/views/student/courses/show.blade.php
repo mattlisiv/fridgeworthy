@@ -42,13 +42,13 @@
 
         <div class="classescol1">
             <div class="classlisttable viewupcomingassign">
-                <div class="classlisttabletitle">upcoming assignments</div>
+                <div class="classlisttabletitle">Assignments</div>
                 @if(count($course->assignments))
                     @foreach($course->assignments as $assignment)
                         <div class="classlisttablerow"><p><a href="{{action('AssignmentManagerController@viewAssignment',$assignment->id)}}" class="plinkwhite">{{$assignment->name}}</a></p></div>
                     @endforeach
                 @else
-                    <div class="classlisttablerow"><p>No upcoming assignments</p></div>
+                    <div class="classlisttablerow"><p>No assignments</p></div>
 
                 @endif
             </div>

@@ -25,7 +25,7 @@
     <!--start list template-->
     <section id="listtemplatecnt">
         <div class="listtable">
-            <div class="listtabletitle">View Upcoming Assignments</div>
+            <div class="listtabletitle">View Assignments</div>
             @if(count($assignments) || is_null($assignments))
                 @foreach($assignments as $assignment)
                     <div class="listtablerow">

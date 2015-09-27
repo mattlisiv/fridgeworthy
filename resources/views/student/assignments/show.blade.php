@@ -42,12 +42,17 @@
                     <br>
                     <br>
                     <br>
-                    @if(is_null($grade))
+
+                    @if(is_null($grade) && $assignment->due_date > \Carbon\Carbon::now())
                         <a href="{{action('AssignmentManagerController@submitGrade',$assignment->id)}}"><button type="button" value="view grades" class="classdetbtn">submit grade</button></a>
                     @else
+                        @if(!is_null($grade))
                         <h5>You have submitted a grade of <span style="font-weight: bold;color:white">{{$grade->numeric_grade}}</span> at {{$grade->created_at}} for this assignment.
                             The grade is currently <span style="font-weight: bold;color:white;">{{$grade->status}}</span>.
                         </h5>
+                        @else
+                            <h5> This assignment was due on {{$assignment->due_date->toFormattedDateString()}}. You are not able to submit a grade, because the due date has passed.</h5>
+                        @endif
                     @endif
                     <br>
                     <br>

@@ -1,6 +1,7 @@
 <?php namespace App;
 
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class Teacher extends User{
@@ -57,6 +58,12 @@ class Teacher extends User{
 
 
         return $this->hasManyThrough('App\Assignment','App\Course');
+
+    }
+
+    public function upcomingAssignments(){
+
+        return $this->assignments()->where('due_date','>',Carbon::now());
 
     }
 

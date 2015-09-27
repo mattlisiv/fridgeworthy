@@ -39,7 +39,7 @@
                     $("#parent-profile").show();
                     $("#user-info").text("student info");
                     $("#user-profile").text("student profile");
-                    $("#school").prop("","");
+
 
 
                 }
