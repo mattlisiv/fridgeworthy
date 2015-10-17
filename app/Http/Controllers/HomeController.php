@@ -176,7 +176,7 @@ class HomeController extends Controller {
                 'parent_email' =>$input['parent_email'],
                 'grade'=>$input['grade'],
                 'points'=> 0,
-                'parent_confirmation'=>true,
+                'parent_confirmation'=>'confirmed',
                 'registration_hash'=> $registration_hash
 
             ]);
