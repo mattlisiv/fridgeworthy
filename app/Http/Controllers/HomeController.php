@@ -219,7 +219,7 @@ class HomeController extends Controller {
                     'last_name'=>$input['parent_last_name'],
                     'school_id'=>$input['school_id'],
                     'points'=>0,
-                    'parent_confirmation'=>true,
+                    'parent_confirmation'=>'confirmed',
 
                 ]);
 
