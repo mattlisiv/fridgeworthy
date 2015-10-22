@@ -21,6 +21,8 @@ Route::group(array('domain' => 'admin.'.$domain,'middleware'=>'authorize','user_
     Route::resource('courses','Admin\CourseController');
     Route::resource('fileuploads','Admin\CourseFilesController');
     Route::get('preview/{id}','Admin\CouponController@preview');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 
 });
 
@@ -51,6 +53,7 @@ Route::group(array('domain' => $domain), function()
     Route::post("register","HomeController@register");
     Route::get("error","HomeController@error");
     Route::post("signup-for-listserv","HomeController@signupForListserv");
+
 
 
 

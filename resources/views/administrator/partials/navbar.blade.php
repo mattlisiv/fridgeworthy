@@ -16,7 +16,7 @@
                     <li> <a href="{{action('Admin\RewardController@index')}}">Rewards</a></li>
                     <li> <a href="{{action('Admin\CouponController@index')}}">Coupons</a></li>
                     <li> <a href="{{action('Admin\UserController@index')}}">Users</a></li>
-
+                    <li> <a href="/logs">Application Logs</a></li>
 
 
                 </ul>

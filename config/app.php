@@ -150,6 +150,7 @@ return [
         'App\Repositories\DBServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',
         'GrahamCampbell\Dropbox\DropboxServiceProvider',
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
 
 
@@ -208,6 +209,7 @@ return [
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'PDF' => 'Barryvdh\DomPDF\Facade',
         'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox',
+
 
     ],
 
