@@ -6,7 +6,7 @@ $(document).ready(function() {
         hideNonCommonDataFields();
         if(user_status){
 
-            $("$status").val(user_status);
+            $("#status").val(user_status);
         }
         //If user type has been define //
         if(user_type){

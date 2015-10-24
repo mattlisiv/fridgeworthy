@@ -4,15 +4,6 @@
 
     @include('administrator.partials.navbar')
 
-    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/waypoints.sticky.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/retina.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.stepframemodal.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/fridgeworthy.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jquery.scrollbox.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/admin/create_user.js')}}"></script>
 
     <h4>Edit {{$user->first_name}} {{$user->last_name}}'s Information</h4>
@@ -36,5 +27,4 @@
         var grade = '{{$user->grade}}';
     @endif
 
-    $("#")
 </script>

@@ -11,4 +11,12 @@ class EmailListServ extends Model {
         'first_name','last_name','email','type'
     ];
 
+
+    public function getName(){
+
+        return $this->first_name.' '.$this->last_name;
+    }
+
 }
+
+
