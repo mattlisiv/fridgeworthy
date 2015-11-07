@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Student extends User{
 
 
-    public static function create(array $attributes){
+    public static function create(array $attributes = []){
 
 
         $model = new static($attributes);

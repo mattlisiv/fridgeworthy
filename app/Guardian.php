@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Guardian extends User{
 
 
-    public static function create(array $attributes){
-
+    public static function create(array $attributes = []){
 
         $model = new static($attributes);
 
@@ -19,7 +18,6 @@ class Guardian extends User{
         $model->attachRole(Role::guardian());
 
         return $model;
-
 
     }
 

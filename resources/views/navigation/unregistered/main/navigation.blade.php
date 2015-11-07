@@ -12,7 +12,9 @@
         <div class="navmainlinks">
             <ul>
                 <li><a href="{{url('/')}}#home">home</a></li>
-                <li><a href="{{url('/')}}#about" >about us</a></li>
+                <li><a href="{{url('/')}}#about" >about us</a>
+                    <ul class="dropdownmenu"><li><a href="http://blog.fridge-worthy.com">blog</a></li></ul>
+                </li>
                 <li><a href="{{url('/')}}#rewards">rewards</a>
                     <ul class="dropdownmenu"><li><a href="{{action('PublicRewardController@index')}}" >rewards center</a></li></ul>
                 </li>
@@ -33,7 +35,11 @@
                 <div class="menu-header">
                     <ul id="menu-mobile-menu" class="menu">
                         <li class="menu-item"><a href="{{url('/')}}#home">home</a></li>
-                        <li class="menu-item"><a href="{{url('/')}}#about">about us</a></li>
+                        <li class="menu-item"><a href="{{url('/')}}#about">about us</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="http://blog.fridge-worthy.com">blog</a></li>
+                            </ul>
+                        </li>
                         <li class="menu-item menu-item-has-children"><a href="{{url('/')}}#rewards">rewards</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{action('PublicRewardController@index')}}">rewards center</a></li>
