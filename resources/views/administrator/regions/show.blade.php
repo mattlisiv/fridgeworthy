@@ -22,9 +22,34 @@
                     {!! Form::submit('Edit Region',['class' => 'btn btn-primary form-control']) !!}
                     {!! Form::close() !!}
                     <br>
-                    {!! Form::open(['action'=>['Admin\RegionController@destroy',$region->id], 'method' => 'DELETE']) !!}
-                    {!! Form::submit('Delete Region',['class' => 'btn btn-danger form-control']) !!}
-                    {!! Form::close() !!}             
+                    <button type="button" class="btn btn-danger form-control" data-toggle="modal" data-target="#deleteModal"> Delete Region</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="delete">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this region? </h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                By deleting this region, you will be deleting all associated schools and classes.
+                                Please confirm you want to do this a database administrator.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            {!! Form::open(['action'=>['Admin\RegionController@destroy',$region->id], 'method' => 'DELETE']) !!}
+                            {!! Form::submit('Delete Region',['class' => 'btn btn-danger']) !!}
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

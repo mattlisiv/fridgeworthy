@@ -38,7 +38,7 @@ class DistrictController extends Controller {
     public function store(DistrictRequest $request){
 
         $this->districtRepository->store($request->all());
-        return redirect()->action('DistrictController@index');
+        return redirect()->action('Admin\DistrictController@index');
 
     }
 
