@@ -10,8 +10,9 @@
                 <li class="active">Course Management</li>
             </ol>
             <h1>Course Management</h1>
-            <table class="table table-bordered">
+            <table id="search-table" class="table table-bordered">
                 <tr><th>Course Name</th><th>School</th><th>Teacher</th></tr>
+                <tbody>
                 @foreach($courses as $course)
                     <tr>
                         <td><a href="{{action('Admin\CourseController@show',[$course->id])}}">{{$course->name}}</a></td>
@@ -19,6 +20,7 @@
                         <td><a href="{{action('Admin\UserController@show',[$course->teacher->id])}}">{{$course->teacher->getName()}}</a></td>
                     </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

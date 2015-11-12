@@ -4,26 +4,28 @@
 <head>
     <title>FridgeWorthy | {{$pageTitle}}</title>
 
+    <!--JS links-->
+    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.scrollbox.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset("js/bind-delay/bindWithDelay.js")}}"></script>
+    <script type="text/javascript" src="{{asset("js/bind-delay/onDelay.js")}}"></script>
+    <script type="text/javascript" src="{{asset("js/filter-table/jquery.filtertable.min.js")}}"></script>
+    <script type="text/javascript" src="{{asset("js/pagination/jquery.twbsPagination.min.js")}}"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--Bootstrap links-->
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
+    <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
-    <script  type="text/javascript" src="{{ URL::asset('js/jquery-1.11.1.min.js') }}"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-
+    <style>
+        .filter-table .quick { margin-left: 0.5em; font-size: 0.8em; text-decoration: none; }
+        .fitler-table .quick:hover { text-decoration: underline; }
+        td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+    </style> <!-- or put the styling in your stylesheet -->
 
 </head>
-
-
 
 <body>
 
@@ -38,11 +40,28 @@
 
 @yield('content')
 </div>
-
-</body>
 <script type="text/javascript">
-    $(function() {
-        $( "#datepicker" ).datepicker();
+
+   $( document).ready(
+            $(function() {
+                $( "#datepicker").datepicker();
+            }));
+</script>
+<script type="text/javascript">
+    $( document).ready(
+            $("#search-table").filterTable()
+
+    );
+</script>
+<script>
+    $('#pagination-demo').twbsPagination({
+        totalPages: 35,
+        visiblePages: 7,
+        onPageClick: function (event, page) {
+            $('#page-content').text('Page ' + page);
+        }
     });
 </script>
+</body>
+
 </html>

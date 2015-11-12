@@ -9,8 +9,9 @@
                 <li class="active">Reward Management</li>
             </ol>
             <h1>Reward Management</h1>
-            <table class="table table-bordered">
+            <table id="search-table" class="table table-bordered">
                 <tr><th>Name</th><th>Business</th></tr>
+                <tbody>
                 @if(isset($rewards))
                 @foreach($rewards as $reward)
                     <tr>
@@ -19,6 +20,7 @@
                     </tr>
                 @endforeach
                 @endif
+                </tbody>
             </table>
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

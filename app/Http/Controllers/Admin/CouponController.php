@@ -142,8 +142,12 @@ class CouponController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
-	}
+        $this->couponRepository->destroy($id);
+        $user = Auth::user();
+        return redirect()->action('Admin\CouponController@index');
+
+
+    }
 
     public function preview($id){
 

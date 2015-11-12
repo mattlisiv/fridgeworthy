@@ -10,8 +10,9 @@
                 <li class="active">User Management</li>
             </ol>
             <h1>User Management</h1>
-            <table class="table table-bordered">
+            <table id="search-table" class="table table-bordered">
                 <tr><th>ID</th><th>Email</th><th>Role</th><th>Status</th></tr>
+                <tbody>
                 @foreach($users as $user)
                     <tr>
                         <td><a href="{{action('Admin\UserController@show',[$user->id])}}">{{$user->getName()}}</a></td>
@@ -32,6 +33,7 @@
                         <td>{{$user->status}}</td>
                     </tr>
                 @endforeach
+                </tbody>
             </table> 
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

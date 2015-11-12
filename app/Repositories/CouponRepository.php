@@ -108,6 +108,8 @@ class CouponRepository implements CouponRepositoryInterface{
 
     public function destroy($id){
 
+        $coupon = Coupon::findOrFail($id);
+        return $coupon->delete();
     }
 
     public function filterCouponsByUnclaimedStatus(Collection $coupons){

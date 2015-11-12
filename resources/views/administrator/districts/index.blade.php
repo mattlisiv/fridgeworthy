@@ -10,13 +10,15 @@
             <li class="active">District Management</li>
         </ol>
         <h1>District Management</h1>
-        <table class="table table-bordered">
+        <table id="search-table" class="table table-bordered">
             <tr><th>Name</th></tr>
+            <tbody>
             @foreach($districts as $district)
                 <tr>
                     <td><a href="{{action('Admin\DistrictController@show',[$district->id]) }}">{{$district->name}}</a></td>
                 </tr>
             @endforeach
+            </tbody>
         </table>
     </div>
     <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

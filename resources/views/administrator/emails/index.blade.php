@@ -10,8 +10,9 @@
                 <li class="active">Email Management</li>
             </ol>
             <h1>Email Management</h1>
-            <table class="table table-bordered">
+            <table id="search-table" class="table table-bordered">
                 <tr><th>Name</th><th>Email</th><th>Type</th></tr>
+                <tbody>
                 @foreach($emails as $email)
                     <tr>
                         <td>{{$email->getName()}}</td>
@@ -19,6 +20,7 @@
                         <td>{{$email->type}}</td>
                     </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

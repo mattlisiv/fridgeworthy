@@ -8,7 +8,7 @@
             <ol class="breadcrumb">
                 <li><a href="{{action('Admin\AdministratorController@index') }}">Administrative Home</a></li>
                 <li><a href="{{action('Admin\CouponController@index') }}">Coupon Management</a></li>
-                <li class="active">Coupon</li>
+                <li class="active">Coupon Information</li>
             </ol>
             <h3>Coupon for {{$coupon->reward->name}}</h3>
                 <div class="panel panel-default">
@@ -29,6 +29,9 @@
                             </div>
                             <div class="col-lg-2 col-lg-offset-2">
                                 <button class="btn btn-default"><a target="_blank" href="{{action('Admin\CouponController@preview',$coupon->id)}}">Preview Coupon</a></button>
+                                <br>
+                                <br>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >Delete Coupon</button>
                             </div>
 
                         </div>
@@ -40,7 +43,34 @@
 
         </div>
     </div>
+    <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="delete">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this coupon? </h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                By deleting this coupon, this coupon can no longer be redeemed by a user.
+                                Please confirm you want to do this a database administrator.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            {!! Form::open(['action'=>['Admin\CouponController@destroy',$coupon->id], 'method' => 'DELETE']) !!}
+                            {!! Form::submit('Delete Coupon',['class' => 'btn btn-danger']) !!}
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            {!! Form::close() !!}
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @include('errors.list')
 @endsection
+

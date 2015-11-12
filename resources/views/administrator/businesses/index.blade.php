@@ -10,13 +10,15 @@
                 <li class="active">Business Management</li>
             </ol>
             <h1>Business Management</h1>
-            <table class="table table-bordered">
+            <table id="search-table" class="table table-bordered">
+                <tbody>
                 <tr><th>Name</th></tr>
                     @foreach($businesses as $business)
                     <tr>
                         <td><a href="{{action('Admin\BusinessController@show',[$business->id]) }}">{{$business->name}}</a></td>
                     </tr>
                     @endforeach
+                </tbody>
             </table>
     </div>
         <div class="col-lg-3 col-lg-offset-1" style="padding-top: 50px;">

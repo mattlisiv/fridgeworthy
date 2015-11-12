@@ -1,11 +1,7 @@
-<!--JS links-->
-<script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/jquery.scrollbox.min.js')}}"></script>
 
+<br>
+<br>
 <div class="row" class="col-md-10 col-xs-8">
-    <br>
-    <br>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">

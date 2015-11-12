@@ -9,13 +9,15 @@
             <li class="active">School Management</li>
         </ol>
         <h1>School Management</h1>
-        <table class="table table-bordered">
+        <table id="search-table" class="table table-bordered">
             <tr><th>Name</th></tr>
+            <tbody>
             @foreach($schools as $school)
                 <tr>
                     <td><a href="{{action('Admin\SchoolController@show',[$school->id])}}">{{$school->name}}</a></td>
                 </tr>
             @endforeach
+            </tbody>
         </table>
     </div>
     <div class="col-lg-3 col-lg-offset-1" style="padding-top:50px;">
