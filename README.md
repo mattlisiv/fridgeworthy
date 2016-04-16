@@ -1,2 +1,2 @@
-This is a proprietary software of FridgeWorthy LLC. 
-If you do not have permssion to from FridgeWorthy LLC to view/edit application, please exit.
+This is a project I did for a local startup called FridgeWorthy that would allow students to submit grades to teachers and receive points in turn. 
+
